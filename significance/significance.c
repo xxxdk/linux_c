@@ -13,7 +13,7 @@ int main(int argc, char const *argv[])
   d = 1234567891.23456789;
   l = 123456789123456789;
 
-  printf("int %d\nfloat %f\ndouble %lf\nlong %ld\n", i, f, d, l);
+  printf("int %d\nfloat %f\ndouble %.10lf\nlong %ld\n", i, f, d, l);
 
   return 0;
 }
