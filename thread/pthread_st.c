@@ -26,7 +26,7 @@ int main(void)
   pthread_t tid;
   err = pthread_create(&tid, NULL, thread_func, NULL);
   if(err != 0){
-    fprintf(stderr "create thread fail\n");
+    fprintf(stderr,"%s","create thread fail\n");
     exit(-1);
   }
   printids("man thread: ");
