@@ -1,0 +1,3042 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://www.spinics.net/lists/linux-usb/msg41963.html
+Subject: =?utf-8?Q?[PATCH]=20PTP:=20ported=20from=20gadgetfs=20to=20functionfs=20k?=
+ =?utf-8?Q?ernel=20interface=20=E2=80=94=20Linux=20USB?=
+Date: Sun, 26 May 2019 15:27:51 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--lHJ90kFiV4pVJLgeUqF58vfLZVlQuy8G0n6FbxhYXS----"
+
+
+------MultipartBoundary--lHJ90kFiV4pVJLgeUqF58vfLZVlQuy8G0n6FbxhYXS----
+Content-Type: text/html
+Content-ID: <frame-FA57C8A24A75D96330764F825715E391@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://www.spinics.net/lists/linux-usb/msg41963.html
+
+<!-- MHonArc v2.6.19 --><!--X-Subject: [PATCH] PTP: ported from gadgetfs to=
+ functionfs kernel interface --><!--X-From-R13: [nerx Emlcebjfxv &#60;z.fml=
+cebjfxvNfnzfhat.pbz> --><!--X-Date: Fri, 28 Jan 2011 01:25:43 &#45;0800 -->=
+<!--X-Message-Id: 1296206727&#45;27895&#45;2&#45;git&#45;send&#45;email&#45=
+;m.szyprowski@samsung.com --><!--X-Content-Type: text/plain --><!--X-Refere=
+nce: 1296206727&#45;27895&#45;1&#45;git&#45;send&#45;email&#45;m.szyprowski=
+@samsung.com --><!--X-Head-End--><!DOCTYPE html PUBLIC "-//W3C//DTD HTML//E=
+N"><html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; char=
+set=3DUTF-8">
+
+
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1"=
+>
+<meta name=3D"description" content=3D"USB for Linux: [PATCH] PTP: ported fr=
+om gadgetfs to functionfs kernel interface">
+<style>
+<!--
+ pre {white-space: pre-wrap;}
+-->
+</style>
+<title>[PATCH] PTP: ported from gadgetfs to functionfs kernel interface =E2=
+=80=94 Linux USB</title>
+<link rel=3D"alternate" type=3D"application/rss+xml" title=3D"Linux USB" hr=
+ef=3D"https://feedproxy.google.com/LinuxUsb">
+<style type=3D"text/css">.at-icon{fill:#fff;border:0}.at-icon-wrapper{displ=
+ay:inline-block;overflow:hidden}a .at-icon-wrapper{cursor:pointer}.at-round=
+ed,.at-rounded-element .at-icon-wrapper{border-radius:12%}.at-circular,.at-=
+circular-element .at-icon-wrapper{border-radius:50%}.addthis_32x32_style .a=
+t-icon{width:2pc;height:2pc}.addthis_24x24_style .at-icon{width:24px;height=
+:24px}.addthis_20x20_style .at-icon{width:20px;height:20px}.addthis_16x16_s=
+tyle .at-icon{width:1pc;height:1pc}#at16lb{display:none;position:absolute;t=
+op:0;left:0;width:100%;height:100%;z-index:1001;background-color:#000;opaci=
+ty:.001}#at_complete,#at_error,#at_share,#at_success{position:static!import=
+ant}.at15dn{display:none}#at15s,#at16p,#at16p form input,#at16p label,#at16=
+p textarea,#at_share .at_item{font-family:arial,helvetica,tahoma,verdana,sa=
+ns-serif!important;font-size:9pt!important;outline-style:none;outline-width=
+:0;line-height:1em}* html #at15s.mmborder{position:absolute!important}#at15=
+s.mmborder{position:fixed!important;width:250px!important}#at15s{background=
+:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAA=
+GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAl=
+GFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg=3D=3D);float:none;line-height:1em;m=
+argin:0;overflow:visible;padding:5px;text-align:left;position:absolute}#at1=
+5s a,#at15s span{outline:0;direction:ltr;text-transform:none}#at15s .at-lab=
+el{margin-left:5px}#at15s .at-icon-wrapper{width:1pc;height:1pc;vertical-al=
+ign:middle}#at15s .at-icon{width:1pc;height:1pc}.at4-icon{display:inline-bl=
+ock;background-repeat:no-repeat;background-position:top left;margin:0;overf=
+low:hidden;cursor:pointer}.addthis_16x16_style .at4-icon,.addthis_default_s=
+tyle .at4-icon,.at4-icon,.at-16x16{width:1pc;height:1pc;line-height:1pc;bac=
+kground-size:1pc!important}.addthis_32x32_style .at4-icon,.at-32x32{width:2=
+pc;height:2pc;line-height:2pc;background-size:2pc!important}.addthis_24x24_=
+style .at4-icon,.at-24x24{width:24px;height:24px;line-height:24px;backgroun=
+d-size:24px!important}.addthis_20x20_style .at4-icon,.at-20x20{width:20px;h=
+eight:20px;line-height:20px;background-size:20px!important}.at4-icon.circul=
+ar,.circular .at4-icon,.circular.aticon{border-radius:50%}.at4-icon.rounded=
+,.rounded .at4-icon{border-radius:4px}.at4-icon-left{float:left}#at15s .at4=
+-icon{text-indent:20px;padding:0;overflow:visible;white-space:nowrap;backgr=
+ound-size:1pc;width:1pc;height:1pc;background-position:top left;display:inl=
+ine-block;line-height:1pc}.addthis_vertical_style .at4-icon,.at4-follow-con=
+tainer .at4-icon{margin-right:5px}html>body #at15s{width:250px!important}#a=
+t15s.atm{background:none!important;padding:0!important;width:10pc!important=
+}#at15s_inner{background:#fff;border:1px solid #fff;margin:0}#at15s_head{po=
+sition:relative;background:#f2f2f2;padding:4px;cursor:default;border-bottom=
+:1px solid #e5e5e5}.at15s_head_success{background:#cafd99!important;border-=
+bottom:1px solid #a9d582!important}.at15s_head_success a,.at15s_head_succes=
+s span{color:#000!important;text-decoration:none}#at15s_brand,#at15sptx,#at=
+16_brand{position:absolute}#at15s_brand{top:4px;right:4px}.at15s_brandx{rig=
+ht:20px!important}a#at15sptx{top:4px;right:4px;text-decoration:none;color:#=
+4c4c4c;font-weight:700}#at15sptx:hover{text-decoration:underline}#at16_bran=
+d{top:5px;right:30px;cursor:default}#at_hover{padding:4px}#at_hover .at_ite=
+m,#at_share .at_item{background:#fff!important;float:left!important;color:#=
+4c4c4c!important}#at_share .at_item .at-icon-wrapper{margin-right:5px}#at_h=
+over .at_bold{font-weight:700;color:#000!important}#at_hover .at_item{width=
+:7pc!important;padding:2px 3px!important;margin:1px;text-decoration:none!im=
+portant}#at_hover .at_item.athov,#at_hover .at_item:focus,#at_hover .at_ite=
+m:hover{margin:0!important}#at_hover .at_item.athov,#at_hover .at_item:focu=
+s,#at_hover .at_item:hover,#at_share .at_item.athov,#at_share .at_item:hove=
+r{background:#f2f2f2!important;border:1px solid #e5e5e5;color:#000!importan=
+t;text-decoration:none}.ipad #at_hover .at_item:focus{background:#fff!impor=
+tant;border:1px solid #fff}.at15t{display:block!important;height:1pc!import=
+ant;line-height:1pc!important;padding-left:20px!important;background-positi=
+on:0 0;text-align:left}.addthis_button,.at15t{cursor:pointer}.addthis_toolb=
+ox a.at300b,.addthis_toolbox a.at300m{width:auto}.addthis_toolbox a{margin-=
+bottom:5px;line-height:initial}.addthis_toolbox.addthis_vertical_style{widt=
+h:200px}.addthis_button_facebook_like .fb_iframe_widget{line-height:100%}.a=
+ddthis_button_facebook_like iframe.fb_iframe_widget_lift{max-width:none}.ad=
+dthis_toolbox a.addthis_button_counter,.addthis_toolbox a.addthis_button_fa=
+cebook_like,.addthis_toolbox a.addthis_button_facebook_send,.addthis_toolbo=
+x a.addthis_button_facebook_share,.addthis_toolbox a.addthis_button_foursqu=
+are,.addthis_toolbox a.addthis_button_linkedin_counter,.addthis_toolbox a.a=
+ddthis_button_pinterest_pinit,.addthis_toolbox a.addthis_button_tweet{displ=
+ay:inline-block}.addthis_toolbox span.addthis_follow_label{display:none}.ad=
+dthis_toolbox.addthis_vertical_style span.addthis_follow_label{display:bloc=
+k;white-space:nowrap}.addthis_toolbox.addthis_vertical_style a{display:bloc=
+k}.addthis_toolbox.addthis_vertical_style.addthis_32x32_style a{line-height=
+:2pc;height:2pc}.addthis_toolbox.addthis_vertical_style .at300bs{margin-rig=
+ht:4px;float:left}.addthis_toolbox.addthis_20x20_style span{line-height:20p=
+x}.addthis_toolbox.addthis_32x32_style span{line-height:2pc}.addthis_toolbo=
+x.addthis_pill_combo_style .addthis_button_compact .at15t_compact,.addthis_=
+toolbox.addthis_pill_combo_style a{float:left}.addthis_toolbox.addthis_pill=
+_combo_style a.addthis_button_tweet{margin-top:-2px}.addthis_toolbox.addthi=
+s_pill_combo_style .addthis_button_compact .at15t_compact{margin-right:4px}=
+.addthis_default_style .addthis_separator{margin:0 5px;display:inline}div.a=
+tclear{clear:both}.addthis_default_style .addthis_separator,.addthis_defaul=
+t_style .at4-icon,.addthis_default_style .at300b,.addthis_default_style .at=
+300bo,.addthis_default_style .at300bs,.addthis_default_style .at300m{float:=
+left}.at300b img,.at300bo img{border:0}a.at300b .at4-icon,a.at300m .at4-ico=
+n{display:block}.addthis_default_style .at300b,.addthis_default_style .at30=
+0bo,.addthis_default_style .at300m{padding:0 2px}.at300b,.at300bo,.at300bs,=
+.at300m{cursor:pointer}.addthis_button_facebook_like.at300b:hover,.addthis_=
+button_facebook_like.at300bs:hover,.addthis_button_facebook_send.at300b:hov=
+er,.addthis_button_facebook_send.at300bs:hover{opacity:1}.addthis_20x20_sty=
+le .at15t,.addthis_20x20_style .at300bs{overflow:hidden;display:block;heigh=
+t:20px!important;width:20px!important;line-height:20px!important}.addthis_3=
+2x32_style .at15t,.addthis_32x32_style .at300bs{overflow:hidden;display:blo=
+ck;height:2pc!important;width:2pc!important;line-height:2pc!important}.at30=
+0bs{overflow:hidden;display:block;background-position:0 0;height:1pc;width:=
+1pc;line-height:1pc!important}.addthis_default_style .at15t_compact,.addthi=
+s_default_style .at15t_expanded{margin-right:4px}#at_share .at_item{width:1=
+23px!important;padding:4px;margin-right:2px;border:1px solid #fff}#at16p{ba=
+ckground:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACN=
+Ms+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGA=
+gAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg=3D=3D);z-index:10000001;pos=
+ition:absolute;top:50%;left:50%;width:300px;padding:10px;margin:0 auto;marg=
+in-top:-185px;margin-left:-155px;font-family:arial,helvetica,tahoma,verdana=
+,sans-serif;font-size:9pt;color:#5e5e5e}#at_share{margin:0;padding:0}#at16p=
+t{position:relative;background:#f2f2f2;height:13px;padding:5px 10px}#at16pt=
+ a,#at16pt h4{font-weight:700}#at16pt h4{display:inline;margin:0;padding:0;=
+font-size:9pt;color:#4c4c4c;cursor:default}#at16pt a{position:absolute;top:=
+5px;right:10px;color:#4c4c4c;text-decoration:none;padding:2px}#at15sptx:foc=
+us,#at16pt a:focus{outline:thin dotted}#at15s #at16pf a{top:1px}#_atssh{wid=
+th:1px!important;height:1px!important;border:0!important}.atm{width:10pc!im=
+portant;padding:0;margin:0;line-height:9pt;letter-spacing:normal;font-famil=
+y:arial,helvetica,tahoma,verdana,sans-serif;font-size:9pt;color:#444;backgr=
+ound:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9=
+AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjA=
+xEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg=3D=3D);padding:4px}.atm-f{text-=
+align:right;border-top:1px solid #ddd;padding:5px 8px}.atm-i{background:#ff=
+f;border:1px solid #d5d6d6;padding:0;margin:0;box-shadow:1px 1px 5px rgba(0=
+,0,0,.15)}.atm-s{margin:0!important;padding:0!important}.atm-s a:focus{bord=
+er:transparent;outline:0;transition:none}#at_hover.atm-s a,.atm-s a{display=
+:block;text-decoration:none;padding:4px 10px;color:#235dab!important;font-w=
+eight:400;font-style:normal;transition:none}#at_hover.atm-s .at_bold{color:=
+#235dab!important}#at_hover.atm-s a:hover,.atm-s a:hover{background:#2095f0=
+;text-decoration:none;color:#fff!important}#at_hover.atm-s .at_bold{font-we=
+ight:700}#at_hover.atm-s a:hover .at_bold{color:#fff!important}.atm-s a .at=
+-label{vertical-align:middle;margin-left:5px;direction:ltr}.at_PinItButton{=
+display:block;width:40px;height:20px;padding:0;margin:0;background-image:ur=
+l(//s7.addthis.com/static/t00/pinit00.png);background-repeat:no-repeat}.at_=
+PinItButton:hover{background-position:0 -20px}.addthis_toolbox .addthis_but=
+ton_pinterest_pinit{position:relative}.at-share-tbx-element .fb_iframe_widg=
+et span{vertical-align:baseline!important}#at16pf{height:auto;text-align:ri=
+ght;padding:4px 8px}.at-privacy-info{position:absolute;left:7px;bottom:7px;=
+cursor:pointer;text-decoration:none;font-family:helvetica,arial,sans-serif;=
+font-size:10px;line-height:9pt;letter-spacing:.2px;color:#666}.at-privacy-i=
+nfo:hover{color:#000}.body .wsb-social-share .wsb-social-share-button-vert{=
+padding-top:0;padding-bottom:0}.body .wsb-social-share.addthis_counter_styl=
+e .addthis_button_tweet.wsb-social-share-button{padding-top:40px}.body .wsb=
+-social-share.addthis_counter_style .addthis_button_facebook_like.wsb-socia=
+l-share-button{padding-top:21px}@media print{#at4-follow,#at4-share,#at4-th=
+ankyou,#at4-whatsnext,#at4m-mobile,#at15s,.at4,.at4-recommended{display:non=
+e!important}}@media screen and (max-width:400px){.at4win{width:100%}}@media=
+ screen and (max-height:700px) and (max-width:400px){.at4-thankyou-inner .a=
+t4-recommended-container{height:122px;overflow:hidden}.at4-thankyou-inner .=
+at4-recommended .at4-recommended-item:first-child{border-bottom:1px solid #=
+c5c5c5}}</style><style type=3D"text/css">.at-branding-logo{font-family:helv=
+etica,arial,sans-serif;text-decoration:none;font-size:10px;display:inline-b=
+lock;margin:2px 0;letter-spacing:.2px}.at-branding-logo .at-branding-icon{b=
+ackground-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAK=
+CAMAAAC67D+PAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF///=
+/+GlNUkcc1QAAAB1JREFUeNpiYIQDBjQmAwMmkwEM0JnY1WIxFyDAABGeAFEudiZsAAAAAElFTk=
+SuQmCC")}.at-branding-logo .at-branding-icon,.at-branding-logo .at-privacy-=
+icon{display:inline-block;height:10px;width:10px;margin-left:4px;margin-rig=
+ht:3px;margin-bottom:-1px;background-repeat:no-repeat}.at-branding-logo .at=
+-privacy-icon{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANS=
+UhEUgAAAAkAAAAKCAMAAABR24SMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccll=
+PAAAABhQTFRF8fr9ot/xXcfn2/P5AKva////////AKTWodjhjAAAAAd0Uk5T////////ABpLA0Y=
+AAAA6SURBVHjaJMzBDQAwCAJAQaj7b9xifV0kUKJ9ciWxlzWEWI5gMF65KUTv0VKkjVeTerqE/x=
+7+9BVgAEXbAWI8QDcfAAAAAElFTkSuQmCC")}.at-branding-logo span{text-decoration=
+:none}.at-branding-logo .at-branding-addthis,.at-branding-logo .at-branding=
+-powered-by{color:#666}.at-branding-logo .at-branding-addthis:hover{color:#=
+333}.at-cv-with-image .at-branding-addthis,.at-cv-with-image .at-branding-a=
+ddthis:hover{color:#fff}a.at-branding-logo:visited{color:initial}.at-brandi=
+ng-info{display:inline-block;padding:0 5px;color:#666;border:1px solid #666=
+;border-radius:50%;font-size:10px;line-height:9pt;opacity:.7;transition:all=
+ .3s ease;text-decoration:none}.at-branding-info span{border:0;clip:rect(0 =
+0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;w=
+idth:1px}.at-branding-info:before{content:'i';font-family:Times New Roman}.=
+at-branding-info:hover{color:#0780df;border-color:#0780df}</style><style ty=
+pe=3D"text/css"></style><style type=3D"text/css">.addthis_counter{font-weig=
+ht:700;display:inline-block;border:0;outline:0;cursor:pointer;color:#fff}.a=
+ddthis_counter a{display:block;font-family:arial,helvetica,sans-serif!impor=
+tant;text-decoration:none!important;border:0}.addthis_counter{text-decorati=
+on:none!important;text-align:left}.addthis_counter .addthis_button_expanded=
+{background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAACaCAMA=
+AADcrusAAAAA21BMVEX////+bUznWjrnWjrBwcGJiYnm5ubFxcWMjIyRkZH39/f19fX////nWjr=
++bUzys6n+uq7/7+z87evqd2H+hm3/5+P+sKPxqJz65OH/9/b+el3paU//zcT2yMDshXH99vX+kX=
+z+nIn/w7n0vrX30cz9bEv/3tn529f/1s/ukYH3aUn+ppbvnY/bUjTmWTn/3dX+9fP3aEj/9vT52=
+NH/5d/aUTP9a0r74tzlWDjfWz386+f/7en4b1H/7uv4b1D/3db/9/X/7uraUjT+9vT87Oj87Onp=
+ZEb52dH+dlezszuQAAAABHRSTlMAExMAzBw6IQAAAnlJREFUeF6009eKKzEMBuBJriW5T2/pPdv=
+bqb28/xMdGbOQiyxZZ9n/QnjAH8KWJxl8uqeI3H8ZJFcUmatkFktmCUXnXHIBIRevJ/AcBuUSQI=
+0onZ8k1/QxkNqVJIvyNPl8S1/ZMFkuuYxtqhQoS2MA1RNIGKUArjwk/4Lk0jtXp0QpjEjJHiw5S=
+bzZQlo6eUi+fafba0985LKwqSOqJdNaMdmQ5O+NOn6WYsNlPk7nnvRF6iF3lOBz/MZqZ6kvZCBS=
++bUn1h/MvTCXmumYArEKijlYJr6N6t8y/fcn5zz+dfwvNlhH9ZmtB8nw6REj8vg0TO4wMnfJPpb=
+sE4zOueQGQm5eT+A5DKopgF5htjhJLvFDIE1eoeiq0+T3A/5lw2Q65TIxmdagDU4AdIsgYJUB5N=
+Uh+RMklzbPmwwxgxVq0YLBXCBvNpBVuTgkP3/hw6UnPmLamSxHbATTRjPZouDvrT5+lm7LZTHJF=
+p60XeYhdxTgc/zGmtxg24lAhPZrT4w/WP7CXBqmEwzEaOgWYJj4Nrp9y/Tfn5zz+Hex5Ecy3EX1=
+2e+G/9mrQxUAYBgGooEFAm3//3snZmviJnL+6cMRrXSgHqsWOGb8iISEhISEqDxRAsSld5De/nL=
+br4MViEEYDMI5mFQ3ff/nXejx33YHcyqtc/8QQSXaRYfJZpAaFWx2FdwfMXyqYdYjp4punpP5fc=
+giiyyyyCKVl9+6nxQHCP+t20WHCTdIjQo2KjgDAT/Y7UQk/li1tkPtyaQlEhBARABBUV+lvhc1r=
+z4w+FX4bKWLrA0cp7Ue+KhqnpA/mXggAQFEBBAU9VXqe1HzzgNTv2Iyx9Dc8gWOjkKMG1wfQQAA=
+AABJRU5ErkJggg=3D=3D");background-repeat:no-repeat;display:inline-block}.ad=
+dthis_counter .atc_s{background:url("data:image/png;base64,iVBORw0KGgoAAAAN=
+SUhEUgAAABQAAAAUBAMAAAB/pwA+AAAAFVBMVEUAAAD///////////////////////9Iz20EAAA=
+ABnRSTlMAwPm7kB4+mBDvAAAAP0lEQVQI12MIVksDgyRTBrM0KEhmAApChRnS4ACdKcCIl5ko6M=
+AiKAZmJjAAARsKE6GAsGE43IBwJLLTER4CAHvvQkc3Hji8AAAAAElFTkSuQmCC");background=
+-size:10px;background-repeat:no-repeat;background-color:#fe6d4c;background-=
+position:5px 5px;display:inline-block;border-radius:2px;min-width:25px;text=
+-decoration:none}.addthis_counter .atc_s:hover{background-color:#e75a3a}.ad=
+dthis_counter.addthis_bubble_style{background-image:url("data:image/gif;bas=
+e64,R0lGODlhUgBkAKIEAOrq6sLCwoWFhf///////wAAAAAAAAAAACH5BAEAAAQALAAAAABSAGQ=
+AAAP/SLoa/jDKSetkOGsdwPhgKI5kaYpAsK1sd75wPKZsjQVyrpuq7eO7YLDnqwGFyBixuDomn6=
+UlkwOtkqTTm3ULwmYXTi7U+3WJreSp+VxNF9fs8ZcBjz/dRo8dPSfU90l4TXqAcn1/hTuCLYSJQ=
+31gjY45i3mTipB0kpcnlTZhnDyZdKFKo2ClMJ5GqS+rLa2dpw2xorOgtR+vg7kou7y9AzSzYBbG=
+x8gRxAwCzc7P0NHS09TSywoCm60AAsvZwSDcxALgId2z5OUf56fp6uyj7uXwmfLg9JD2wfh9+r3=
+8X76pGwBwisCBBYscRFhP2718Dh/OWThwXb+IEidi/New+SKIhD4ozmu3sRVIhSVLnVRYcWXIlu=
+NgopPZjmY8m/VwQlQnblxKRz29VRtKtCg0YsmSOsBgtGmzNz9zDCMgEkpQWGyI+KuyElebBVuhd=
+I2jNc5JRF+pRtUBEu3XqlYSum0DNy6jPQHqcrVEVq2ds2spYQssY2xWsGZ/9MWW+NNiqo35cpmq=
+V8jVFkqTMXVqlEnmz1I4i4Y3twplwjqCehVTthC71VxaA3qdSPYe2oVs/0WVG7HrBqgx+f1deou=
+KylsEFDeOPPlyNM3tPpcTXSzw2oMT4QakOzJs475n8+Ye/vZ4vOV30+rN+Pf1PacBXQWdefPopg=
+QSAAA7");background-repeat:no-repeat}.addthis_counter a.atc_s{font-size:11p=
+x;font-weight:100;color:#fff;padding:0 5px 0 20px;line-height:20px;overflow=
+:hidden;cursor:pointer;transition:none}.addthis_counter .atc_s-span,.addthi=
+s_counter a.atc_s{display:block;height:20px}.addthis_counter .addthis_butto=
+n_expanded.at300m .at4-icon{display:none!important}.addthis_counter a.addth=
+is_button_expanded:hover,.addthis_counter.addthis_pill_style a.addthis_butt=
+on_expanded:hover{text-decoration:none;color:#000}.addthis_counter .addthis=
+_button_expanded{display:block;background-repeat:no-repeat;background-posit=
+ion:0 -40px;width:50px;height:33px;line-height:33px;padding-bottom:4px;marg=
+in-bottom:3px;text-align:center;text-decoration:none;font-size:1pc;font-wei=
+ght:700;color:#333}.addthis_counter{vertical-align:top}.addthis_counter.add=
+this_native_counter .addthis_button_expanded{font-weight:400}* html .addthi=
+s_counter.compatmode0 .addthis_button_expanded{padding-bottom:0!important}*=
+ html .addthis_counter .addthis_button_expanded{height:37px}.addthis_counte=
+r .addthis_button_expanded:hover{background-position:0 -77px;cursor:pointer=
+;color:#000}.addthis_counter .addthis_button_expanded .at300bs{display:none=
+!important}.addthis_counter.addthis_pill_style{display:block;height:25px;ov=
+erflow:hidden}.addthis_counter.addthis_pill_style a.atc_s{float:left}.addth=
+is_counter.addthis_pill_style a.addthis_button_expanded{display:none;backgr=
+ound-repeat:no-repeat;background-position:0 -114px;width:34px!important;hei=
+ght:20px;line-height:20px;margin:0 0 0 3px;padding:0 0 0 4px;float:left;tex=
+t-align:center;text-decoration:none;font-family:arial,helvetica,sans-serif;=
+font-weight:700;font-size:11px;color:#333;-ms-box-sizing:content-box;-o-box=
+-sizing:content-box;box-sizing:content-box}.addthis_counter.addthis_pill_st=
+yle.addthis_nonzero a.addthis_button_expanded{display:block!important;trans=
+ition:none}.addthis_counter.addthis_pill_style a.addthis_button_expanded:ho=
+ver{background-position:0 -134px!important}.addthis_counter.addthis_bubble_=
+style{margin:0 0 0 -2px;text-align:center;font-weight:700;font-family:arial=
+,helvetica,sans-serif;color:#000;background-repeat:no-repeat;background-pos=
+ition:0 -4pc;padding:0 0 0 4px;height:1pc;width:2pc!important;-ms-box-sizin=
+g:content-box;-o-box-sizing:content-box;box-sizing:content-box}.addthis_nat=
+ive_counter_parent .addthis_counter.addthis_bubble_style{background-positio=
+n:0 -4pc!important}.addthis_counter.addthis_bubble_style.addthis_native_cou=
+nter{margin:0 2px}.addthis_counter.addthis_bubble_style a.addthis_button_ex=
+panded{font-size:11px;height:1pc;line-height:1pc;width:34px;background:none=
+}.addthis_counter.addthis_bubble_style:hover{background-position:-36px -4pc=
+!important}.addthis_20x20_style .addthis_counter.addthis_bubble_style{backg=
+round-repeat:no-repeat;background-position:0 -5pc!important;height:20px;wid=
+th:35px!important;line-height:20px;padding:0 0 0 6px}.addthis_20x20_style .=
+addthis_counter.addthis_bubble_style:hover{background-position:-41px -5pc!i=
+mportant}.addthis_20x20_style .addthis_counter.addthis_bubble_style a.addth=
+is_button_expanded{background:none;font-size:9pt;line-height:20px;height:20=
+px;margin:0;width:35px!important;padding:0!important}.addthis_20x20_style .=
+addthis_counter.addthis_bubble_style.addthis_native_counter a.addthis_butto=
+n_expanded{font-size:11px}.addthis_32x32_style .addthis_counter.addthis_bub=
+ble_style,.addthis_32x32_white_style .addthis_counter.addthis_bubble_style{=
+background-repeat:no-repeat;background-position:0 0!important;height:2pc;wi=
+dth:56px!important;line-height:2pc;padding:0 0 0 6px}.addthis_32x32_style .=
+addthis_counter.addthis_bubble_style a.addthis_button_expanded,.addthis_32x=
+32_white_style .addthis_counter.addthis_bubble_style a.addthis_button_expan=
+ded{background:none;font-size:1pc;line-height:2pc;height:2pc;margin:0;width=
+:56px!important;padding:0!important}.addthis_32x32_style .addthis_counter.a=
+ddthis_bubble_style:hover,.addthis_32x32_white_style .addthis_counter.addth=
+is_bubble_style:hover{background-position:0 -2pc!important}.addthis_counter=
+.addthis_bubble_style .atc_s{display:none!important}* html .addthis_counter=
+.addthis_bubble_style{width:36px!important;display:inline}* html .addthis_c=
+ounter.bubblecompatmode0{width:2pc!important;display:block}* html .addthis_=
+counter.addthis_bubble_style a.addthis_button_expanded{width:24px!important=
+;height:14px!important;line-height:14px!important;padding:0;margin-top:1px!=
+important;display:inline}* html .addthis_counter.bubblecompatmode0 a.addthi=
+s_button_expanded{width:36px}* html .addthis_32x32_style .addthis_counter.a=
+ddthis_bubble_style{width:60px!important}* html .addthis_32x32_style .addth=
+is_counter.addthis_bubble_style a.addthis_button_expanded{width:46px;height=
+:26px!important;line-height:26px!important;margin-top:2px!important}* html =
+.addthis_32x32_style .addthis_counter.bubblecompatmode0 a.addthis_button_ex=
+panded{height:2pc!important;line-height:2pc!important}</style><style type=
+=3D"text/css">.at-share-dock.atss{top:auto;left:0;right:0;bottom:0;width:10=
+0%;max-width:100%;z-index:1000200;box-shadow:0 0 1px 1px #e2dfe2}.at-share-=
+dock.at-share-dock-zindex-hide{z-index:-1!important}.at-share-dock.atss-top=
+{bottom:auto;top:0}.at-share-dock a{width:auto;transition:none;color:#fff;t=
+ext-decoration:none;box-sizing:content-box;-webkit-box-sizing:content-box;-=
+moz-box-sizing:content-box}.at-share-dock a:hover{width:auto}.at-share-dock=
+ .at4-count{height:43px;padding:5px 0 0;line-height:20px;background:#fff;fo=
+nt-family:Helvetica neue,arial}.at-share-dock .at4-count span{width:100%}.a=
+t-share-dock .at4-count .at4-share-label{color:#848484;font-size:10px;lette=
+r-spacing:1px}.at-share-dock .at4-count .at4-counter{top:2px;position:relat=
+ive;display:block;color:#222;font-size:22px}.at-share-dock.at-shfs-medium .=
+at4-count{height:36px;line-height:1pc;padding-top:4px}.at-share-dock.at-shf=
+s-medium .at4-count .at4-counter{font-size:18px}.at-share-dock.at-shfs-medi=
+um .at-share-btn .at-icon-wrapper,.at-share-dock.at-shfs-medium a .at-icon-=
+wrapper{padding:6px 0}.at-share-dock.at-shfs-small .at4-count{height:26px;l=
+ine-height:1;padding-top:3px}.at-share-dock.at-shfs-small .at4-count .at4-s=
+hare-label{font-size:8px}.at-share-dock.at-shfs-small .at4-count .at4-count=
+er{font-size:14px}.at-share-dock.at-shfs-small .at-share-btn .at-icon-wrapp=
+er,.at-share-dock.at-shfs-small a .at-icon-wrapper{padding:4px 0}</style><s=
+tyle type=3D"text/css">div.at-share-close-control.ats-dark,div.at-share-ope=
+n-control-left.ats-dark,div.at-share-open-control-right.ats-dark{background=
+:#262b30}div.at-share-close-control.ats-light,div.at-share-open-control-lef=
+t.ats-light,div.at-share-open-control-right.ats-light{background:#fff}div.a=
+t-share-close-control.ats-gray,div.at-share-open-control-left.ats-gray,div.=
+at-share-open-control-right.ats-gray{background:#f2f2f2}.atss{position:fixe=
+d;top:20%;width:3pc;z-index:100020;background:none}.at-share-close-control{=
+position:relative;width:3pc;overflow:auto}.at-share-open-control-left{posit=
+ion:fixed;top:20%;z-index:100020;left:0;width:22px}.at-share-close-control =
+.at4-arrow.at-left{float:right}.atss-left{left:0;float:left;right:auto}.ats=
+s-right{left:auto;float:right;right:0}.atss-right.at-share-close-control .a=
+t4-arrow.at-right{position:relative;right:0;overflow:auto}.atss-right.at-sh=
+are-close-control .at4-arrow{float:left}.at-share-open-control-right{positi=
+on:fixed;top:20%;z-index:100020;right:0;width:22px;float:right}.atss-right =
+.at-share-close-control .at4-arrow{float:left}.atss.atss-right a{float:righ=
+t}.atss.atss-right .at4-share-title{float:right;overflow:hidden}.atss .at-s=
+hare-btn,.atss a{position:relative;display:block;width:3pc;margin:0;outline=
+-offset:-1px;text-align:center;float:left;transition:width .15s ease-in-out=
+;overflow:hidden;background:#e8e8e8;z-index:100030;cursor:pointer}.at-share=
+-btn::-moz-focus-inner{border:0;padding:0}.atss-right .at-share-btn{float:r=
+ight}.atss .at-share-btn{border:0;padding:0}.atss .at-share-btn:focus,.atss=
+ .at-share-btn:hover,.atss a:focus,.atss a:hover{width:4pc}.atss .at-share-=
+btn .at-icon-wrapper,.atss a .at-icon-wrapper{display:block;padding:8px 0}.=
+atss .at-share-btn:last-child,.atss a:last-child{border:none}.atss .at-shar=
+e-btn span .at-icon,.atss a span .at-icon{position:relative;top:0;left:0;di=
+splay:block;background-repeat:no-repeat;background-position:50% 50%;width:2=
+pc;height:2pc;line-height:2pc;border:none;padding:0;margin:0 auto;overflow:=
+hidden;cursor:pointer;cursor:hand}.at4-share .at-custom-sidebar-counter{fon=
+t-family:Helvetica neue,arial;vertical-align:top;margin-right:4px;display:i=
+nline-block;text-align:center}.at4-share .at-custom-sidebar-count{font-size=
+:17px;line-height:1.25em;color:#222}.at4-share .at-custom-sidebar-text{font=
+-size:9px;line-height:1.25em;color:#888;letter-spacing:1px}.at4-share .at4-=
+share-count-container{position:absolute;left:0;right:auto;top:auto;bottom:0=
+;width:100%;color:#fff;background:inherit}.at4-share .at4-share-count,.at4-=
+share .at4-share-count-container{line-height:1pc;font-size:10px}.at4-share =
+.at4-share-count{text-indent:0;font-family:Arial,Helvetica Neue,Helvetica,s=
+ans-serif;font-weight:200;width:100%;height:1pc}.at4-share .at4-share-count=
+-anchor{padding-bottom:8px;text-decoration:none;transition:padding .15s eas=
+e-in-out .15s,width .15s ease-in-out}</style><style type=3D"text/css">#at4-=
+drawer-outer-container{top:0;width:20pc;position:fixed}#at4-drawer-outer-co=
+ntainer.at4-drawer-inline{position:relative}#at4-drawer-outer-container.at4=
+-drawer-inline.at4-drawer-right{float:right;right:0;left:auto}#at4-drawer-o=
+uter-container.at4-drawer-inline.at4-drawer-left{float:left;left:0;right:au=
+to}#at4-drawer-outer-container.at4-drawer-shown,#at4-drawer-outer-container=
+.at4-drawer-shown *{z-index:999999}#at4-drawer-outer-container,#at4-drawer-=
+outer-container .at4-drawer-outer,#at-drawer{height:100%;overflow-y:auto;ov=
+erflow-x:hidden}.at4-drawer-push-content-right-back{position:relative;right=
+:0}.at4-drawer-push-content-right{position:relative;left:20pc!important}.at=
+4-drawer-push-content-left-back{position:relative;left:0}.at4-drawer-push-c=
+ontent-left{position:relative;right:20pc!important}#at4-drawer-outer-contai=
+ner.at4-drawer-right{left:auto;right:-20pc}#at4-drawer-outer-container.at4-=
+drawer-left{right:auto;left:-20pc}#at4-drawer-outer-container.at4-drawer-sh=
+own.at4-drawer-right{left:auto;right:0}#at4-drawer-outer-container.at4-draw=
+er-shown.at4-drawer-left{right:auto;left:0}#at-drawer{top:0;z-index:9999999=
+;height:100%;animation-duration:.4s}#at-drawer.drawer-push.at-right{right:-=
+20pc}#at-drawer.drawer-push.at-left{left:-20pc}#at-drawer .at-recommended-l=
+abel{padding:0 0 0 20px;color:#999;line-height:3pc;font-size:18px;font-weig=
+ht:300;cursor:default}#at-drawer-arrow{width:30px;height:5pc}#at-drawer-arr=
+ow.ats-dark{background:#262b30}#at-drawer-arrow.ats-gray{background:#f2f2f2=
+}#at-drawer-open-arrow{background-image:url(data:image/png;base64,iVBORw0KG=
+goAAAANSUhEUgAAAA0AAABcCAYAAAC1OT8uAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJl=
+YWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u=
+/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYW=
+RvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4M=
+SwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRw=
+Oi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGl=
+vbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIi=
+B4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZ=
+WY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpD=
+cmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5=
+jZUlEPSJ4bXAuaWlkOjk3ODNCQjdERUQ3QjExRTM5NjFGRUZBODc3MTIwMTNCIiB4bXBNTTpEb2=
+N1bWVudElEPSJ4bXAuZGlkOjk3ODNCQjdFRUQ3QjExRTM5NjFGRUZBODc3MTIwMTNCIj4gPHhtc=
+E1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OTc4M0JCN0JFRDdCMTFF=
+Mzk2MUZFRkE4NzcxMjAxM0IiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OTc4M0JCN0NFRDd=
+CMTFFMzk2MUZFRkE4NzcxMjAxM0IiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC=
+94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7kstzCAAAB4ElEQVR42uyWv0oDQRDGb9dYi=
+mgVjliID2Ca9AGfwtZob2Grja1PIFj7EhGCYK99VPBPOkVMp8X5rc6FeN7dfjOksMjAxwXZ3667=
+OzvfLKRr682l5ZV9aDh+fxsnRHhoDzqGLjFBi4XOoFtoAxowoB893o/w7WpAl/+QgQMBwwRdTPh=
+UC2lAV/wDA7qy5WOgq9psHejqTqkKdLE7KYCv0JZjMgBgB58raBG6mP1K6j2pT099T+qMUOeeOs=
+s1wDcEIA1PnQXy576rAUI0oFMoC7VCnn40Gs8Pd4lAiXNUKmJ0lh1mPzGEWiyUCqAGW3Pwv4IvU=
+JsFO9CHgP3Zr6Te0xwgAf3LxaAjS241pbikCRkOg+nSJdV4p8HOPl3vvRYI5dtrgVDvvcWovcWo=
+vcWovcWovcWovcWovQChWNywNpqvdAKtQp/QNmPUIQ6kwwqt2Xmsxf6GMPM1Pptsbz45CPmXqKb=
++15Gz4J/LZcDSNIqBlQlbB0afe1mmUDWiCNKFZRq0VKMeXY1CTDq2sJLWsCmoaBBRqNRR6qBKC6=
+qCaj2rDIqaXBGiXHEaom00h1S+K3fVlr6HNuqgvgCh0+owt21bybQn8+mZ78mcEebcM2e5+T2ZX=
+24ZqCph0qn1vgQYAJ/KDpLQr2tPAAAAAElFTkSuQmCC);background-repeat:no-repeat;wi=
+dth:13px;height:23px;margin:28px 0 0 8px}.at-left #at-drawer-open-arrow{bac=
+kground-position:0 -46px}.ats-dark #at-drawer-open-arrow{background-positio=
+n:0 -23px}.ats-dark.at-left #at-drawer-open-arrow{background-position:0 -69=
+px}#at-drawer-arrow.at4-drawer-modern-browsers{position:fixed;top:40%;backg=
+round-repeat:no-repeat;background-position:0 0!important;z-index:9999999}.a=
+t4-drawer-inline #at-drawer-arrow{position:absolute}#at-drawer-arrow.at4-dr=
+awer-modern-browsers.at-right{right:0}#at-drawer-arrow.at4-drawer-modern-br=
+owsers.at-left{left:0}.at4-drawer-push-animation-left{transition:left .4s e=
+ase-in-out .15s}.at4-drawer-push-animation-right{transition:right .4s ease-=
+in-out .15s}#at-drawer.drawer-push.at4-drawer-push-animation-right{right:0}=
+#at-drawer.drawer-push.at4-drawer-push-animation-right-back{right:-20pc!imp=
+ortant}#at-drawer.drawer-push.at4-drawer-push-animation-left{left:0}#at-dra=
+wer.drawer-push.at4-drawer-push-animation-left-back{left:-20pc!important}#a=
+t-drawer .at4-closebutton.drawer-close{content:'X';color:#999;display:block=
+;position:absolute;margin:0;top:0;right:0;width:3pc;height:45px;line-height=
+:45px;overflow:hidden;opacity:.5}#at-drawer.ats-dark .at4-closebutton.drawe=
+r-close{color:#fff}#at-drawer .at4-closebutton.drawer-close:hover{opacity:1=
+}#at-drawer.ats-dark.at4-recommended .at4-logo-container a{color:#666}#at-d=
+rawer.at4-recommended .at4-recommended-vertical{padding:0}#at-drawer.at4-re=
+commended .at4-recommended-item .sponsored-label{margin:2px 0 0 21px;color:=
+#ddd}#at-drawer.at4-recommended .at4-recommended-vertical .at4-recommended-=
+item{position:relative;padding:0;width:20pc;height:180px;margin:0}#at-drawe=
+r.at4-recommended .at4-recommended-vertical .at4-recommended-item .at4-reco=
+mmended-item-img a:after{content:'';position:absolute;top:0;left:0;right:0;=
+bottom:0;background:rgba(0,0,0,.65);z-index:1000000;transition:all .2s ease=
+-in-out}#at-drawer.at4-recommended .at4-recommended-vertical .at4-recommend=
+ed-item.at-hover .at4-recommended-item-img a:after{background:rgba(0,0,0,.8=
+)}#at-drawer .at4-recommended-vertical .at4-recommended-item .at4-recommend=
+ed-item-img,#at-drawer .at4-recommended-vertical .at4-recommended-item .at4=
+-recommended-item-img a,#at-drawer .at4-recommended-vertical .at4-recommend=
+ed-item .at4-recommended-item-img img{width:20pc;height:180px;float:none}#a=
+t-drawer .at4-recommended-vertical .at4-recommended-item .at4-recommended-i=
+tem-caption{width:100%;position:absolute;bottom:0;left:0;height:70px}#at-dr=
+awer .at4-recommended-vertical .at4-recommended-item .at4-recommended-item-=
+caption .at-h4{color:#fff;position:absolute;height:52px;top:0;left:20px;rig=
+ht:20px;margin:0;padding:0;line-height:25px;font-size:20px;font-weight:600;=
+z-index:1000001;text-decoration:none;text-transform:none}#at-drawer.at4-rec=
+ommended .at4-recommended-vertical .at4-recommended-item .at4-recommended-i=
+tem-caption .at-h4 a:hover{text-decoration:none}#at-drawer.at4-recommended =
+.at4-recommended-vertical .at4-recommended-item .at4-recommended-item-capti=
+on .at-h4 a:link{color:#fff}#at-drawer.at4-recommended .at4-recommended-ver=
+tical .at4-recommended-item .at4-recommended-item-caption small{position:ab=
+solute;top:auto;bottom:10px;left:20px;width:auto;color:#ccc}#at-drawer.at4-=
+recommended .at4-logo-container{margin-left:20px}#at-drawer.ats-dark.at4-re=
+commended .at4-logo-container a:hover{color:#fff}#at-drawer.at4-recommended=
+ .at-logo{margin:0}</style><style type=3D"text/css">.at4-follow.at-mobile{d=
+isplay:none!important}.at4-follow{position:fixed;top:0;right:0;font-weight:=
+400;color:#666;cursor:default;z-index:10001}.at4-follow .at4-follow-inner{p=
+osition:relative;padding:10px 24px 10px 15px}.at4-follow-inner,.at-follow-o=
+pen-control{border:0 solid #c5c5c5;border-width:1px 0 1px 1px;margin-top:-1=
+px}.at4-follow .at4-follow-container{margin-left:9pt}.at4-follow.at4-follow=
+-24 .at4-follow-container{height:24px;line-height:23px;font-size:13px}.at4-=
+follow.at4-follow-32 .at4-follow-container{width:15pc;height:2pc;line-heigh=
+t:2pc;font-size:14px}.at4-follow .at4-follow-container .at-follow-label{dis=
+play:inline-block;height:24px;line-height:24px;margin-right:10px;padding:0;=
+cursor:default;float:left}.at4-follow .at4-follow-container .at-icon-wrappe=
+r{height:24px;width:24px}.at4-follow.ats-transparent .at4-follow-inner,.at-=
+follow-open-control.ats-transparent{border-color:transparent}.at4-follow.at=
+s-dark .at4-follow-inner,.at-follow-open-control.ats-dark{background:#262b3=
+0;border-color:#000;color:#fff}.at4-follow.ats-dark .at-follow-close-contro=
+l{background-color:#262b30}.at4-follow.ats-light .at4-follow-inner{backgrou=
+nd:#fff;border-color:#c5c5c5}.at4-follow.ats-gray .at4-follow-inner,.at-fol=
+low-open-control.ats-gray{background:#f2f2f2;border-color:#c5c5c5}.at4-foll=
+ow.ats-light .at4-follow-close-control,.at-follow-open-control.ats-light{ba=
+ckground:#e5e5e5}.at4-follow .at4-follow-inner .at4-follow-close-control{po=
+sition:absolute;top:0;bottom:0;left:0;width:20px;cursor:pointer;display:non=
+e}.at4-follow .at4-follow-inner .at4-follow-close-control div{display:block=
+;line-height:20px;text-indent:-9999em;margin-top:calc(50% + 1px);overflow:h=
+idden}.at-follow-open-control div.at4-arrow.at-left{background-position:0 -=
+2px}.at-follow-open-control{position:fixed;height:35px;top:0;right:0;paddin=
+g-top:10px;z-index:10002}.at-follow-btn{margin:0 5px 5px 0;padding:0;outlin=
+e-offset:-1px;display:inline-block;box-sizing:content-box;transition:all .2=
+s ease-in-out}.at-follow-btn:focus,.at-follow-btn:hover{transform:translate=
+Y(-4px)}.at4-follow-24 .at-follow-btn{height:25px;line-height:0;width:25px}=
+</style><style type=3D"text/css">.at-follow-tbx-element .at300b,.at-follow-=
+tbx-element .at300m{display:inline-block;width:auto;padding:0;margin:0 2px =
+5px;outline-offset:-1px;transition:all .2s ease-in-out}.at-follow-tbx-eleme=
+nt .at300b:focus,.at-follow-tbx-element .at300b:hover,.at-follow-tbx-elemen=
+t .at300m:focus,.at-follow-tbx-element .at300m:hover{transform:translateY(-=
+4px)}.at-follow-tbx-element .addthis_vertical_style .at300b,.at-follow-tbx-=
+element .addthis_vertical_style .at300m{display:block}.at-follow-tbx-elemen=
+t .addthis_vertical_style .at300b .addthis_follow_label,.at-follow-tbx-elem=
+ent .addthis_vertical_style .at300b .at-icon-wrapper,.at-follow-tbx-element=
+ .addthis_vertical_style .at300m .addthis_follow_label,.at-follow-tbx-eleme=
+nt .addthis_vertical_style .at300m .at-icon-wrapper{display:inline-block;ve=
+rtical-align:middle;margin-right:5px}.at-follow-tbx-element .addthis_vertic=
+al_style .at300b:focus,.at-follow-tbx-element .addthis_vertical_style .at30=
+0b:hover,.at-follow-tbx-element .addthis_vertical_style .at300m:focus,.at-f=
+ollow-tbx-element .addthis_vertical_style .at300m:hover{transform:none}</st=
+yle><style type=3D"text/css">.at4-jumboshare .at-share-btn{display:inline-b=
+lock;margin-right:13px;margin-top:13px}.at4-jumboshare .at-share-btn .at-ic=
+on{float:left}.at4-jumboshare .at-share-btn .at300bs{display:inline-block;f=
+loat:left;cursor:pointer}.at4-jumboshare .at4-mobile .at-share-btn .at-icon=
+,.at4-jumboshare .at4-mobile .at-share-btn .at-icon-wrapper{margin:0;paddin=
+g:0}.at4-jumboshare .at4-mobile .at-share-btn{padding:0}.at4-jumboshare .at=
+4-mobile .at-share-btn .at-label{display:none}.at4-jumboshare .at4-count{fo=
+nt-size:60px;line-height:60px;font-family:Helvetica neue,arial;font-weight:=
+700}.at4-jumboshare .at4-count-container{display:table-cell;text-align:cent=
+er;min-width:200px;vertical-align:middle;border-right:1px solid #ccc;paddin=
+g-right:20px}.at4-jumboshare .at4-share-container{display:table-cell;vertic=
+al-align:middle;padding-left:20px}.at4-jumboshare .at4-share-container.at-s=
+hare-tbx-element{padding-top:0}.at4-jumboshare .at4-title{position:relative=
+;font-size:18px;line-height:18px;bottom:2px}.at4-jumboshare .at4-spacer{hei=
+ght:1px;display:block;visibility:hidden;opacity:0}.at4-jumboshare .at-share=
+-btn{display:inline-block;margin:0 2px;line-height:0;padding:0;overflow:hid=
+den;text-decoration:none;text-transform:none;color:#fff;cursor:pointer;tran=
+sition:all .2s ease-in-out;border:0;background-color:transparent}.at4-jumbo=
+share .at-share-btn:focus,.at4-jumboshare .at-share-btn:hover{transform:tra=
+nslateY(-4px);color:#fff;text-decoration:none}.at4-jumboshare .at-label{fon=
+t-family:helvetica neue,helvetica,arial,sans-serif;font-size:9pt;padding:0 =
+15px 0 0;margin:0;height:2pc;line-height:2pc;background:none}.at4-jumboshar=
+e .at-share-btn:hover,.at4-jumboshare .at-share-btn:link{text-decoration:no=
+ne}.at4-jumboshare .at-share-btn::-moz-focus-inner{border:0;padding:0}.at4-=
+jumboshare.at-mobile .at-label{display:none}</style><style type=3D"text/css=
+">.at4-recommendedbox-outer-container{display:inline}.at4-recommended-outer=
+{position:static}.at4-recommended{top:20%;margin:0;text-align:center;font-w=
+eight:400;font-size:13px;line-height:17px;color:#666}.at4-recommended.at-in=
+line .at4-recommended-horizontal{text-align:left}.at4-recommended-recommend=
+edbox{padding:0;z-index:inherit}.at4-recommended-recommended{padding:40px 0=
+}.at4-recommended-horizontal{max-height:340px}.at4-recommended.at-medium .a=
+t4-recommended-horizontal{max-height:15pc}.at4-recommended.at4-minimal.at-m=
+edium .at4-recommended-horizontal{padding-top:10px;max-height:230px}.at4-re=
+commended-text-only .at4-recommended-horizontal{max-height:130px}.at4-recom=
+mended-horizontal{padding-top:5px;overflow-y:hidden}.at4-minimal{background=
+:none;color:#000;border:none!important;box-shadow:none!important}@media scr=
+een and (max-width:900px){.at4-recommended-horizontal .at4-recommended-item=
+,.at4-recommended-horizontal .at4-recommended-item .at4-recommended-item-im=
+g{width:15pc}}.at4-recommended.at4-minimal .at4-recommended-horizontal .at4=
+-recommended-item .at4-recommended-item-caption{padding:0 0 10px}.at4-recom=
+mended.at4-minimal .at4-recommended-horizontal .at4-recommended-item-captio=
+n{padding:20px 0 0!important}.addthis-smartlayers .at4-recommended .at-h3.a=
+t-recommended-label{margin:0;padding:0;font-weight:300;font-size:18px;line-=
+height:24px;color:#464646;width:100%;display:inline-block;zoom:1}.addthis-s=
+martlayers .at4-recommended.at-inline .at-h3.at-recommended-label{text-alig=
+n:left}#at4-thankyou .addthis-smartlayers .at4-recommended.at-inline .at-h3=
+.at-recommended-label{text-align:center}.at4-recommended .at4-recommended-i=
+tem{display:inline-block;zoom:1;position:relative;background:#fff;border:1p=
+x solid #c5c5c5;width:200px;margin:10px}.addthis_recommended_horizontal .at=
+4-recommended-item{border:none}.at4-recommended .at4-recommended-item .spon=
+sored-label{color:#666;font-size:9px;position:absolute;top:-20px}.at4-recom=
+mended .at4-recommended-item-img .at-tli,.at4-recommended .at4-recommended-=
+item-img a{position:absolute;left:0}.at4-recommended.at-inline .at4-recomme=
+nded-horizontal .at4-recommended-item{margin:10px 20px 0 0}.at4-recommended=
+.at-medium .at4-recommended-horizontal .at4-recommended-item{margin:10px 10=
+px 0 0}.at4-recommended.at-medium .at4-recommended-item{width:140px;overflo=
+w:hidden}.at4-recommended .at4-recommended-item .at4-recommended-item-img{p=
+osition:relative;text-align:center;width:100%;height:200px;line-height:0;ov=
+erflow:hidden}.at4-recommended .at4-recommended-item .at4-recommended-item-=
+img a{display:block;width:100%;height:200px}.at4-recommended.at-medium .at4=
+-recommended-item .at4-recommended-item-img,.at4-recommended.at-medium .at4=
+-recommended-item .at4-recommended-item-img a{height:140px}.at4-recommended=
+ .at4-recommended-item .at4-recommended-item-img img{position:absolute;top:=
+0;left:0;min-height:0;min-width:0;max-height:none;max-width:none;margin:0;p=
+adding:0}.at4-recommended .at4-recommended-item .at4-recommended-item-capti=
+on{height:74px;overflow:hidden;padding:20px;text-align:left;-ms-box-sizing:=
+content-box;-o-box-sizing:content-box;box-sizing:content-box}.at4-recommend=
+ed.at-medium .at4-recommended-item .at4-recommended-item-caption{height:50p=
+x;padding:15px}.at4-recommended .at4-recommended-item .at4-recommended-item=
+-caption .at-h4{height:54px;margin:0 0 5px;padding:0;overflow:hidden;word-w=
+rap:break-word;font-size:14px;font-weight:400;line-height:18px;text-align:l=
+eft}.at4-recommended.at-medium .at4-recommended-item .at4-recommended-item-=
+caption .at-h4{font-size:9pt;line-height:1pc;height:33px}.at4-recommended .=
+at4-recommended-item:hover .at4-recommended-item-caption .at-h4{text-decora=
+tion:underline}.at4-recommended a:link,.at4-recommended a:visited{text-deco=
+ration:none;color:#464646}.at4-recommended .at4-recommended-item .at4-recom=
+mended-item-caption .at-h4 a:hover{text-decoration:underline;color:#000}.at=
+4-recommended .at4-recommended-item .at4-recommended-item-caption small{dis=
+play:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-s=
+ize:11px;color:#666}.at4-recommended.at-medium .at4-recommended-item .at4-r=
+ecommended-item-caption small{font-size:9px}.at4-recommended .at4-recommend=
+ed-vertical{padding:15px 0 0}.at4-recommended .at4-recommended-vertical .at=
+4-recommended-item{display:block;width:auto;max-width:100%;height:60px;bord=
+er:none;margin:0 0 15px;box-shadow:none;background:none}.at4-recommended-ve=
+rtical .at4-recommended-item .at4-recommended-item-img,.at4-recommended-ver=
+tical .at4-recommended-item .at4-recommended-item-img img{width:60px;height=
+:60px;float:left}.at4-recommended-vertical .at4-recommended-item .at4-recom=
+mended-item-caption{border-top:none;margin:0;height:60px;padding:3px 5px}.a=
+t4-recommended .at4-recommended-vertical .at4-recommended-item .at4-recomme=
+nded-item-caption .at-h4{height:38px;margin:0}.at4-recommended .at4-recomme=
+nded-vertical .at4-recommended-item .at4-recommended-item-caption small{pos=
+ition:absolute;bottom:0}.at4-recommended .at-recommended-label.at-vertical{=
+text-align:left}.at4-no-image-light-recommended,.at4-no-image-minimal-recom=
+mended{background-color:#f2f2f2!important}.at4-no-image-gray-recommended{ba=
+ckground-color:#e6e6e5!important}.at4-no-image-dark-recommended{background-=
+color:#4e555e!important}.at4-recommended .at4-recommended-item-placeholder-=
+img{background-repeat:no-repeat!important;background-position:center!import=
+ant;width:100%!important;height:100%!important}.at4-recommended-horizontal =
+.at4-no-image-dark-recommended .at4-recommended-item-placeholder-img{backgr=
+ound-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAfCAYAAA=
+CCox+xAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvb=
+S5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVT=
+ek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs=
+9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNS=
+AgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyL=
+zIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6=
+eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25=
+zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb2=
+0veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvd=
+G9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjlFNUUyQTg3=
+MTI0RDExRTM4NzAwREJDRjlCQzAyMUVFIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjlFNUU=
+yQTg4MTI0RDExRTM4NzAwREJDRjlCQzAyMUVFIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOm=
+luc3RhbmNlSUQ9InhtcC5paWQ6OUU1RTJBODUxMjREMTFFMzg3MDBEQkNGOUJDMDIxRUUiIHN0U=
+mVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OUU1RTJBODYxMjREMTFFMzg3MDBEQkNGOUJDMDIxRUUi=
+Lz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCB=
+lbmQ9InIiPz6oCfPiAAABfUlEQVR42uyWTU/DMAyGm3bdBxp062hHe+PC//9HCIkDYpNAO7CPAu=
+WN5Eohyhpno2GHWqq8pO78xHHsiLquH4L/l6cwuBAZaOPKs//YBFIJIR59UiAt7huYi90aE/UQa=
+kTDLaL26RUEAAJqiefm93T9Bpj1X4O0bY0OIUXCpYBJvYDAUWyAUCWliHGTcnpqRMaM72ImRAJV=
+knYG+eb4YEDIBeU0zGnsBLK1ODogYSsLhDwIJeVVk18lzfNA4ERGZNXi59UCIQhiYDilpSm/jp4=
+awLxDvWhlf4/nGe8+LLuSt+SZul28ggaHG6gNVhDR+IuRFzOoxGKWwG7vVFm5AAQxgcqYpzrjFj=
+R9zwPH5LSuT7XlNr2MQm5LzqjLpncNNaM+s8M27Y60g3FwhoSMzrtUQllgLtRs5pZ2cB4IhbvQb=
+GRZv1NsrhyS8+SI5Mo9RJWpjAI1xqKL+0iEP180vy214JbeR12AyOgsHI7e0NfFyKv0ID1ID+Iq=
+PwIMAOeljGQOryBmAAAAAElFTkSuQmCC)!important}.at4-recommended-vertical .at4-=
+no-image-dark-recommended .at4-recommended-item-placeholder-img{background-=
+image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAOCAYAAADwikb=
+vAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG=
+9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY=
+3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFk=
+b2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICA=
+gICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLX=
+JkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wP=
+SJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFk=
+b2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGF=
+wLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG=
+9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjAzREMyNTM2MTI0R=
+jExRTM4NzAwREJDRjlCQzAyMUVFIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjAzREMyNTM3=
+MTI0RjExRTM4NzAwREJDRjlCQzAyMUVFIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3R=
+hbmNlSUQ9InhtcC5paWQ6MDNEQzI1MzQxMjRGMTFFMzg3MDBEQkNGOUJDMDIxRUUiIHN0UmVmOm=
+RvY3VtZW50SUQ9InhtcC5kaWQ6MDNEQzI1MzUxMjRGMTFFMzg3MDBEQkNGOUJDMDIxRUUiLz4gP=
+C9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9=
+InIiPz5GfbtkAAAAxklEQVR42qRSTQvCMAxduk53mEOHKFPP/v8/5cGTiIibivVFUomlG7gFHvl=
+oXpKmJefcPhkmNyvGEWj+IOZA6ckPImoxxVwOLvCvXUzkpayNCpRQK64IbOBnAYGAXMeMslNlU+=
+CzrIEdCkxi5DPAoz6BE8ZuVNdKJuL8rS9sv62IXlCHyP0KqKUKZXK9uwkSLVArfwpVR3b225kXw=
+ovibcP+jC4jUtfWPZmfqJJnYlkAM128j1z0nHWKSUbIKDL/msHktwADAPptQo+vkZNLAAAAAElF=
+TkSuQmCC)!important}.at4-recommended-horizontal .at4-no-image-gray-recommen=
+ded .at4-recommended-item-placeholder-img,.at4-recommended-horizontal .at4-=
+no-image-light-recommended .at4-recommended-item-placeholder-img,.at4-recom=
+mended-horizontal .at4-no-image-minimal-recommended .at4-recommended-item-p=
+laceholder-img{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANS=
+UhEUgAAACIAAAAfCAYAAACCox+xAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccll=
+PAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0=
+iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bn=
+M6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxM=
+y8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3=
+LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY=
+6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxucz=
+p4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0d=
+HA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9y=
+VG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ=
+4bXAuaWlkOjAzREMyNTMyMTI0RjExRTM4NzAwREJDRjlCQzAyMUVFIiB4bXBNTTpEb2N1bWVudE=
+lEPSJ4bXAuZGlkOjAzREMyNTMzMTI0RjExRTM4NzAwREJDRjlCQzAyMUVFIj4gPHhtcE1NOkRlc=
+ml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OUU1RTJBODkxMjREMTFFMzg3MDBE=
+QkNGOUJDMDIxRUUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OUU1RTJBOEExMjREMTFFMzg=
+3MDBEQkNGOUJDMDIxRUUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG=
+1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6dfDQvAAABg0lEQVR42uyWS0vDQBDH82jaKNW0qUltb=
+l68e/Di98eLBz+CCB5EBaWIpUat/4UJLMuame1j7SEDYbqbKfPLvHbDi8ur8+D/5T4K9kR6xrr2=
+7D+xgdS3N9d3PilQFmcNzN6mxkbdhxrQcoGofXkFAUAINcVzrG2vsP8KmJdtg7SlxoRQouBywOR=
+eQOAosUDoklPEpEU5XDciqeB/iRAig6pIO4P8CHysBBDqg0palrR2Alkwjj5RsDUDoRqhorpq6q=
+uifRkInKiIPLf4eWIgQoLoWbq0stXXn10DmDeoR2PsL/E84N0Hk5Wypc70dMkGGhzOoeb4gpjW3=
+4K6GEFljFkGu6XTZJUCEMQBVCHs6kI60MycB47FyUmo20oPvYJCzhVnvIsR3zg5ghoRTNpyHKTB=
+BhIJTt6pFsoZ9iLDZswcB5uBULhnho0a66eazaFDca59Hym1e4guQ4rCO4Fu/T4Sw8Gk+c3MghN=
+6H+8CRKVg4tB6fV8XI6/SgXQgHYir/AowAMU5TskhKVUNAAAAAElFTkSuQmCC)!important}.a=
+t4-recommended-vertical .at4-no-image-gray-recommended .at4-recommended-ite=
+m-placeholder-img,.at4-recommended-vertical .at4-no-image-light-recommended=
+ .at4-recommended-item-placeholder-img,.at4-recommended-vertical .at4-no-im=
+age-minimal-recommended .at4-recommended-item-placeholder-img{background-im=
+age:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAOCAYAAADwikbvA=
+AAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9i=
+ZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3p=
+rYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2=
+JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgI=
+CAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJk=
+Zi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJ=
+odHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2=
+JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwL=
+zEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9w=
+IENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjAzREMyNTNBMTI0RjE=
+xRTM4NzAwREJDRjlCQzAyMUVFIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjAzREMyNTNCMT=
+I0RjExRTM4NzAwREJDRjlCQzAyMUVFIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3Rhb=
+mNlSUQ9InhtcC5paWQ6MDNEQzI1MzgxMjRGMTFFMzg3MDBEQkNGOUJDMDIxRUUiIHN0UmVmOmRv=
+Y3VtZW50SUQ9InhtcC5kaWQ6MDNEQzI1MzkxMjRGMTFFMzg3MDBEQkNGOUJDMDIxRUUiLz4gPC9=
+yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9In=
+IiPz65Fr9cAAAA0ElEQVR42qRRuQrCQBDd3SSaIgYNosSrtLew8f+xsfAnYmEVRMR4YHwjExjCb=
+sBk4DHHzptjR2+2u7VqJ3efjTNQ/EEMgbgiv46H/QNTDPnhCv/mYiLPI21EIIaaUEVgBj+oETQQ=
+ypgRtidsXfNJpsACBXo28gWgUd9AjrEL0TXhiSh/XhWudlZI/kCdLPtFUGMRCni9p6kl+kAq/D5=
+UavmzX2fNd87obsCSfztnrOR0rjvTiRImkoyAQQNRyZ2jhjenGNVBOpF1WZatyV8BBgBJ+irgS/=
+KHdAAAAABJRU5ErkJggg=3D=3D)!important}#at-drawer.ats-dark,.at4-recommended.=
+ats-dark .at4-recommended-horizontal .at4-recommended-item-caption,.at4-rec=
+ommended.ats-dark .at4-recommended-vertical .at4-recommended-item-caption{b=
+ackground:#262b30}#at-drawer.ats-gray,.at4-recommended.ats-gray .at4-recomm=
+ended-horizontal .at4-recommended-item-caption{background:#f2f2f2}#at-drawe=
+r.ats-light,.at4-recommended.ats-light .at4-recommended-horizontal .at4-rec=
+ommended-item-caption{background:#fff}.at4-recommended.ats-dark .at4-recomm=
+ended-vertical .at4-recommended-item{background:none}.at4-recommended.ats-d=
+ark .at4-recommended-item .at4-recommended-item-caption a:hover,.at4-recomm=
+ended.ats-dark .at4-recommended-item .at4-recommended-item-caption a:link,.=
+at4-recommended.ats-dark .at4-recommended-item .at4-recommended-item-captio=
+n a:visited,.at4-recommended.ats-dark .at4-recommended-item .at4-recommende=
+d-item-caption small,.at4-recommended.ats-dark .at4-recommended-item-captio=
+n,.at4-recommended.ats-dark .at-logo a:hover,.at4-recommended.ats-dark .at-=
+recommended-label.at-vertical{color:#fff}.at4-recommended-vertical-logo{pad=
+ding-top:0;text-align:left}.at4-recommended-vertical-logo .at4-logo-contain=
+er{line-height:10px}.at4-recommended-horizontal-logo{text-align:center}.at4=
+-recommended.at-inline .at4-recommended-horizontal-logo{text-align:left}#at=
+4-thankyou .at4-recommended.at-inline .at4-recommended-horizontal{text-alig=
+n:center}.at4-recommended .at-logo{margin:10px 0 0;padding:0;height:25px;ov=
+erflow:auto;-ms-box-sizing:content-box;-o-box-sizing:content-box;box-sizing=
+:content-box}.at4-recommended.at-inline .at4-recommended-horizontal .at-log=
+o{text-align:left}.at4-recommended .at4-logo-container a.at-sponsored-link{=
+color:#666}.at4-recommended-class .at4-logo-container a:hover,.at4-recommen=
+dedbox-outer-container .at4-recommended-recommendedbox .at4-logo-container =
+a:hover{color:#000}</style><style type=3D"text/css">.at-recommendedjumbo-ou=
+ter-container{margin:0;padding:0;border:0;background:none;color:#000}.at-re=
+commendedjumbo-footer{position:relative;width:100%;height:510px;overflow:hi=
+dden;transition:all .3s ease-in-out}.at-mobile .at-recommendedjumbo-footer{=
+height:250px}.at-recommendedjumbo-footer #bg-link:after{content:'';position=
+:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.75)}.at-reco=
+mmendedjumbo-footer:hover #bg-link:after{background:rgba(0,0,0,.85)}.at-rec=
+ommendedjumbo-footer *,.at-recommendedjumbo-footer :after,.at-recommendedju=
+mbo-footer :before{box-sizing:border-box}.at-recommendedjumbo-footer:hover =
+#at-recommendedjumbo-footer-bg{animation:atRecommendedJumboAnimatedBackgrou=
+nd 1s ease-in-out 1;animation-fill-mode:forwards}.at-recommendedjumbo-foote=
+r #at-recommendedjumbo-top-holder{position:absolute;top:0;padding:0 40px;wi=
+dth:100%}.at-mobile .at-recommendedjumbo-footer #at-recommendedjumbo-top-ho=
+lder{padding:0 20px}.at-recommendedjumbo-footer .at-recommendedjumbo-footer=
+-inner{position:relative;text-align:center;font-family:helvetica,arial,sans=
+-serif;z-index:2;width:100%}.at-recommendedjumbo-footer #at-recommendedjumb=
+o-label-holder{margin:40px 0 0;max-height:30px}.at-mobile .at-recommendedju=
+mbo-footer #at-recommendedjumbo-label-holder{margin:20px 0 0;max-height:20p=
+x}.at-recommendedjumbo-footer #at-recommendedjumbo-label{font-weight:300;fo=
+nt-size:24px;line-height:24px;color:#fff;margin:0}.at-mobile .at-recommende=
+djumbo-footer #at-recommendedjumbo-label{font-weight:150;font-size:14px;lin=
+e-height:14px}.at-recommendedjumbo-footer #at-recommendedjumbo-title-holder=
+{margin:20px 0 0;min-height:3pc;max-height:78pt}.at-mobile .at-recommendedj=
+umbo-footer #at-recommendedjumbo-title-holder{margin:10px 0 0;min-height:24=
+px;max-height:54px}.at-recommendedjumbo-footer #at-recommendedjumbo-content=
+-title{font-size:3pc;line-height:52px;font-weight:700;margin:0}.at-mobile .=
+at-recommendedjumbo-footer #at-recommendedjumbo-content-title{font-size:24p=
+x;line-height:27px}.at-recommendedjumbo-footer a{text-decoration:none;color=
+:#fff}.at-recommendedjumbo-footer a:visited{color:#fff}.at-recommendedjumbo=
+-footer small{margin:20px 0 0;display:inline-block;height:2pc;line-height:2=
+pc;font-size:14px;color:#ccc;cursor:default}.at-mobile .at-recommendedjumbo=
+-footer small{margin:10px 0 0;height:14px;line-height:14px;font-size:9pt}.a=
+t-recommendedjumbo-footer .at-logo-container{position:absolute;bottom:20px;=
+margin:auto;left:0;right:0}.at-mobile .at-recommendedjumbo-footer .at-logo-=
+container{bottom:10px}.at-recommendedjumbo-footer a.at-sponsored-link{color=
+:#ccc}.at-recommendedjumbo-footer div #at-recommendedjumbo-logo-link{paddin=
+g:2px 0 0 11px;text-decoration:none;line-height:20px;font-family:helvetica,=
+arial,sans-serif;font-size:9px;color:#ccc}@keyframes atRecommendedJumboAnim=
+atedBackground{0%{transform:scale(1,1)}to{transform:scale(1.1,1.1)}}</style=
+><style type=3D"text/css">.at-resp-share-element{position:relative;padding:=
+0;margin:0;font-size:0;line-height:0}.at-resp-share-element:after,.at-resp-=
+share-element:before{content:" ";display:table}.at-resp-share-element.at-mo=
+bile .at4-share-count-container,.at-resp-share-element.at-mobile .at-label{=
+display:none}.at-resp-share-element .at-share-btn{display:inline-block;*dis=
+play:inline;*zoom:1;margin:0 2px 5px;padding:0;overflow:hidden;line-height:=
+0;text-decoration:none;text-transform:none;color:#fff;cursor:pointer;transi=
+tion:all .2s ease-in-out;border:0;font-family:helvetica neue,helvetica,aria=
+l,sans-serif;background-color:transparent}.at-resp-share-element .at-share-=
+btn::-moz-focus-inner{border:0;padding:0}.at-resp-share-element .at-share-b=
+tn:focus,.at-resp-share-element .at-share-btn:hover{transform:translateY(-4=
+px);color:#fff;text-decoration:none}.at-resp-share-element .at-share-btn .a=
+t-icon-wrapper{float:left}.at-resp-share-element .at-share-btn.at-share-btn=
+.at-svc-compact:hover{transform:none}.at-resp-share-element .at-share-btn .=
+at-label{font-family:helvetica neue,helvetica,arial,sans-serif;font-size:9p=
+t;padding:0 15px 0 0;margin:0 0 0 5px;height:2pc;line-height:2pc;background=
+:none}.at-resp-share-element .at-icon,.at-resp-share-element .at-label{curs=
+or:pointer}.at-resp-share-element .at4-share-count-container{text-decoratio=
+n:none;float:right;padding-right:15px;font-size:9pt}.at-mobile .at-resp-sha=
+re-element .at-label{display:none}.at-resp-share-element.at-mobile .at-shar=
+e-btn{margin-right:5px}.at-mobile .at-resp-share-element .at-share-btn{padd=
+ing:5px;margin-right:5px}</style><style type=3D"text/css">.at-share-tbx-ele=
+ment{position:relative;margin:0;color:#fff;font-size:0}.at-share-tbx-elemen=
+t,.at-share-tbx-element .at-share-btn{font-family:helvetica neue,helvetica,=
+arial,sans-serif;padding:0;line-height:0}.at-share-tbx-element .at-share-bt=
+n{cursor:pointer;margin:0 5px 5px 0;display:inline-block;overflow:hidden;bo=
+rder:0;text-decoration:none;text-transform:none;background-color:transparen=
+t;color:inherit;transition:all .2s ease-in-out}.at-share-tbx-element .at-sh=
+are-btn:focus,.at-share-tbx-element .at-share-btn:hover{transform:translate=
+Y(-4px);outline-offset:-1px;color:inherit}.at-share-tbx-element .at-share-b=
+tn::-moz-focus-inner{border:0;padding:0}.at-share-tbx-element .at-share-btn=
+.at-share-btn.at-svc-compact:hover{transform:none}.at-share-tbx-element .at=
+-icon-wrapper{vertical-align:middle}.at-share-tbx-element .at4-share-count,=
+.at-share-tbx-element .at-label{margin:0 7.5px 0 2.5px;text-decoration:none=
+;vertical-align:middle;display:inline-block;background:none;height:0;font-s=
+ize:inherit;line-height:inherit;color:inherit}.at-share-tbx-element.at-mobi=
+le .at4-share-count,.at-share-tbx-element.at-mobile .at-label{display:none}=
+.at-share-tbx-element .at_native_button{vertical-align:middle}.at-share-tbx=
+-element .addthis_counter.addthis_bubble_style{margin:0 2px;vertical-align:=
+middle;display:inline-block}.at-share-tbx-element .fb_iframe_widget{display=
+:block}.at-share-tbx-element.at-share-tbx-native .at300b{vertical-align:mid=
+dle}.at-style-responsive .at-share-btn{padding:5px}.at-style-jumbo{display:=
+table}.at-style-jumbo .at4-spacer{height:1px;display:block;visibility:hidde=
+n;opacity:0}.at-style-jumbo .at4-count-container{display:table-cell;text-al=
+ign:center;min-width:200px;vertical-align:middle;border-right:1px solid #cc=
+c;padding-right:20px}.at-style-jumbo .at4-count{font-size:60px;line-height:=
+60px;font-weight:700}.at-style-jumbo .at4-count-title{position:relative;fon=
+t-size:18px;line-height:18px;bottom:2px}.at-style-jumbo .at-share-btn-eleme=
+nts{display:table-cell;vertical-align:middle;padding-left:20px}.at_flat_cou=
+nter{cursor:pointer;font-family:helvetica,arial,sans-serif;font-weight:700;=
+text-transform:uppercase;display:inline-block;position:relative;vertical-al=
+ign:top;height:auto;margin:0 5px;padding:0 6px;left:-1px;background:#ebebeb=
+;color:#32363b;transition:all .2s ease}.at_flat_counter:after{top:30%;left:=
+-4px;content:"";position:absolute;border-width:5px 8px 5px 0;border-style:s=
+olid;border-color:transparent #ebebeb transparent transparent;display:block=
+;width:0;height:0;transform:translateY(360deg)}.at_flat_counter:hover{backg=
+round:#e1e2e2}</style><style type=3D"text/css">.at4-thankyou-background{top=
+:0;right:0;left:0;bottom:0;-webkit-overflow-scrolling:touch;z-index:9999999=
+;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAA=
+KCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeN=
+pizCuu/sRABGBiIBKMKqSOQoAAAwC8KgJipENhxwAAAABJRU5ErkJggg=3D=3D);background:=
+hsla(217,6%,46%,.95)}.at4-thankyou-background.at-thankyou-shown{position:fi=
+xed}.at4-thankyou-inner{position:absolute;width:100%;top:10%;left:50%;margi=
+n-left:-50%;text-align:center}.at4-thankyou-mobile .at4-thankyou-inner{top:=
+5%}.thankyou-description{font-weight:400}.at4-thankyou-background .at4lb-in=
+ner{position:relative;width:100%;height:100%}.at4-thankyou-background .at4l=
+b-inner .at4x{position:absolute;top:15px;right:15px;display:block;width:20p=
+x;height:20px;padding:20px;margin:0;cursor:pointer;transition:opacity .25s =
+ease-in;opacity:.4;background:url("data:image/gif;base64,iVBORw0KGgoAAAANSU=
+hEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/=
+AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAAWdEVYdENyZWF0aW9u=
+IFRpbWUAMTEvMTMvMTKswDp5AAAAd0lEQVQ4jb2VQRLAIAgDE///Z3qqY1FAhalHMCsCIkVEAIA=
+kkVgvp2lDBgYAnAyHkWotLccNrEd4A7X2TqIdqLfnWBAdaF5rJdyJfjtPH5GT37CaGhoVq3nOm/=
+XflUuLUto2pY1d+vRKh0Pp+MrAVtDe2JkvYNQ+jVSEEFmOkggAAAAASUVORK5CYII=3D") no-r=
+epeat center center;overflow:hidden;text-indent:-99999em;border:1px solid t=
+ransparent}.at4-thankyou-background .at4lb-inner .at4x:focus,.at4-thankyou-=
+background .at4lb-inner .at4x:hover{border:1px solid #fff;border-radius:50%=
+;outline:0}.at4-thankyou-background .at4lb-inner #at4-palogo{position:absol=
+ute;bottom:10px;display:inline-block;text-decoration:none;font-family:helve=
+tica,arial,sans-serif;font-size:11px;cursor:pointer;-webkit-transition:opac=
+ity .25s ease-in;moz-transition:opacity .25s ease-in;transition:opacity .25=
+s ease-in;opacity:.5;z-index:100020;color:#fff;padding:2px 0 0 13px}.at4-th=
+ankyou-background .at4lb-inner #at4-palogo .at-branding-addthis,.at4-thanky=
+ou-background .at4lb-inner #at4-palogo .at-branding-info{color:#fff}.at4-th=
+ankyou-background .at4lb-inner #at4-palogo:hover,.at4-thankyou-background.a=
+ts-dark .at4lb-inner a#at4-palogo:hover{text-decoration:none;color:#fff;opa=
+city:1}.at4-thankyou-background.ats-dark{background-image:url("data:image/p=
+ng;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZ=
+QBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgeMZABGBiIBKMKqSOQoAAAwB+cQD6=
+hqlbCwAAAABJRU5ErkJggg=3D=3D");background:rgba(0,0,0,.85)}.at4-thankyou-bac=
+kground .thankyou-title{color:#fff;font-size:38.5px;margin:10px 20px;line-h=
+eight:38.5px;font-family:helvetica neue,helvetica,arial,sans-serif;font-wei=
+ght:300}.at4-thankyou-background.ats-dark .thankyou-description,.at4-thanky=
+ou-background.ats-dark .thankyou-title{color:#fff}.at4-thankyou-background =
+.thankyou-description{color:#fff;font-size:18px;margin:10px 0;line-height:2=
+4px;padding:0;font-family:helvetica neue,helvetica,arial,sans-serif;font-we=
+ight:300}.at4-thankyou-background .at4-thanks-icons{padding-top:10px}.at4-t=
+hankyou-mobile *{-webkit-overflow-scrolling:touch}#at4-thankyou .at4-recomm=
+ended-recommendedbox .at-logo{display:none}.at4-thankyou .at-h3{height:49px=
+;line-height:49px;margin:0 50px 0 20px;padding:1px 0 0;font-family:helvetic=
+a neue,helvetica,arial,sans-serif;font-size:1pc;font-weight:700;color:#fff;=
+text-shadow:0 1px #000}.at4-thanks{padding-top:50px;text-align:center}.at4-=
+thanks label{display:block;margin:0 0 15px;font-size:1pc;line-height:1pc}.a=
+t4-thanks .at4-h2{background:none;border:none;margin:0 0 10px;padding:0;fon=
+t-family:helvetica neue,helvetica,arial,sans-serif;font-size:28px;font-weig=
+ht:300;color:#000}.at4-thanks .at4-thanks-icons{position:relative;height:2p=
+c}.at4-thanks .at4-thanks-icons .at-thankyou-label{display:block;padding-bo=
+ttom:10px;font-size:14px;color:#666}.at4-thankyou-layer .at-follow .at-icon=
+-wrapper{width:2pc;height:2pc}</style><style type=3D"text/css">.at4-recomme=
+nded-toaster{position:fixed;top:auto;bottom:0;right:0;z-index:100021}.at4-r=
+ecommended-toaster.ats-light{border:1px solid #c5c5c5;background:#fff}.at4-=
+recommended-toaster.ats-gray{border:1px solid #c5c5c5;background:#f2f2f2}.a=
+t4-recommended-toaster.ats-dark{background:#262b30;color:#fff}.at4-recommen=
+ded-toaster .at4-recommended-container{padding-top:0;margin:0}.at4-recommen=
+ded.at4-recommended-toaster div.at-recommended-label{line-height:1pc;font-s=
+ize:1pc;text-align:left;padding:20px 0 0 20px}.at4-toaster-outer .at4-recom=
+mended .at4-recommended-item .at4-recommended-item-caption .at-h4{font-size=
+:11px;line-height:11px;margin:10px 0 6px;height:30px}.at4-recommended.at4-r=
+ecommended-toaster div.at-recommended-label.ats-gray,.at4-recommended.at4-r=
+ecommended-toaster div.at-recommended-label.ats-light{color:#464646}.at4-re=
+commended.at4-recommended-toaster div.at-recommended-label.ats-dark{color:#=
+fff}.at4-toaster-close-control{position:absolute;top:0;right:0;display:bloc=
+k;width:20px;height:20px;line-height:20px;margin:5px 5px 0 0;padding:0;text=
+-indent:-9999em}.at4-toaster-open-control{position:fixed;right:0;bottom:0;z=
+-index:100020}.at4-toaster-outer .at4-recommended-item{width:90pt;border:0;=
+margin:9px 10px 0}.at4-toaster-outer .at4-recommended-item:first-child{marg=
+in-left:20px}.at4-toaster-outer .at4-recommended-item:last-child{margin-rig=
+ht:20px}.at4-toaster-outer .at4-recommended-item .at4-recommended-item-img{=
+max-height:90pt;max-width:90pt}.at4-toaster-outer .at4-recommended-item .at=
+4-recommended-item-img img{height:90pt;width:90pt}.at4-toaster-outer .at4-r=
+ecommended-item .at4-recommended-item-caption{height:30px;padding:0;margin:=
+0;height:initial}.at4-toaster-outer .ats-dark .at4-recommended-item .at4-re=
+commended-item-caption{background:#262b30}.at4-toaster-outer .at4-recommend=
+ed .at4-recommended-item .at4-recommended-item-caption small{width:auto;lin=
+e-height:14px;margin:0}.at4-toaster-outer .at4-recommended.ats-dark .at4-re=
+commended-item .at4-recommended-item-caption small{color:#fff}.at4-recommen=
+ded-toaster .at-logo{margin:0 0 3px 20px;text-align:left}.at4-recommended-t=
+oaster .at-logo .at4-logo-container.at-sponsored-logo{position:relative}.at=
+4-toaster-outer .at4-recommended-item .sponsored-label{text-align:right;fon=
+t-size:10px;color:#666;float:right;position:fixed;bottom:6px;right:20px;top=
+:initial;z-index:99999}</style><style type=3D"text/css">.at4-whatsnext{posi=
+tion:fixed;bottom:0!important;right:0;background:#fff;border:1px solid #c5c=
+5c5;margin:-1px;width:390px;height:90pt;overflow:hidden;font-size:9pt;font-=
+weight:400;color:#000;z-index:1800000000}.at4-whatsnext a{color:#666}.at4-w=
+hatsnext .at-whatsnext-content{height:90pt;position:relative}.at4-whatsnext=
+ .at-whatsnext-content .at-branding{position:absolute;bottom:15px;right:10p=
+x;padding-left:9px;text-decoration:none;line-height:10px;font-family:helvet=
+ica,arial,sans-serif;font-size:10px;color:#666}.at4-whatsnext .at-whatsnext=
+-content .at-whatsnext-content-inner{position:absolute;top:15px;right:20px;=
+bottom:15px;left:140px;text-align:left;height:105px}.at4-whatsnext .at-what=
+snext-content-inner a{display:inline-block}.at4-whatsnext .at-whatsnext-con=
+tent-inner div.at-h6{text-align:left;margin:0;padding:0 0 3px;font-size:11p=
+x;color:#666;cursor:default}.at4-whatsnext .at-whatsnext-content .at-h3{tex=
+t-align:left;margin:5px 0;padding:0;line-height:1.2em;font-weight:400;font-=
+size:14px;height:3pc}.at4-whatsnext .at-whatsnext-content-inner a:link,.at4=
+-whatsnext .at-whatsnext-content-inner a:visited{text-decoration:none;font-=
+weight:400;color:#464646}.at4-whatsnext .at-whatsnext-content-inner a:hover=
+{color:#000}.at4-whatsnext .at-whatsnext-content-inner small{position:absol=
+ute;bottom:15px;line-height:10px;font-size:11px;color:#666;cursor:default;t=
+ext-align:left}.at4-whatsnext .at-whatsnext-content .at-whatsnext-content-i=
+mg{position:absolute;top:0;left:0;width:90pt;height:90pt;overflow:hidden}.a=
+t4-whatsnext .at-whatsnext-content .at-whatsnext-content-img img{position:a=
+bsolute;top:0;left:0;max-height:none;max-width:none}.at4-whatsnext .at-what=
+snext-close-control{position:absolute;top:0;right:0;display:block;width:20p=
+x;height:20px;line-height:20px;margin:0 5px 0 0;padding:0;text-indent:-9999=
+em}.at-whatsnext-open-control{position:fixed;right:0;bottom:0;z-index:10002=
+0}.at4-whatsnext.ats-dark{background:#262b30}.at4-whatsnext.ats-dark .at-wh=
+atsnext-content .at-h3,.at4-whatsnext.ats-dark .at-whatsnext-content a.at4-=
+logo:hover,.at4-whatsnext.ats-dark .at-whatsnext-content-inner a:link,.at4-=
+whatsnext.ats-dark .at-whatsnext-content-inner a:visited{color:#fff}.at4-wh=
+atsnext.ats-light{background:#fff}.at4-whatsnext.ats-gray{background:#f2f2f=
+2}.at4-whatsnext.at-whatsnext-nophoto{width:270px}.at4-whatsnext.at-whatsne=
+xt-nophoto .at-whatsnext-content-img{display:none}.at4-whatsnext.at-whatsne=
+xt-nophoto .at-whatsnext-content .at-whatsnext-content-inner{top:15px;right=
+:0;left:20px}.at4-whatsnext.at-whatsnext-nophoto .at-whatsnext-content .at-=
+whatsnext-content-inner.addthis_32x32_style{top:0;right:0;left:0;padding:45=
+px 20px 0;font-size:20px}.at4-whatsnext.at-whatsnext-nophoto .at-whatsnext-=
+content .at-whatsnext-content-inner .at4-icon,.at4-whatsnext.at-whatsnext-n=
+ophoto .at-whatsnext-content .at-whatsnext-content-inner .at4-icon-fw,.at4-=
+whatsnext.at-whatsnext-nophoto .at-whatsnext-content .at-whatsnext-content-=
+inner .whatsnext-msg{vertical-align:middle}.at-whatsnext-img,.at-whatsnext-=
+img-lnk{position:absolute;left:0}</style><style type=3D"text/css">.at4-what=
+snextmobile{position:fixed;bottom:0;right:0;left:0;background:#fff;z-index:=
+9999998;height:170px;font-size:28px}.at4-whatsnextmobile .col-2{height:100%=
+;font-size:1em}.at4-whatsnextmobile .col-2:first-child{max-width:200px;disp=
+lay:inline-block;float:left}.at4-whatsnextmobile .col-2:last-child{position=
+:absolute;left:200px;right:50px;top:0;bottom:0;display:inline-block}.at4-wh=
+atsnextmobile .at-whatsnext-content-inner{font-size:1em}.at4-whatsnextmobil=
+e .at-whatsnext-content-img img{height:100%;width:100%}.at4-whatsnextmobile=
+ .at-close-control{font-size:1em;position:absolute;top:0;right:0;width:50px=
+;height:50px}.at4-whatsnextmobile .at-close-control button{width:100%;heigh=
+t:100%;font-size:1em;font-weight:400;text-decoration:none;opacity:.5;paddin=
+g:0;cursor:pointer;background:0 0;border:0;-webkit-appearance:none}.at4-wha=
+tsnextmobile .at-h3,.at4-whatsnextmobile .at-h6{font-size:1em;margin:0;colo=
+r:#a1a1a1;margin-left:2.5%;margin-top:25px}.at4-whatsnextmobile .at-h3{font=
+-size:1em;line-height:1em;font-weight:500;height:50%}.at4-whatsnextmobile .=
+at-h3 a{font-size:1em;text-decoration:none}.at4-whatsnextmobile .at-h6{font=
+-size:.8em;line-height:.8em;font-weight:500}.at4-whatsnextmobile .footer{po=
+sition:absolute;bottom:2px;left:200px;right:0;padding-left:2.5%;font-size:1=
+em;line-height:.6em}.at4-whatsnextmobile .footer small{font-size:.6em;color=
+:#a1a1a1}.at4-whatsnextmobile .footer small:first-child{margin-right:5%;flo=
+at:left}.at4-whatsnextmobile .footer small:last-child{margin-right:2.5%;flo=
+at:right}.at4-whatsnextmobile .at-whatsnext-content{height:100%}.at4-whatsn=
+extmobile.ats-dark{background:#262b30;color:#fff}.at4-whatsnextmobile .at-c=
+lose-control button{color:#bfbfbf}.at4-whatsnextmobile.ats-dark a:link,.at4=
+-whatsnextmobile.ats-dark a:visited{color:#fff}.at4-whatsnextmobile.ats-gra=
+y{background:#f2f2f2;color:#262b30}.at4-whatsnextmobile.ats-light{backgroun=
+d:#fff;color:#262b30}.at4-whatsnextmobile.ats-dark .footer a:link,.at4-what=
+snextmobile.ats-dark .footer a:visited,.at4-whatsnextmobile.ats-gray .foote=
+r a:link,.at4-whatsnextmobile.ats-gray .footer a:visited,.at4-whatsnextmobi=
+le.ats-light .footer a:link,.at4-whatsnextmobile.ats-light .footer a:visite=
+d{color:#a1a1a1}.at4-whatsnextmobile.ats-gray a:link,.at4-whatsnextmobile.a=
+ts-gray a:visited,.at4-whatsnextmobile.ats-light a:link,.at4-whatsnextmobil=
+e.ats-light a:visited{color:#262b30}@media only screen and (min-device-widt=
+h:320px) and (max-device-width:480px){.at4-whatsnextmobile{height:85px;font=
+-size:14px}.at4-whatsnextmobile .col-2:first-child{width:75pt}.at4-whatsnex=
+tmobile .col-2:last-child{right:25px;left:75pt}.at4-whatsnextmobile .footer=
+{left:75pt}.at4-whatsnextmobile .at-close-control{width:25px;height:25px}.a=
+t4-whatsnextmobile .at-h3,.at4-whatsnextmobile .at-h6{margin-top:12.5px}}</=
+style><style type=3D"text/css">.at-custom-mobile-bar{left:0;right:0;width:1=
+00%;height:56px;position:fixed;text-align:center;z-index:100020;background:=
+#fff;overflow:hidden;box-shadow:0 0 10px 0 rgba(0,0,0,.2);font:initial;line=
+-height:normal;top:auto;bottom:0}.at-custom-mobile-bar.at-custom-mobile-bar=
+-zindex-hide{z-index:-1!important}.at-custom-mobile-bar.atss-top{top:0;bott=
+om:auto}.at-custom-mobile-bar.atss-bottom{top:auto;bottom:0}.at-custom-mobi=
+le-bar .at-custom-mobile-bar-btns{display:inline-block;text-align:center}.a=
+t-custom-mobile-bar .at-custom-mobile-bar-counter,.at-custom-mobile-bar .at=
+-share-btn{margin-top:4px}.at-custom-mobile-bar .at-share-btn{display:inlin=
+e-block;text-decoration:none;transition:none;box-sizing:content-box}.at-cus=
+tom-mobile-bar .at-custom-mobile-bar-counter{font-family:Helvetica neue,ari=
+al;vertical-align:top;margin-left:4px;margin-right:4px;display:inline-block=
+}.at-custom-mobile-bar .at-custom-mobile-bar-count{font-size:26px;line-heig=
+ht:1.25em;color:#222}.at-custom-mobile-bar .at-custom-mobile-bar-text{font-=
+size:9pt;line-height:1.25em;color:#888;letter-spacing:1px}.at-custom-mobile=
+-bar .at-icon-wrapper{text-align:center;height:3pc;width:3pc;margin:0 4px}.=
+at-custom-mobile-bar .at-icon{vertical-align:top;margin:8px;width:2pc;heigh=
+t:2pc}.at-custom-mobile-bar.at-shfs-medium{height:3pc}.at-custom-mobile-bar=
+.at-shfs-medium .at-custom-mobile-bar-counter{margin-top:6px}.at-custom-mob=
+ile-bar.at-shfs-medium .at-custom-mobile-bar-count{font-size:18px}.at-custo=
+m-mobile-bar.at-shfs-medium .at-custom-mobile-bar-text{font-size:10px}.at-c=
+ustom-mobile-bar.at-shfs-medium .at-icon-wrapper{height:40px;width:40px}.at=
+-custom-mobile-bar.at-shfs-medium .at-icon{margin:6px;width:28px;height:28p=
+x}.at-custom-mobile-bar.at-shfs-small{height:40px}.at-custom-mobile-bar.at-=
+shfs-small .at-custom-mobile-bar-counter{margin-top:3px}.at-custom-mobile-b=
+ar.at-shfs-small .at-custom-mobile-bar-count{font-size:1pc}.at-custom-mobil=
+e-bar.at-shfs-small .at-custom-mobile-bar-text{font-size:10px}.at-custom-mo=
+bile-bar.at-shfs-small .at-icon-wrapper{height:2pc;width:2pc}.at-custom-mob=
+ile-bar.at-shfs-small .at-icon{margin:4px;width:24px;height:24px}</style><s=
+tyle type=3D"text/css">.at-custom-sidebar{top:20%;width:58px;position:fixed=
+;text-align:center;z-index:100020;background:#fff;overflow:hidden;box-shado=
+w:0 0 10px 0 rgba(0,0,0,.2);font:initial;line-height:normal;top:auto;bottom=
+:0}.at-custom-sidebar.at-custom-sidebar-zindex-hide{z-index:-1!important}.a=
+t-custom-sidebar.atss-left{left:0;right:auto;float:left;border-radius:0 4px=
+ 4px 0}.at-custom-sidebar.atss-right{left:auto;right:0;float:right;border-r=
+adius:4px 0 0 4px}.at-custom-sidebar .at-custom-sidebar-btns{display:inline=
+-block;text-align:center;padding-top:4px}.at-custom-sidebar .at-custom-side=
+bar-counter{margin-bottom:8px}.at-custom-sidebar .at-share-btn{display:inli=
+ne-block;text-decoration:none;transition:none;box-sizing:content-box}.at-cu=
+stom-sidebar .at-custom-sidebar-counter{font-family:Helvetica neue,arial;ve=
+rtical-align:top;margin-left:4px;margin-right:4px;display:inline-block}.at-=
+custom-sidebar .at-custom-sidebar-count{font-size:21px;line-height:1.25em;c=
+olor:#222}.at-custom-sidebar .at-custom-sidebar-text{font-size:10px;line-he=
+ight:1.25em;color:#888;letter-spacing:1px}.at-custom-sidebar .at-icon-wrapp=
+er{text-align:center;margin:0 4px}.at-custom-sidebar .at-icon{vertical-alig=
+n:top;margin:9px;width:2pc;height:2pc}.at-custom-sidebar .at-icon-wrapper{p=
+osition:relative}.at-custom-sidebar .at4-share-count,.at-custom-sidebar .at=
+4-share-count-container{line-height:1pc;font-size:10px}.at-custom-sidebar .=
+at4-share-count{text-indent:0;font-family:Arial,Helvetica Neue,Helvetica,sa=
+ns-serif;font-weight:200;width:100%;height:1pc}.at-custom-sidebar .at4-shar=
+e-count-anchor .at-icon{margin-top:3px}.at-custom-sidebar .at4-share-count-=
+container{position:absolute;left:0;right:auto;top:auto;bottom:0;width:100%;=
+color:#fff;background:inherit}</style><style type=3D"text/css">.at-image-sh=
+aring-mobile-icon{position:absolute;background:#000 url(//s7.addthis.com/st=
+atic/44a36d35bafef33aa9455b7d3039a771.png) no-repeat top center;background-=
+color:rgba(0,0,0,.9);background-image:url(//s7.addthis.com/static/10db52518=
+1ee0bbe1a515001be1c7818.svg),none;border-radius:3px;width:50px;height:40px;=
+top:-9999px;left:-9999px}.at-image-sharing-tool{display:block;position:abso=
+lute;text-align:center;z-index:9001;background:none;overflow:hidden;top:-99=
+99px;left:-9999px;font:initial;line-height:0}.at-image-sharing-tool.addthis=
+-animated{animation-duration:.15s}.at-image-sharing-tool.at-orientation-ver=
+tical .at-share-btn{display:block}.at-image-sharing-tool.at-orientation-hor=
+izontal .at-share-btn{display:inline-block}.at-image-sharing-tool.at-image-=
+sharing-tool-size-big .at-icon{width:43px;height:43px}.at-image-sharing-too=
+l.at-image-sharing-tool-size-mobile .at-share-btn{margin:0!important}.at-im=
+age-sharing-tool.at-image-sharing-tool-size-mobile .at-icon-wrapper{height:=
+60px;width:100%;border-radius:0!important}.at-image-sharing-tool.at-image-s=
+haring-tool-size-mobile .at-icon{max-width:100%;height:54px!important;width=
+:54px!important}.at-image-sharing-tool .at-custom-shape.at-image-sharing-to=
+ol-btns{margin-right:8px;margin-bottom:8px}.at-image-sharing-tool .at-custo=
+m-shape .at-share-btn{margin-top:8px;margin-left:8px}.at-image-sharing-tool=
+ .at-share-btn{line-height:0;text-decoration:none;transition:none;box-sizin=
+g:content-box}.at-image-sharing-tool .at-icon-wrapper{text-align:center;hei=
+ght:100%;width:100%}.at-image-sharing-tool .at-icon{vertical-align:top;widt=
+h:2pc;height:2pc;margin:3px}</style><style type=3D"text/css">.at-expanding-=
+share-button{box-sizing:border-box;position:fixed;z-index:9999}.at-expandin=
+g-share-button[data-position=3Dbottom-right]{bottom:10px;right:10px}.at-exp=
+anding-share-button[data-position=3Dbottom-right] .at-expanding-share-butto=
+n-toggle-bg,.at-expanding-share-button[data-position=3Dbottom-right] .at-ex=
+panding-share-button-toggle-btn[data-name]:after,.at-expanding-share-button=
+[data-position=3Dbottom-right] .at-icon-wrapper,.at-expanding-share-button[=
+data-position=3Dbottom-right] [data-name]:after{float:right}.at-expanding-s=
+hare-button[data-position=3Dbottom-right] [data-name]:after{margin-right:10=
+px}.at-expanding-share-button[data-position=3Dbottom-right] .at-expanding-s=
+hare-button-toggle-btn[data-name]:after{margin-right:5px}.at-expanding-shar=
+e-button[data-position=3Dbottom-right] .at-icon-wrapper{margin-right:-3px}.=
+at-expanding-share-button[data-position=3Dbottom-left]{bottom:10px;left:10p=
+x}.at-expanding-share-button[data-position=3Dbottom-left] .at-expanding-sha=
+re-button-toggle-bg,.at-expanding-share-button[data-position=3Dbottom-left]=
+ .at-expanding-share-button-toggle-btn[data-name]:after,.at-expanding-share=
+-button[data-position=3Dbottom-left] .at-icon-wrapper,.at-expanding-share-b=
+utton[data-position=3Dbottom-left] [data-name]:after{float:left}.at-expandi=
+ng-share-button[data-position=3Dbottom-left] [data-name]:after{margin-left:=
+10px}.at-expanding-share-button[data-position=3Dbottom-left] .at-expanding-=
+share-button-toggle-btn[data-name]:after{margin-left:5px}.at-expanding-shar=
+e-button *,.at-expanding-share-button :after,.at-expanding-share-button :be=
+fore{box-sizing:border-box}.at-expanding-share-button .at-expanding-share-b=
+utton-services-list{display:none;list-style:none;margin:0 5px;overflow:visi=
+ble;padding:0}.at-expanding-share-button .at-expanding-share-button-service=
+s-list>li{display:block;height:45px;position:relative;overflow:visible}.at-=
+expanding-share-button .at-expanding-share-button-toggle-btn,.at-expanding-=
+share-button .at-share-btn{transition:.1s;text-decoration:none}.at-expandin=
+g-share-button .at-share-btn{display:block;height:40px;padding:0 3px 0 0}.a=
+t-expanding-share-button .at-expanding-share-button-toggle-btn{position:rel=
+ative;overflow:auto}.at-expanding-share-button .at-expanding-share-button-t=
+oggle-btn.at-expanding-share-button-hidden[data-name]:after{display:none}.a=
+t-expanding-share-button .at-expanding-share-button-toggle-bg{box-shadow:0 =
+2px 4px 0 rgba(0,0,0,.3);border-radius:50%;position:relative}.at-expanding-=
+share-button .at-expanding-share-button-toggle-bg>span{background-image:url=
+("data:image/svg+xml,%3Csvg%20width%3D%2232px%22%20height%3D%2232px%22%20vi=
+ewBox%3D%220%200%2032%2032%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F=
+%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ctitle%3Eshare%3C%2Ftitle%3E%3Cg%20stroke=
+%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%2=
+2evenodd%22%3E%3Cg%20fill%3D%22%23FFFFFF%22%3E%3Cpath%20d%3D%22M26%2C13.428=
+5714%20C26%2C13.6220248%2025.9293162%2C13.7894338%2025.7879464%2C13.9308036=
+%20L20.0736607%2C19.6450893%20C19.932291%2C19.786459%2019.7648819%2C19.8571=
+429%2019.5714286%2C19.8571429%20C19.3779752%2C19.8571429%2019.2105662%2C19.=
+786459%2019.0691964%2C19.6450893%20C18.9278267%2C19.5037195%2018.8571429%2C=
+19.3363105%2018.8571429%2C19.1428571%20L18.8571429%2C16.2857143%20L16.35714=
+29%2C16.2857143%20C15.6279725%2C16.2857143%2014.9750773%2C16.3080355%2014.3=
+984375%2C16.3526786%20C13.8217977%2C16.3973217%2013.2488868%2C16.477306%201=
+2.6796875%2C16.5926339%20C12.1104882%2C16.7079619%2011.6157015%2C16.8660704=
+%2011.1953125%2C17.0669643%20C10.7749235%2C17.2678581%2010.3824423%2C17.526=
+4121%2010.0178571%2C17.8426339%20C9.65327199%2C18.1588557%209.35565592%2C18=
+.534596%209.125%2C18.9698661%20C8.89434408%2C19.4051361%208.71391434%2C19.9=
+203839%208.58370536%2C20.515625%20C8.45349637%2C21.1108661%208.38839286%2C2=
+1.7842224%208.38839286%2C22.5357143%20C8.38839286%2C22.9449425%208.40699386=
+%2C23.4025272%208.44419643%2C23.9084821%20C8.44419643%2C23.9531252%208.4534=
+9693%2C24.0405499%208.47209821%2C24.1707589%20C8.4906995%2C24.3009679%208.5=
+%2C24.3995532%208.5%2C24.4665179%20C8.5%2C24.5781256%208.46837829%2C24.6711=
+306%208.40513393%2C24.7455357%20C8.34188956%2C24.8199408%208.25446484%2C24.=
+8571429%208.14285714%2C24.8571429%20C8.02380893%2C24.8571429%207.9196433%2C=
+24.7938994%207.83035714%2C24.6674107%20C7.77827355%2C24.6004461%207.7299109=
+4%2C24.5186017%207.68526786%2C24.421875%20C7.64062478%2C24.3251483%207.5904=
+0206%2C24.2135423%207.53459821%2C24.0870536%20C7.47879436%2C23.9605648%207.=
+43973225%2C23.87128%207.41741071%2C23.8191964%20C6.47246551%2C21.6986501%20=
+6%2C20.0208395%206%2C18.7857143%20C6%2C17.3050521%206.19717065%2C16.0662252=
+%206.59151786%2C15.0691964%20C7.79688103%2C12.0706695%2011.0520568%2C10.571=
+4286%2016.3571429%2C10.5714286%20L18.8571429%2C10.5714286%20L18.8571429%2C7=
+.71428571%20C18.8571429%2C7.52083237%2018.9278267%2C7.35342333%2019.0691964=
+%2C7.21205357%20C19.2105662%2C7.07068382%2019.3779752%2C7%2019.5714286%2C7%=
+20C19.7648819%2C7%2019.932291%2C7.07068382%2020.0736607%2C7.21205357%20L25.=
+7879464%2C12.9263393%20C25.9293162%2C13.067709%2026%2C13.2351181%2026%2C13.=
+4285714%20L26%2C13.4285714%20Z%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2F=
+svg%3E");background-position:center center;background-repeat:no-repeat;tran=
+sition:transform .4s ease;border-radius:50%;display:block}.at-expanding-sha=
+re-button .at-icon-wrapper{box-shadow:0 2px 4px 0 rgba(0,0,0,.3);border-rad=
+ius:50%;display:inline-block;height:40px;line-height:40px;text-align:center=
+;width:40px}.at-expanding-share-button .at-icon{display:inline-block;height=
+:34px;margin:3px 0;vertical-align:top;width:34px}.at-expanding-share-button=
+ [data-name]:after{box-shadow:0 2px 4px 0 rgba(0,0,0,.3);transform:translat=
+e(0, -50%);transition:.4s;background-color:#fff;border-radius:3px;color:#66=
+6;content:attr(data-name);font-family:Helvetica Neue,Helvetica,Arial,sans-s=
+erif;font-size:9pt;line-height:9pt;font-weight:500;opacity:0;padding:3px 5p=
+x;position:relative;top:20px;white-space:nowrap}.at-expanding-share-button.=
+at-expanding-share-button-show-icons .at-expanding-share-button-services-li=
+st{display:block}.at-expanding-share-button.at-expanding-share-button-anima=
+te-in .at-expanding-share-button-toggle-bg>span{transform:rotate(270deg);ba=
+ckground-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww=
+.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999=
+%2Fxlink%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cg%3E%3Cpath%20d%3D%22M18=
+%2014V8h-4v6H8v4h6v6h4v-6h6v-4h-6z%22%20fill-rule%3D%22evenodd%22%20fill%3D=
+%22white%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E");background-position:cen=
+ter center;background-repeat:no-repeat}.at-expanding-share-button.at-expand=
+ing-share-button-animate-in [data-name]:after{opacity:1}.at-expanding-share=
+-button.at-hide-label [data-name]:after{display:none}.at-expanding-share-bu=
+tton.at-expanding-share-button-desktop .at-expanding-share-button-toggle{he=
+ight:50px}.at-expanding-share-button.at-expanding-share-button-desktop .at-=
+icon-wrapper:hover{box-shadow:0 2px 5px 0 rgba(0,0,0,.5)}.at-expanding-shar=
+e-button.at-expanding-share-button-desktop .at-expanding-share-button-toggl=
+e-bg{height:50px;line-height:50px;width:50px}.at-expanding-share-button.at-=
+expanding-share-button-desktop .at-expanding-share-button-toggle-bg>span{he=
+ight:50px;width:50px}.at-expanding-share-button.at-expanding-share-button-d=
+esktop .at-expanding-share-button-toggle-bg:after{box-shadow:0 2px 5px 0 rg=
+ba(0,0,0,.2);transition:opacity .2s ease;border-radius:50%;content:'';heigh=
+t:100%;opacity:0;position:absolute;top:0;left:0;width:100%}.at-expanding-sh=
+are-button.at-expanding-share-button-desktop .at-expanding-share-button-tog=
+gle-bg:hover:after{opacity:1}.at-expanding-share-button.at-expanding-share-=
+button-desktop .at-expanding-share-button-toggle-btn[data-name]:after{top:2=
+5px}.at-expanding-share-button.at-expanding-share-button-mobile .at-expandi=
+ng-share-button-services-list{margin:0}.at-expanding-share-button.at-expand=
+ing-share-button-mobile .at-expanding-share-button-toggle-btn,.at-expanding=
+-share-button.at-expanding-share-button-mobile .at-share-btn{outline:0}.at-=
+expanding-share-button.at-expanding-share-button-mobile .at-expanding-share=
+-button-toggle{height:40px;-webkit-tap-highlight-color:transparent}.at-expa=
+nding-share-button.at-expanding-share-button-mobile .at-expanding-share-but=
+ton-toggle-bg,.at-expanding-share-button.at-expanding-share-button-mobile .=
+at-expanding-share-button-toggle-bg span{height:40px;line-height:40px;width=
+:40px}.at-expanding-share-button.at-expanding-share-button-mobile .at-expan=
+ding-share-button-click-flash{transform:scale(0);transition:transform ease,=
+opacity ease-in;background-color:hsla(0,0%,100%,.3);border-radius:50%;heigh=
+t:40px;opacity:1;position:absolute;width:40px;z-index:10000}.at-expanding-s=
+hare-button.at-expanding-share-button-mobile .at-expanding-share-button-cli=
+ck-flash.at-expanding-share-button-click-flash-animate{transform:scale(1);o=
+pacity:0}.at-expanding-share-button.at-expanding-share-button-mobile+.at-ex=
+panding-share-button-mobile-overlay{transition:opacity ease;bottom:0;backgr=
+ound-color:hsla(0,0%,87%,.7);display:block;height:auto;left:0;opacity:0;pos=
+ition:fixed;right:0;top:0;width:auto;z-index:9998}.at-expanding-share-butto=
+n.at-expanding-share-button-mobile+.at-expanding-share-button-mobile-overla=
+y.at-expanding-share-button-hidden{height:0;width:0;z-index:-10000}.at-expa=
+nding-share-button.at-expanding-share-button-mobile.at-expanding-share-butt=
+on-animate-in+.at-expanding-share-button-mobile-overlay{transition:opacity =
+ease;opacity:1}</style><style type=3D"text/css">.at-tjin-element .at300b,.a=
+t-tjin-element .at300m{display:inline-block;width:auto;padding:0;margin:0 2=
+px 5px;outline-offset:-1px;transition:all .2s ease-in-out}.at-tjin-element =
+.at300b:focus,.at-tjin-element .at300b:hover,.at-tjin-element .at300m:focus=
+,.at-tjin-element .at300m:hover{transform:translateY(-4px)}.at-tjin-element=
+ .addthis_tjin_label{display:none}.at-tjin-element .addthis_vertical_style =
+.at300b,.at-tjin-element .addthis_vertical_style .at300m{display:block}.at-=
+tjin-element .addthis_vertical_style .at300b .addthis_tjin_label,.at-tjin-e=
+lement .addthis_vertical_style .at300b .at-icon-wrapper,.at-tjin-element .a=
+ddthis_vertical_style .at300m .addthis_tjin_label,.at-tjin-element .addthis=
+_vertical_style .at300m .at-icon-wrapper{display:inline-block;vertical-alig=
+n:middle;margin-right:5px}.at-tjin-element .addthis_vertical_style .at300b:=
+focus,.at-tjin-element .addthis_vertical_style .at300b:hover,.at-tjin-eleme=
+nt .addthis_vertical_style .at300m:focus,.at-tjin-element .addthis_vertical=
+_style .at300m:hover{transform:none}.at-tjin-element .at-tjin-btn{margin:0 =
+5px 5px 0;padding:0;outline-offset:-1px;display:inline-block;box-sizing:con=
+tent-box;transition:all .2s ease-in-out}.at-tjin-element .at-tjin-btn:focus=
+,.at-tjin-element .at-tjin-btn:hover{transform:translateY(-4px)}.at-tjin-el=
+ement .at-tjin-title{margin:0 0 15px}</style><style type=3D"text/css">#addt=
+hissmartlayerscssready{color:#bada55!important}.addthis-smartlayers,div#at4=
+-follow,div#at4-share,div#at4-thankyou,div#at4-whatsnext{padding:0;margin:0=
+}#at4-follow-label,#at4-share-label,#at4-whatsnext-label,.at4-recommended-l=
+abel.hidden{padding:0;border:none;background:none;position:absolute;top:0;l=
+eft:0;height:0;width:0;overflow:hidden;text-indent:-9999em}.addthis-smartla=
+yers .at4-arrow:hover{cursor:pointer}.addthis-smartlayers .at4-arrow:after,=
+.addthis-smartlayers .at4-arrow:before{content:none}a.at4-logo{background:u=
+rl(data:image/gif;base64,R0lGODlhBwAHAJEAAP9uQf///wAAAAAAACH5BAkKAAIALAAAAA=
+AHAAcAAAILFH6Ge8EBH2MKiQIAOw=3D=3D) no-repeat left center}.at4-minimal a.at=
+4-logo{background:url(data:image/gif;base64,R0lGODlhBwAHAJEAAP9uQf///wAAAAA=
+AACH5BAkKAAIALAAAAAAHAAcAAAILFH6Ge8EBH2MKiQIAOw=3D=3D) no-repeat left cente=
+r!important}button.at4-closebutton{position:absolute;top:0;right:0;padding:=
+0;margin-right:10px;cursor:pointer;background:transparent;border:0;-webkit-=
+appearance:none;font-size:19px;line-height:1;color:#000;text-shadow:0 1px 0=
+ #fff;opacity:.2}button.at4-closebutton:hover{color:#000;text-decoration:no=
+ne;cursor:pointer;opacity:.5}div.at4-arrow{background-image:url(data:image/=
+png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAoCAYAAABpYH0BAAAAGXRFWHRTb2Z0d2Fy=
+ZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAV1JREFUeNrsmesOgyAMhQfxwfrofTM3E10ME2i5Oep=
+pwr9a5OMUCrh1XV+wcvNAAIAA+BiAzrmtUWln27dbjEcC3AdODfo0BdEPhmcO4nIDvDNELi2jgg=
+k4/k8dT7skfeKzWIEd4VUpMQKvNB7X+OZSmAZkATWC1xvipbpnLmOosbJZC08CkAeA4E6qFUEMw=
+LAGnlSBPCE8lW8CYnZTcimH2HoT7kSFOx5HBmCnDhTIu1p5s98G+QZrxGPhZVMY1vgyAQaAAAiA=
+AAgDQACcBOD+BvJtBWfRy7NpJK5tBe4FNzXokywV734wPHMQlxvgnSGyNoUP/2ACjv/7iSeYKO3=
+YWKzAjvCqlBiBVxqPa3ynexNJwOsN8TJbzL6JNIYYXWpMv4lIIAZgWANPqkCeEJ7KNwExu8lpLl=
+SpAVQarO77TyKdBsyRPuwV0h0gmoGnTWFYzVkYBoAA+I/2FmAAt6+b5XM9mFkAAAAASUVORK5CY=
+II=3D);background-repeat:no-repeat;width:20px;height:20px;margin:0;padding:=
+0;overflow:hidden;text-indent:-9999em;text-align:left;cursor:pointer}#at4-r=
+ecommendedpanel-outer-container .at4-arrow.at-right,div.at4-arrow.at-right{=
+background-position:-20px 0}#at4-recommendedpanel-outer-container .at4-arro=
+w.at-left,div.at4-arrow.at-left{background-position:0 0}div.at4-arrow.at-do=
+wn{background-position:-60px 0}div.at4-arrow.at-up{background-position:-40p=
+x 0}.ats-dark div.at4-arrow.at-right{background-position:-20px -20px}.ats-d=
+ark div.at4-arrow.at-left{background-position:0 -20px}.ats-dark div.at4-arr=
+ow.at-down{background-position:-60px -20px}.ats-dark div.at4-arrow.at-up{ba=
+ckground-position:-40px -20}.at4-opacity-hidden{opacity:0!important}.at4-op=
+acity-visible{opacity:1!important}.at4-visually-hidden{position:absolute;cl=
+ip:rect(1px,1px,1px,1px);padding:0;border:0;overflow:hidden}.at4-hidden-off=
+-screen,.at4-hidden-off-screen *{position:absolute!important;top:-9999px!im=
+portant;left:-9999px!important}.at4-show{display:block!important;opacity:1!=
+important}.at4-show-content{opacity:1!important;visibility:visible}.at4-hid=
+e{display:none!important;opacity:0!important}.at4-hide-content{opacity:0!im=
+portant;visibility:hidden}.at4-visible{display:block!important;opacity:0!im=
+portant}.at-wordpress-hide{display:none!important;opacity:0!important}.addt=
+his-animated{animation-fill-mode:both;animation-timing-function:ease-out;an=
+imation-duration:.3s}.slideInDown.addthis-animated,.slideInLeft.addthis-ani=
+mated,.slideInRight.addthis-animated,.slideInUp.addthis-animated,.slideOutD=
+own.addthis-animated,.slideOutLeft.addthis-animated,.slideOutRight.addthis-=
+animated,.slideOutUp.addthis-animated{animation-duration:.4s}@keyframes fad=
+eIn{0%{opacity:0}to{opacity:1}}.fadeIn{animation-name:fadeIn}@keyframes fad=
+eInUp{0%{opacity:0;transform:translateY(20px)}to{opacity:1;transform:transl=
+ateY(0)}}.fadeInUp{animation-name:fadeInUp}@keyframes fadeInDown{0%{opacity=
+:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}.fadeI=
+nDown{animation-name:fadeInDown}@keyframes fadeInLeft{0%{opacity:0;transfor=
+m:translateX(-20px)}to{opacity:1;transform:translateX(0)}}.fadeInLeft{anima=
+tion-name:fadeInLeft}@keyframes fadeInRight{0%{opacity:0;transform:translat=
+eX(20px)}to{opacity:1;transform:translateX(0)}}.fadeInRight{animation-name:=
+fadeInRight}@keyframes fadeOut{0%{opacity:1}to{opacity:0}}.fadeOut{animatio=
+n-name:fadeOut}@keyframes fadeOutUp{0%{opacity:1;transform:translateY(0)}to=
+{opacity:0;transform:translateY(-20px)}}.fadeOutUp{animation-name:fadeOutUp=
+}@keyframes fadeOutDown{0%{opacity:1;transform:translateY(0)}to{opacity:0;t=
+ransform:translateY(20px)}}.fadeOutDown{animation-name:fadeOutDown}@keyfram=
+es fadeOutLeft{0%{opacity:1;transform:translateX(0)}to{opacity:0;transform:=
+translateX(-20px)}}.fadeOutLeft{animation-name:fadeOutLeft}@keyframes fadeO=
+utRight{0%{opacity:1;transform:translateX(0)}to{opacity:0;transform:transla=
+teX(20px)}}.fadeOutRight{animation-name:fadeOutRight}@keyframes slideInUp{0=
+%{transform:translateY(1500px)}0%,to{opacity:1}to{transform:translateY(0)}}=
+.slideInUp{animation-name:slideInUp}.slideInUp.addthis-animated{animation-d=
+uration:.4s}@keyframes slideInDown{0%{transform:translateY(-850px)}0%,to{op=
+acity:1}to{transform:translateY(0)}}.slideInDown{animation-name:slideInDown=
+}@keyframes slideOutUp{0%{transform:translateY(0)}0%,to{opacity:1}to{transf=
+orm:translateY(-250px)}}.slideOutUp{animation-name:slideOutUp}@keyframes sl=
+ideOutUpFast{0%{transform:translateY(0)}0%,to{opacity:1}to{transform:transl=
+ateY(-1250px)}}#at4m-menu.slideOutUp{animation-name:slideOutUpFast}@keyfram=
+es slideOutDown{0%{transform:translateY(0)}0%,to{opacity:1}to{transform:tra=
+nslateY(350px)}}.slideOutDown{animation-name:slideOutDown}@keyframes slideO=
+utDownFast{0%{transform:translateY(0)}0%,to{opacity:1}to{transform:translat=
+eY(1250px)}}#at4m-menu.slideOutDown{animation-name:slideOutDownFast}@keyfra=
+mes slideInLeft{0%{opacity:0;transform:translateX(-850px)}to{transform:tran=
+slateX(0)}}.slideInLeft{animation-name:slideInLeft}@keyframes slideInRight{=
+0%{opacity:0;transform:translateX(1250px)}to{transform:translateX(0)}}.slid=
+eInRight{animation-name:slideInRight}@keyframes slideOutLeft{0%{transform:t=
+ranslateX(0)}to{opacity:0;transform:translateX(-350px)}}.slideOutLeft{anima=
+tion-name:slideOutLeft}@keyframes slideOutRight{0%{transform:translateX(0)}=
+to{opacity:0;transform:translateX(350px)}}.slideOutRight{animation-name:sli=
+deOutRight}.at4win{margin:0 auto;background:#fff;border:1px solid #ebeced;w=
+idth:25pc;box-shadow:0 0 10px rgba(0,0,0,.3);border-radius:8px;font-family:=
+helvetica neue,helvetica,arial,sans-serif;text-align:left;z-index:9999}.at4=
+win .at4win-header{position:relative;border-bottom:1px solid #f2f2f2;backgr=
+ound:#fff;height:49px;-webkit-border-top-left-radius:8px;-webkit-border-top=
+-right-radius:8px;-moz-border-radius-topleft:8px;-moz-border-radius-toprigh=
+t:8px;border-top-left-radius:8px;border-top-right-radius:8px;cursor:default=
+}.at4win .at4win-header .at-h3,.at4win .at4win-header h3{height:49px;line-h=
+eight:49px;margin:0 50px 0 0;padding:1px 0 0;margin-left:20px;font-family:h=
+elvetica neue,helvetica,arial,sans-serif;font-size:1pc;font-weight:700;text=
+-shadow:0 1px #fff;color:#333}.at4win .at4win-header .at-h3 img,.at4win .at=
+4win-header h3 img{display:inline-block;margin-right:4px}.at4win .at4win-he=
+ader .at4-close{display:block;position:absolute;top:0;right:0;background:ur=
+l("data:image/gif;base64,R0lGODlhFAAUAIABAAAAAP///yH5BAEAAAEALAAAAAAUABQAAA=
+IzBIKpG+YMm5Enpodw1HlCfnkKOIqU1VXk55goVb2hi7Y0q95lfG70uurNaqLgTviyyUoFADs=
+=3D") no-repeat center center;background-repeat:no-repeat;background-positi=
+on:center center;border-left:1px solid #d2d2d1;width:49px;height:49px;line-=
+height:49px;overflow:hidden;text-indent:-9999px;text-shadow:none;cursor:poi=
+nter;opacity:.5;border:0;transition:opacity .15s ease-in}.at4win .at4win-he=
+ader .at4-close::-moz-focus-inner{border:0;padding:0}.at4win .at4win-header=
+ .at4-close:hover{opacity:1;background-color:#ebeced;border-top-right-radiu=
+s:7px}.at4win .at4win-content{position:relative;background:#fff;min-height:=
+220px}#at4win-footer{position:relative;background:#fff;border-top:1px solid=
+ #d2d2d1;-webkit-border-bottom-right-radius:8px;-webkit-border-bottom-left-=
+radius:8px;-moz-border-radius-bottomright:8px;-moz-border-radius-bottomleft=
+:8px;border-bottom-right-radius:8px;border-bottom-left-radius:8px;height:11=
+px;line-height:11px;padding:5px 20px;font-size:11px;color:#666;-ms-box-sizi=
+ng:content-box;-o-box-sizing:content-box;box-sizing:content-box}#at4win-foo=
+ter a{margin-right:10px;text-decoration:none;color:#666}#at4win-footer a:ho=
+ver{text-decoration:none;color:#000}#at4win-footer a.at4-logo{top:5px;paddi=
+ng-left:10px}#at4win-footer a.at4-privacy{position:absolute;top:5px;right:1=
+0px;padding-right:14px}.at4win.ats-dark{border-color:#555;box-shadow:none}.=
+at4win.ats-dark .at4win-header{background:#1b1b1b;-webkit-border-top-left-r=
+adius:6px;-webkit-border-top-right-radius:6px;-moz-border-radius-topleft:6p=
+x;-moz-border-radius-topright:6px;border-top-left-radius:6px;border-top-rig=
+ht-radius:6px}.at4win.ats-dark .at4win-header .at4-close{background:url("da=
+ta:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQ=
+ICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZX=
+dvcmtzIENTNui8sowAAAAWdEVYdENyZWF0aW9uIFRpbWUAMTEvMTMvMTKswDp5AAAAd0lEQVQ4j=
+b2VQRLAIAgDE///Z3qqY1FAhalHMCsCIkVEAIAkkVgvp2lDBgYAnAyHkWotLccNrEd4A7X2TqId=
+qLfnWBAdaF5rJdyJfjtPH5GT37CaGhoVq3nOm/XflUuLUto2pY1d+vRKh0Pp+MrAVtDe2JkvYNQ=
++jVSEEFmOkggAAAAASUVORK5CYII=3D") no-repeat center center;background-image:=
+url(//s7.addthis.com/static/fb08f6d50887bd0caacc86a62bcdcf68.svg),none;bord=
+er-color:#333}.at4win.ats-dark .at4win-header .at4-close:hover{background-c=
+olor:#000}.at4win.ats-dark .at4win-header .at-h3,.at4win.ats-dark .at4win-h=
+eader h3{color:#fff;text-shadow:0 1px #000}.at4win.ats-gray .at4win-header{=
+background:#fff;border-color:#d2d2d1;-webkit-border-top-left-radius:6px;-we=
+bkit-border-top-right-radius:6px;-moz-border-radius-topleft:6px;-moz-border=
+-radius-topright:6px;border-top-left-radius:6px;border-top-right-radius:6px=
+}.at4win.ats-gray .at4win-header a.at4-close{border-color:#d2d2d1}.at4win.a=
+ts-gray .at4win-header a.at4-close:hover{background-color:#ebeced}.at4win.a=
+ts-gray #at4win-footer{border-color:#ebeced}.at4win .clear{clear:both}.at4w=
+in ::selection{background:#fe6d4c;color:#fff}.at4win ::-moz-selection{backg=
+round:#fe6d4c;color:#fff}.at4-icon-fw{display:inline-block;background-repea=
+t:no-repeat;background-position:0 0;margin:0 5px 0 0;overflow:hidden;text-i=
+ndent:-9999em;cursor:pointer;padding:0;border-radius:50%;-moz-border-radius=
+:50%;-webkit-border-radius:50%}.at44-follow-container a.aticon{height:2pc;m=
+argin:0 5px 5px 0}.at44-follow-container .at4-icon-fw{margin:0}</style></he=
+ad>
+<body itemscope=3D"" itemtype=3D"//schema.org/Article" bgcolor=3D"white" vl=
+ink=3D"green" link=3D"blue">
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+<form action=3D"https://www.google.com/" id=3D"cse-search-box" target=3D"_b=
+lank">
+  <div>
+   =20
+   =20
+    <input type=3D"text" name=3D"q" size=3D"25" placeholder=3D"Custom Searc=
+h" style=3D"border: 1px solid rgb(126, 157, 185); padding: 2px; background:=
+ url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey=
+_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: =
+48px;">
+    <input type=3D"submit" name=3D"sa" value=3D"Search">
+  </div>
+</form>
+
+<h1 itemprop=3D"name">[PATCH] PTP: ported from gadgetfs to functionfs kerne=
+l interface</h1>
+[<a href=3D"https://www.spinics.net/lists/linux-usb/msg41962.html">Date Pre=
+v</a>][<a href=3D"https://www.spinics.net/lists/linux-usb/msg41964.html">Da=
+te Next</a>][<a href=3D"https://www.spinics.net/lists/linux-usb/msg41962.ht=
+ml">Thread Prev</a>][<a href=3D"https://www.spinics.net/lists/linux-usb/msg=
+41969.html">Thread Next</a>][<a href=3D"https://www.spinics.net/lists/linux=
+-usb/mail253.html#41963">Date Index</a>][<a href=3D"https://www.spinics.net=
+/lists/linux-usb/thrd253.html#41963">Thread Index</a>]=20
+
+
+<p>&nbsp;<br>
+
+<!-- responsive test for archives -->
+<ins class=3D"adsbygoogle" style=3D"display:block" data-ad-client=3D"ca-pub=
+-3422782820843221" data-ad-slot=3D"6345952567" data-ad-format=3D"auto"></in=
+s>
+
+
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+</p><hr>
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul>
+<li><em>Subject</em>: [PATCH] PTP: ported from gadgetfs to functionfs kerne=
+l interface</li>
+<li><em>From</em>: Marek Szyprowski &lt;<a href=3D"mailto:m.szyprowski@DOMA=
+IN.HIDDEN">m.szyprowski@xxxxxxxxxxx</a>&gt;</li>
+<li><em>Date</em>: Fri, 28 Jan 2011 10:25:27 +0100</li>
+<li><em>Cc</em>: <a href=3D"mailto:m.szyprowski@DOMAIN.HIDDEN">m.szyprowski=
+@xxxxxxxxxxx</a>, <a href=3D"mailto:kyungmin.park@DOMAIN.HIDDEN">kyungmin.p=
+ark@xxxxxxxxxxx</a>, <a href=3D"mailto:g.liakhovetski@DOMAIN.HIDDEN">g.liak=
+hovetski@xxxxxx</a>,        <a href=3D"mailto:mina86@DOMAIN.HIDDEN">mina86@=
+xxxxxxxxxx</a></li>
+<li><em>In-reply-to</em>: &lt;<a href=3D"mailto:1296206727-27895-1-git-send=
+-email-m.szyprowski@DOMAIN.HIDDEN">1296206727-27895-1-git-send-email-m.szyp=
+rowski@xxxxxxxxxxx</a>&gt;</li>
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<!-- AddThis Button BEGIN -->
+<div class=3D"addthis_toolbox addthis_default_style ">
+<a class=3D"addthis_button_tumblr addthis_button_preferred_1 at300b" target=
+=3D"_blank" title=3D"Tumblr" href=3D"https://www.spinics.net/lists/linux-us=
+b/msg41963.html#"><span class=3D"at-icon-wrapper" style=3D"background-color=
+: rgb(55, 69, 92); line-height: 16px; height: 16px; width: 16px;"><svg xmln=
+s=3D"http://www.w3.org/2000/svg" xmlns:xlink=3D"http://www.w3.org/1999/xlin=
+k" viewBox=3D"0 0 32 32" version=3D"1.1" role=3D"img" aria-labelledby=3D"at=
+-svg-tumblr-2" title=3D"Tumblr" alt=3D"Tumblr" style=3D"width: 16px; height=
+: 16px;" class=3D"at-icon at-icon-tumblr"><title id=3D"at-svg-tumblr-2">Tum=
+blr</title><g><path d=3D"M19.59 22.176c-.392.186-1.14.348-1.695.362-1.682.0=
+45-2.008-1.18-2.022-2.07V13.93h4.218v-3.18H15.89V5.403h-3.076c-.05 0-.138.0=
+44-.15.157-.18 1.636-.947 4.51-4.133 5.66v2.71h2.124v6.862c0 2.35 1.733 5.6=
+88 6.308 5.61 1.544-.028 3.258-.674 3.637-1.23l-1.01-2.996" fill-rule=3D"ev=
+enodd"></path></g></svg></span></a>
+<a class=3D"addthis_button_qzone addthis_button_preferred_2 at300b" target=
+=3D"_blank" title=3D"Qzone" href=3D"https://www.spinics.net/lists/linux-usb=
+/msg41963.html#"><span class=3D"at-icon-wrapper" style=3D"background-color:=
+ rgb(9, 133, 221); line-height: 16px; height: 16px; width: 16px;"><svg xmln=
+s=3D"http://www.w3.org/2000/svg" xmlns:xlink=3D"http://www.w3.org/1999/xlin=
+k" viewBox=3D"0 0 32 32" version=3D"1.1" role=3D"img" aria-labelledby=3D"at=
+-svg-qzone-3" title=3D"Qzone" alt=3D"Qzone" style=3D"width: 16px; height: 1=
+6px;" class=3D"at-icon at-icon-qzone"><title id=3D"at-svg-qzone-3">Qzone</t=
+itle><g><path d=3D"M24.307 19.276c.876-.158.442-.484.084-.442-.65.067-1.575=
+.075-2.593.05l.118.693a25.58 25.58 0 0 0 2.392-.3zm2.686-6.814a.206.206 0 0=
+ 0-.175-.142l-7.34-1.067-3.285-6.647c-.075-.14-.31-.14-.384 0l-3.286 6.647-=
+7.34 1.067a.208.208 0 0 0-.174.142.214.214 0 0 0 .058.217l5.312 5.178-1.25 =
+7.305a.205.205 0 0 0 .083.21c.066.05.15.057.225.015l6.57-3.444 6.565 3.453.=
+1.025.125-.042c.067-.05.1-.125.083-.208l-.958-5.596c-1.06.084-2.118.124-2.9=
+77.124-3.01 0-5.262-.142-5.296-.142a.642.642 0 0 1-.576-.458.633.633 0 0 1 =
+.233-.692l6.055-4.404c-3.894-.308-7.163-.25-7.196-.25-.526.025-1-.142.025-.=
+56.176-.066 4.254-.924 8.974-.29.26.033.468.224.535.475a.647.647 0 0 1-.244=
+.674l-5.92 4.303c1.084.226 3.91.468 6.262.526l-.176-1.025 5.31-5.18a.208.20=
+8 0 0 0 .06-.216z" fill-rule=3D"evenodd"></path></g></svg></span></a>
+<a class=3D"addthis_button_sinaweibo addthis_button_preferred_3 at300b" tar=
+get=3D"_blank" title=3D"Sina Weibo" href=3D"https://www.spinics.net/lists/l=
+inux-usb/msg41963.html#"><span class=3D"at-icon-wrapper" style=3D"backgroun=
+d-color: rgb(230, 22, 45); line-height: 16px; height: 16px; width: 16px;"><=
+svg xmlns=3D"http://www.w3.org/2000/svg" xmlns:xlink=3D"http://www.w3.org/1=
+999/xlink" viewBox=3D"0 0 32 32" version=3D"1.1" role=3D"img" aria-labelled=
+by=3D"at-svg-sinaweibo-4" title=3D"Sina Weibo" alt=3D"Sina Weibo" style=3D"=
+width: 16px; height: 16px;" class=3D"at-icon at-icon-sinaweibo"><title id=
+=3D"at-svg-sinaweibo-4">Sina Weibo</title><g><g fill-rule=3D"evenodd"></g><=
+path d=3D"M14.24 23.808c-3.64.367-6.785-1.307-7.022-3.734-.236-2.43 2.525-4=
+.693 6.164-5.06 3.642-.367 6.786 1.307 7.02 3.734.24 2.43-2.522 4.696-6.16 =
+5.06m7.28-8.063c-.31-.096-.523-.157-.362-.57.352-.898.39-1.672.006-2.227-.7=
+13-1.036-2.667-.98-4.907-.028 0 0-.705.312-.523-.253.343-1.125.29-2.065-.24=
+3-2.61-1.214-1.238-4.446.045-7.216 2.86C6.205 15.023 5 17.26 5 19.192c0 3.6=
+94 4.664 5.942 9.226 5.942 5.98 0 9.96-3.53 9.96-6.333.003-1.695-1.402-2.65=
+7-2.665-3.055M25.494 8.983a5.76 5.76 0 0 0-5.542-1.823.855.855 0 0 0-.646 1=
+.015.84.84 0 0 0 1 .657c1.398-.303 2.912.138 3.938 1.295a4.254 4.254 0 0 1 =
+.865 4.113c-.144.45.1.93.542 1.076a.84.84 0 0 0 1.06-.55v-.002a5.973 5.973 =
+0 0 0-1.218-5.78"></path><path d=3D"M23.276 11.018a2.8 2.8 0 0 0-2.698-.885=
+.74.74 0 0 0-.56.876c.086.396.472.65.86.563.467-.102.977.046 1.32.432.343.3=
+88.437.915.29 1.378a.742.742 0 0 0 .466.928.724.724 0 0 0 .913-.474c.3-.947=
+.113-2.026-.59-2.818M14.44 19.41c-.126.223-.408.328-.627.235-.218-.09-.285-=
+.34-.16-.555.127-.215.397-.32.612-.234.22.08.298.33.176.555m-1.16 1.512c-.3=
+53.57-1.11.82-1.676.558-.56-.26-.726-.922-.374-1.48.35-.555 1.078-.802 1.64=
+2-.56.57.25.753.905.407 1.482m1.322-4.04c-1.733-.46-3.69.42-4.443 1.97-.77 =
+1.583-.025 3.34 1.723 3.914 1.815.595 3.95-.318 4.695-2.023.734-1.67-.182-3=
+.39-1.976-3.86"></path></g></svg></span></a>
+<a class=3D"addthis_button_tencentweibo addthis_button_preferred_4 at300b" =
+target=3D"_blank" title=3D"Tencent Weibo" href=3D"https://www.spinics.net/l=
+ists/linux-usb/msg41963.html#"><span class=3D"at-icon-wrapper" style=3D"bac=
+kground-color: rgb(49, 158, 221); line-height: 16px; height: 16px; width: 1=
+6px;"><svg xmlns=3D"http://www.w3.org/2000/svg" xmlns:xlink=3D"http://www.w=
+3.org/1999/xlink" viewBox=3D"0 0 32 32" version=3D"1.1" role=3D"img" aria-l=
+abelledby=3D"at-svg-tencentweibo-5" title=3D"Tencent Weibo" alt=3D"Tencent =
+Weibo" style=3D"width: 16px; height: 16px;" class=3D"at-icon at-icon-tencen=
+tweibo"><title id=3D"at-svg-tencentweibo-5">Tencent Weibo</title><g><path d=
+=3D"M22.973 16.124c.374-.208.628-.62.628-1.093 0-.682-.53-1.235-1.183-1.235=
+s-1.183.553-1.183 1.236c0 .648.475 1.18 1.08 1.233.967 2.35 2.886 4.18 5.26=
+ 4.948a.326.326 0 0 0 .41-.225.346.346 0 0 0-.215-.43c-2.147-.693-3.89-2.32=
+7-4.797-4.43zm-13.718-2.68a2.59 2.59 0 0 1-.137-.834c0-1.378 1.07-2.494 2.3=
+87-2.494 1.32 0 2.388 1.116 2.388 2.494 0 1.377-1.07 2.494-2.388 2.494a2.32=
+ 2.32 0 0 1-1.562-.608c-2.372 2.606-3.75 6.09-3.75 9.814 0 .343.012.683.035=
+ 1.022a.615.615 0 0 1-.553.666.606.606 0 0 1-.638-.578A16.412 16.412 0 0 1 =
+5 24.31c0-4.142 1.567-8.01 4.255-10.865zm.512 5.54a6.078 6.078 0 0 0 1.68.2=
+36c3.493 0 6.325-2.96 6.325-6.61 0-3.65-2.832-6.61-6.326-6.61C7.952 6 5.12 =
+8.96 5.12 12.61c0 .965.198 1.9.576 2.76.138.313.492.45.79.306.3-.144.432-.5=
+15.294-.827a5.543 5.543 0 0 1-.467-2.24c0-2.962 2.298-5.363 5.133-5.363 2.8=
+34 0 5.132 2.4 5.132 5.363 0 2.962-2.298 5.363-5.132 5.363-.466 0-.923-.065=
+-1.363-.19a.594.594 0 0 0-.733.435c-.088.332.1.675.417.766zm15.334-1.39c.58=
+2-.68.908-1.56.908-2.49 0-2.066-1.603-3.74-3.58-3.74-1.978 0-3.582 1.674-3.=
+582 3.74 0 2.066 1.604 3.742 3.58 3.742.166 0 .3-.14.3-.312a.305.305 0 0 0-=
+.3-.312c-1.647 0-2.983-1.396-2.983-3.118s1.336-3.118 2.984-3.118c1.65 0 2.9=
+85 1.396 2.985 3.118 0 .776-.272 1.507-.757 2.074-.11.13-.098.326.025.44a.2=
+9.29 0 0 0 .42-.025z" fill-rule=3D"evenodd"></path></g></svg></span></a>
+<a class=3D"addthis_button_compact at300m" href=3D"https://www.spinics.net/=
+lists/linux-usb/msg41963.html#"><span class=3D"at-icon-wrapper" style=3D"ba=
+ckground-color: rgb(255, 101, 80); line-height: 16px; height: 16px; width: =
+16px;"><svg xmlns=3D"http://www.w3.org/2000/svg" xmlns:xlink=3D"http://www.=
+w3.org/1999/xlink" viewBox=3D"0 0 32 32" version=3D"1.1" role=3D"img" aria-=
+labelledby=3D"at-svg-addthis-1" title=3D"More" alt=3D"More" style=3D"width:=
+ 16px; height: 16px;" class=3D"at-icon at-icon-addthis"><title id=3D"at-svg=
+-addthis-1">AddThis</title><g><path d=3D"M18 14V8h-4v6H8v4h6v6h4v-6h6v-4h-6=
+z" fill-rule=3D"evenodd"></path></g></svg></span></a>
+<a class=3D"addthis_counter addthis_bubble_style" href=3D"https://www.spini=
+cs.net/lists/linux-usb/msg41963.html#" style=3D"display: inline-block;"><a =
+class=3D"addthis_button_expanded" target=3D"_blank" title=3D"=E6=9B=B4=E5=
+=A4=9A..." href=3D"https://www.spinics.net/lists/linux-usb/msg41963.html#">=
+0</a><a class=3D"atc_s addthis_button_compact">Share<span></span></a></a>
+<div class=3D"atclear"></div></div>
+
+<!-- AddThis Button END -->
+<hr>
+
+<!-- responsive link 1 -->
+<ins class=3D"adsbygoogle" style=3D"display:block" data-ad-client=3D"ca-pub=
+-3422782820843221" data-ad-slot=3D"8681825769" data-ad-format=3D"link"></in=
+s>
+
+<p>
+</p><div class=3D"content" itemprop=3D"articleBody">
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>This patch adapts PTP-gadget driver from gadgetfs interface to
+functionfs interface. With functionfs one can create usb multifunction
+composite gadget with some functions implemented in kernel space (like
+USB Ethernet) and other (like the PTP) in userspace.
+
+Signed-off-by: Marek Szyprowski &lt;m.szyprowski@xxxxxxxxxxx&gt;
+Signed-off-by: Kyungmin Park &lt;kyungmin.park@xxxxxxxxxxx&gt;
+---
+ Makefile          |    9 +-
+ README            |    2 +-
+ README-functionfs |   65 +++++
+ ptp.c             |  800 ++++++++++++++-----------------------------------=
+----
+ usbstring.c       |  142 ----------
+ usbstring.h       |   38 ---
+ 6 files changed, 284 insertions(+), 772 deletions(-)
+ create mode 100644 README-functionfs
+ delete mode 100644 usbstring.c
+ delete mode 100644 usbstring.h
+
+diff --git a/Makefile b/Makefile
+index d56d320..b1f9652 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,18 +1,15 @@
+ CPPFLAGS	:=3D -Wall -I$(KERNEL_SRC)/include
+=20
+-ptp:		ptp.o usbstring.o
++ptp:		ptp.o
+ 	$(CROSS_COMPILE)gcc -lpthread -o $@ $^
+=20
+-ptp.o:		ptp.c usbstring.h
+-	$(CROSS_COMPILE)gcc $(CPPFLAGS) -c -o $@ $&lt;
+-
+-usbstring.o:	usbstring.c usbstring.h
++ptp.o:		ptp.c
+ 	$(CROSS_COMPILE)gcc $(CPPFLAGS) -c -o $@ $&lt;
+=20
+ all:		ptp
+=20
+ clean:
+-	rm -f ptp ptp.o usbstring.o
++	rm -f ptp ptp.o
+=20
+ install:	ptp
+ 	install -m 0755 -t $(DESTDIR)/usr/local/bin/ ptp
+diff --git a/README b/README
+index ff12403..7fc0028 100644
+--- a/README
++++ b/README
+@@ -7,7 +7,7 @@ This is an open-source project, licensed under GPL v3, henc=
+e the author is
+ hoping, that it will be useful to others, and that others will contribute =
+to it,
+ eventually making it a complete implementation of the standard.
+=20
+-The driver works completely in user-space and uses gadgetfs to communicate=
+ with
++The driver works completely in user-space and uses functionfs to communica=
+te with
+ USB gadget hardware.
+=20
+ The code is based on the gadgetfs examples from
+diff --git a/README-functionfs b/README-functionfs
+new file mode 100644
+index 0000000..d651d47
+--- /dev/null
++++ b/README-functionfs
+@@ -0,0 +1,65 @@
++This version of PTP driver uses USB FunctionFS interface to communicate
++with Linux Kernel. This interface allows to create a multifunction
++composite gadget which consists of 2 or more usb functions. Some of
++these functions (like USB Ethernet) can be implemented in the kernel
++space, while the other in user-space. For more information please refer
++to kernel/drivers/usb/gadget/f_fs.c and kernel/tools/usb/ffs-test.c.
++
++You can test this driver together with g_ffs.ko Linux kernel module:
++$ insmod g_ffs.ko
++$ mkdir /dev/usbffs
++$ mount usbffs /dev/usbffs -t functionfs
++$ ./ptp &lt;path to images directory&gt;
++
++If you want to use PTP on functionfs together with other usb functions
++connected to WindowsXP/Vista host, you will probably encouter some
++strange problems. It looks that there is a bug in the WindowsXP/Vista
++drivers that sets the target of usb setup request always to zero. To let
++make it working correctly you need to either set your functionfs
++interface number to zero or add the following workaround in your kernel
++multifunction driver:
++
++---&gt;8---
++
++/* Still Image class-specific requests: */
++#define USB_REQ_PTP_CANCEL_REQUEST		0x64
++#define USB_REQ_PTP_GET_EXTENDED_EVENT_DATA	0x65
++#define USB_REQ_PTP_DEVICE_RESET_REQUEST	0x66
++#define USB_REQ_PTP_GET_DEVICE_STATUS_REQUEST	0x67
++
++#define USB_REQ_PTP_TYPE_MASK	(USB_TYPE_MASK | USB_RECIP_MASK)
++#define USB_REQ_PTP_TYPE		(USB_TYPE_CLASS | USB_RECIP_INTERFACE)
++static int
++multi_composite_setup(struct usb_gadget *gadget, const struct usb_ctrlrequ=
+est *_ctrl)
++{
++	struct usb_ctrlrequest *ctrl =3D (struct usb_ctrlrequest *)_ctrl;
++
++	/* hack for broken PTP Windows XP/Vista drivers */
++	if (multi_ffs_data &amp;&amp;
++	    (ctrl-&gt;bRequest &gt;=3D USB_REQ_PTP_CANCEL_REQUEST &amp;&amp;
++	     ctrl-&gt;bRequest &lt;=3D USB_REQ_PTP_GET_DEVICE_STATUS_REQUEST) &am=
+p;&amp;
++	    (ctrl-&gt;bRequestType &amp; USB_REQ_PTP_TYPE_MASK) =3D=3D USB_REQ_PT=
+P_TYPE &amp;&amp;
++	     ctrl-&gt;wIndex =3D=3D 0) {
++		printk(KERN_INFO "broken PTP/MTP 0x%02x setup request, force interface t=
+o %d\n",
++		       ctrl-&gt;bRequest, ffs_interface);
++		ctrl-&gt;wIndex =3D cpu_to_le16(ffs_interface);
++	}
++
++	return composite_setup(gadget, ctrl);
++}
++
++---&gt;8---
++
++The above function can be used to hijack gadget setup callback in the
++composite framework and fix the interface number to the one used by
++functionfs interface. You can enable it with the following call:
++
++---&gt;8---
++	composite_driver.setup =3D multi_composite_setup;
++---&gt;8---
++
++With the following workaround I've managed to get PTP Interface working
++together with RNDIS, ACM and Mass Storage USB functions in the single
++Multifunction USB Gadget.
++
++Marek Szyprowski &lt;m.szyprowski@xxxxxxxxxxx&gt;
+diff --git a/ptp.c b/ptp.c
+index 4c4b383..1d5442e 100644
+--- a/ptp.c
++++ b/ptp.c
+@@ -2,10 +2,17 @@
+  * Copyright (C) 2009
+  * Guennadi Liakhovetski, DENX Software Engineering, &lt;lg@xxxxxxx&gt;
+  *
++ * Copyright (C) 2010 Samsung Electronics
++ * USB functionfs conversion by Marek Szyprowski &lt;m.szyprowski@xxxxxxxx=
+xxx&gt;
++ *
+  * This program is free software; you can redistribute it and/or modify
+  * it under the terms of the GNU General Public License version 3 as
+  * published by the Free Software Foundation.
+  */
++
++#define _BSD_SOURCE /* for endian.h */
++
++#include &lt;endian.h&gt;
+ #include &lt;errno.h&gt;
+ #include &lt;fcntl.h&gt;
+ #include &lt;unistd.h&gt;
+@@ -32,10 +39,8 @@
+ #include &lt;asm/byteorder.h&gt;
+=20
+ #include &lt;linux/types.h&gt;
+-#include &lt;linux/usb/gadgetfs.h&gt;
+ #include &lt;linux/usb/ch9.h&gt;
+-
+-#include "usbstring.h"
++#include &lt;linux/usb/functionfs.h&gt;
+=20
+ #define min(a,b) ({ typeof(a) __a =3D (a); typeof(b) __b =3D (b); __a &lt;=
+ __b ? __a : __b; })
+ #define ARRAY_SIZE(arr) (sizeof(arr) / sizeof((arr)[0]))
+@@ -48,16 +53,9 @@ static int verbose;
+ #define USB_REQ_PTP_DEVICE_RESET_REQUEST	0x66
+ #define USB_REQ_PTP_GET_DEVICE_STATUS_REQUEST	0x67
+=20
+-#define DRIVER_VENDOR_NUM	0x1d6b
+-#define DRIVER_PRODUCT_NUM	0x0100
+-#define DRIVER_MFGR		"Linux"
+-#define DRIVER_PRODUCT		"PTP Gadget"
+-#define DRIVER_CONFIG		"Configuration 0"
+-#define DRIVER_INTERFACE	"Source/Sink"
+-
+ /* Will be used for bcdDevice: remember to update on major changes */
+ #define MAJOR			1
+-#define MINOR			0
++#define MINOR			1
+ #define DRIVER_VERSION		((MAJOR &lt;&lt; 8) | MINOR)
+ #define VERSION_STRING		__stringify(MAJOR) "." __stringify(MINOR)
+=20
+@@ -68,160 +66,165 @@ static int verbose;
+=20
+ /*------------------------------------------------------------------------=
+-*/
+=20
+-/* these descriptors are modified based on what controller we find */
+-
+-#define	STRINGID_MFGR		1
+-#define	STRINGID_PRODUCT	2
+-#define	STRINGID_CONFIG		3
+-#define	STRINGID_INTERFACE	4
+-
+-static struct usb_device_descriptor device_desc =3D {
+-	.bLength =3D		sizeof device_desc,
+-	.bDescriptorType =3D	USB_DT_DEVICE,
+-
+-	.bcdUSB =3D		__constant_cpu_to_le16(0x0200),
+-	.bcdDevice =3D		__constant_cpu_to_le16(DRIVER_VERSION),
+-	.bDeviceClass =3D		USB_CLASS_PER_INTERFACE,
+-	.bDeviceSubClass =3D	0,
+-	.bDeviceProtocol =3D	0,
+-	/* .bMaxPacketSize0 ... set by gadgetfs */
+-	.idVendor =3D		__constant_cpu_to_le16(DRIVER_VENDOR_NUM),
+-	.idProduct =3D		__constant_cpu_to_le16(DRIVER_PRODUCT_NUM),
+-	.iManufacturer =3D	STRINGID_MFGR,
+-	.iProduct =3D		STRINGID_PRODUCT,
+-	.bNumConfigurations =3D	1,
+-};
+-
+-#define	MAX_USB_POWER		1
+-
+-#define	CONFIG_VALUE		1
+-
+-static const struct usb_config_descriptor config =3D {
+-	.bLength =3D		sizeof config,
+-	.bDescriptorType =3D	USB_DT_CONFIG,
+-
+-	/* must compute wTotalLength ... */
+-	.bNumInterfaces =3D	1,
+-	.bConfigurationValue =3D	CONFIG_VALUE,
+-	.iConfiguration =3D	STRINGID_CONFIG,
+-	.bmAttributes =3D		USB_CONFIG_ATT_ONE | USB_CONFIG_ATT_SELFPOWER,
+-	.bMaxPower =3D		(MAX_USB_POWER + 1) / 2,
+-};
+-
+ /* USB subclass value =3D the protocol encapsulation */
+ #define USB_SC_IMAGE_CAPTURE	0x01		/* Still Image Capture Subclass */
+ #define USB_PR_CB		0x01		/* Control/Bulk w/o interrupt */
+=20
+-static struct usb_interface_descriptor source_sink_intf =3D {
+-	.bLength =3D		sizeof source_sink_intf,
+-	.bDescriptorType =3D	USB_DT_INTERFACE,
+-
+-	.bInterfaceClass =3D	USB_CLASS_STILL_IMAGE,
+-	.bInterfaceSubClass =3D	USB_SC_IMAGE_CAPTURE,
+-	.bInterfaceProtocol =3D	USB_PR_CB,
+-	.iInterface =3D		STRINGID_INTERFACE,
+-};
+-
+ #define MAX_PACKET_SIZE_FS 64
+ #define MAX_PACKET_SIZE_HS 512
+=20
+-/* Full speed configurations are used for full-speed only devices as
+- * well as dual-speed ones (the only kind with high speed support).
+- */
+-static struct usb_endpoint_descriptor fs_source_desc =3D {
+-	.bLength =3D		USB_DT_ENDPOINT_SIZE,
+-	.bDescriptorType =3D	USB_DT_ENDPOINT,
+-
+-	.bmAttributes =3D		USB_ENDPOINT_XFER_BULK,
+-	/* NOTE some controllers may need FS bulk max packet size
+-	 * to be smaller.  it would be a chip-specific option.
+-	 */
+-	.wMaxPacketSize =3D	__constant_cpu_to_le16(MAX_PACKET_SIZE_FS),
+-};
+-
+-static struct usb_endpoint_descriptor fs_sink_desc =3D {
+-	.bLength =3D		USB_DT_ENDPOINT_SIZE,
+-	.bDescriptorType =3D	USB_DT_ENDPOINT,
+-
+-	.bmAttributes =3D		USB_ENDPOINT_XFER_BULK,
+-	.wMaxPacketSize =3D	__constant_cpu_to_le16(MAX_PACKET_SIZE_FS),
+-};
+-
+ /* some devices can handle other status packet sizes */
+ #define STATUS_MAXPACKET	8
+-//#define	LOG2_STATUS_POLL_MSEC	3
+-
+-static struct usb_endpoint_descriptor fs_status_desc =3D {
+-	.bLength =3D		USB_DT_ENDPOINT_SIZE,
+-	.bDescriptorType =3D	USB_DT_ENDPOINT,
+-
+-	.bmAttributes =3D		USB_ENDPOINT_XFER_INT,
+-	.wMaxPacketSize =3D	__constant_cpu_to_le16(STATUS_MAXPACKET),
+-//	.bInterval =3D		(1 &lt;&lt; LOG2_STATUS_POLL_MSEC),
+-	.bInterval =3D		10,
+-};
+-
+-static const struct usb_endpoint_descriptor *fs_eps[] =3D {
+-	&amp;fs_source_desc,
+-	&amp;fs_sink_desc,
+-	&amp;fs_status_desc,
+-};
+=20
++/******************** Little Endian Handling *****************************=
+***/
+=20
+-/* High speed configurations are used only in addition to a full-speed
+- * ones ... since all high speed devices support full speed configs.
+- * Of course, not all hardware supports high speed configurations.
+- */
+-
+-static struct usb_endpoint_descriptor hs_source_desc =3D {
+-	.bLength =3D		USB_DT_ENDPOINT_SIZE,
+-	.bDescriptorType =3D	USB_DT_ENDPOINT,
++#define cpu_to_le16(x)  htole16(x)
++#define cpu_to_le32(x)  htole32(x)
++#define le32_to_cpu(x)  le32toh(x)
++#define le16_to_cpu(x)  le16toh(x)
+=20
+-	.bmAttributes =3D		USB_ENDPOINT_XFER_BULK,
+-	.wMaxPacketSize =3D	__constant_cpu_to_le16(MAX_PACKET_SIZE_HS),
+-};
++static inline __u16 get_unaligned_le16(const void *_ptr)
++{
++	const __u8 *ptr =3D _ptr;
++	return ptr[0] | (ptr[1] &lt;&lt; 8);
++}
+=20
+-static struct usb_endpoint_descriptor hs_sink_desc =3D {
+-	.bLength =3D		USB_DT_ENDPOINT_SIZE,
+-	.bDescriptorType =3D	USB_DT_ENDPOINT,
++static inline __u32 get_unaligned_le32(const void *_ptr)
++{
++	const __u8 *ptr =3D _ptr;
++	return ptr[0] | (ptr[1] &lt;&lt; 8) | (ptr[2] &lt;&lt; 16) | (ptr[3] &lt;=
+&lt; 24);
++}
+=20
+-	.bmAttributes =3D		USB_ENDPOINT_XFER_BULK,
+-	.wMaxPacketSize =3D	__constant_cpu_to_le16(MAX_PACKET_SIZE_HS),
+-};
++static inline void put_unaligned_le16(__u16 val, void *_ptr)
++{
++	__u8 *ptr =3D _ptr;
++	*ptr++ =3D val;
++	*ptr++ =3D val &gt;&gt; 8;
++}
+=20
+-static struct usb_endpoint_descriptor hs_status_desc =3D {
+-	.bLength =3D		USB_DT_ENDPOINT_SIZE,
+-	.bDescriptorType =3D	USB_DT_ENDPOINT,
++static inline void put_unaligned_le32(__u32 val, void *_ptr)
++{
++	__u8 *ptr =3D _ptr;
++	*ptr++ =3D val;
++	*ptr++ =3D val &gt;&gt;  8;
++	*ptr++ =3D val &gt;&gt; 16;
++	*ptr++ =3D val &gt;&gt; 24;
++}
+=20
+-	.bmAttributes =3D		USB_ENDPOINT_XFER_INT,
+-	.wMaxPacketSize =3D	__constant_cpu_to_le16(STATUS_MAXPACKET),
+-//	.bInterval =3D		LOG2_STATUS_POLL_MSEC + 3,
+-	.bInterval =3D		10,
++/******************** Descriptors and Strings ****************************=
+***/
++
++static const struct {
++	struct usb_functionfs_descs_head header;
++	struct {
++		struct usb_interface_descriptor intf;
++		struct usb_endpoint_descriptor_no_audio source;
++		struct usb_endpoint_descriptor_no_audio sink;
++		struct usb_endpoint_descriptor_no_audio status;
++	} __attribute__((packed)) fs_descs, hs_descs;
++} __attribute__((packed)) descriptors =3D {
++	.header =3D {
++		.magic =3D cpu_to_le32(FUNCTIONFS_DESCRIPTORS_MAGIC),
++		.length =3D cpu_to_le32(sizeof descriptors),
++		.fs_count =3D 4,
++		.hs_count =3D 4,
++	},
++	.fs_descs =3D {
++		.intf =3D {
++			.bLength =3D sizeof descriptors.fs_descs.intf,
++			.bDescriptorType =3D USB_DT_INTERFACE,
++			.bNumEndpoints =3D 3,
++
++			.bInterfaceClass =3D USB_CLASS_STILL_IMAGE,
++			.bInterfaceSubClass =3D USB_SC_IMAGE_CAPTURE,
++			.bInterfaceProtocol =3D USB_PR_CB,
++			.iInterface =3D 1, /* first string from the provided table */
++		},
++		.source =3D {
++			.bLength =3D sizeof descriptors.fs_descs.source,
++			.bDescriptorType =3D USB_DT_ENDPOINT,
++			.bEndpointAddress =3D 1 | USB_DIR_OUT,
++			.bmAttributes =3D USB_ENDPOINT_XFER_BULK,
++			.wMaxPacketSize =3D MAX_PACKET_SIZE_FS,
++		},
++		.sink =3D {
++			.bLength =3D sizeof descriptors.fs_descs.sink,
++			.bDescriptorType =3D USB_DT_ENDPOINT,
++			.bEndpointAddress =3D 2 | USB_DIR_IN,
++			.bmAttributes =3D USB_ENDPOINT_XFER_BULK,
++			.wMaxPacketSize =3D MAX_PACKET_SIZE_FS,
++		},
++		.status =3D {
++			.bLength =3D sizeof descriptors.fs_descs.status,
++			.bDescriptorType =3D USB_DT_ENDPOINT,
++			.bEndpointAddress =3D 3 | USB_DIR_IN,
++			.bmAttributes =3D USB_ENDPOINT_XFER_INT,
++			.bInterval =3D 10,
++			.wMaxPacketSize =3D __constant_cpu_to_le16(STATUS_MAXPACKET),
++		},
++	},
++	.hs_descs =3D {
++		.intf =3D {
++			.bLength =3D sizeof descriptors.hs_descs.intf,
++			.bDescriptorType =3D USB_DT_INTERFACE,
++			.bNumEndpoints =3D 3,
++
++			.bInterfaceClass =3D USB_CLASS_STILL_IMAGE,
++			.bInterfaceSubClass =3D USB_SC_IMAGE_CAPTURE,
++			.bInterfaceProtocol =3D USB_PR_CB,
++			.iInterface =3D 1, /* first string from the provided table */
++		},
++		.source =3D {
++			.bLength =3D sizeof descriptors.hs_descs.source,
++			.bDescriptorType =3D USB_DT_ENDPOINT,
++			.bEndpointAddress =3D 1 | USB_DIR_OUT,
++			.bmAttributes =3D USB_ENDPOINT_XFER_BULK,
++			.wMaxPacketSize =3D MAX_PACKET_SIZE_HS,
++		},
++		.sink =3D {
++			.bLength =3D sizeof descriptors.hs_descs.sink,
++			.bDescriptorType =3D USB_DT_ENDPOINT,
++			.bEndpointAddress =3D 2 | USB_DIR_IN,
++			.bmAttributes =3D USB_ENDPOINT_XFER_BULK,
++			.wMaxPacketSize =3D MAX_PACKET_SIZE_HS,
++		},
++		.status =3D {
++			.bLength =3D sizeof descriptors.hs_descs.status,
++			.bDescriptorType =3D USB_DT_ENDPOINT,
++			.bEndpointAddress =3D 3 | USB_DIR_IN,
++			.bmAttributes =3D USB_ENDPOINT_XFER_INT,
++			.bInterval =3D 10,
++			.wMaxPacketSize =3D __constant_cpu_to_le16(STATUS_MAXPACKET),
++		},
++	},
+ };
+=20
+-static const struct usb_endpoint_descriptor *hs_eps[] =3D {
+-	&amp;hs_source_desc,
+-	&amp;hs_sink_desc,
+-	&amp;hs_status_desc,
++#define STR_INTERFACE_ "PTP Interface"
++
++static const struct {
++	struct usb_functionfs_strings_head header;
++	struct {
++		__le16 code;
++		const char str1[sizeof STR_INTERFACE_];
++	} __attribute__((packed)) lang0;
++} __attribute__((packed)) strings =3D {
++	.header =3D {
++		.magic =3D cpu_to_le32(FUNCTIONFS_STRINGS_MAGIC),
++		.length =3D cpu_to_le32(sizeof strings),
++		.str_count =3D cpu_to_le32(1),
++		.lang_count =3D cpu_to_le32(1),
++	},
++	.lang0 =3D {
++		cpu_to_le16(0x0409), /* en-us */
++		STR_INTERFACE_,
++	},
+ };
+=20
+-/*------------------------------------------------------------------------=
+-*/
++#define STR_INTERFACE strings.lang0.str1
+=20
++/******************** Descriptors and Strings ****************************=
+***/
+=20
+ static char driver_mfgr[64];
+=20
+-static struct usb_string stringtab[] =3D {
+-	{ STRINGID_MFGR,	driver_mfgr, },
+-	{ STRINGID_PRODUCT,	DRIVER_PRODUCT, },
+-	{ STRINGID_CONFIG,	DRIVER_CONFIG, },
+-	{ STRINGID_INTERFACE,	DRIVER_INTERFACE, },
+-};
+-
+-static struct usb_gadget_strings strings =3D {
+-	.language =3D	0x0409,		/* "en-us" */
+-	.strings =3D	stringtab,
+-};
+-
+ /*------------------------------------------------------------------------=
+-*/
+=20
+ /* kernel drivers could autoconfigure like this too ... if
+@@ -237,8 +240,6 @@ static char	*EP_IN_NAME, *EP_OUT_NAME, *EP_STATUS_NAME;
+  */
+ #define	USB_BUFSIZE	(7 * 1024)
+=20
+-static enum usb_device_speed current_speed;
+-
+ #define CHECK_COUNT(cnt, min, max, op) do {			\
+ 	if (cnt &amp; 3 || cnt &lt; min || cnt &gt; max) {		\
+ 		fprintf(stderr, "Wrong " op " size: %u\n",	\
+@@ -585,294 +586,33 @@ static int autoconfig(void)
+ 	struct utsname	uts;
+ 	int ret;
+=20
+-	/* NetChip 2280 PCI device or dummy_hcd, high/full speed */
+-	if (stat(DEVNAME =3D "net2280", &amp;statb) =3D=3D 0 ||
+-			stat(DEVNAME =3D "dummy_udc", &amp;statb) =3D=3D 0) {
+-		HIGHSPEED =3D 1;
+-
+-		fs_source_desc.bEndpointAddress
+-			=3D hs_source_desc.bEndpointAddress
+-			=3D USB_DIR_IN | 7;
+-		EP_IN_NAME =3D "ep-a";
+-		fs_sink_desc.bEndpointAddress =3D hs_sink_desc.bEndpointAddress
+-			=3D USB_DIR_OUT | 3;
+-		EP_OUT_NAME =3D "ep-b";
+-
+-		source_sink_intf.bNumEndpoints =3D 3;
+-		fs_status_desc.bEndpointAddress
+-			=3D hs_status_desc.bEndpointAddress
+-			=3D USB_DIR_IN | 11;
+-		EP_STATUS_NAME =3D "ep-f";
+-
+-	/* Intel PXA 2xx processor, full speed only */
+-	} else if (stat(DEVNAME =3D "pxa2xx_udc", &amp;statb) =3D=3D 0) {
+-		HIGHSPEED =3D 0;
+-
+-		fs_source_desc.bEndpointAddress =3D USB_DIR_IN | 6;
+-		EP_IN_NAME =3D "ep6in-bulk";
+-		fs_sink_desc.bEndpointAddress =3D USB_DIR_OUT | 7;
+-		EP_OUT_NAME =3D "ep7out-bulk";
+-
+-		/* using bulk for this since the pxa interrupt endpoints
+-		 * always use the no-toggle scheme (discouraged).
+-		 */
+-		source_sink_intf.bNumEndpoints =3D 3;
+-		fs_status_desc.bEndpointAddress =3D USB_DIR_IN | 11;
+-		EP_STATUS_NAME =3D "ep11in-bulk";
+-#if 0
+-	/* AMD au1x00 processor, full speed only */
+-	} else if (stat(DEVNAME =3D "au1x00_udc", &amp;statb) =3D=3D 0) {
+-		HIGHSPEED =3D 0;
+-
+-		fs_source_desc.bEndpointAddress =3D USB_DIR_IN | 2;
+-		EP_IN_NAME =3D "ep2in";
+-		fs_sink_desc.bEndpointAddress =3D USB_DIR_OUT | 4;
+-		EP_OUT_NAME =3D "ep4out";
+-
+-		source_sink_intf.bNumEndpoints =3D 3;
+-		fs_status_desc.bEndpointAddress =3D USB_DIR_IN | 3;
+-		EP_STATUS_NAME =3D "ep3in";
+-
+-	/* Intel SA-1100 processor, full speed only */
+-	} else if (stat(DEVNAME =3D "sa1100", &amp;statb) =3D=3D 0) {
+-		HIGHSPEED =3D 0;
+-
+-		fs_source_desc.bEndpointAddress =3D USB_DIR_IN | 2;
+-		EP_IN_NAME =3D "ep2in-bulk";
+-		fs_sink_desc.bEndpointAddress =3D USB_DIR_OUT | 1;
+-		EP_OUT_NAME =3D "ep1out-bulk";
+-
+-		source_sink_intf.bNumEndpoints =3D 2;
+-		EP_STATUS_NAME =3D 0;
+-#endif
+-
+-	/* Toshiba TC86c001 PCI device, full speed only */
+-	} else if (stat(DEVNAME =3D "goku_udc", &amp;statb) =3D=3D 0) {
+-		HIGHSPEED =3D 0;
+-
+-		fs_source_desc.bEndpointAddress =3D USB_DIR_IN | 2;
+-		EP_IN_NAME =3D "ep2-bulk";
+-		fs_sink_desc.bEndpointAddress =3D USB_DIR_OUT | 1;
+-		EP_OUT_NAME =3D "ep1-bulk";
+-
+-		source_sink_intf.bNumEndpoints =3D 3;
+-		fs_status_desc.bEndpointAddress =3D USB_DIR_IN | 3;
+-		EP_STATUS_NAME =3D "ep3-bulk";
+-
+-	/* Renesas SH77xx processors, full speed only */
+-	} else if (stat(DEVNAME =3D "sh_udc", &amp;statb) =3D=3D 0) {
+-		HIGHSPEED =3D 0;
+-
+-		fs_source_desc.bEndpointAddress =3D USB_DIR_IN | 2;
+-		EP_IN_NAME =3D "ep2in-bulk";
+-		fs_sink_desc.bEndpointAddress =3D USB_DIR_OUT | 1;
+-		EP_OUT_NAME =3D "ep1out-bulk";
+-
+-		source_sink_intf.bNumEndpoints =3D 3;
+-		fs_status_desc.bEndpointAddress =3D USB_DIR_IN | 3;
+-		EP_STATUS_NAME =3D "ep3in-bulk";
+-
+-	/* OMAP 1610 and newer devices, full speed only, fifo mode 0 or 3 */
+-	} else if (stat(DEVNAME =3D "omap_udc", &amp;statb) =3D=3D 0) {
+-		HIGHSPEED =3D 0;
+-
+-		fs_source_desc.bEndpointAddress =3D USB_DIR_IN | 1;
+-		EP_IN_NAME =3D "ep1in-bulk";
+-		fs_sink_desc.bEndpointAddress =3D USB_DIR_OUT | 2;
+-		EP_OUT_NAME =3D "ep2out-bulk";
+-
+-		source_sink_intf.bNumEndpoints =3D 3;
+-		fs_status_desc.bEndpointAddress =3D USB_DIR_IN | 3;
+-		EP_STATUS_NAME =3D "ep3in-int";
+-
+-	/* Something based on Mentor USB Highspeed Dual-Role Controller */
+-	} else if (stat(DEVNAME =3D "musb_hdrc", &amp;statb) =3D=3D 0) {
+-		HIGHSPEED =3D 1;
+-
+-		fs_source_desc.bEndpointAddress
+-			=3D hs_source_desc.bEndpointAddress
+-			=3D USB_DIR_IN | 1;
+-		EP_IN_NAME =3D "ep1in";
+-		fs_sink_desc.bEndpointAddress =3D hs_sink_desc.bEndpointAddress
+-			=3D USB_DIR_OUT | 1;
+-		EP_OUT_NAME =3D "ep1out";
+-
+-		source_sink_intf.bNumEndpoints =3D 3;
+-		fs_status_desc.bEndpointAddress
+-			=3D hs_status_desc.bEndpointAddress
+-			=3D USB_DIR_IN | 3;
+-		EP_STATUS_NAME =3D "ep3in";
+-
+-	/* Atmel AT91 processors, full speed only */
+-	} else if (stat(DEVNAME =3D "at91_udc", &amp;statb) =3D=3D 0) {
+-		HIGHSPEED =3D 0;
+-
+-		fs_source_desc.bEndpointAddress =3D USB_DIR_IN | 1;
+-		EP_IN_NAME =3D "ep1";
+-		fs_sink_desc.bEndpointAddress =3D USB_DIR_OUT | 2;
+-		EP_OUT_NAME =3D "ep2";
+-
+-		source_sink_intf.bNumEndpoints =3D 3;
+-		fs_status_desc.bEndpointAddress =3D USB_DIR_IN | 3;
+-		EP_STATUS_NAME =3D "ep3-int";
+-
+-	/* Sharp LH740x processors, full speed only */
+-	} else if (stat(DEVNAME =3D "lh740x_udc", &amp;statb) =3D=3D 0) {
+-		HIGHSPEED =3D 0;
+-
+-		fs_source_desc.bEndpointAddress =3D USB_DIR_IN | 1;
+-		EP_IN_NAME =3D "ep1in-bulk";
+-		fs_sink_desc.bEndpointAddress =3D USB_DIR_OUT | 2;
+-		EP_OUT_NAME =3D "ep2out-bulk";
+-
+-		source_sink_intf.bNumEndpoints =3D 3;
+-		fs_status_desc.bEndpointAddress =3D USB_DIR_IN | 3;
+-		EP_STATUS_NAME =3D "ep3in-int";
+-
+-	/* Atmel AT32AP700x processors, high/full speed */
+-	} else if (stat(DEVNAME =3D "atmel_usba_udc", &amp;statb) =3D=3D 0) {
+-		HIGHSPEED =3D 1;
+-
+-		fs_source_desc.bEndpointAddress
+-			=3D hs_source_desc.bEndpointAddress
+-			=3D USB_DIR_IN | 1;
+-		EP_IN_NAME =3D "ep1in-bulk";
+-		fs_sink_desc.bEndpointAddress
+-			=3D hs_sink_desc.bEndpointAddress
+-			=3D USB_DIR_OUT | 2;
+-		EP_OUT_NAME =3D "ep2out-bulk";
+-
+-		source_sink_intf.bNumEndpoints =3D 3;
+-		fs_status_desc.bEndpointAddress
+-			=3D hs_status_desc.bEndpointAddress
+-			=3D USB_DIR_IN | 3;
+-		EP_STATUS_NAME =3D "ep3in-int";
+-
+-	/* Freescale i.MX31 SoC, high/full speed */
+-	} else if (stat(DEVNAME =3D "fsl-usb2-udc", &amp;statb) =3D=3D 0) {
+-		HIGHSPEED =3D 1;
+-
+-		fs_source_desc.bEndpointAddress
+-			=3D hs_source_desc.bEndpointAddress
+-			=3D USB_DIR_IN | 1;
+-		EP_IN_NAME =3D "ep1in";
+-		fs_sink_desc.bEndpointAddress
+-			=3D hs_sink_desc.bEndpointAddress
+-			=3D USB_DIR_OUT | 1;
+-		EP_OUT_NAME =3D "ep1out";
+-
+-		source_sink_intf.bNumEndpoints =3D 3;
+-		fs_status_desc.bEndpointAddress
+-			=3D hs_status_desc.bEndpointAddress
+-			=3D USB_DIR_IN | 2;
+-		EP_STATUS_NAME =3D "ep2in";
+-	} else if (stat(DEVNAME =3D "arc_udc", &amp;statb) =3D=3D 0) {
++	if (stat(DEVNAME =3D "ep0", &amp;statb) =3D=3D 0) {
+ 		HIGHSPEED =3D 1;
+-
+-		fs_source_desc.bEndpointAddress
+-			=3D hs_source_desc.bEndpointAddress
+-			=3D USB_DIR_IN | 1;
+-		EP_IN_NAME =3D "ep1in";
+-		fs_sink_desc.bEndpointAddress
+-			=3D hs_sink_desc.bEndpointAddress
+-			=3D USB_DIR_OUT | 1;
+-		EP_OUT_NAME =3D "ep1out";
+-
+-		source_sink_intf.bNumEndpoints =3D 3;
+-		fs_status_desc.bEndpointAddress
+-			=3D hs_status_desc.bEndpointAddress
+-			=3D USB_DIR_IN | 2;
+-		EP_STATUS_NAME =3D "ep2in";
++		EP_OUT_NAME =3D "ep1";
++		EP_IN_NAME =3D "ep2";
++		EP_STATUS_NAME =3D "ep3";
+ 	} else {
+ 		DEVNAME =3D 0;
+ 		return -ENODEV;
+ 	}
+=20
+ 	ret =3D uname(&amp;uts);
+-	snprintf(driver_mfgr, sizeof(driver_mfgr), DRIVER_MFGR " %s with %s",
+-		 ret ? "unknown" : uts.release, DEVNAME);
++	snprintf(driver_mfgr, sizeof(driver_mfgr), "PTP Interface %s with %s",
++		 ret ? "unknown" : uts.release, "functionfs");
+=20
+ 	return 0;
+ }
+=20
+ /*------------------------------------------------------------------------=
+-*/
+=20
+-/* you should be able to open and configure endpoints
+- * whether or not the host is connected
+- */
+-static int ep_config(char *name,
+-		     struct usb_endpoint_descriptor *fs,
+-		     struct usb_endpoint_descriptor *hs)
+-{
+-	int	fd, err;
+-	char	buf[USB_BUFSIZE];
+-
+-	/* open and initialize with endpoint descriptor(s) */
+-	fd =3D open(name, O_RDWR);
+-	if (fd &lt; 0) {
+-		err =3D -errno;
+-		fprintf(stderr, "open %s error %d (%s)\n",
+-			name, errno, strerror(errno));
+-		return err;
+-	}
+-
+-	/* one (fs or ls) or two (fs + hs) sets of config descriptors */
+-	*(uint32_t *)buf =3D 1;	/* tag for this format */
+-	memcpy(buf + 4, fs, USB_DT_ENDPOINT_SIZE);
+-	if (HIGHSPEED)
+-		memcpy(buf + 4 + USB_DT_ENDPOINT_SIZE,
+-			hs, USB_DT_ENDPOINT_SIZE);
+-	err =3D write(fd, buf, 4 + USB_DT_ENDPOINT_SIZE
+-			+ (HIGHSPEED ? USB_DT_ENDPOINT_SIZE : 0));
+-	if (err &lt; 0) {
+-		err =3D -errno;
+-		fprintf(stderr, "config %s error %d (%s)\n",
+-			name, errno, strerror(errno));
+-		close(fd);
+-		return err;
+-	} else if (verbose)
+-		fprintf(stderr, "%s start fd %d\n", name, fd);
+-
+-	return fd;
+-}
+-
+-#define source_open(name) \
+-	ep_config(name, &amp;fs_source_desc, &amp;hs_source_desc)
+-#define sink_open(name) \
+-	ep_config(name, &amp;fs_sink_desc, &amp;hs_sink_desc)
+-#define int_open(name) \
+-	ep_config(name, &amp;fs_status_desc, &amp;hs_status_desc)
+-
+-/*------------------------------------------------------------------------=
+-*/
+-
+-static char *build_config(char *cp, const struct usb_endpoint_descriptor *=
+*ep)
+-{
+-	struct usb_config_descriptor *c;
+-	int i;
+-
+-	c =3D (struct usb_config_descriptor *)cp;
+-
+-	memcpy(cp, &amp;config, config.bLength);
+-	cp +=3D config.bLength;
+-	memcpy(cp, &amp;source_sink_intf, source_sink_intf.bLength);
+-	cp +=3D source_sink_intf.bLength;
+-
+-	for (i =3D 0; i &lt; source_sink_intf.bNumEndpoints; i++) {
+-		memcpy(cp, ep[i], USB_DT_ENDPOINT_SIZE);
+-		cp +=3D USB_DT_ENDPOINT_SIZE;
+-	}
+-	c-&gt;wTotalLength =3D __cpu_to_le16(cp - (char *)c);
+-	return cp;
+-}
+-
+ static void init_device(void)
+ {
+-	char		buf[4096], *cp =3D buf;
+ 	int		err;
++	ssize_t ret;
+=20
+ 	err =3D autoconfig();
+ 	if (err &lt; 0) {
+-		fprintf(stderr, "?? don't recognize /dev/gadget bulk device\n");
++		fprintf(stderr, "?? don't recognize /dev/usbffs bulk device\n");
+ 		control =3D err;
+ 		return;
+ 	}
+@@ -884,42 +624,21 @@ static void init_device(void)
+ 		return;
+ 	}
+=20
+-	*(uint32_t *)cp =3D 0;	/* tag for this format */
+-	cp +=3D 4;
+-
+-	/* write full then high speed configs */
+-	cp =3D build_config(cp, fs_eps);
+-	if (HIGHSPEED)
+-		cp =3D build_config(cp, hs_eps);
+-
+-	/* and device descriptor at the end */
+-	memcpy(cp, &amp;device_desc, sizeof device_desc);
+-	cp +=3D sizeof device_desc;
+-
+-	err =3D write(control, buf, cp - buf);
+-	if (err &lt; 0) {
+-		perror("write dev descriptors");
+-		close(control);
+-		control =3D -errno;
+-		return;
+-	} else if (err !=3D cp - buf) {
+-		fprintf(stderr, "dev init, wrote %d expected %d\n",
+-				err, cp - buf);
+-		close(control);
+-		control =3D -errno;
+-		return;
++	fprintf(stderr, "%s: writing descriptors\n", DEVNAME);
++	ret =3D write(control, &amp;descriptors, sizeof descriptors);
++	if (ret &lt; 0) {
++		fprintf(stderr, "%s: write: descriptors", DEVNAME);
++		control =3D err;
+ 	}
+-	return;
+-}
+=20
+-static const char *speed(enum usb_device_speed s)
+-{
+-	switch (s) {
+-	case USB_SPEED_LOW:	return "low speed";
+-	case USB_SPEED_FULL:	return "full speed";
+-	case USB_SPEED_HIGH:	return "high speed";
+-	default:		return "UNKNOWN speed";
++	fprintf(stderr, "%s: writing strings\n", DEVNAME);
++	ret =3D write(control, &amp;strings, sizeof strings);
++	if(ret &lt; 0) {
++		fprintf(stderr, "%s: write: strings", DEVNAME);
++		control =3D err;
+ 	}
++
++	return;
+ }
+=20
+ /*------------------------------------------------------------------------=
+-*/
+@@ -1620,18 +1339,18 @@ static int start_io(void)
+ 	if (bulk_in &gt;=3D 0 &amp;&amp; bulk_out &gt;=3D 0)
+ 		return 0;
+=20
+-	snprintf(buf, sizeof(buf), "/dev/gadget/%s", EP_IN_NAME);
+-	bulk_in =3D source_open(buf);
++	snprintf(buf, sizeof(buf), "/dev/usbffs/%s", EP_IN_NAME);
++	bulk_in =3D open(buf, O_RDWR);
+ 	if (bulk_in &lt; 0)
+ 		return bulk_in;
+=20
+-	snprintf(buf, sizeof(buf), "/dev/gadget/%s", EP_OUT_NAME);
+-	bulk_out =3D sink_open(buf);
++	snprintf(buf, sizeof(buf), "/dev/usbffs/%s", EP_OUT_NAME);
++	bulk_out =3D open(buf, O_RDWR);
+ 	if (bulk_out &lt; 0)
+ 		return bulk_out;
+=20
+-	snprintf(buf, sizeof(buf), "/dev/gadget/%s", EP_STATUS_NAME);
+-	interrupt =3D int_open(buf);
++	snprintf(buf, sizeof(buf), "/dev/usbffs/%s", EP_STATUS_NAME);
++	interrupt =3D open(buf, O_RDWR);
+ 	if (interrupt &lt; 0)
+ 		return interrupt;
+=20
+@@ -1678,11 +1397,11 @@ static int reset_interface(void)
+=20
+ 	pthread_kill(bulk_pthread, SIGINT);
+=20
+-	err =3D ioctl(bulk_in, GADGETFS_CLEAR_HALT);
++	err =3D ioctl(bulk_in, FUNCTIONFS_CLEAR_HALT);
+ 	if (err &lt; 0)
+ 		perror("reset source fd");
+=20
+-	err =3D ioctl(bulk_out, GADGETFS_CLEAR_HALT);
++	err =3D ioctl(bulk_out, FUNCTIONFS_CLEAR_HALT);
+ 	if (err &lt; 0)
+ 		perror("reset sink fd");
+=20
+@@ -1694,9 +1413,9 @@ static int reset_interface(void)
+ 	return 0;
+ }
+=20
+-static void handle_control(struct usb_ctrlrequest *setup)
++static void handle_control(const struct usb_ctrlrequest *setup)
+ {
+-	int		err, tmp;
++	int		err;
+ 	uint8_t		buf[256];
+ 	uint16_t	value, index, length;
+=20
+@@ -1716,108 +1435,6 @@ static void handle_control(struct usb_ctrlrequest *=
+setup)
+ 	*/
+=20
+ 	switch (setup-&gt;bRequest) {	/* usb 2.0 spec ch9 requests */
+-	case USB_REQ_GET_DESCRIPTOR:
+-		if (setup-&gt;bRequestType !=3D USB_DIR_IN)
+-			goto stall;
+-		switch (value &gt;&gt; 8) {
+-		case USB_DT_STRING:
+-			tmp =3D value &amp; 0xff;
+-			if (verbose &gt; 1)
+-				fprintf(stderr,
+-					"... get string %d lang %04x\n",
+-					tmp, index);
+-			if (tmp !=3D 0 &amp;&amp; index !=3D strings.language)
+-				goto stall;
+-			err =3D usb_gadget_get_string(&amp;strings, tmp, buf);
+-			if (err &lt; 0)
+-				goto stall;
+-			tmp =3D err;
+-			if (length &lt; tmp)
+-				tmp =3D length;
+-			err =3D write(control, buf, tmp);
+-			if (err &lt; 0) {
+-				if (errno =3D=3D EIDRM)
+-					fprintf(stderr, "string timeout\n");
+-				else
+-					perror("write string data");
+-			} else if (err !=3D tmp) {
+-				fprintf(stderr, "short string write, %d\n",
+-					err);
+-			}
+-			break;
+-		default:
+-			goto stall;
+-		}
+-		return;
+-	case USB_REQ_SET_CONFIGURATION:
+-		if (setup-&gt;bRequestType !=3D USB_DIR_OUT)
+-			goto stall;
+-		if (verbose)
+-			fprintf(stderr, "CONFIG #%d\n", value);
+-
+-		/* Kernel is normally waiting for us to finish reconfiguring
+-		 * the device.
+-		 *
+-		 * Some hardware can't, notably older PXA2xx hardware.  (With
+-		 * racey and restrictive config change automagic.  PXA 255 is
+-		 * OK, most PXA 250s aren't.  If it has a UDC CFR register,
+-		 * it can handle deferred response for SET_CONFIG.)  To handle
+-		 * such hardware, don't write code this way ... instead, keep
+-		 * the endpoints always active and don't rely on seeing any
+-		 * config change events, either this or SET_INTERFACE.
+-		 */
+-		switch (value) {
+-		case CONFIG_VALUE:
+-			start_io();
+-			break;
+-		case 0:
+-			stop_io();
+-			break;
+-		default:
+-			/* kernel bug -- "can't happen" */
+-			fprintf(stderr, "? illegal config\n");
+-			goto stall;
+-		}
+-
+-		/* ... ack (a write would stall) */
+-		err =3D read(control, &amp;err, 0);
+-		if (err)
+-			perror("ack SET_CONFIGURATION");
+-		return;
+-	case USB_REQ_GET_INTERFACE:
+-		if (setup-&gt;bRequestType !=3D (USB_DIR_IN|USB_RECIP_INTERFACE)
+-				|| index !=3D 0
+-				|| length &gt; 1)
+-			goto stall;
+-
+-		/* only one altsetting in this driver */
+-		buf[0] =3D 0;
+-		err =3D write(control, buf, length);
+-		if (err &lt; 0) {
+-			if (errno =3D=3D EIDRM)
+-				fprintf(stderr, "GET_INTERFACE timeout\n");
+-			else
+-				perror("write GET_INTERFACE data");
+-		} else if (err !=3D length) {
+-			fprintf(stderr, "short GET_INTERFACE write, %d\n",
+-				err);
+-		}
+-		return;
+-	case USB_REQ_SET_INTERFACE:
+-		if (setup-&gt;bRequestType !=3D USB_RECIP_INTERFACE
+-				|| index !=3D 0
+-				|| value !=3D 0)
+-			goto stall;
+-
+-		err =3D reset_interface();
+-		if (err)
+-			goto stall;
+-
+-		/* ... and ack (a write would stall) */
+-		err =3D read(control, &amp;err, 0);
+-		if (err)
+-			perror("ack SET_INTERFACE");
+-		return;
+ 	/* Still Image class-specific requests */
+ 	case USB_REQ_PTP_CANCEL_REQUEST:
+ 		return;
+@@ -1826,7 +1443,6 @@ static void handle_control(struct usb_ctrlrequest *se=
+tup)
+ 		goto stall;
+ 	case USB_REQ_PTP_DEVICE_RESET_REQUEST:
+ 		if (setup-&gt;bRequestType !=3D 0x21
+-				|| index !=3D 0
+ 				|| value !=3D 0)
+ 			goto stall;
+=20
+@@ -1834,6 +1450,9 @@ static void handle_control(struct usb_ctrlrequest *se=
+tup)
+ 		if (err)
+ 			goto stall;
+=20
++		/* reset session */
++		session =3D -EINVAL;
++
+ 		/* ... and ack (a write would stall) */
+ 		err =3D read(control, &amp;err, 0);
+ 		if (err)
+@@ -1841,7 +1460,6 @@ static void handle_control(struct usb_ctrlrequest *se=
+tup)
+ 		return;
+ 	case USB_REQ_PTP_GET_DEVICE_STATUS_REQUEST:
+ 		if (setup-&gt;bRequestType !=3D 0xa1
+-				|| index !=3D 0
+ 				|| value !=3D 0)
+ 			goto stall;
+ 		else {
+@@ -1882,7 +1500,16 @@ stall:
+=20
+ static int read_control(void)
+ {
+-	struct usb_gadgetfs_event event[NEVENT];
++	static const char *const names[] =3D {
++		[FUNCTIONFS_BIND] =3D "BIND",
++		[FUNCTIONFS_UNBIND] =3D "UNBIND",
++		[FUNCTIONFS_ENABLE] =3D "ENABLE",
++		[FUNCTIONFS_DISABLE] =3D "DISABLE",
++		[FUNCTIONFS_SETUP] =3D "SETUP",
++		[FUNCTIONFS_SUSPEND] =3D "SUSPEND",
++		[FUNCTIONFS_RESUME] =3D "RESUME",
++	};
++	const struct usb_functionfs_event event[NEVENT];
+ 	int i, nevent, ret;
+=20
+ 	ret =3D read(control, &amp;event, sizeof(event));
+@@ -1897,36 +1524,39 @@ static int read_control(void)
+ 	nevent =3D ret / sizeof event[0];
+=20
+ 	for (i =3D 0; i &lt; nevent; i++) {
++		fprintf(stderr, "Event %s\n", names[event-&gt;type]);
++
+ 		switch (event[i].type) {
+-		case GADGETFS_NOP:
+-			if (verbose)
+-				fprintf(stderr, "NOP\n");
+-			break;
+-		case GADGETFS_CONNECT:
++		case FUNCTIONFS_BIND:
+ 			if (status !=3D PTP_WAITCONFIG)
+ 				status =3D PTP_IDLE;
+-			current_speed =3D event[i].u.speed;
+-			if (verbose)
+-				fprintf(stderr,
+-					"CONNECT %s\n",
+-				    speed(event[i].u.speed));
+-			break;
+-		case GADGETFS_SETUP:
+-			if (status !=3D PTP_WAITCONFIG)
+-				status =3D PTP_IDLE;
+-			handle_control(&amp;event[i].u.setup);
+ 			break;
+-		case GADGETFS_DISCONNECT:
++
++		case FUNCTIONFS_UNBIND:
+ 			status =3D PTP_WAITCONFIG;
+-			current_speed =3D USB_SPEED_UNKNOWN;
+-			if (verbose)
+-				fprintf(stderr, "DISCONNECT\n");
+ 			break;
+-		case GADGETFS_SUSPEND:
+-			if (verbose)
+-				fprintf(stderr, "SUSPEND\n");
++
++		case FUNCTIONFS_ENABLE:
++			/* reset session */
++			session =3D -EINVAL;
++
++			/* fallback */
++
++		case FUNCTIONFS_RESUME:
++			start_io();
++                        break;
++
++		case FUNCTIONFS_SUSPEND:
++		case FUNCTIONFS_DISABLE:
+ 			stop_io();
+ 			break;
++
++		case FUNCTIONFS_SETUP:
++			if (status !=3D PTP_WAITCONFIG)
++				status =3D PTP_IDLE;
++			handle_control(&amp;event[i].u.setup);
++			break;
++
+ 		default:
+ 			fprintf(stderr,
+ 				"* unhandled event %d\n",
+@@ -1989,7 +1619,7 @@ static size_t put_string(iconv_t ic, char *buf, const=
+ char *s, size_t len)
+=20
+ 	ret =3D iconv(ic, &amp;in, &amp;inl, &amp;buf, &amp;outl);
+ 	if (inl || outl)
+-		fprintf(stdout, "iconv() error %d: %u input / %u output bytes left!\n",
++		fprintf(stderr, "iconv() error %d: %u input / %u output bytes left!\n",
+ 			errno, inl, outl);
+=20
+ 	return ret;
+@@ -2223,8 +1853,8 @@ int main(int argc, char *argv[])
+=20
+ 	enum_objects(root);
+=20
+-	if (chdir("/dev/gadget") &lt; 0) {
+-		perror("can't chdir /dev/gadget");
++	if (chdir("/dev/usbffs") &lt; 0) {
++		perror("can't chdir /dev/usbffs");
+ 		exit(EXIT_FAILURE);
+ 	}
+=20
+diff --git a/usbstring.c b/usbstring.c
+deleted file mode 100644
+index 993acc2..0000000
+--- a/usbstring.c
++++ /dev/null
+@@ -1,142 +0,0 @@
+-/*
+- * Copyright (C) 2003 David Brownell
+- *
+- * This program is free software; you can redistribute it and/or modify
+- * it under the terms of the GNU Lesser General Public License as publishe=
+d
+- * by the Free Software Foundation; either version 2.1 of the License, or
+- * (at your option) any later version.
+- */
+-
+-#include &lt;errno.h&gt;
+-#include &lt;string.h&gt;
+-
+-#include &lt;linux/types.h&gt;
+-#include &lt;linux/usb/ch9.h&gt;
+-
+-#include "usbstring.h"
+-
+-static inline void put_unaligned_le16(__u16 val, __u16 *cp)
+-{
+-	__u8	*p =3D (void *)cp;
+-
+-	*p++ =3D (__u8) val;
+-	*p++ =3D (__u8) (val &gt;&gt; 8);
+-}
+-
+-static int utf8_to_utf16le(const char *s, __u16 *cp, unsigned len)
+-{
+-	int	count =3D 0;
+-	__u8	c;
+-	__u16	uchar;
+-
+-	/* this insists on correct encodings, though not minimal ones.
+-	 * BUT it currently rejects legit 4-byte UTF-8 code points,
+-	 * which need surrogate pairs.  (Unicode 3.1 can use them.)
+-	 */
+-	while (len !=3D 0 &amp;&amp; (c =3D (__u8) *s++) !=3D 0) {
+-		if (c &amp; 0x80) {
+-			// 2-byte sequence:
+-			// 00000yyyyyxxxxxx =3D 110yyyyy 10xxxxxx
+-			if ((c &amp; 0xe0) =3D=3D 0xc0) {
+-				uchar =3D (c &amp; 0x1f) &lt;&lt; 6;
+-
+-				c =3D (__u8) *s++;
+-				if ((c &amp; 0xc0) !=3D 0xc0)
+-					goto fail;
+-				c &amp;=3D 0x3f;
+-				uchar |=3D c;
+-
+-			// 3-byte sequence (most CJKV characters):
+-			// zzzzyyyyyyxxxxxx =3D 1110zzzz 10yyyyyy 10xxxxxx
+-			} else if ((c &amp; 0xf0) =3D=3D 0xe0) {
+-				uchar =3D (c &amp; 0x0f) &lt;&lt; 12;
+-
+-				c =3D (__u8) *s++;
+-				if ((c &amp; 0xc0) !=3D 0xc0)
+-					goto fail;
+-				c &amp;=3D 0x3f;
+-				uchar |=3D c &lt;&lt; 6;
+-
+-				c =3D (__u8) *s++;
+-				if ((c &amp; 0xc0) !=3D 0xc0)
+-					goto fail;
+-				c &amp;=3D 0x3f;
+-				uchar |=3D c;
+-
+-				/* no bogus surrogates */
+-				if (0xd800 &lt;=3D uchar &amp;&amp; uchar &lt;=3D 0xdfff)
+-					goto fail;
+-
+-			// 4-byte sequence (surrogate pairs, currently rare):
+-			// 11101110wwwwzzzzyy + 110111yyyyxxxxxx
+-			//     =3D 11110uuu 10uuzzzz 10yyyyyy 10xxxxxx
+-			// (uuuuu =3D wwww + 1)
+-			// FIXME accept the surrogate code points (only)
+-
+-			} else
+-				goto fail;
+-		} else
+-			uchar =3D c;
+-		put_unaligned_le16 (uchar, cp++);
+-		count++;
+-		len--;
+-	}
+-	return count;
+-fail:
+-	return -1;
+-}
+-
+-
+-/**
+- * usb_gadget_get_string - fill out a string descriptor=20
+- * @table: of c strings encoded using UTF-8
+- * @id: string id, from low byte of wValue in get string descriptor
+- * @buf: at least 256 bytes
+- *
+- * Finds the UTF-8 string matching the ID, and converts it into a
+- * string descriptor in utf16-le.
+- * Returns length of descriptor (always even) or negative errno
+- *
+- * If your driver needs strings in multiple languages, you'll probably
+- * "switch (wIndex) { ... }"  in your ep0 string descriptor logic,
+- * using this routine after choosing which set of UTF-8 strings to use.
+- *
+- * Note that US-ASCII is a strict subset of UTF-8; any string bytes with
+- * the eighth bit set will be multibyte UTF-8 characters, not ISO-8859/1
+- * characters.
+- */
+-int
+-usb_gadget_get_string (struct usb_gadget_strings *table, int id, __u8 *buf=
+)
+-{
+-	struct usb_string	*s;
+-	int			len;
+-
+-	/* descriptor 0 has the language id */
+-	if (id =3D=3D 0) {
+-		buf [0] =3D 4;
+-		buf [1] =3D USB_DT_STRING;
+-		buf [2] =3D (__u8) table-&gt;language;
+-		buf [3] =3D (__u8) (table-&gt;language &gt;&gt; 8);
+-		return 4;
+-	}
+-	for (s =3D table-&gt;strings; s &amp;&amp; s-&gt;s; s++)
+-		if (s-&gt;id =3D=3D id)
+-			break;
+-
+-	/* unrecognized: stall. */
+-	if (!s || !s-&gt;s)
+-		return -EINVAL;
+-
+-	/* string descriptors have length, tag, then UTF16-LE text */
+-	len =3D strlen (s-&gt;s);
+-	if (len &gt; 126)
+-		len =3D 126;
+-	memset (buf + 2, 0, 2 * len);	/* zero all the bytes */
+-	len =3D utf8_to_utf16le(s-&gt;s, (__u16 *)&amp;buf[2], len);
+-	if (len &lt; 0)
+-		return -EINVAL;
+-	buf [0] =3D (len + 1) * 2;
+-	buf [1] =3D USB_DT_STRING;
+-	return buf [0];
+-}
+-
+diff --git a/usbstring.h b/usbstring.h
+deleted file mode 100644
+index 982bec4..0000000
+--- a/usbstring.h
++++ /dev/null
+@@ -1,38 +0,0 @@
+-/*
+- * (c) Copyright 2003 by David Brownell
+- * All Rights Reserved.
+- *
+- * This software is licensed under the GNU LGPL version 2.
+- */
+-
+-/* utility to simplify dealing with string descriptors */
+-
+-/**
+- * struct usb_string - wraps a C string and its USB id
+- * @id: the (nonzero) ID for this string
+- * @s: the string, in UTF-8 encoding
+- *
+- * If you're using usb_gadget_get_string(), use this to wrap a string
+- * together with its ID.
+- */
+-struct usb_string {
+-	__u8			id;
+-	const char		*s;
+-};
+-
+-/**
+- * struct usb_gadget_strings - a set of USB strings in a given language
+- * @language: identifies the strings' language (0x0409 for en-us)
+- * @strings: array of strings with their ids
+- *
+- * If you're using usb_gadget_get_string(), use this to wrap all the
+- * strings for a given language.
+- */
+-struct usb_gadget_strings {
+-	__u16			language;	/* 0x0409 for en-us */
+-	struct usb_string	*strings;
+-};
+-
+-/* put descriptor for string with that id into buf (buflen &gt;=3D 256) */
+-int usb_gadget_get_string (struct usb_gadget_strings *table, int id, __u8 =
+*buf);
+-
+--=20
+1.7.1.569.g6f426
+
+--
+To unsubscribe from this list: send the line "unsubscribe linux-usb" in
+the body of a message to majordomo@xxxxxxxxxxxxxxx
+More majordomo info at  <a rel=3D"nofollow" href=3D"http://vger.kernel.org/=
+majordomo-info.html">http://vger.kernel.org/majordomo-info.html</a>
+
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+</div>
+<hr>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<ul><li><strong>References</strong>:
+<ul>
+<li><strong><a name=3D"41962" href=3D"https://www.spinics.net/lists/linux-u=
+sb/msg41962.html">[PATCH] FunctionFS based PTP-Gadget driver</a></strong>
+<ul><li><em>From:</em> Marek Szyprowski</li></ul></li>
+</ul></li></ul>
+<!--X-References-End-->
+<!--X-BotPNI-->
+<ul>
+<li>Prev by Date:
+<strong><a href=3D"https://www.spinics.net/lists/linux-usb/msg41962.html">[=
+PATCH] FunctionFS based PTP-Gadget driver</a></strong>
+</li>
+<li>Next by Date:
+<strong><a href=3D"https://www.spinics.net/lists/linux-usb/msg41964.html">[=
+RFC] USB: gadget: f_mass_storage: limit page cache usage</a></strong>
+</li>
+<li>Previous by thread:
+<strong><a href=3D"https://www.spinics.net/lists/linux-usb/msg41962.html">[=
+PATCH] FunctionFS based PTP-Gadget driver</a></strong>
+</li>
+<li>Next by thread:
+<strong><a href=3D"https://www.spinics.net/lists/linux-usb/msg41969.html">R=
+e: [PATCH] FunctionFS based PTP-Gadget driver</a></strong>
+</li>
+<li>Index(es):
+<ul>
+<li><a href=3D"https://www.spinics.net/lists/linux-usb/mail253.html#41963">=
+<strong>Date</strong></a></li>
+<li><a href=3D"https://www.spinics.net/lists/linux-usb/thrd253.html#41963">=
+<strong>Thread</strong></a></li>
+</ul>
+</li>
+</ul>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<center>
+<font size=3D"-1">
+<a href=3D"https://www.spinics.net/lists/">[Index&nbsp;of&nbsp;Archives]</a=
+>
+&nbsp;
+&nbsp;
+<a href=3D"https://www.spinics.net/lists/linux-media/">[Linux&nbsp;Media]</=
+a>
+&nbsp;
+&nbsp;
+<a href=3D"https://www.spinics.net/lists/linux-input/">[Linux&nbsp;Input]</=
+a>
+&nbsp;
+&nbsp;
+<a href=3D"https://www.spinics.net/lists/linux-audio-users/">[Linux&nbsp;Au=
+dio&nbsp;Users]</a>
+&nbsp;
+&nbsp;
+<a href=3D"https://yosemitenews.info/">[Yosemite&nbsp;News]</a>
+&nbsp;
+&nbsp;
+<a href=3D"https://www.spinics.net/lists/kernel/">[Linux&nbsp;Kernel]</a>
+&nbsp;
+&nbsp;
+<a href=3D"https://www.spinics.net/lists/linux-scsi/">[Linux&nbsp;SCSI]</a>
+&nbsp;
+&nbsp;
+<a href=3D"https://www.spinics.net/lists/linux-usb-devel/">[Old&nbsp;Linux&=
+nbsp;USB&nbsp;Devel&nbsp;Archive]</a>
+</font>
+</center>
+<hr>
+<p>
+</p><div>
+
+<ins class=3D"adsbygoogle" style=3D"display:block" data-ad-format=3D"autore=
+laxed" data-ad-client=3D"ca-pub-3422782820843221" data-ad-slot=3D"142452456=
+4"></ins>
+
+</div>
+<table width=3D"100%">
+<tbody><tr>
+<td align=3D"left">&nbsp;</td>
+<td align=3D"right"><a href=3D"https://www.spinics.net/lists/"><img src=3D"=
+https://www.spinics.net/button_01.gif" border=3D"0" alt=3D"Powered by Linux=
+"></a></td>
+</tr>
+</tbody></table>
+<!--X-User-Footer-End-->
+
+
+
+
+
+<div id=3D"_atssh" style=3D"visibility: hidden; height: 1px; width: 1px; po=
+sition: absolute; top: -9999px; z-index: 100000;"><iframe id=3D"_atssh875" =
+title=3D"AddThis utility frame" src=3D"cid:frame-7810592E7978C9CBE50D98F9D8=
+A6B4B9@mhtml.blink" style=3D"height: 1px; width: 1px; position: absolute; t=
+op: 0px; z-index: 100000; border: 0px; left: 0px;"></iframe></div><style id=
+=3D"service-icons-0"></style></body></html>
+------MultipartBoundary--lHJ90kFiV4pVJLgeUqF58vfLZVlQuy8G0n6FbxhYXS----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png
+
+iVBORw0KGgoAAAANSUhEUgAAAC4AAAAQCAQAAADDwIVhAAAB7klEQVR4AdWUA7BWURSF+5Ft27Zt
+27ZtW4Ns29aX7Rpl1yDbrrvbc6Zn+73LhXvWPY4U8Q9i0pQtnGUTdYgZwLIOSlEYu092Hm7wgwOs
+4RACAQyPwWm2EdV7MxaPuEZBoimORlHKBTA8OodY51N4L/5QxlvHqQVtrsymzOnOjUI0j+HYiInN
+Y8QJzhPHoITkIbc5YxGXRYieL2lhvBaKBEvVuMoycxzhK6d4TwHQcAcNzRdf6Ok+/BqHcZr/9kPM
++ZXK7OIvrSnBfISaeoqiEqr8VScG57lDdapwGaEo+1hJcSxWkJ3ZCB3cwjdyi1QGxSMLmSiM0J8v
+TP/vv2CDni/+s+nqdEIjDauHUETDF7FM9Roc4A/nKO0WXgahh9tUYhAvacY3Rv3n99ip573/bJQ6
+/REyGFYBy4QvZD3CDzaQ0dM8VUuYQFFT63EIU01nPSE/SeiI0E1PUZRElSdcJQ2P2ElGfW/6X/Pl
+1EGYSQwyM4MCHmfqEP7yg1f8QhhoRj4zd7B4gjAPh57zEGWWqpnUrc4P3vKaFwhFOckOojAC4Skf
+eU4ur+usPO2oSBQPK681qVx5KmWlcPxn0WhIOdogZCSRnjbVUtKSykHfLLaxgmQkZzevgn8vqs9r
+PvCe51QK/nAb8SlEERL6/M0/SoB55gUBIU8AAAAASUVORK5CYII=
+
+------MultipartBoundary--lHJ90kFiV4pVJLgeUqF58vfLZVlQuy8G0n6FbxhYXS----
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: https://www.spinics.net/button_01.gif
+
+R0lGODlhWAAfAMQAAP///wgICEJCQlJSUlpaWmtra3Nzc4SEhJSUlK2trb29vc7Ozt7e3loAALVC
+APdrAP+MANbGraV7Oe/GMf/eAFqEcxghIQC1/zm17wCU/zmU3iGM9wBj5ylavQA5vQAAACwAAAAA
+WAAfAAAF/yAgjmRpnmiqrmw6tHAsz6vxiUuu73zv/8CgcKfAaDTBzw2wUCh8z2hTJ61OrdirNvvk
+YS6YcAaoxA3P6PRZwbmAv5xfmalj2O3qvP6n8GTcbhwMPnM6BQFKHxYIPQwWAV17klBtFx5uY4RL
+dQxKAXg8nR8Jg5OmOx8CFx+YSD2FOXaIBKA7DAkJp7o6Hh5hrZpmCwwAswCltnfKy4PNeM7Qy3ls
+EhAUFW4YVDqwwwyztZwIyuMLBgLjdgLrCrfrAgwKBAgIBwoF77loCgIPFP8TMrji0Y0YOGSxCigZ
+RECJgkQf0i1Qku7hBzsWDRwLYCHSmQgO/v17cGFDMCZPZP99oIUwR4IydpQIUADg5cVjDdMBWGjn
+ZYCaAYapUdDAHwUHBS7EebUp1reV4bwhGoGIGDGYAAaMujPVTtYPNki1HOLBggMHlzKYZCrMIFSE
+d3gWu2G1KwOtCI7NXSbz2NggSjn0+nNBIFs6UlceSzZXxFO/jYk1FLsXso2fUYN8KQwIUwZtqJoO
+m8vSWYJ2XffWvclgsmO7gz4gKpCZzx8MJjDcDt32KQG/dyxcpRt5uF6tpESk7jROibceCexRIYyC
+w4YLyAqSdmzHwKenxCJvJN5QgIgDC3GaB4BA9p1QA/Qt2PAZ94kFlbiJjq2EgIABWoE1HDETfUBT
+TAYCoID/TTIhEgACWo0migCnlXKLPKTkQJh9uWWjnzCHyIYIRB8MI4AFA+BjwSMCGHCABScuksAA
+CFjwwQEAWGDPOQFQ6F+PFrhoAEMJIEBhKRy0wSEJumXgQQcfIuYNM1QyQE9NtBAwWgGk0ALATLcw
+YIATBJDCpYIIODHTAemUOQgGA0iAzZIAfCGABAIsVSAOXVRZyx30qMMAPHYEymYCBiCQyz1OpFRA
+O/UsmIubrekTgVEVZJDBCBEMwIE/BejZjRoMsCkooaWSogCNCwhwQDwD3NGOmwgMiRGlbi4wwQMP
+QDABB5+NAEGvEHQg6iYenVHqq9EtO8gA3sR3l1gtRtdloYauIrpAAlouIG0OvfYaAQkMTAABBBJw
+MNCoaAwC4QEHeFOrdMMwYqU3Chjg5j3x3lLAo4McQAC8GebgAK8DbBAeBgZAgJYH8rErVDNCTWyH
+qX5mrHHGOkRQ1MO9cCCAwx4MtCcTGzOzQKDApeyynzxMIEEHNNOMwAPyRXlKsrukEU4EEiwQAUE3
+KETi0UgnrfTSTDftNEQNPS311FRXfXQIADs=
+
+------MultipartBoundary--lHJ90kFiV4pVJLgeUqF58vfLZVlQuy8G0n6FbxhYXS----
+Content-Type: text/html
+Content-ID: <frame-7810592E7978C9CBE50D98F9D8A6B4B9@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://s7.addthis.com/static/sh.e4e8af4de595fdb10ec1459d.html#rand=0.6554422610312107&iit=1558884402415&tmr=load%3D1558884402305%26core%3D1558884402403%26main%3D1558884402408%26ifr%3D1558884402423&cb=0&cdn=0&md=0&kw=&ab=-&dh=www.spinics.net&dr=&du=https%3A%2F%2Fwww.spinics.net%2Flists%2Flinux-usb%2Fmsg41963.html&href=https%3A%2F%2Fwww.spinics.net%2Flists%2Flinux-usb%2Fmsg41963.html&dt=%5BPATCH%5D%20PTP%3A%20ported%20from%20gadgetfs%20to%20functionfs%20kernel%20interface%20%E2%80%94%20Linux%20USB&dbg=0&cap=tc%3D0%26ab%3D0&inst=1&jsl=0&prod=undefined&lng=zh&ogt=&pc=men&pub=ra-5196c2ae1be43d18&ssl=1&sid=5ceab032974dc7ee&srf=0.01&ver=300&xck=0&xtr=0&og=&csi=undefined&rev=v8.4.5-wp&ct=1&xld=1&xd=1
+
+<!DOCTYPE html><html><head><meta http-equiv=3D"Content-Type" content=3D"tex=
+t/html; charset=3DUTF-8"><meta name=3D"robots" content=3D"noindex,nofollow"=
+><title>AddThis Utility Frame</title></head><body></body></html>
+------MultipartBoundary--lHJ90kFiV4pVJLgeUqF58vfLZVlQuy8G0n6FbxhYXS------

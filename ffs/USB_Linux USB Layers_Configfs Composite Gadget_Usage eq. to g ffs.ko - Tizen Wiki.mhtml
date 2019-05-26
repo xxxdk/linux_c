@@ -1,0 +1,1452 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://wiki.tizen.org/USB/Linux_USB_Layers/Configfs_Composite_Gadget/Usage_eq._to_g_ffs.ko
+Subject: USB/Linux USB Layers/Configfs Composite Gadget/Usage eq. to g ffs.ko - Tizen Wiki
+Date: Sun, 26 May 2019 15:27:28 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--YjNJgYH3omwm7wcPVonkrK73SaIUa94XX9UWntodet----"
+
+
+------MultipartBoundary--YjNJgYH3omwm7wcPVonkrK73SaIUa94XX9UWntodet----
+Content-Type: text/html
+Content-ID: <frame-0AFFEBCE280D4FF84EB6AD622D64F335@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://wiki.tizen.org/USB/Linux_USB_Layers/Configfs_Composite_Gadget/Usage_eq._to_g_ffs.ko
+
+<!DOCTYPE html><html class=3D"client-js" lang=3D"en" dir=3D"ltr"><head><met=
+a http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+
+<title>USB/Linux USB Layers/Configfs Composite Gadget/Usage eq. to g ffs.ko=
+ - Tizen Wiki</title>
+
+
+<link rel=3D"stylesheet" href=3D"https://wiki.tizen.org/load.php?debug=3Dfa=
+lse&amp;lang=3Den&amp;modules=3Dmediawiki.legacy.commonPrint%2Cshared%7Cmed=
+iawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&a=
+mp;only=3Dstyles&amp;skin=3Dvector">
+
+<style>
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-u=
+ser-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-=
+index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedi=
+t{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-=
+height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dc=
+d9d9;text-shadow:0 0.0625em 0 rgba( 255,255,255,0.5 );border-radius:5px;box=
+-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-tran=
+sition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transi=
+tion:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook =
+.postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{paddi=
+ng-left:41px;  line-height:25px;background-repeat:no-repeat;background-posi=
+tion:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;b=
+ase64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQAr=
+xrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69=
+hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF=
+2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06e=
+GMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/U=
+u5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tid=
+oqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA=
+4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1=
+Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S78=
+00AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=
+=3D);background-image:url(/resources/src/mediawiki.action/images/green-chec=
+kmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absol=
+ute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-hei=
+ght:2.3em;color:#000;text-shadow:0 0.0625em 0 #fff;text-decoration:none;opa=
+city:0.2;filter:alpha( opacity=3D20 )}.postedit-close:hover{color:#000;text=
+-decoration:none;opacity:0.4;filter:alpha( opacity=3D40 )}
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-selec=
+t:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsi=
+ble-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:rig=
+ht} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl =
+.mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{c=
+ursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-c=
+ollapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-conten=
+t-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-co=
+ntent-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-tog=
+gle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collap=
+sible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-=
+content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-colla=
+psible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:=
+none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position=
+:relative;background-color:#fff;cursor:pointer;border:solid 1px #aaa;paddin=
+g:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height=
+:1.25em}.suggestions-results{background-color:#fff;cursor:pointer;border:so=
+lid 1px #aaa;padding:0;margin:0}.suggestions-result{color:#000;margin:0;lin=
+e-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-te=
+xt-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestion=
+s-result-current{background-color:#4c59a6;color:#fff}.suggestions-special .=
+special-label{color:#808080;text-align:left}.suggestions-special .special-q=
+uery{color:#000;font-style:italic;text-align:left}.suggestions-special .spe=
+cial-hover{background-color:#c0c0c0}.suggestions-result-current .special-la=
+bel,.suggestions-result-current .special-query{color:#fff}.highlight{font-w=
+eight:bold}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:h=
+over,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSu=
+ggest-link:focus{color:#000;text-decoration:none}.suggestions-result-curren=
+t a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-li=
+nk:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.sugges=
+tions-result-current a.mw-searchSuggest-link:focus{color:#fff}.suggestions =
+a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:el=
+lipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name=3D"Res=
+ourceLoaderDynamicStyles" content=3D"">
+<meta name=3D"generator" content=3D"MediaWiki 1.28.1">
+<link rel=3D"shortcut icon" href=3D"https://wiki.tizen.org/favicon.ico">
+<link rel=3D"search" type=3D"application/opensearchdescription+xml" href=3D=
+"https://wiki.tizen.org/opensearch_desc.php" title=3D"Tizen Wiki (en)">
+<link rel=3D"EditURI" type=3D"application/rsd+xml" href=3D"https://wiki.tiz=
+en.org/api.php?action=3Drsd">
+<link rel=3D"alternate" type=3D"application/atom+xml" title=3D"Tizen Wiki A=
+tom feed" href=3D"https://wiki.tizen.org/index.php?title=3DSpecial:RecentCh=
+anges&amp;feed=3Datom">
+</head>
+<body class=3D"mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject =
+page-USB_Linux_USB_Layers_Configfs_Composite_Gadget_Usage_eq_to_g_ffs_ko ro=
+otpage-USB skin-vector action-view">		<div id=3D"mw-page-base" class=3D"nop=
+rint"></div>
+		<div id=3D"mw-head-base" class=3D"noprint"></div>
+		<div id=3D"content" class=3D"mw-body" role=3D"main">
+			<a id=3D"top"></a>
+
+						<div class=3D"mw-indicators">
+</div>
+			<h1 id=3D"firstHeading" class=3D"firstHeading" lang=3D"en">USB/Linux USB=
+ Layers/Configfs Composite Gadget/Usage eq. to g ffs.ko</h1>
+									<div id=3D"bodyContent" class=3D"mw-body-content">
+									<div id=3D"siteSub">From Tizen Wiki</div>
+								<div id=3D"contentSub"><span class=3D"subpages">&lt; <a href=3D"htt=
+ps://wiki.tizen.org/USB" title=3D"USB">USB</a>=E2=80=8E | <a href=3D"https:=
+//wiki.tizen.org/USB/Linux_USB_Layers/Configfs_Composite_Gadget" title=3D"U=
+SB/Linux USB Layers/Configfs Composite Gadget">Linux USB Layers/Configfs Co=
+mposite Gadget</a></span></div>
+												<div id=3D"jump-to-nav" class=3D"mw-jump">
+					Jump to:					<a href=3D"https://wiki.tizen.org/USB/Linux_USB_Layers/Co=
+nfigfs_Composite_Gadget/Usage_eq._to_g_ffs.ko#mw-head">navigation</a>, 				=
+	<a href=3D"https://wiki.tizen.org/USB/Linux_USB_Layers/Configfs_Composite_=
+Gadget/Usage_eq._to_g_ffs.ko#p-search">search</a>
+				</div>
+				<div id=3D"mw-content-text" lang=3D"en" dir=3D"ltr" class=3D"mw-content=
+-ltr"><div id=3D"toc" class=3D"toc"><div id=3D"toctitle"><h2>Contents</h2><=
+span class=3D"toctoggle">&nbsp;[<a role=3D"button" tabindex=3D"0" id=3D"tog=
+glelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class=3D"toclevel-1 tocsection-1"><a href=3D"https://wiki.tizen.org/USB=
+/Linux_USB_Layers/Configfs_Composite_Gadget/Usage_eq._to_g_ffs.ko#Owner"><s=
+pan class=3D"tocnumber">1</span> <span class=3D"toctext">Owner</span></a></=
+li>
+<li class=3D"toclevel-1 tocsection-2"><a href=3D"https://wiki.tizen.org/USB=
+/Linux_USB_Layers/Configfs_Composite_Gadget/Usage_eq._to_g_ffs.ko#Code_chan=
+ge_log"><span class=3D"tocnumber">2</span> <span class=3D"toctext">Code cha=
+nge log</span></a></li>
+<li class=3D"toclevel-1 tocsection-3"><a href=3D"https://wiki.tizen.org/USB=
+/Linux_USB_Layers/Configfs_Composite_Gadget/Usage_eq._to_g_ffs.ko#Guide"><s=
+pan class=3D"tocnumber">3</span> <span class=3D"toctext">Guide</span></a>
+<ul>
+<li class=3D"toclevel-2 tocsection-4"><a href=3D"https://wiki.tizen.org/USB=
+/Linux_USB_Layers/Configfs_Composite_Gadget/Usage_eq._to_g_ffs.ko#BACKWARD_=
+COMPATIBILITY"><span class=3D"tocnumber">3.1</span> <span class=3D"toctext"=
+>BACKWARD COMPATIBILITY</span></a></li>
+<li class=3D"toclevel-2 tocsection-5"><a href=3D"https://wiki.tizen.org/USB=
+/Linux_USB_Layers/Configfs_Composite_Gadget/Usage_eq._to_g_ffs.ko#USING_THE=
+_NEW_.22GADGET.22"><span class=3D"tocnumber">3.2</span> <span class=3D"toct=
+ext">USING THE NEW "GADGET"</span></a></li>
+<li class=3D"toclevel-2 tocsection-6"><a href=3D"https://wiki.tizen.org/USB=
+/Linux_USB_Layers/Configfs_Composite_Gadget/Usage_eq._to_g_ffs.ko#TESTING_T=
+HE_FUNCTIONS"><span class=3D"tocnumber">3.3</span> <span class=3D"toctext">=
+TESTING THE FUNCTIONS</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class=3D"mw-headline" id=3D"Owner">Owner</span></h2>
+<ul><li> Andrzej Pietrasiewicz &lt;andrzej.p (at) samsung.com&gt;  (KERNEL)=
+</li></ul>
+<h2><span class=3D"mw-headline" id=3D"Code_change_log">Code change log</spa=
+n></h2>
+<p>v4..v5:
+</p><p>- don't take ffs_lock explicitly in g_ffs
+- simplify gfs_init, bugfix not decrementing the "i" in error recovery
+</p><p>v3..v4:
+</p><p>- small fixes after Michal's review, thank you, Michal!
+- export ffs_lock instead of ffs_dev_lock and ffs_dev_unlock, which are now
+static inline
+- improved ffs_find_dev, ffs_alloc_dev by introducing ffs_get_single_dev()
+- rearranged kfree invocations in ffs_free_dev
+- eliminated goto in ffs_acquire_dev
+- used explicit decrementation in gfs_init
+- removed some add/remove empty line hunks
+</p><p>v2..v3:
+</p><p>- a number of fixes regarding systems with multiple udcs, e.g. syste=
+ms,
+where more than one gadget can be loaded at a time
+- cleanup of ffs devices handling: since they need to be registered by
+both g_ffs and configfs-based gadget, they need to be managed in one
+place; instead of static callbacks in f_fs.c now each device can have its
+own set of callbacks
+- callbacks are used by the g_ffs, while configfs-based gadget is happy
+with generic ffs_acquire/release_dev(), ffs_ready/closed()
+- functionfs_init() and functionfs_cleanup() now called when the first
+device is created and when the last is removed, respectively
+- removed gfs_lock from g_ffs in favor of a lock in f_fs.c protecting
+the devices list
+- thanks to all the above the ffs_alloc_inst() is greatly simplified
+compared to v2
+- simplified the way how usb_f_fs user's (g_ffs's) refcount is maintained
+(no ffs_owner static in f_fs.c)
+- some of patches 12..16 used to contain Michal's Acked-by, but since there
+have been (relatively) many changes to those patches,
+I removed the Acked-by lines
+</p><p>v1..v2:
+</p><p>- fixes after Michal's review, thank you, Michal!
+</p><p>- removal of unnecessary hunks, simplified VLAIS replacement code, u=
+sed proper pointer dereferencing, simplified ffs_do_functionfs_bind(),
+</p><p>ffs_alloc_inst() and ffs_free(), style corrections, allocated usb_fu=
+nction structures in one chunk for all configs in g_ffs
+</p><p>Rebased onto Felipe's master.
+</p><p>At the moment I don't have any public git repo at hand, so a branch =
+'usb-gadget-configfs' will be available later at
+</p>
+<h2><span class=3D"mw-headline" id=3D"Guide">Guide</span></h2>
+<p>This series aims at integrating configfs into FunctionFS, the way it has=
+ been done for acm, ncm, ecm, eem, ecm subset, rndis, obex, phonet
+</p><p>and mass_storage. It contains everything that is required to provide=
+ the equivalent of g_ffs.ko with configfs.
+</p><p>Configfs support in FunctionFS has been awaited by the Android folks=
+ as discussed during the LPC 2013.
+</p><p>Apart from that a VLAIS (variable length array in a struct) patch is=
+ added. It is not strictly necessary, but it won't hurt and it=20
+</p><p>will make the Clang people happy.
+</p><p><br>
+FunctionFS is more complicated than most other USB functions, so the result=
+ing patch series is a bit long. Howerver, it is supposed to do things in st=
+eps.
+</p><p>1) preliminary work: extend generic configfs support in USB gadget, =
+convert g_ffs to new function interfaces of f_ecm, f_subset, f_rndis; g_ffs=
+ is the
+</p><p>last user of the old interfaces so remove compatibility layers
+</p><p>2) factoring out a u_fs.h header and finally making f_fs a separate =
+module with both old and new function interface
+</p><p>3) converting all users of f_fs (in fact only g_ffs) to the new inte=
+rface and remove compatiblilty layer
+</p><p>4) add configfs support
+</p><p>A branch 'usb-gadget-configfs' is available at
+</p><p><a rel=3D"nofollow" class=3D"external free" href=3D"git://git.linaro=
+.org/people/mszyprowski/linux-srpol.git">git://git.linaro.org/people/mszypr=
+owski/linux-srpol.git</a>
+</p><p><br>
+</p><p><br>
+</p>
+<h3><span class=3D"mw-headline" id=3D"BACKWARD_COMPATIBILITY">BACKWARD COMP=
+ATIBILITY</span></h3>
+<p>Please note that the old g_ffs.ko is still available and works.
+</p>
+<h3><span class=3D"mw-headline" id=3D"USING_THE_NEW_.22GADGET.22">USING THE=
+ NEW "GADGET"</span></h3>
+<p>Please refer to this post:
+</p><p><a rel=3D"nofollow" class=3D"external free" href=3D"http://www.spini=
+cs.net/lists/linux-usb/msg76388.html">http://www.spinics.net/lists/linux-us=
+b/msg76388.html</a>
+</p><p>for general information from Sebastian on how to use configfs-based =
+gadgets (*).
+</p><p>With configfs the procedure is as follows, compared to the informati=
+on mentioned above (*):
+</p><p>instead of mkdir functions/acm.ttyS1 do
+</p>
+<pre style=3D"color: black">mkdir functions/ffs.&lt;instance name&gt;
+</pre>
+<p>e.g. mkdir functions/ffs.ptp
+</p><p>In functions/&lt;function&gt;.&lt;instance name&gt; there will be no=
+ attribute files at all, because all parameters are passed with FunctionFS.
+</p><p>An example gadget with adb and ptp functions:
+</p><p>(I assume there are ptpd and adbd daemons using FunctionFS available=
+, a proof-of-concept adbd can be found here:
+</p><p><a rel=3D"nofollow" class=3D"external free" href=3D"https://android-=
+review.googlesource.com/#/c/31640/">https://android-review.googlesource.com=
+/#/c/31640/</a>,
+</p><p>an early version of ptp which I used is here:
+</p><p><a rel=3D"nofollow" class=3D"external free" href=3D"http://www.spini=
+cs.net/lists/linux-usb/msg41963.html">http://www.spinics.net/lists/linux-us=
+b/msg41963.html</a>)
+</p>
+<pre style=3D"color: black">$ modprobe libcomposite
+
+$ mount none cfg -t configfs
+
+$ mkdir cfg/usb_gadget/g1
+$ cd cfg/usb_gadget/g1
+=20
+$ mkdir configs/c.1
+$ mkdir functions/ffs.adb
+$ mkdir functions/ffs.ptp
+
+$ mkdir strings/0x409
+$ mkdir configs/c.1/strings/0x409
+
+$ echo 0x2d01 &gt; idProduct
+$ echo 0x04e8 &gt; idVendor
+
+$ echo my-serial-num &gt; strings/0x409/serialnumber
+$ echo my-manufacturer &gt; strings/0x409/manufacturer
+$ echo "FunctionFS gadget (ptp, adb)" &gt; strings/0x409/product
+
+$ echo "Conf 1" &gt; configs/c.1/strings/0x409/configuration
+$ echo 120 &gt; configs/c.1/MaxPower
+$ ln -s functions/ffs.ptp configs/c.1
+$ ln -s functions/ffs.adb configs/c.1
+
+$ mkdir /dev/usbffs
+$ mount ptp /dev/usbffs -t functionfs
+$ ptpd
+
+$ mkdir -p /dev/usbgadget/adb
+$ mount -t functionfs adb /dev/usbgadget/adb -o uid=3D2000,gid=3D2000
+$ adbd
+
+$ echo s3c-hsotg &gt; cfg/usb_gadget/g1/UDC
+</pre>
+<p>After unbinding the gadget with=20
+</p>
+<pre style=3D"color: black">=20
+echo "" &gt; UDC=20
+</pre>=20
+<p>the symbolic links in the configuration directory can be removed, the st=
+rings/* subdirectories in the configuration directory can
+</p><p>be removed, the strings/* subdirectories at the gadget level can be =
+removed and the configs/* subdirectories can be removed.
+</p><p>The functions/* subdirectories can be removed. After that the gadget=
+ directory can be removed.
+</p><p>Daemons need to be closed and then the respective modules can be unl=
+oaded.
+</p><p><br>
+</p>
+<h3><span class=3D"mw-headline" id=3D"TESTING_THE_FUNCTIONS">TESTING THE FU=
+NCTIONS</span></h3>
+<p>FunctionFS)
+</p><p>device: connect the gadget, enable it host: mount the ptp device, ad=
+b shell
+</p>
+<!--=20
+NewPP limit report
+Cached time: 20190526140153
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.008 seconds
+Real time usage: 0.012 seconds
+Preprocessor visited node count: 49/1000000
+Preprocessor generated node count: 88/1000000
+Post=E2=80=90expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!--=20
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key wiki_tizen_org:pcache:idhash:307-0!*!*!=
+!en!*!* and timestamp 20190526140153 and revision id 20634
+ -->
+</div>					<div class=3D"printfooter">
+						Retrieved from "<a dir=3D"ltr" href=3D"https://wiki.tizen.org/index.p=
+hp?title=3DUSB/Linux_USB_Layers/Configfs_Composite_Gadget/Usage_eq._to_g_ff=
+s.ko&amp;oldid=3D20634">https://wiki.tizen.org/index.php?title=3DUSB/Linux_=
+USB_Layers/Configfs_Composite_Gadget/Usage_eq._to_g_ffs.ko&amp;oldid=3D2063=
+4</a>"					</div>
+				<div id=3D"catlinks" class=3D"catlinks" data-mw=3D"interface"><div id=
+=3D"mw-normal-catlinks" class=3D"mw-normal-catlinks"><a href=3D"https://wik=
+i.tizen.org/Special:Categories" title=3D"Special:Categories">Category</a>: =
+<ul><li><a href=3D"https://wiki.tizen.org/Category:USB" title=3D"Category:U=
+SB">USB</a></li></ul></div></div>				<div class=3D"visualClear"></div>
+							</div>
+		</div>
+		<div id=3D"mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id=3D"mw-head">
+									<div id=3D"p-personal" role=3D"navigation" class=3D"" aria-labelle=
+dby=3D"p-personal-label">
+						<h3 id=3D"p-personal-label">Personal tools</h3>
+						<ul>
+							<li id=3D"pt-login"><a href=3D"https://wiki.tizen.org/index.php?titl=
+e=3DSpecial:UserLogin&amp;returnto=3DUSB%2FLinux+USB+Layers%2FConfigfs+Comp=
+osite+Gadget%2FUsage+eq.+to+g+ffs.ko" title=3D"You are encouraged to log in=
+; however, it is not mandatory [alt-shift-o]" accesskey=3D"o">Log in</a></l=
+i>						</ul>
+					</div>
+									<div id=3D"left-navigation">
+										<div id=3D"p-namespaces" role=3D"navigation" class=3D"vectorTabs"=
+ aria-labelledby=3D"p-namespaces-label">
+						<h3 id=3D"p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li id=3D"ca-nstab-main" class=3D"selected"><span><a href=3D=
+"https://wiki.tizen.org/USB/Linux_USB_Layers/Configfs_Composite_Gadget/Usag=
+e_eq._to_g_ffs.ko" title=3D"View the content page [alt-shift-c]" accesskey=
+=3D"c">Page</a></span></li>
+															<li id=3D"ca-talk" class=3D"new"><span><a href=3D"https://wi=
+ki.tizen.org/index.php?title=3DTalk:USB/Linux_USB_Layers/Configfs_Composite=
+_Gadget/Usage_eq._to_g_ffs.ko&amp;action=3Dedit&amp;redlink=3D1" title=3D"D=
+iscussion about the content page [alt-shift-t]" accesskey=3D"t" rel=3D"disc=
+ussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id=3D"p-variants" role=3D"navigation" class=3D"vectorMenu em=
+ptyPortlet" aria-labelledby=3D"p-variants-label">
+												<h3 id=3D"p-variants-label" tabindex=3D"0">
+							<span>Variants</span><a href=3D"https://wiki.tizen.org/USB/Linux_USB=
+_Layers/Configfs_Composite_Gadget/Usage_eq._to_g_ffs.ko#" tabindex=3D"-1"><=
+/a>
+						</h3>
+
+						<div class=3D"menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id=3D"right-navigation">
+										<div id=3D"p-views" role=3D"navigation" class=3D"vectorTabs" aria=
+-labelledby=3D"p-views-label">
+						<h3 id=3D"p-views-label">Views</h3>
+						<ul>
+															<li id=3D"ca-view" class=3D"selected"><span><a href=3D"https=
+://wiki.tizen.org/USB/Linux_USB_Layers/Configfs_Composite_Gadget/Usage_eq._=
+to_g_ffs.ko">Read</a></span></li>
+															<li id=3D"ca-viewsource"><span><a href=3D"https://wiki.tizen=
+.org/index.php?title=3DUSB/Linux_USB_Layers/Configfs_Composite_Gadget/Usage=
+_eq._to_g_ffs.ko&amp;action=3Dedit" title=3D"This page is protected.
+You can view its source [alt-shift-e]" accesskey=3D"e">View source</a></spa=
+n></li>
+															<li id=3D"ca-history" class=3D"collapsible"><span><a href=3D=
+"https://wiki.tizen.org/index.php?title=3DUSB/Linux_USB_Layers/Configfs_Com=
+posite_Gadget/Usage_eq._to_g_ffs.ko&amp;action=3Dhistory" title=3D"Past rev=
+isions of this page [alt-shift-h]" accesskey=3D"h">View history</a></span><=
+/li>
+													</ul>
+					</div>
+										<div id=3D"p-cactions" role=3D"navigation" class=3D"vectorMenu em=
+ptyPortlet" aria-labelledby=3D"p-cactions-label" style=3D"">
+						<h3 id=3D"p-cactions-label" tabindex=3D"0"><span>More</span><a href=
+=3D"https://wiki.tizen.org/USB/Linux_USB_Layers/Configfs_Composite_Gadget/U=
+sage_eq._to_g_ffs.ko#" tabindex=3D"-1"></a></h3>
+
+						<div class=3D"menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id=3D"p-search" role=3D"search">
+						<h3>
+							<label for=3D"searchInput">Search</label>
+						</h3>
+
+						<form action=3D"https://wiki.tizen.org/index.php" id=3D"searchform">
+							<div id=3D"simpleSearch">
+							<input type=3D"search" name=3D"search" placeholder=3D"Search Tizen W=
+iki" title=3D"Search Tizen Wiki [alt-shift-f]" accesskey=3D"f" id=3D"search=
+Input" tabindex=3D"1" autocomplete=3D"off"><input type=3D"submit" name=3D"g=
+o" value=3D"Go" title=3D"Go to a page with this exact name if it exists" id=
+=3D"searchButton" class=3D"searchButton">							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id=3D"mw-panel">
+				<div id=3D"p-logo" role=3D"banner"><a class=3D"mw-wiki-logo" href=3D"ht=
+tps://wiki.tizen.org/Main_Page" title=3D"Visit the main page"></a></div>
+						<div class=3D"portal" role=3D"navigation" id=3D"p-navigation" aria-la=
+belledby=3D"p-navigation-label">
+			<h3 id=3D"p-navigation-label">Navigation</h3>
+
+			<div class=3D"body">
+									<ul>
+						<li id=3D"n-Tizen.org-Home-Page"><a href=3D"http://www.tizen.org/" re=
+l=3D"nofollow">Tizen.org Home Page</a></li><li id=3D"n-mainpage-description=
+"><a href=3D"https://wiki.tizen.org/Main_Page" title=3D"Visit the main page=
+ [alt-shift-z]" accesskey=3D"z">Main page</a></li><li id=3D"n-recentchanges=
+"><a href=3D"https://wiki.tizen.org/Special:RecentChanges" title=3D"A list =
+of recent changes in the wiki [alt-shift-r]" accesskey=3D"r">Recent changes=
+</a></li><li id=3D"n-randompage"><a href=3D"https://wiki.tizen.org/Special:=
+Random" title=3D"Load a random page [alt-shift-x]" accesskey=3D"x">Random p=
+age</a></li><li id=3D"n-help"><a href=3D"https://www.mediawiki.org/wiki/Spe=
+cial:MyLanguage/Help:Contents" title=3D"The place to find out">Help</a></li=
+>					</ul>
+							</div>
+		</div>
+			<div class=3D"portal" role=3D"navigation" id=3D"p-tb" aria-labelledby=3D=
+"p-tb-label">
+			<h3 id=3D"p-tb-label">Tools</h3>
+
+			<div class=3D"body">
+									<ul>
+						<li id=3D"t-whatlinkshere"><a href=3D"https://wiki.tizen.org/Special:=
+WhatLinksHere/USB/Linux_USB_Layers/Configfs_Composite_Gadget/Usage_eq._to_g=
+_ffs.ko" title=3D"A list of all wiki pages that link here [alt-shift-j]" ac=
+cesskey=3D"j">What links here</a></li><li id=3D"t-recentchangeslinked"><a h=
+ref=3D"https://wiki.tizen.org/Special:RecentChangesLinked/USB/Linux_USB_Lay=
+ers/Configfs_Composite_Gadget/Usage_eq._to_g_ffs.ko" rel=3D"nofollow" title=
+=3D"Recent changes in pages linked from this page [alt-shift-k]" accesskey=
+=3D"k">Related changes</a></li><li id=3D"t-specialpages"><a href=3D"https:/=
+/wiki.tizen.org/Special:SpecialPages" title=3D"A list of all special pages =
+[alt-shift-q]" accesskey=3D"q">Special pages</a></li><li id=3D"t-print"><a =
+href=3D"https://wiki.tizen.org/index.php?title=3DUSB/Linux_USB_Layers/Confi=
+gfs_Composite_Gadget/Usage_eq._to_g_ffs.ko&amp;printable=3Dyes" rel=3D"alte=
+rnate" title=3D"Printable version of this page [alt-shift-p]" accesskey=3D"=
+p">Printable version</a></li><li id=3D"t-permalink"><a href=3D"https://wiki=
+.tizen.org/index.php?title=3DUSB/Linux_USB_Layers/Configfs_Composite_Gadget=
+/Usage_eq._to_g_ffs.ko&amp;oldid=3D20634" title=3D"Permanent link to this r=
+evision of the page">Permanent link</a></li><li id=3D"t-info"><a href=3D"ht=
+tps://wiki.tizen.org/index.php?title=3DUSB/Linux_USB_Layers/Configfs_Compos=
+ite_Gadget/Usage_eq._to_g_ffs.ko&amp;action=3Dinfo" title=3D"More informati=
+on about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id=3D"footer" role=3D"contentinfo">
+							<ul id=3D"footer-info">
+											<li id=3D"footer-info-lastmod"> This page was last modified on 7=
+ March 2016, at 17:46.</li>
+									</ul>
+							<ul id=3D"footer-places">
+											<li id=3D"footer-places-privacy"><a href=3D"https://wiki.tizen.o=
+rg/Project:Privacy_policy" title=3D"Project:Privacy policy">Privacy policy<=
+/a></li>
+											<li id=3D"footer-places-about"><a href=3D"https://wiki.tizen.org=
+/Project:About" title=3D"Project:About">About Tizen Wiki</a></li>
+											<li id=3D"footer-places-disclaimer"><a href=3D"https://wiki.tize=
+n.org/Project:General_disclaimer" title=3D"Project:General disclaimer">Disc=
+laimers</a></li>
+									</ul>
+										<ul id=3D"footer-icons" class=3D"noprint">
+											<li id=3D"footer-poweredbyico">
+							<a href=3D"https://www.mediawiki.org/"><img src=3D"https://wiki.tize=
+n.org/resources/assets/poweredby_mediawiki_88x31.png" alt=3D"Powered by Med=
+iaWiki" width=3D"88" height=3D"31"></a>						</li>
+									</ul>
+						<div style=3D"clear:both"></div>
+		</div>
+	=09
+=09
+
+<div class=3D"suggestions" style=3D"display: none; font-size: 13px;"><div c=
+lass=3D"suggestions-results"></div><div class=3D"suggestions-special"></div=
+></div></body></html>
+------MultipartBoundary--YjNJgYH3omwm7wcPVonkrK73SaIUa94XX9UWntodet----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://wiki.tizen.org/load.php?debug=false&lang=en&modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&only=styles&skin=vector
+
+@charset "utf-8";
+
+@media print {
+  .noprint, #jump-to-nav, .mw-jump, #column-one, .mw-editsection, .mw-edits=
+ection-like, #footer-places, .mw-hidden-catlinks, .usermessage, .patrollink=
+, .ns-0 .mw-redirectedfrom, .magnify, #mw-navigation, #siteNotice, #f-power=
+edbyico, #f-copyrightico, li#about, li#disclaimer, li#mobileview, li#privac=
+y { display: none; }
+  body { background: rgb(255, 255, 255); color: rgb(0, 0, 0); margin: 0px; =
+padding: 0px; }
+  h1, h2, h3, h4, h5, h6 { font-weight: bold; break-after: avoid; }
+  dt { font-weight: bold; }
+  ul { list-style-type: square; }
+  p { margin: 1em 0px; line-height: 1.2em; orphans: 3; widows: 3; }
+  pre, .mw-code { background: rgb(255, 255, 255); color: rgb(0, 0, 0); bord=
+er: 1pt dashed rgb(0, 0, 0); padding: 1em 0px; font-size: 8pt; white-space:=
+ pre; overflow-wrap: break-word; overflow: auto; }
+  img, figure, .wikitable, .thumb { break-inside: avoid; }
+  img { border: 0px; vertical-align: middle; }
+  #globalWrapper { width: 100% !important; min-width: 0px !important; }
+  .mw-body { background: rgb(255, 255, 255); color: rgb(0, 0, 0); direction=
+: ltr; border: 0px !important; padding: 0px !important; margin: 0px !import=
+ant; }
+  #column-content { margin: 0px !important; }
+  #column-content .mw-body { padding: 1em; margin: 0px !important; }
+  #toc { background-color: rgb(249, 249, 249); border: 1pt solid rgb(170, 1=
+70, 170); padding: 5px; display: table; }
+  .tocnumber, .toctext { display: table-cell; }
+  .tocnumber { padding-left: 0px; padding-right: 0.5em; }
+  .mw-content-ltr .tocnumber { padding-left: 0px; padding-right: 0.5em; }
+  .mw-content-rtl .tocnumber { padding-left: 0.5em; padding-right: 0px; }
+  #footer { background: rgb(255, 255, 255); color: rgb(0, 0, 0); margin-top=
+: 1em; border-top: 1pt solid rgb(170, 170, 170); direction: ltr; }
+  a { background: none !important; padding: 0px !important; }
+  .mw-body a.external.text::after, .mw-body a.external.autonumber::after { =
+content: " (" attr(href) ")"; word-break: break-all; overflow-wrap: break-w=
+ord; }
+  .mw-body a.external.text[href^=3D"//"]::after, .mw-body a.external.autonu=
+mber[href^=3D"//"]::after { content: " (https:" attr(href) ")"; }
+  a, a.external, a.new, a.stub { color: rgb(0, 0, 0) !important; text-decor=
+ation: none !important; }
+  a, a.external, a.new, a.stub { color: inherit !important; text-decoration=
+: inherit !important; }
+  div.floatright { float: right; clear: right; position: relative; margin: =
+0.5em 0px 0.8em 1.4em; }
+  div.floatright p { font-style: italic; }
+  div.floatleft { float: left; clear: left; position: relative; margin: 0.5=
+em 1.4em 0.8em 0px; }
+  div.floatleft p { font-style: italic; }
+  .center { text-align: center; }
+  div.thumb { background-color: transparent; border: 0px; width: auto; marg=
+in-top: 0.5em; margin-bottom: 0.8em; }
+  div.thumbinner { background-color: rgb(255, 255, 255); border: 1pt solid =
+rgb(204, 204, 204); padding: 3px; font-size: 94%; text-align: center; overf=
+low: hidden; }
+  html .thumbimage { border: 1pt solid rgb(204, 204, 204); }
+  html .thumbcaption { border: none; text-align: left; line-height: 1.4em; =
+padding: 3px; font-size: 94%; }
+  div.tright { float: right; clear: right; margin: 0.5em 0px 0.8em 1.4em; }
+  div.tleft { float: left; clear: left; margin: 0.5em 1.4em 0.8em 0px; }
+  img.thumbborder { border: 1pt solid rgb(221, 221, 221); }
+  table.wikitable, table.mw_metadata { background: rgb(255, 255, 255); marg=
+in: 1em 0px; border: 1pt solid rgb(170, 170, 170); border-collapse: collaps=
+e; }
+  table.wikitable > tr > th, table.wikitable > tr > td, table.wikitable > *=
+ > tr > th, table.wikitable > * > tr > td, .mw_metadata th, .mw_metadata td=
+ { border: 1pt solid rgb(170, 170, 170); padding: 0.2em; }
+  table.wikitable > tr > th, table.wikitable > * > tr > th, .mw_metadata th=
+ { background: rgb(255, 255, 255); font-weight: bold; text-align: center; }
+  table.wikitable > caption, .mw_metadata caption { font-weight: bold; }
+  table.listing, table.listing td { border: 1pt solid rgb(0, 0, 0); border-=
+collapse: collapse; }
+  .catlinks ul { display: inline; padding: 0px; list-style: none none; }
+  .catlinks li { display: inline-block; line-height: 1.15em; padding: 0px 0=
+.4em; border-left: 1pt solid rgb(170, 170, 170); margin: 0.1em 0px; }
+  .catlinks li:first-child { padding-left: 0.2em; border-left: 0px; }
+  .printfooter { padding: 1em 0px; }
+}
+
+@media screen {
+  .mw-content-ltr { direction: ltr; }
+  .mw-content-rtl { direction: rtl; }
+  .sitedir-ltr textarea, .sitedir-ltr input { direction: ltr; }
+  .sitedir-rtl textarea, .sitedir-rtl input { direction: rtl; }
+  .mw-userlink { unicode-bidi: embed; }
+  mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+  wbr { display: inline-block; }
+  input[type=3D"submit"], input[type=3D"button"], input[type=3D"reset"], in=
+put[type=3D"file"] { direction: ltr; }
+  textarea[dir=3D"ltr"], input[dir=3D"ltr"] { direction: ltr; }
+  textarea[dir=3D"rtl"], input[dir=3D"rtl"] { direction: rtl; }
+  abbr[title], .explain[title] { border-bottom: 1px dotted; cursor: help; }
+  @supports (text-decoration:underline dotted) {
+  abbr[title], .explain[title] { border-bottom: none; text-decoration: unde=
+rline dotted; }
+}
+  span.comment { font-style: italic; unicode-bidi: isolate; }
+  #editform, #toolbar, #wpTextbox1 { clear: both; }
+  .mw-editfont-default:not(textarea) { font-family: monospace; }
+  .mw-editfont-monospace { font-family: monospace; }
+  .mw-editfont-sans-serif { font-family: sans-serif; }
+  .mw-editfont-serif { font-family: serif; }
+  li span.deleted, span.history-deleted { text-decoration: line-through; co=
+lor: rgb(136, 136, 136); font-style: italic; }
+  .not-patrolled { background-color: rgb(255, 255, 170); }
+  .unpatrolled { font-weight: bold; color: rgb(255, 0, 0); }
+  div.patrollink { font-size: 75%; text-align: right; }
+  td.mw-label { text-align: right; }
+  td.mw-input { text-align: left; }
+  td.mw-submit { text-align: left; }
+  td.mw-label { vertical-align: middle; }
+  td.mw-submit { white-space: nowrap; }
+  input#wpSummary { width: 80%; margin-bottom: 1em; }
+  .mw-input-with-label { white-space: nowrap; display: inline-block; }
+  .mw-content-ltr .thumbcaption { text-align: left; }
+  .mw-content-ltr .magnify { float: right; }
+  .mw-content-rtl .thumbcaption { text-align: right; }
+  .mw-content-rtl .magnify { float: left; }
+  #catlinks { text-align: left; }
+  .catlinks ul { display: inline; margin: 0px; padding: 0px; list-style: no=
+ne none; }
+  .catlinks li { display: inline-block; line-height: 1.25em; border-left: 1=
+px solid rgb(170, 170, 170); margin: 0.125em 0px; padding: 0px 0.5em; zoom:=
+ 1; }
+  .catlinks li:first-child { padding-left: 0.25em; border-left: none; }
+  .catlinks li a.mw-redirect { font-style: italic; }
+  .mw-hidden-cats-hidden { display: none; }
+  .catlinks-allhidden { display: none; }
+  p.mw-protect-editreasons, p.mw-filedelete-editreasons, p.mw-delete-editre=
+asons { font-size: 90%; text-align: right; }
+  .autocomment { color: rgb(128, 128, 128); }
+  .newpage, .minoredit, .botedit { font-weight: bold; }
+  div.mw-warning-with-logexcerpt { padding: 3px; margin-bottom: 3px; border=
+: 2px solid rgb(47, 111, 171); clear: both; }
+  div.mw-warning-with-logexcerpt ul li { font-size: 90%; }
+  span.mw-revdelundel-link, strong.mw-revdelundel-link { font-size: 90%; }
+  span.mw-revdelundel-hidden, input.mw-revdelundel-hidden { visibility: hid=
+den; }
+  td.mw-revdel-checkbox, th.mw-revdel-checkbox { padding-right: 10px; text-=
+align: center; }
+  a.new { color: rgb(186, 0, 0); }
+  .plainlinks a.external { background: none !important; padding: 0px !impor=
+tant; }
+  .rtl a.external.free, .rtl a.external.autonumber { direction: ltr; unicod=
+e-bidi: embed; }
+  table.wikitable { margin: 1em 0px; background-color: rgb(249, 249, 249); =
+border: 1px solid rgb(170, 170, 170); border-collapse: collapse; color: rgb=
+(0, 0, 0); }
+  table.wikitable > tr > th, table.wikitable > tr > td, table.wikitable > *=
+ > tr > th, table.wikitable > * > tr > td { border: 1px solid rgb(170, 170,=
+ 170); padding: 0.2em 0.4em; }
+  table.wikitable > tr > th, table.wikitable > * > tr > th { background-col=
+or: rgb(242, 242, 242); text-align: center; }
+  table.wikitable > caption { font-weight: bold; }
+  .error, .warning, .success { font-size: larger; }
+  .error { color: rgb(204, 0, 0); }
+  .warning { color: rgb(112, 80, 0); }
+  .success { color: rgb(0, 144, 0); }
+  .errorbox, .warningbox, .successbox { border: 1px solid; padding: 0.5em 1=
+em; margin-bottom: 1em; display: inline-block; zoom: 1; }
+  .errorbox h2, .warningbox h2, .successbox h2 { font-size: 1em; color: inh=
+erit; font-weight: bold; display: inline; margin: 0px 0.5em 0px 0px; border=
+: none; }
+  .errorbox { color: rgb(204, 0, 0); border-color: rgb(250, 197, 197); back=
+ground-color: rgb(250, 227, 227); }
+  .warningbox { color: rgb(112, 80, 0); border-color: rgb(253, 226, 155); b=
+ackground-color: rgb(253, 241, 209); }
+  .successbox { color: rgb(0, 128, 0); border-color: rgb(183, 253, 181); ba=
+ckground-color: rgb(225, 253, 223); }
+  .mw-infobox { border: 2px solid rgb(255, 127, 0); margin: 0.5em; clear: l=
+eft; overflow: hidden; }
+  .mw-infobox-left { margin: 7px; float: left; width: 35px; }
+  .mw-infobox-right { margin: 0.5em 0.5em 0.5em 49px; }
+  .previewnote { color: rgb(204, 0, 0); margin-bottom: 1em; }
+  .previewnote p { text-indent: 3em; margin: 0.8em 0px; }
+  .visualClear { clear: both; }
+  .mw-datatable { border-collapse: collapse; }
+  .mw-datatable, .mw-datatable td, .mw-datatable th { border: 1px solid rgb=
+(170, 170, 170); padding: 0px 0.15em; }
+  .mw-datatable th { background-color: rgb(221, 221, 255); }
+  .mw-datatable td { background-color: rgb(255, 255, 255); }
+  .mw-datatable tr:hover td { background-color: rgb(238, 238, 255); }
+  .mw-content-ltr ul, .mw-content-rtl .mw-content-ltr ul { margin: 0.3em 0p=
+x 0px 1.6em; padding: 0px; }
+  .mw-content-rtl ul, .mw-content-ltr .mw-content-rtl ul { margin: 0.3em 1.=
+6em 0px 0px; padding: 0px; }
+  .mw-content-ltr ol, .mw-content-rtl .mw-content-ltr ol { margin: 0.3em 0p=
+x 0px 3.2em; padding: 0px; }
+  .mw-content-rtl ol, .mw-content-ltr .mw-content-rtl ol { margin: 0.3em 3.=
+2em 0px 0px; padding: 0px; }
+  .mw-content-ltr dd, .mw-content-rtl .mw-content-ltr dd { margin-left: 1.6=
+em; margin-right: 0px; }
+  .mw-content-rtl dd, .mw-content-ltr .mw-content-rtl dd { margin-right: 1.=
+6em; margin-left: 0px; }
+  .mw-ajax-loader { background-image: url("/resources/src/mediawiki.legacy/=
+images/ajax-loader.gif?57f34"); background-position: center center; backgro=
+und-repeat: no-repeat; padding: 16px; position: relative; top: -16px; }
+  .mw-small-spinner { margin-right: 0.6em; background-image: url("/resource=
+s/src/mediawiki.legacy/images/spinner.gif?ca65b"); background-position: cen=
+ter center; background-repeat: no-repeat; padding: 10px !important; }
+  h1:lang(anp), h1:lang(as), h1:lang(bh), h1:lang(bho), h1:lang(bn), h1:lan=
+g(gu), h1:lang(hi), h1:lang(kn), h1:lang(ks), h1:lang(ml), h1:lang(mr), h1:=
+lang(my), h1:lang(mai), h1:lang(ne), h1:lang(new), h1:lang(or), h1:lang(pa)=
+, h1:lang(pi), h1:lang(sa), h1:lang(ta), h1:lang(te) { line-height: 1.6em !=
+important; }
+  h2:lang(anp), h3:lang(anp), h4:lang(anp), h5:lang(anp), h6:lang(anp), h2:=
+lang(as), h3:lang(as), h4:lang(as), h5:lang(as), h6:lang(as), h2:lang(bho),=
+ h3:lang(bho), h4:lang(bho), h5:lang(bho), h6:lang(bho), h2:lang(bh), h3:la=
+ng(bh), h4:lang(bh), h5:lang(bh), h6:lang(bh), h2:lang(bn), h3:lang(bn), h4=
+:lang(bn), h5:lang(bn), h6:lang(bn), h2:lang(gu), h3:lang(gu), h4:lang(gu),=
+ h5:lang(gu), h6:lang(gu), h2:lang(hi), h3:lang(hi), h4:lang(hi), h5:lang(h=
+i), h6:lang(hi), h2:lang(kn), h3:lang(kn), h4:lang(kn), h5:lang(kn), h6:lan=
+g(kn), h2:lang(ks), h3:lang(ks), h4:lang(ks), h5:lang(ks), h6:lang(ks), h2:=
+lang(ml), h3:lang(ml), h4:lang(ml), h5:lang(ml), h6:lang(ml), h2:lang(mr), =
+h3:lang(mr), h4:lang(mr), h5:lang(mr), h6:lang(mr), h2:lang(my), h3:lang(my=
+), h4:lang(my), h5:lang(my), h6:lang(my), h2:lang(mai), h3:lang(mai), h4:la=
+ng(mai), h5:lang(mai), h6:lang(mai), h2:lang(ne), h3:lang(ne), h4:lang(ne),=
+ h5:lang(ne), h6:lang(ne), h2:lang(new), h3:lang(new), h4:lang(new), h5:lan=
+g(new), h6:lang(new), h2:lang(or), h3:lang(or), h4:lang(or), h5:lang(or), h=
+6:lang(or), h2:lang(pa), h3:lang(pa), h4:lang(pa), h5:lang(pa), h6:lang(pa)=
+, h2:lang(pi), h3:lang(pi), h4:lang(pi), h5:lang(pi), h6:lang(pi), h2:lang(=
+sa), h3:lang(sa), h4:lang(sa), h5:lang(sa), h6:lang(sa), h2:lang(ta), h3:la=
+ng(ta), h4:lang(ta), h5:lang(ta), h6:lang(ta), h2:lang(te), h3:lang(te), h4=
+:lang(te), h5:lang(te), h6:lang(te) { line-height: 1.2em; }
+  ol:lang(azb) li, ol:lang(bcc) li, ol:lang(bgn) li, ol:lang(bqi) li, ol:la=
+ng(fa) li, ol:lang(glk) li, ol:lang(kk-arab) li, ol:lang(lrc) li, ol:lang(l=
+uz) li, ol:lang(mzn) li { list-style-type: persian; }
+  ol:lang(ckb) li, ol:lang(sdh) li { list-style-type: arabic-indic; }
+  ol:lang(hi) li, ol:lang(mr) li { list-style-type: devanagari; }
+  ol:lang(as) li, ol:lang(bn) li { list-style-type: bengali; }
+  ol:lang(or) li { list-style-type: oriya; }
+  #toc ul, .toc ul { margin: 0.3em 0px; }
+  .mw-content-ltr .toc ul, .mw-content-ltr #toc ul, .mw-content-rtl .mw-con=
+tent-ltr .toc ul, .mw-content-rtl .mw-content-ltr #toc ul { text-align: lef=
+t; }
+  .mw-content-rtl .toc ul, .mw-content-rtl #toc ul, .mw-content-ltr .mw-con=
+tent-rtl .toc ul, .mw-content-ltr .mw-content-rtl #toc ul { text-align: rig=
+ht; }
+  .mw-content-ltr .toc ul ul, .mw-content-ltr #toc ul ul, .mw-content-rtl .=
+mw-content-ltr .toc ul ul, .mw-content-rtl .mw-content-ltr #toc ul ul { mar=
+gin: 0px 0px 0px 2em; }
+  .mw-content-rtl .toc ul ul, .mw-content-rtl #toc ul ul, .mw-content-ltr .=
+mw-content-rtl .toc ul ul, .mw-content-ltr .mw-content-rtl #toc ul ul { mar=
+gin: 0px 2em 0px 0px; }
+  #toc #toctitle, .toc #toctitle, #toc .toctitle, .toc .toctitle { directio=
+n: ltr; }
+  #mw-clearyourcache, #mw-sitecsspreview, #mw-sitejspreview, #mw-usercsspre=
+view, #mw-userjspreview { direction: ltr; unicode-bidi: embed; }
+  #mw-revision-info, #mw-revision-info-current, #mw-revision-nav { directio=
+n: ltr; }
+  div.tright, div.floatright, table.floatright { clear: right; float: right=
+; }
+  div.tleft, div.floatleft, table.floatleft { float: left; clear: left; }
+  div.floatright, table.floatright, div.floatleft, table.floatleft { positi=
+on: relative; }
+  #mw-credits a { unicode-bidi: embed; }
+  .mw-jump, #jump-to-nav { overflow: hidden; height: 0px; zoom: 1; }
+  .printfooter { display: none; }
+  .xdebug-error { position: absolute; z-index: 99; }
+  .mw-editsection, #jump-to-nav { user-select: none; }
+  .mw-editsection, .mw-editsection-like { font-size: small; font-weight: no=
+rmal; margin-left: 1em; vertical-align: baseline; line-height: 1em; display=
+: inline-block; }
+  .mw-content-ltr .mw-editsection, .mw-content-rtl .mw-content-ltr .mw-edit=
+section { margin-left: 1em; }
+  .mw-content-rtl .mw-editsection, .mw-content-ltr .mw-content-rtl .mw-edit=
+section { margin-right: 1em; }
+  sup, sub { line-height: 1; }
+}
+
+.mw-headline-anchor { display: none; }
+
+@media screen {
+  a { text-decoration: none; color: rgb(6, 69, 173); background: none; }
+  a:not([href]) { cursor: pointer; }
+  a:visited { color: rgb(11, 0, 128); }
+  a:active { color: rgb(250, 167, 0); }
+  a:hover, a:focus { text-decoration: underline; }
+  a:lang(ar), a:lang(kk-arab), a:lang(mzn), a:lang(ps), a:lang(ur) { text-d=
+ecoration: none; }
+  a.stub { color: rgb(119, 34, 51); }
+  a.new, #p-personal a.new { color: rgb(186, 0, 0); }
+  a.new:visited, #p-personal a.new:visited { color: rgb(165, 88, 88); }
+  .mw-body a.extiw, .mw-body a.extiw:active { color: rgb(51, 102, 187); }
+  .mw-body a.extiw:visited { color: rgb(102, 51, 102); }
+  .mw-body a.extiw:active { color: rgb(187, 102, 51); }
+  .mw-body a.external { color: rgb(51, 102, 187); }
+  .mw-body a.external:visited { color: rgb(102, 51, 102); }
+  .mw-body a.external:active { color: rgb(187, 102, 51); }
+  .mw-body a.external.free { overflow-wrap: break-word; }
+  img { border: none; vertical-align: middle; }
+  hr { height: 1px; color: rgb(170, 170, 170); background-color: rgb(170, 1=
+70, 170); border: 0px; margin: 0.2em 0px; }
+  h1, h2, h3, h4, h5, h6 { color: rgb(0, 0, 0); background: none; font-weig=
+ht: normal; margin: 0px; overflow: hidden; padding-top: 0.5em; padding-bott=
+om: 0.17em; border-bottom: 1px solid rgb(170, 170, 170); }
+  h1 { font-size: 188%; }
+  h2 { font-size: 150%; }
+  h3, h4, h5, h6 { border-bottom: none; font-weight: bold; }
+  h3 { font-size: 128%; }
+  h4 { font-size: 116%; }
+  h5 { font-size: 108%; }
+  h6 { font-size: 100%; }
+  h1, h2 { margin-bottom: 0.6em; }
+  h3, h4, h5 { margin-bottom: 0.3em; }
+  p { margin: 0.4em 0px 0.5em; }
+  p img { margin: 0px; }
+  ul { list-style-type: square; margin: 0.3em 0px 0px 1.6em; padding: 0px; =
+}
+  ol { margin: 0.3em 0px 0px 3.2em; padding: 0px; list-style-image: none; }
+  li { margin-bottom: 0.1em; }
+  dt { font-weight: bold; margin-bottom: 0.1em; }
+  dl { margin-top: 0.2em; margin-bottom: 0.5em; }
+  dd { margin-left: 1.6em; margin-bottom: 0.1em; }
+  pre, code, tt, kbd, samp, .mw-code { font-family: monospace, Courier; }
+  code { color: rgb(0, 0, 0); background-color: rgb(249, 249, 249); border:=
+ 1px solid rgb(221, 221, 221); border-radius: 2px; padding: 1px 4px; }
+  pre, .mw-code { color: rgb(0, 0, 0); background-color: rgb(249, 249, 249)=
+; border: 1px solid rgb(221, 221, 221); padding: 1em; white-space: pre-wrap=
+; }
+  table { font-size: 100%; }
+  fieldset { border: 1px solid rgb(47, 111, 171); margin: 1em 0px; padding:=
+ 0px 1em 1em; }
+  fieldset.nested { margin: 0px 0px 0.5em; padding: 0px 0.5em 0.5em; }
+  legend { padding: 0.5em; font-size: 95%; }
+  form { border: none; margin: 0px; }
+  textarea { width: 100%; padding: 0.1em; display: block; box-sizing: borde=
+r-box; }
+  .center { width: 100%; text-align: center; }
+  .center * { margin-left: auto; margin-right: auto; }
+  .small { font-size: 94%; }
+  table.small { font-size: 100%; }
+  #toc, .toc, .mw-warning, .toccolours { border: 1px solid rgb(170, 170, 17=
+0); background-color: rgb(249, 249, 249); padding: 5px; font-size: 95%; }
+  #toc, .toc { display: table; zoom: 1; padding: 7px; }
+  table#toc, table.toc { border-collapse: collapse; }
+  table#toc td, table.toc td { padding: 0px; }
+  #toc h2, .toc h2 { display: inline; border: none; padding: 0px; font-size=
+: 100%; font-weight: bold; }
+  #toc #toctitle, .toc #toctitle, #toc .toctitle, .toc .toctitle { text-ali=
+gn: center; }
+  #toc ul, .toc ul { list-style-type: none; list-style-image: none; margin-=
+left: 0px; padding: 0px; text-align: left; }
+  #toc ul ul, .toc ul ul { margin: 0px 0px 0px 2em; }
+  .tocnumber, .toctext { display: table-cell; text-decoration: inherit; }
+  .tocnumber { padding-left: 0px; padding-right: 0.5em; }
+  .mw-content-ltr .tocnumber { padding-left: 0px; padding-right: 0.5em; }
+  .mw-content-rtl .tocnumber { padding-left: 0.5em; padding-right: 0px; }
+  .mw-warning { margin-left: 50px; margin-right: 50px; text-align: center; =
+}
+  div.floatright, table.floatright { margin: 0px 0px 0.5em 0.5em; border: 0=
+px; }
+  div.floatright p { font-style: italic; }
+  div.floatleft, table.floatleft { margin: 0px 0.5em 0.5em 0px; border: 0px=
+; }
+  div.floatleft p { font-style: italic; }
+  div.thumb { margin-bottom: 0.5em; width: auto; background-color: transpar=
+ent; }
+  div.thumbinner { border: 1px solid rgb(204, 204, 204); padding: 3px; back=
+ground-color: rgb(249, 249, 249); font-size: 94%; text-align: center; overf=
+low: hidden; }
+  html .thumbimage { border: 1px solid rgb(204, 204, 204); }
+  html .thumbcaption { border: none; line-height: 1.4em; padding: 3px; font=
+-size: 94%; text-align: left; }
+  div.magnify { float: right; margin-left: 3px; }
+  div.magnify a { display: block; text-indent: 15px; white-space: nowrap; o=
+verflow: hidden; width: 15px; height: 11px; background-image: linear-gradie=
+nt(transparent, transparent), url("data:image/svg+xml,%3C%3Fxml%20version%3=
+D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%=
+20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2=
+011%2015%22%20width%3D%2215%22%20height%3D%2211%22%3E%0A%20%20%20%20%3Cg%20=
+id%3D%22magnify-clip%22%20fill%3D%22%23fff%22%20stroke%3D%22%23000%22%3E%0A=
+%20%20%20%20%20%20%20%20%3Cpath%20id%3D%22bigbox%22%20d%3D%22M1.509%201.865=
+h10.99v7.919h-10.99z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20id%3D%22s=
+mallbox%22%20d%3D%22M-1.499%206.868h5.943v4.904h-5.943z%22%2F%3E%0A%20%20%2=
+0%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A"); user-select: none; }
+  img.thumbborder { border: 1px solid rgb(221, 221, 221); }
+  .mw-content-ltr .thumbcaption { text-align: left; }
+  .mw-content-ltr .magnify { float: right; margin-left: 3px; margin-right: =
+0px; }
+  .mw-content-ltr div.magnify a { background-image: linear-gradient(transpa=
+rent, transparent), url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22=
+%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20xmlns%3D=
+%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2011%2015%2=
+2%20width%3D%2215%22%20height%3D%2211%22%3E%0A%20%20%20%20%3Cg%20id%3D%22ma=
+gnify-clip%22%20fill%3D%22%23fff%22%20stroke%3D%22%23000%22%3E%0A%20%20%20%=
+20%20%20%20%20%3Cpath%20id%3D%22bigbox%22%20d%3D%22M1.509%201.865h10.99v7.9=
+19h-10.99z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20id%3D%22smallbox%22=
+%20d%3D%22M-1.499%206.868h5.943v4.904h-5.943z%22%2F%3E%0A%20%20%20%20%3C%2F=
+g%3E%0A%3C%2Fsvg%3E%0A"); }
+  .mw-content-rtl .thumbcaption { text-align: right; }
+  .mw-content-rtl .magnify { float: left; margin-left: 0px; margin-right: 3=
+px; }
+  .mw-content-rtl div.magnify a { background-image: linear-gradient(transpa=
+rent, transparent), url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22=
+%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20xmlns%3D=
+%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2011%2015%2=
+2%20width%3D%2215%22%20height%3D%2211%22%3E%0A%20%20%20%20%3Cg%20id%3D%22ma=
+gnify-clip%22%20fill%3D%22%23fff%22%20stroke%3D%22%23000%22%3E%0A%20%20%20%=
+20%20%20%20%20%3Cpath%20id%3D%22bigbox%22%20d%3D%22M9.491%201.865h-10.99v7.=
+919h10.99z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20id%3D%22smallbox%22=
+%20d%3D%22M12.499%206.868h-5.943v4.904h5.943z%22%2F%3E%0A%20%20%20%20%3C%2F=
+g%3E%0A%3C%2Fsvg%3E%0A"); }
+  div.tright { margin: 0.5em 0px 1.3em 1.4em; }
+  div.tleft { margin: 0.5em 1.4em 1.3em 0px; }
+  body.mw-hide-empty-elt .mw-empty-elt { display: none; }
+  .catlinks { border: 1px solid rgb(170, 170, 170); background-color: rgb(2=
+49, 249, 249); padding: 5px; margin-top: 1em; clear: both; }
+  textarea { border: 1px solid rgb(192, 192, 192); }
+  .editOptions { background-color: rgb(240, 240, 240); border-right: 1px so=
+lid rgb(192, 192, 192); border-bottom: 1px solid rgb(192, 192, 192); border=
+-left: 1px solid rgb(192, 192, 192); border-image: initial; border-top: non=
+e; padding: 1em 1em 1.5em; margin-bottom: 2em; }
+  .usermessage { background-color: rgb(255, 206, 123); border: 1px solid rg=
+b(255, 165, 0); color: rgb(0, 0, 0); font-weight: bold; margin: 2em 0px 1em=
+; padding: 0.5em 1em; vertical-align: middle; }
+  #siteNotice { position: relative; text-align: center; margin: 0px; }
+  #localNotice { margin-bottom: 0.9em; }
+  .firstHeading { margin-bottom: 0.1em; line-height: 1.2em; padding-bottom:=
+ 0px; }
+  #siteSub { display: none; }
+  #jump-to-nav { margin-top: -1.4em; margin-bottom: 1.4em; }
+  #contentSub, #contentSub2 { font-size: 84%; line-height: 1.2em; margin: 0=
+px 0px 1.4em 1em; color: rgb(84, 84, 84); width: auto; }
+  span.subpages { display: block; }
+}
+
+.mw-wiki-logo { background-image: url("/skins/common/images/tizen-logo-smal=
+l-wiki.png?f46b9"); }
+
+@media screen {
+  html { font-size: 100%; }
+  html, body { height: 100%; margin: 0px; padding: 0px; font-family: sans-s=
+erif; }
+  body { background-color: rgb(246, 246, 246); }
+  .mw-body { margin-left: 10em; padding: 1em; border-width: 1px 0px 1px 1px=
+; border-style: solid; border-color: rgb(167, 215, 249); border-image: init=
+ial; margin-top: -1px; background-color: rgb(255, 255, 255); color: rgb(37,=
+ 37, 37); direction: ltr; }
+  .mw-body .mw-editsection, .mw-body .mw-editsection-like { font-family: sa=
+ns-serif; }
+  .mw-body p { line-height: inherit; margin: 0.5em 0px; }
+  .mw-body h1, .mw-body h2 { font-family: "Linux Libertine", Georgia, Times=
+, serif; line-height: 1.3; margin-bottom: 0.25em; padding: 0px; }
+  .mw-body h1:lang(ja), .mw-body h2:lang(ja), .mw-body h1:lang(he), .mw-bod=
+y h2:lang(he), .mw-body h1:lang(ko), .mw-body h2:lang(ko) { font-family: sa=
+ns-serif; }
+  .mw-body h1 { font-size: 1.8em; }
+  .mw-body .mw-body-content h1 { margin-top: 1em; }
+  .mw-body h2 { font-size: 1.5em; margin-top: 1em; }
+  .mw-body h3, .mw-body h4, .mw-body h5, .mw-body h6 { line-height: 1.6; ma=
+rgin-top: 0.3em; margin-bottom: 0px; padding-bottom: 0px; }
+  .mw-body h3 { font-size: 1.2em; }
+  .mw-body h3, .mw-body h4 { font-weight: bold; }
+  .mw-body h4, .mw-body h5, .mw-body h6 { font-size: 100%; }
+  .mw-body #toc h2, .mw-body .toc h2 { font-size: 100%; font-family: sans-s=
+erif; }
+  .mw-body .firstHeading { overflow: visible; }
+  .mw-body .mw-indicators { float: right; line-height: 1.6; font-size: 0.87=
+5em; position: relative; z-index: 1; }
+  .mw-body .mw-indicator { display: inline-block; zoom: 1; }
+  div.emptyPortlet { display: none; }
+  ul { list-style-type: disc; list-style-image: url("data:image/svg+xml,%3C=
+%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20xmln=
+s%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20widt=
+h%3D%225%22%20height%3D%2213%22%3E%0A%3Ccircle%20cx%3D%222.5%22%20cy%3D%229=
+.5%22%20r%3D%222.5%22%20fill%3D%22%2300528c%22%2F%3E%0A%3C%2Fsvg%3E%0A"); }
+  pre, .mw-code { line-height: 1.3em; }
+  #siteNotice { font-size: 0.8em; }
+  .redirectText { font-size: 140%; }
+  .redirectMsg p { margin: 0px; }
+  .mw-body-content { position: relative; line-height: 1.6; font-size: 0.875=
+em; z-index: 0; }
+  #p-personal { position: absolute; top: 0.33em; right: 0.75em; z-index: 10=
+0; }
+  #p-personal h3 { display: none; }
+  #p-personal ul { list-style-type: none; list-style-image: none; margin: 0=
+px; padding-left: 10em; }
+  #p-personal li { line-height: 1.125em; float: left; margin-left: 0.75em; =
+margin-top: 0.5em; font-size: 0.75em; white-space: nowrap; }
+  #pt-userpage, #pt-anonuserpage { background-position: left top; backgroun=
+d-repeat: no-repeat; background-image: linear-gradient(transparent, transpa=
+rent), url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3=
+D%22utf-8%22%3F%3E%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%=
+20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%=
+2FDTD%2Fsvg11.dtd%22%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22=
+%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22=
+http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0=
+A%09%20width%3D%2212px%22%20height%3D%2213.836px%22%20viewBox%3D%220%200%20=
+12%2013.836%22%20enable-background%3D%22new%200%200%2012%2013.836%22%20xml%=
+3Aspace%3D%22preserve%22%3E%0A%3Cpath%20fill%3D%22%23777777%22%20d%3D%22M1.=
+938%2C6.656c-1.32%2C1.485-1.47%2C3.15-0.97%2C4.25c0.323%2C0.707%2C0.78%2C1.=
+127%2C1.313%2C1.375%0A%09c0.496%2C0.229%2C1.074%2C0.273%2C1.658%2C0.282c0.0=
+23%2C0%2C0.04%2C0.03%2C0.062%2C0.03h4.187c0.61%2C0%2C1.225-0.125%2C1.75-0.4=
+05%0A%09c0.527-0.28%2C0.961-0.718%2C1.188-1.376c0.335-0.964%2C0.175-2.529-1=
+.094-4.03C9.094%2C7.954%2C7.68%2C8.719%2C6.065%2C8.719%0A%09c-1.677%2C0-3.1=
+82-0.812-4.125-2.063H1.938z%22%2F%3E%0A%3Cpath%20fill%3D%22%23777777%22%20d=
+%3D%22M6.063%2C0c-1.89%2C0-3.595%2C1.674-3.594%2C3.563C2.467%2C5.45%2C4.173=
+%2C7.155%2C6.06%2C7.155%0A%09c1.89%2C0%2C3.564-1.705%2C3.563-3.593C9.625%2C=
+1.673%2C7.95%2C0%2C6.063%2C0L6.063%2C0z%22%2F%3E%0A%3C%2Fsvg%3E%0A"); paddi=
+ng-left: 15px !important; }
+  #pt-anonuserpage { color: rgb(112, 112, 112); }
+  #p-search { float: left; margin-right: 0.5em; margin-left: 0.5em; }
+  #p-search h3 { display: block; clip: rect(1px, 1px, 1px, 1px); width: 1px=
+; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; p=
+osition: absolute !important; }
+  #p-search form, #p-search input { margin: 0.4em 0px 0px; }
+  div#simpleSearch { display: block; width: 20vw; min-width: 5em; max-width=
+: 20em; padding-right: 1.4em; height: 1.4em; margin-top: 0.65em; position: =
+relative; min-height: 1px; border: 1px solid rgb(170, 170, 170); color: bla=
+ck; background-color: white; background-image: url("data:image/png;base64,i=
+VBORw0KGgoAAAANSUhEUgAAAAEAAAAQCAIAAABY/YLgAAAAJUlEQVQIHQXBsQEAAAjDoND/73UW=
+dnerhmHVsDQZJrNWVg3Dqge6bgMe6bejNAAAAABJRU5ErkJggg=3D=3D"); background-posi=
+tion: left top; background-repeat: repeat-x; }
+  div#simpleSearch input { margin: 0px; padding: 0px; border: 0px; backgrou=
+nd-color: transparent; color: black; }
+  div#simpleSearch #searchInput { width: 100%; padding: 0.2em 0px 0.2em 0.2=
+em; font-size: 13px; direction: ltr; -webkit-appearance: textfield; }
+  div#simpleSearch #searchInput:focus { outline: none; }
+  div#simpleSearch #searchInput.placeholder { color: rgb(153, 153, 153); }
+  div#simpleSearch #searchInput::-webkit-search-decoration, div#simpleSearc=
+h #searchInput::-webkit-search-cancel-button, div#simpleSearch #searchInput=
+::-webkit-search-results-button, div#simpleSearch #searchInput::-webkit-sea=
+rch-results-decoration { -webkit-appearance: textfield; }
+  div#simpleSearch #searchButton, div#simpleSearch #mw-searchButton { posit=
+ion: absolute; top: 0px; right: 0px; width: 1.65em; height: 100%; cursor: p=
+ointer; text-indent: -99999px; line-height: 1; direction: ltr; white-space:=
+ nowrap; overflow: hidden; }
+  div#simpleSearch #searchButton { background-image: linear-gradient(transp=
+arent, transparent), url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%2=
+2%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org=
+%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2213%22%3E%3Cg%20stroke-wid=
+th%3D%222%22%20stroke%3D%22%236c6c6c%22%20fill%3D%22none%22%3E%3Cpath%20d%3=
+D%22M11.29%2011.71l-4-4%22%2F%3E%3Ccircle%20cx%3D%225%22%20cy%3D%225%22%20r=
+%3D%224%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E"); background-position: center cente=
+r; background-repeat: no-repeat; }
+  div#simpleSearch #mw-searchButton { z-index: 1; }
+  div.vectorTabs h3 { display: none; }
+  div.vectorTabs { float: left; height: 2.5em; background-image: url("data:=
+image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAuCAIAAABmjeQ9AAAAQ0lEQVR4AW=
+VOhQEAIAzC/X+xAXbXeoDFGA3A9yk1n4juBROcUegfarWjP3ojZvEzxs6j+nygmo+zzsk79nY+t=
+OxdEhlf3UHVgUFrVwAAAABJRU5ErkJggg=3D=3D"); background-position: left bottom=
+; background-repeat: no-repeat; padding-left: 1px; }
+  div.vectorTabs ul { float: left; height: 100%; list-style-type: none; lis=
+t-style-image: none; margin: 0px; padding: 0px; background-image: url("data=
+:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAuCAIAAABmjeQ9AAAAQ0lEQVR4A=
+WVOhQEAIAzC/X+xAXbXeoDFGA3A9yk1n4juBROcUegfarWjP3ojZvEzxs6j+nygmo+zzsk79nY+=
+tOxdEhlf3UHVgUFrVwAAAABJRU5ErkJggg=3D=3D"); background-position: right bott=
+om; background-repeat: no-repeat; }
+  div.vectorTabs ul li { float: left; line-height: 1.125em; display: inline=
+-block; height: 100%; margin: 0px; padding: 0px; background-color: rgb(243,=
+ 243, 243); background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSU=
+hEUgAAAAEAAABkCAIAAADITs03AAAAO0lEQVR4AeSKhREAMQzDdN5/5uixuEKDpqgBjl2f78wd2=
+DVj1+26/h///PfteVMN7zoGebcg1/Y/ZQQAlAUtQCujIJMAAAAASUVORK5CYII=3D"); backgr=
+ound-position: left bottom; background-repeat: repeat-x; white-space: nowra=
+p; }
+  div.vectorTabs ul > li { display: block; }
+  div.vectorTabs li { }
+  div.vectorTabs li.new a, div.vectorTabs li.new a:visited { color: rgb(165=
+, 88, 88); }
+  div.vectorTabs li.selected { background-image: url("data:image/png;base64=
+,iVBORw0KGgoAAAANSUhEUgAAAAEAAABkAQAAAABvV2fNAAAADElEQVR4AWNoGB4QAInlMgFKeR=
+KBAAAAAElFTkSuQmCC"); }
+  div.vectorTabs li.selected a, div.vectorTabs li.selected a:visited { colo=
+r: rgb(51, 51, 51); text-decoration: none; }
+  div.vectorTabs li.icon a { background-position: right bottom; background-=
+repeat: no-repeat; }
+  div.vectorTabs li a { display: inline-block; height: 1.9em; padding-left:=
+ 0.5em; padding-right: 0.5em; color: rgb(6, 69, 173); cursor: pointer; font=
+-size: 0.8em; }
+  div.vectorTabs li > a { display: block; }
+  div.vectorTabs span { display: inline-block; background-image: url("data:=
+image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAuCAIAAABmjeQ9AAAAQ0lEQVR4AW=
+VOhQEAIAzC/X+xAXbXeoDFGA3A9yk1n4juBROcUegfarWjP3ojZvEzxs6j+nygmo+zzsk79nY+t=
+OxdEhlf3UHVgUFrVwAAAABJRU5ErkJggg=3D=3D"); background-position: right botto=
+m; background-repeat: no-repeat; }
+  div.vectorTabs span a { display: inline-block; padding-top: 1.25em; }
+  div.vectorTabs span > a { float: left; display: block; }
+  div.vectorMenu { direction: ltr; float: left; cursor: pointer; position: =
+relative; }
+  body.rtl div.vectorMenu { direction: rtl; }
+  div#mw-head div.vectorMenu h3 { float: left; background-image: url("data:=
+image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAuCAIAAABmjeQ9AAAAQ0lEQVR4AW=
+VOhQEAIAzC/X+xAXbXeoDFGA3A9yk1n4juBROcUegfarWjP3ojZvEzxs6j+nygmo+zzsk79nY+t=
+OxdEhlf3UHVgUFrVwAAAABJRU5ErkJggg=3D=3D"); background-repeat: no-repeat; ba=
+ckground-position: right bottom; font-size: 1em; height: 2.5em; padding-rig=
+ht: 1px; margin-right: -1px; }
+  div.vectorMenu h3 span { display: block; font-size: 0.8em; padding-left: =
+0.7em; padding-top: 1.375em; margin-right: 20px; font-weight: normal; color=
+: rgb(77, 77, 77); }
+  div.vectorMenu h3 a { position: absolute; top: 0px; right: 0px; width: 20=
+px; height: 2.5em; background-image: linear-gradient(transparent, transpare=
+nt), url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%=
+22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22=
+%20width%3D%2222%22%20height%3D%2216%22%3E%3Cpath%20d%3D%22M15.502%206.001l=
+-5%205.001-5-5.001z%22%20fill%3D%22%23797979%22%2F%3E%3C%2Fsvg%3E"); backgr=
+ound-position: 100% 70%; background-repeat: no-repeat; transition: backgrou=
+nd-position 250ms ease 0s; }
+  div.vectorMenu.menuForceShow h3 a { background-position: 100% 100%; }
+  div.vectorMenuFocus h3 a { background-image: linear-gradient(transparent,=
+ transparent), url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20en=
+coding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F200=
+0%2Fsvg%22%20width%3D%2222%22%20height%3D%2216%22%3E%3Cpath%20d%3D%22M15.50=
+2%206.001l-5%205.001-5-5.001z%22%20fill%3D%22%23929292%22%2F%3E%3C%2Fsvg%3E=
+"); }
+  div.vectorMenu div.menu { min-width: 100%; position: absolute; top: 2.5em=
+; left: -1px; background-color: white; border-width: 0px 1px 1px; border-st=
+yle: solid; border-color: silver; border-image: initial; clear: both; text-=
+align: left; display: none; z-index: 1; }
+  div.vectorMenu:hover div.menu, div.vectorMenu.menuForceShow div.menu { di=
+splay: block; }
+  div.vectorMenu ul { list-style-type: none; list-style-image: none; paddin=
+g: 0px; margin: 0px; text-align: left; }
+  div.vectorMenu li { padding: 0px; margin: 0px; text-align: left; line-hei=
+ght: 1em; }
+  div.vectorMenu li a { display: inline-block; padding: 0.5em; white-space:=
+ nowrap; color: rgb(6, 69, 173); cursor: pointer; font-size: 0.8em; }
+  div.vectorMenu li > a { display: block; }
+  div.vectorMenu li.selected a, div.vectorMenu li.selected a:visited { colo=
+r: rgb(51, 51, 51); text-decoration: none; }
+  * html div.vectorMenu div.menu { display: block; position: static; border=
+: 0px; }
+  * html div#mw-head div.vectorMenu h3 { display: none; }
+  * html div.vectorMenu li { float: left; line-height: 1.125em; border-righ=
+t: 1px solid rgb(167, 215, 249); }
+  * html div.vectorMenu li a { padding-top: 1.25em; }
+  @-webkit-keyframes rotate {=20
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+  @keyframes rotate {=20
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+  #ca-unwatch.icon a, #ca-watch.icon a { margin: 0px; padding: 3.1em 0px 0p=
+x; display: block; width: 26px; height: 0px; overflow: hidden; background-p=
+osition: 5px 60%; }
+  #ca-unwatch.icon a { background-image: linear-gradient(transparent, trans=
+parent), url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding=
+%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsv=
+g%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width=
+%3D%2216%22%20height%3D%2216%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22a%2=
+2%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23c2edff%22%2F%3E%3Cstop%=
+20offset%3D%22.5%22%20stop-color%3D%22%2368bdff%22%2F%3E%3Cstop%20offset%3D=
+%221%22%20stop-color%3D%22%23fff%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGr=
+adient%20x1%3D%2213.47%22%20y1%3D%2214.363%22%20x2%3D%224.596%22%20y2%3D%22=
+3.397%22%20id%3D%22b%22%20xlink%3Ahref%3D%22%23a%22%20gradientUnits%3D%22us=
+erSpaceOnUse%22%2F%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M8.103%201.146l2.175%204=
+.408%204.864.707-3.52%203.431.831%204.845-4.351-2.287-4.351%202.287.831-4.8=
+45-3.52-3.431%204.864-.707z%22%20fill%3D%22url%28%23b%29%22%20stroke%3D%22%=
+237cb5d1%22%20stroke-width%3D%220.9999199999999999%22%2F%3E%3C%2Fsvg%3E"); =
+}
+  #ca-watch.icon a { background-image: linear-gradient(transparent, transpa=
+rent), url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3=
+D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%=
+22%20width%3D%2216%22%20height%3D%2216%22%3E%3Cpath%20d%3D%22M8.103%201.146=
+l2.175%204.408%204.864.707-3.52%203.431.831%204.845-4.351-2.287-4.351%202.2=
+87.831-4.845-3.52-3.431%204.864-.707z%22%20fill%3D%22%23fff%22%20stroke%3D%=
+22%237cb5d1%22%20stroke-width%3D%220.9999199999999999%22%2F%3E%3C%2Fsvg%3E"=
+); }
+  #ca-unwatch.icon a:hover, #ca-unwatch.icon a:focus { background-image: li=
+near-gradient(transparent, transparent), url("data:image/svg+xml,%3C%3Fxml%=
+20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22htt=
+p%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.=
+w3.org%2F1999%2Fxlink%22%20width%3D%2216%22%20height%3D%2216%22%3E%3Cdefs%3=
+E%3ClinearGradient%20id%3D%22a%22%3E%3Cstop%20offset%3D%220%22%20stop-color=
+%3D%22%23c2edff%22%2F%3E%3Cstop%20offset%3D%22.5%22%20stop-color%3D%22%2368=
+bdff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23fff%22%2F%3E%3=
+C%2FlinearGradient%3E%3ClinearGradient%20x1%3D%2213.47%22%20y1%3D%2214.363%=
+22%20x2%3D%224.596%22%20y2%3D%223.397%22%20id%3D%22b%22%20xlink%3Ahref%3D%2=
+2%23a%22%20gradientUnits%3D%22userSpaceOnUse%22%2F%3E%3C%2Fdefs%3E%3Cpath%2=
+0d%3D%22M8.103%201.146l2.175%204.408%204.864.707-3.52%203.431.831%204.845-4=
+.351-2.287-4.351%202.287.831-4.845-3.52-3.431%204.864-.707z%22%20fill%3D%22=
+url%28%23b%29%22%20stroke%3D%22%23c8b250%22%20stroke-width%3D%220.999919999=
+9999999%22%2F%3E%3C%2Fsvg%3E"); }
+  #ca-watch.icon a:hover, #ca-watch.icon a:focus { background-image: linear=
+-gradient(transparent, transparent), url("data:image/svg+xml,%3C%3Fxml%20ve=
+rsion%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A=
+%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%3E%=
+3Cpath%20d%3D%22M8.103%201.146l2.175%204.408%204.864.707-3.52%203.431.831%2=
+04.845-4.351-2.287-4.351%202.287.831-4.845-3.52-3.431%204.864-.707z%22%20fi=
+ll%3D%22%23fff%22%20stroke%3D%22%23c8b250%22%20stroke-width%3D%220.99991999=
+99999999%22%2F%3E%3C%2Fsvg%3E"); }
+  #ca-unwatch.icon a.loading, #ca-watch.icon a.loading { background-image: =
+linear-gradient(transparent, transparent), url("data:image/svg+xml,%3C%3Fxm=
+l%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22h=
+ttp%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%=
+22%3E%3Cpath%20d%3D%22M8.103%201.146l2.175%204.408%204.864.707-3.52%203.431=
+.831%204.845-4.351-2.287-4.351%202.287.831-4.845-3.52-3.431%204.864-.707z%2=
+2%20fill%3D%22%23fff%22%20stroke%3D%22%23d1d1d1%22%20stroke-width%3D%220.99=
+99199999999999%22%2F%3E%3C%2Fsvg%3E"); animation: 700ms linear 0s infinite =
+normal none running rotate; outline: none; cursor: default; pointer-events:=
+ none; background-position: 50% 60%; transform-origin: 50% 57%; }
+  #ca-unwatch.icon a span, #ca-watch.icon a span { display: none; }
+  #mw-navigation h2 { position: absolute; top: -9999px; }
+  #mw-page-base { height: 5em; background-position: left bottom; background=
+-repeat: repeat-x; background-image: linear-gradient(rgb(255, 255, 255) 50%=
+, rgb(246, 246, 246) 100%); background-color: rgb(255, 255, 255); }
+  #mw-head-base { margin-top: -5em; margin-left: 10em; height: 5em; }
+  div#mw-head { position: absolute; top: 0px; right: 0px; width: 100%; }
+  div#mw-head h3 { margin: 0px; padding: 0px; }
+  #left-navigation { float: left; margin-left: 10em; margin-top: 2.5em; mar=
+gin-bottom: -2.5em; display: inline; }
+  #right-navigation { float: right; margin-top: 2.5em; }
+  #p-logo { position: absolute; top: -160px; left: 0px; width: 10em; height=
+: 160px; }
+  #p-logo a { display: block; width: 10em; height: 160px; background-repeat=
+: no-repeat; background-position: center center; text-decoration: none; }
+  div#mw-panel { font-size: inherit; position: absolute; top: 160px; paddin=
+g-top: 1em; width: 10em; left: 0px; }
+  div#mw-panel div.portal { margin: 0px 0.6em 0px 0.7em; padding: 0.25em 0p=
+x; direction: ltr; background-position: left top; background-repeat: no-rep=
+eat; background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA=
+IwAAAABCAAAAAAphRnkAAAAJ0lEQVQIW7XFsQEAIAyAMPD/b7uLWz8wS5youFW1UREfiIpH1Q2V=
+Bz7fGPS1dOGeAAAAAElFTkSuQmCC"); }
+  div#mw-panel div.portal h3 { font-size: 0.75em; color: rgb(77, 77, 77); f=
+ont-weight: normal; margin: 0px; padding: 0.25em 0px 0.25em 0.25em; cursor:=
+ default; border: none; }
+  div#mw-panel div.portal div.body { margin: 0px 0px 0px 1.25em; padding-to=
+p: 0px; }
+  div#mw-panel div.portal div.body ul { list-style-type: none; list-style-i=
+mage: none; margin: 0px; padding: 0px; }
+  div#mw-panel div.portal div.body ul li { line-height: 1.125em; margin: 0p=
+x; padding: 0.25em 0px; font-size: 0.75em; overflow-wrap: break-word; }
+  div#mw-panel div.portal div.body ul li a { color: rgb(6, 69, 173); }
+  div#mw-panel div.portal div.body ul li a:visited { color: rgb(11, 0, 128)=
+; }
+  div#mw-panel #p-logo + div.portal { background-image: none; margin-top: 0=
+px; }
+  div#mw-panel #p-logo + div.portal h3 { display: none; }
+  div#mw-panel #p-logo + div.portal div.body { margin-left: 0.5em; }
+  div#footer { margin-left: 10em; margin-top: 0px; padding: 0.75em; directi=
+on: ltr; }
+  div#footer ul { list-style-type: none; list-style-image: none; margin: 0p=
+x; padding: 0px; }
+  div#footer ul li { margin: 0px; padding: 0.5em 0px; color: rgb(51, 51, 51=
+); font-size: 0.7em; }
+  div#footer #footer-icons { float: right; }
+  div#footer #footer-icons li { float: left; margin-left: 0.5em; line-heigh=
+t: 2em; text-align: right; }
+  div#footer #footer-info li { line-height: 1.4em; }
+  div#footer #footer-places li { float: left; margin-right: 1em; line-heigh=
+t: 2em; }
+  body.ltr div#footer #footer-places { float: left; }
+  .mw-body .external { background-position: right center; background-repeat=
+: no-repeat; background-image: linear-gradient(transparent, transparent), u=
+rl("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-=
+8%22%20standalone%3D%22no%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.o=
+rg%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%3E%3Cpath%20fill%=
+3D%22%23fff%22%20stroke%3D%22%2306c%22%20d%3D%22M1.5%204.518h5.982V10.5H1.5=
+z%22%2F%3E%3Cpath%20d%3D%22M5.765%201H11v5.39L9.427%207.937l-1.31-1.31L5.39=
+3%209.35l-2.69-2.688%202.81-2.808L4.2%202.544z%22%20fill%3D%22%2306f%22%2F%=
+3E%3Cpath%20d%3D%22M9.995%202.004l.022%204.885L8.2%205.07%205.32%207.95%204=
+.09%206.723l2.882-2.88-1.85-1.852z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%=
+3E"); padding-right: 13px; }
+}
+
+@media screen and (min-width: 982px) {
+  .mw-body { margin-left: 11em; padding: 1.25em 1.5em 1.5em; }
+  #p-logo { left: 0.5em; }
+  div#footer { margin-left: 11em; padding: 1.25em; }
+  #mw-panel { padding-left: 0.5em; }
+  #p-search { margin-right: 1em; }
+  #left-navigation { margin-left: 11em; }
+  #p-personal { right: 1em; }
+  #mw-head-base { margin-left: 11em; }
+}
+------MultipartBoundary--YjNJgYH3omwm7wcPVonkrK73SaIUa94XX9UWntodet----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: https://wiki.tizen.org/skins/common/images/tizen-logo-small-wiki.png?f46b9
+
+iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJ
+bWFnZVJlYWR5ccllPAAADb5JREFUeNrsXQtwVNUZPnd381iIGELeER9tlAphsBCCWNFCBEGcCLTU
+tKm2FkfFKa3amfoaB7WADo4z+ChUmUoamzEdKiglbbA8Aggq0BKIBQIJISS72Wxeu9nN7mb33nt6
+zr37vHtucvdhrcP/MTu72Xvv///nP9/5z3/+cxI4jDECXLnQgQuAAAAgAAAIAAACAIAAACAAAAgA
+AAIAgAAAIAAACAAAAgCAAAAgAAAIAAACAIAAACAAAAgAAAIAgAAAIAAACAAAAgCAAAAgAAAIAAAC
+AIAAACAAAAgAAAIAgAAAIAAACAAAAgCAAAAgAAAIAAACAIAAACAA4OuG4ZvegA1vvXdFd+Bza34B
+EQAABAAAAABAzOASFQD/4QSsAgBJQGVlZeG4cePKvV7vLT6s//1fav908X8aAVauXNlYUlJyZ0pK
+CuK4hAODFBkGBgaEpqamHzY0NHwUiBQ6nQ5VVVV9cfPNN5cFdNFrHo8HnTp1qnrHjh0PiaIYylLJ
+/RUVFS/OmDFjbUZGRty2UR02m23g9OnT8+vr60+H6wjXtWrVqq7i4uIi+jkRP1B9giCg8wTV1dVT
+wvVRuYsXLx5XUFDwh7y8vFKj0VhkMBgmUB+YTCYkGjM/u3HK1HufW7NqYMwsnti5YsWKbcQ/P09P
+Tw/60+fzobNnzx6tra393pw5c+ZnZWXtSk1NrU9LS5tF7Pp3f3//vw4cOLAxGAEuXLiQYzabgwYm
+ClHEiOd9eofDcb3Px0dMFS0tLbldXV3Sd1QXdQ797HQ6J4+MeCMZSq53dHRcR8gkfaYNjivUGQwo
+Jycni+f514ltC3leYE5fzc3NE9va2iSbEiUAfX54eHiisk20DXa7ffn48eMfoJ1OfITcbjcio196
+fWt6WV5v/+Bm4rdKLbouXrw42Wq1Bv1DddN34s9CqvvQocMHZs8u3UtI8StCgO2kbSOEBESVLzQF
++HwCMcSJ9Ho9kwShnwPvWDUPoD/TF3UiJYLSAdT5TuewXxdlrCiNFno/NUoJQRCJI10oMCrj6RiO
+o47hkNGYtmDu3Lm3HD58uImli5I15Acu2M5Yc51ABKDvLD12+1AK1UX1yKOWtlMeKJi01+lw3P/C
+xrf++cITj/1x7MEmIpfL7Zelk2ymuukroPvIkc+W+2+/M/BcBAGoT3U6uTPkBig7NLqzAx1B31id
+QuVRY0a8XqV7JKOpgeGyqOzoe0O20efCbYmtQ3ji9EGUnp6nMxj0G4mcRbzfSVpsk9sYW95MbZYG
+AKNN4XoCbQ/oErCAeEIGa1//plfe3vrpU4/8rGUssgXCfmTfqOlmJIFYYjqHlP0YcjaWyBE5Ejg/
+49ijkt5KvheVEYA2nEZypSxWtIjUlUCy4x9lFksP1VteUjJt+uefH2+Oto2GbhzRIbJndDHbQEVI
+pGa0ScQhfwbcECCCyPNIIC+CjB5rb80bW2vmPfZgpXe06ZbVN9TP6v5UEMDn9b1GZCxTYxgZNeXk
+LYMqCx/9RHG3IOBjLMeQ5zwkzOwc8YwoDEbB0Rw+yiVnKe6VQ5X3HXJHJorB/alpqZkGQ1omsz3k
+X/b4jFtJGG5mjyYURgB5JJMReZR81Rsr8QTBd4TVJixif8dF+kCaIsno5/2jmbyXWXV964iM344W
+AViyqJ9ZupkEOH++pZq8VavdOHXqtHbS6RnKuZDMW2e2b/9o2WhKPAojZLbqmLmDh2Hwzp27Pydv
+y7U6/d3aullmi3UfGQFXs66np6UdK8jP/TNLlzwFchG20e9GRjwbiR0fxxN92Hpw8BVNGoEm0MGf
+BwYHn9q0tbrhsQd+vH+0KSDanyJTd1x1gOBcFUj+sBQQpQTNPYYSVtISmnb8jMVyyIpVlhI12/9a
+3GXu/gexi9n5ZCnUnDtp4qLKinvdLF1yhMNB22S7UFztHH16EOXVT4QP5NBNwz/viwjdepPZXLu1
+9oNpP/3BigGWP6NlafNnTATQ6xWjVpqzBLKE8cRMgEDIj5QlxiwrHHUff1zU2WVuJMldDut6Soqh
+PTc7a8mKe5bY1fQobcNhHZaIbVrmbeyfWslSNSKhk1cnvnxTt2UbseE+FpmicgD/8nosmw3aGYul
+kaDQgWiyHKtj1GTR7+J18o6/1+eYyMgnWW8R6zpZIvXmZectum/R3abRdMhJIBdIYKX5Py8vn5BH
+nz5rZsnYaYiUjfPSMvdCazvJX3hVPUofBHMhgR9SRAB56WjzVrxTU7P6wZU/2qLMqVj+pH5OGgFo
+1opEMWoZqIVlX6Usivq9e4ydpu7dHo9nukq1zF6Yl7toafnC1rHkyyOJCxZy6I45rT8UFU2uW7du
+fR2JIqPWIWjHdnZetjU1nfzOG2+80+N2O9XuDBbAlKsVh63/9QmTUt4lfjIqn+o2d7/+wc4PDy5b
+vPRM1BSg9GdSCUDnRo6lRESumKeA5Mnae2hfapfJvNvlcpcxO5/j3AVFhSvunn9XkxbZwRwA4+Cy
+jJZnLRZLsGijRoBABc7t8WS6hp03DTmdPS7VqQapEqC783LHdd++6TdkCbiZ8aixs7Ozbtee+tK7
+7ij3ygNKnQCu5BFA9M/TCiUCYZkr9hwgGbIOftaoN3dbahwO5wKVtb9QVFBQede88v1a5bI6JVAU
+0lKBDCS4NGm09vSPep8aAej395Qv2fLBh3WLHU5nRVS10uudbiaRgLRpjSSL+E3kVCKAK6kE0EVl
+rVgate44CJC4LJPJ/NagzXa/2vXCgvyHv3/7/F2xyJSzaQWRgoUarNxDU59KEB61LcG1u0Kb5Af/
+s9mTJj405Bj6D0kK85XPW63WX/5tz6768jsWNsgrimh/ihr8qT0JpIzlFHsAgcw9xgiQDFkN+3av
+6+3rX612PTc359k7bp1fHVd0UmRl/hqpxkqgP7Jh5BlNtxQBcHQWKPlBlEfuzOllAySZrLrc2fkJ
+kalXyrh0qaPmoH7fNIkAClkYafNnTEkgh3FEpwXmMlccSWAisg4e+eTXFkvP82rXs7MnvTrv1gWv
+uuJIKANVyojqnLTa4d8n19q01Z2xffXjTx8fTb9UuBExYwqQ85DAs6W3zN1vtw++1tfX/4xSBu9D
+OR2EBCGbMSMKJTEJ5JDAZLs7jiQwXllfnGj8SVeXaZPa9czMzOrbyhY8G+9yUo4Ayg0vDvl4/sNV
+Dz+puRI49moDq+cACj9kZWautQ3aFrjd0YnuoNe72GAwnKI7rNEEQEmsA4gYYdZMF0eBJF5Zp04f
+qSDhcJva1uyECRN25edmP5xIwSb6oIh/NSAKSS8EiSoRACuWw9dNnuol80nVhda2k8S+jOginahn
+HXBBySSAmgLalfFUAmOV1XL+xO3tly7VkWdTWdczxo/fX5CfV1mQP0VIiADSXMqohIr4KyAAOwKw
+IuG1k0ta7fahxzu7umrUyspfLQGk0hg7lMW8FxCDrPIFt6H3tm2e3tZ2cTdZjhlZ8oxGY9M1ZK3/
+5qY3x0z3qbNstiHU3t6J9u4/GrVdinFoj4Lzb3PTo2ipqQbDk0+sCh6Y0QJa0u3rG0DnWi6iw58e
+jyK7wMiDpOwdsX1aXDzr/cGB/qU2u/1+pT9FFmvJV0nbC1A7IiWq7OAlS9bwsJtksq6XZ8+aaRln
+HGdlpeEpKQY3kbdrw4bfaSpDW3t7e7rN5qolSyt9ra0d6hHAnwBmZl5Nj5M9v37dS2vIfKvtUIB0
+IkjElzsvNz79zNoXPVFb4ti/rFSuAuRraj4tKMh/1OEYKhvxem8I72gsYmZbk7YbiPwlUpaSkVh3
+yWKQtWfPQXT+XMs5s8m87MbiYpSalsby/41aVdNRbbX2ImuPdZNvxHdUqY8exwqfkOlBEJvNRp/7
+rkASLb1Br7X/Jf5Ye3pLmk5++WKUj6gPFAlnkHWiuk+vuup6e2Gh48HW1rbGwNJQzxn8sqJDwEjS
+IoBK4oVHPcWTHFm8wG8Ydg4/crLpVFaKwSCH4TiPB4nSXjsvHVht/rKFvTwL60Uarew2O3I6nFJJ
+OBa9gryrJx48dEy1HM7MhPDoPs3KmvJpTrb95e7u7pekcrdBx/QprWBoPhGkpbLFIbko4q+M+I9M
+jn3uLFFZs+csdZw43rBFr9M/T5ZjyOvjETNT0xgDpEFGPrF0RQRlLH8WSVTgBTEOnXIbmXq4sO1m
+HCou0jdRg0+zsyetH7QNLnQ6nbfrDSlRvkQa5WifAsTIAxwokCypnHpNtiwS4taLSLeaNC4rsfxb
+1sOp6PJX8ZIEmU7MNklLYTHU8zhscGjxqS5fuPYaT9W5c+dOUllyBYsLkjYQPMeSo/1ACMlndHru
+eiXDSSg77/PxMbklHllTS+a7z3zZ+KxOr3+b5n2J9QvnIiHzEksX+b6HJJQ3JI0CGFtYekgntZOu
+9pFmp2i1LYoDKddcLipyPGrp6V2LQ0PfR1Y67YRDZ8moeXcsOQn/BsiMmfcgwNeLljOHl5PUJId0
++rEpU+c1xTghAgEAAADgygT3Tf/9/tLS0iu6A0+cOJHQ8/A3gq5wAAGAAAAgAAAIAAACAIAAACAA
+4IoCB3/oESIAAAgAAAIAgAAAIAAACAAAAgCAAAAgAAAIAAACAIAAACAAAAgAAAIAgAAAIAAACAAA
+AgCAAAAgAAAIAAACAIAAACAAAAgAAAIAgAAAIAAACAAAAgCAAAAgAAAIAAACAIAAACAA4P8M/xVg
+APbBuCo2HlsaAAAAAElFTkSuQmCC
+
+------MultipartBoundary--YjNJgYH3omwm7wcPVonkrK73SaIUa94XX9UWntodet----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: https://wiki.tizen.org/resources/assets/poweredby_mediawiki_88x31.png
+
+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
+AAAAAElFTkSuQmCC
+
+------MultipartBoundary--YjNJgYH3omwm7wcPVonkrK73SaIUa94XX9UWntodet------

@@ -1,0 +1,2227 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://lwn.net/Articles/383128/
+Subject: The FunctionFS composite function [LWN.net]
+Date: Sun, 26 May 2019 15:51:13 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--bBGmtIx9OVNqEv3MjXSSbEByuKZ6xno730dt3uNm3h----"
+
+
+------MultipartBoundary--bBGmtIx9OVNqEv3MjXSSbEByuKZ6xno730dt3uNm3h----
+Content-Type: text/html
+Content-ID: <frame-3EEE241271D8169FECDCD187426FF171@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://lwn.net/Articles/383128/
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.=
+w3.org/TR/html4/loose.dtd"><html><head><meta http-equiv=3D"Content-Type" co=
+ntent=3D"text/html; charset=3DUTF-8"><title>The FunctionFS composite functi=
+on  [LWN.net]</title>
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-sc=
+ale=3D1">
+
+        <link rel=3D"icon" href=3D"https://lwn.net/images/favicon.png" type=
+=3D"image/png">
+        <link rel=3D"alternate" type=3D"application/rss+xml" title=3D"LWN.n=
+et headlines" href=3D"https://lwn.net/headlines/newrss">
+        <link rel=3D"stylesheet" href=3D"https://lwn.net/CSS/lwn">
+<link rel=3D"stylesheet" href=3D"https://lwn.net/CSS/nosub">
+<link rel=3D"stylesheet" href=3D"https://lwn.net/CSS/pure-min">
+           <!--[if lte IE 8]>
+             <link rel=3D"stylesheet" href=3D"/CSS/grids-responsive-old-ie-=
+min">
+           <![endif]-->
+           <!--[if gt IE 8]><!-->
+             <link rel=3D"stylesheet" href=3D"https://lwn.net/CSS/grids-res=
+ponsive-min">
+           <!--<![endif]-->
+           <link rel=3D"stylesheet" href=3D"https://lwn.net/CSS/pure-lwn">
+          =20
+       =20
+
+
+
+        </head>
+        <body bgcolor=3D"#ffffff" link=3D"Blue" vlink=3D"Green" alink=3D"Gr=
+een">
+        <a name=3D"t"></a>
+<div id=3D"menu"><a href=3D"https://lwn.net/"><img src=3D"https://static.lw=
+n.net/images/logo/barepenguin-70.png" class=3D"logo" border=3D"0" alt=3D"LW=
+N.net Logo">
+           <font class=3D"logo">LWN<br>.net</font>
+           <font class=3D"logobl">News from the source</font></a>
+           <a href=3D"https://lwn.net/"><img src=3D"https://static.lwn.net/=
+images/lcorner-ss.png" class=3D"sslogo" border=3D"0" alt=3D"LWN"></a><div c=
+lass=3D"navmenu-container">
+           <ul class=3D"navmenu">
+        <li><a class=3D"navmenu" href=3D"https://lwn.net/Articles/383128/#t=
+"><b>Content</b></a><ul><li><a href=3D"https://lwn.net/current/">Weekly Edi=
+tion</a></li><li><a href=3D"https://lwn.net/Archives/">Archives</a></li><li=
+><a href=3D"https://lwn.net/Search/">Search</a></li><li><a href=3D"https://=
+lwn.net/Kernel/">Kernel</a></li><li><a href=3D"https://lwn.net/Security/">S=
+ecurity</a></li><li><a href=3D"https://lwn.net/Distributions/">Distribution=
+s</a></li><li><a href=3D"https://lwn.net/Calendar/">Events calendar</a></li=
+><li><a href=3D"https://lwn.net/Comments/unread">Unread comments</a></li><l=
+i><hr></li><li><a href=3D"https://lwn.net/op/FAQ.lwn">LWN FAQ</a></li><li><=
+a href=3D"https://lwn.net/op/AuthorGuide.lwn">Write for us</a></li></ul></l=
+i>
+<li><a class=3D"navmenu" href=3D"https://lwn.net/Articles/383128/#t"><b>Edi=
+tion</b></a><ul><li><a href=3D"https://lwn.net/Articles/382742/">Return to =
+the Kernel page</a></li></ul></li>
+</ul></div>
+</div> <!-- menu -->
+<div class=3D"pure-g not-handset" style=3D"margin-left: 10.5em">
+           <div class=3D"not-print">
+             <div id=3D"azk13321_leaderboard"></div>
+           </div>
+           </div>
+        <div class=3D"topnav-container">
+<div class=3D"not-handset"><form action=3D"https://lwn.net/Login/" method=
+=3D"post" name=3D"loginform" class=3D"loginform">
+        <b>User:</b> <input type=3D"text" name=3D"Username" value=3D"" size=
+=3D"8"> <b>Password:</b> <input type=3D"password" name=3D"Password" size=3D=
+"8">  <input type=3D"submit" name=3D"submit" value=3D"Log in"></form> |
+           <form action=3D"https://lwn.net/subscribe/" method=3D"post" clas=
+s=3D"loginform">
+           <input type=3D"submit" name=3D"submit" value=3D"Subscribe">
+           </form> |
+           <form action=3D"https://lwn.net/Login/newaccount" method=3D"post=
+" class=3D"loginform">
+           <input type=3D"submit" name=3D"submit" value=3D"Register">
+           </form>
+        </div>
+               <div class=3D"handset-only">
+               <a href=3D"https://lwn.net/subscribe/"><b>Subscribe</b></a> =
+/
+               <a href=3D"https://lwn.net/Login/"><b>Log in</b></a> /
+               <a href=3D"https://lwn.net/Login/newaccount"><b>New account<=
+/b></a>
+               </div>
+               </div><div class=3D"pure-grid maincolumn">
+<div class=3D"lwn-u-1 pure-u-md-19-24">
+<div class=3D"PageHeadline">
+<h1>The FunctionFS composite function </h1>
+</div>
+<div class=3D"ArticleText">
+<table>
+<tbody><tr><td valign=3D"top"><b>From</b>:</td>
+    	     <td>&nbsp;</td><td valign=3D"top">Michal Nazarewicz &lt;m.nazarew=
+icz@samsung.com&gt; </td></tr>
+<tr><td valign=3D"top"><b>To</b>:</td>
+    	     <td>&nbsp;</td><td valign=3D"top">linux-usb@vger.kernel.org </td>=
+</tr>
+<tr><td valign=3D"top"><b>Subject</b>:</td>
+    	     <td>&nbsp;</td><td valign=3D"top">[PATCH 0/7] The FunctionFS comp=
+osite function </td></tr>
+<tr><td valign=3D"top"><b>Date</b>:</td>
+    	     <td>&nbsp;</td><td valign=3D"top">Fri, 09 Apr 2010 21:21:17 +0200=
+</td></tr>
+<tr><td valign=3D"top"><b>Cc</b>:</td>
+    	     <td>&nbsp;</td><td valign=3D"top">Michal Nazarewicz &lt;mina86@mi=
+na86.com&gt;,
+	Michal Nazarewicz &lt;m.nazarewicz@samsung.com&gt;,
+	Davide Libenzi &lt;davidel@xmailserver.org&gt;,
+	Greg KH &lt;greg@kroah.com&gt;,
+	Kyungmin Park &lt;kyungmin.park@samsung.com&gt;,
+	Marek Szyprowski &lt;m.szyprowski@samsung.com&gt;,
+	Thomas Gleixner &lt;tglx@linutronix.de&gt;,
+	linux-fsdevel@vger.kernel.org, linux-kernel@vger.kernel.org</td></tr>
+<tr><td valign=3D"top"><b>Archive-link</b>:</td>
+    	     <td>&nbsp;</td><td valign=3D"top"><a href=3D"http://article.gmane=
+.org/gmane.linux.kernel/972321">Article</a>, <a href=3D"http://thread.gmane=
+.org/gmane.linux.kernel/972321">Thread</a>
+        </td></tr>
+</tbody></table><p>
+</p><pre>Hello everyone,
+
+
+*Changes from Previous Version*
+
+This is the second version of the FunctionFS patchset.
+
+1. A new wait_event_interruptible_locked() macro (in 6 variants) has
+   been added and used in the f_fs.c instead of an open-coding it.
+   This, again, was suggested by Greg.
+
+   As a side effect of the above, also a patch for fs/timerfd.c is
+   provided that uses the new facility (hence I'm ccing it to fsdevel
+   and timerfd folks as well).
+
+2. The __init/__exit tags from various USB related files have been
+   removed instead of using __usb_* tags that can be switched.  This
+   was requested by Greg.
+
+3. A bug in f_fs.c in has been fixed (the one I've spotted and
+   announced earlier on the list).  Also there were some other tiny
+   changes to f_fs.c.
+
+4. The testusb.c now looks for usbfs in both /dev/bus/usb and
+   /proc/bus/usb.  It was suggested by Heikki Krogerus that some
+   distributions don't provide usbfs in /proc.  Also -A argument has
+   been added to let user supply the path.
+
+Chosen differences as a diff are included at the end of the mail.
+
+
+*Prologue*
+
+Patches that follow implement the FunctionFS composite function that
+is a conversion of GadgetFS to use the composite framework.  Possible
+uses are:
+
+1. what Peter Korsgaard has described[1]:
+
+<font class=3D"QuotedText">&gt; I could certainly imagine doing something l=
+ike that, E.G. reuse the
+</font><font class=3D"QuotedText">&gt; existing g_serial functionality whil=
+e implementing E.G. a HID device
+</font><font class=3D"QuotedText">&gt; though gadgetfs.
+</font>
+2. or what Rupesh Gujare has described[2]:
+
+<font class=3D"QuotedText">&gt; In my requirement, I want to have Media Tra=
+nsfer Protocol (MTP)
+</font><font class=3D"QuotedText">&gt; (which uses user level usb driver (u=
+sb.c) &amp; gadgetfs) along with
+</font><font class=3D"QuotedText">&gt; modem functionality(f_acm.c).
+</font><font class=3D"QuotedText">&gt;
+</font><font class=3D"QuotedText">&gt; Currently either of them ie. f_acm (=
+as part of composite driver
+</font><font class=3D"QuotedText">&gt; along with ums) or gadgetfs (as inde=
+pendent module) can be loaded,
+</font><font class=3D"QuotedText">&gt; which allows only one active USB fun=
+ction at a time.
+</font><font class=3D"QuotedText">&gt;
+</font><font class=3D"QuotedText">&gt; If gadgetfs can be made as a composi=
+te function then I can have both
+</font><font class=3D"QuotedText">&gt; functionality at same time.
+</font>
+
+*The Patches*
+
+The first patch creates a new wait_event_interruptible_locked()
+interface for waiting on events.  While holding the wait queue's lock.
+Refer to the commit message for usage.
+
+The second patch makes use of the new interface in fs/timerfd.c file
+replacing some 20 lines by a single macro call.
+
+Next three patches implement the FunctionFS and a composite gadget
+that uses FunctionFS and Ethernet function (with the later function
+optionally disabled via Kconfig).
+
+The last three patches provide a testing code for the FunctionFS.
+My original intend was to provide those just for anyone who'd like to
+test the code and not to include them in the Linux source tree but if
+that seems appropriate then why not?
+
+
+*How FunctionFS works*
+
+(Copied from second patch commit message.)
+
+From kernel point of view it is just a composite function with some
+unique behaviour.  It may be added to an USB configuration only after
+the user space driver has registered by writing descriptors and
+strings (the user space program has to provide the same information
+that kernel level composite functions provide when they are added to
+the configuration).
+
+This in particular means that the composite initialisation functions
+may not be in init section (ie. may not use the __init tag) hence the
+first and fourth patch in the series.
+
+
+From user space point of view it is a file system which when
+mounted provide an "ep0" file.  User space driver need to
+write descriptors and strings to that file.  It does not need
+to worry about endpoints, interfaces or strings numbers but
+simply provide descriptors such as if the function was the
+only one (endpoints and strings numbers starting from one and
+interface numbers starting from core).  The FunctionFS changes
+numbers of those as needed also handling situation when
+numbers differ in different configurations.
+
+When descriptors and strings are written "ep#" files appear
+(one for each declared endpoint) which handle communication on
+a single endpoint.  Again, FunctionFS takes care of the real
+numbers and changing of the configuration (which means that
+"ep1" file may be really mapped to (say) endpoint 3 (and when
+configuration changes to (say) endpoint 2)).  "ep0" is used
+for receiving events and handling setup requests.
+
+When all files are closed the function disables itself.
+
+
+*Testing*
+
+The fifth patch implement a simple source/sink FunctionFS driver based
+on similar driver for GadgetFS by David Brownell[3].  It registers
+a dual-speed function with a single IN and single OUT endpoints.
+
+The sixth and seventh patch provide a host-side testing code.  This is
+what David Brownell has created a while back[4] with a simple fix to
+make the tool detect the number of our source/sink interface.
+
+Still, you will need to configure the gadget to report idProduct =3D=3D
+0xa4a4 (an "echo 0xa4a4 &gt;/sys/module/g_ffs/parameters/usb_product"
+should suffice) or configure host to handle 0x0525:0xa4ac devices
+using the usbtest driver.
+
+Hence, the simplest way to run the test is to do the following:
+
+* On target (machine that runs has the gadget) as root:
+  $ echo 0xa4a4 &gt;/sys/module/g_ffs/parameters/usb_product &amp;&amp;
+  $ mkdir /dev/ffs &amp;&amp;
+  $ mount -t functionfs ffs /dev/ffs &amp;&amp;
+  $ cd /dev/ffs &amp;&amp;
+  $ /path/to/ffs-test
+* On host (as root):
+  $ testusb -a
+
+At this point I have to admit that communication on EP0 has not yet
+been tested, so beware of bugs there.
+
+
+*Request for Comments and Future Work*
+
+Regarding presented version there are two aspects I'd like to discuss.
+
+1. First of all, the current code uses similar approach GadgetFS
+   used -- there is a single file ("ep0" in case of FunctionFS and
+   named after the controller in case of GadgetFS) that is used to
+   receive events from kernel and handle ep0 communication.
+
+   I think it is not the best approach as it'd be simpler and cleaner
+   if there were two files: one for receiving events and another for
+   handling ep0 communication.
+
+   What do you think? Should I keep the current version or change to
+   code to use two files?
+
+2. What still needs to be implemented is a mechanism allowing double
+   buffering (and in effect transmission without pauses) and maybe
+   single-thread user-space driver implementation.
+
+   I'd like to ask what would be the best way to achieve this.
+   GadgetFS implements asynchronous I/O -- is it still the best
+   option?
+
+3. The last thing I'd like to mention is that the FunctionFS is
+   designed in such a way that with some more work it will be able
+   to mount it several times so in the end a gadget could use several
+   FunctionFS functions.
+
+   The idea is that each FunctionFS instance is identified by the
+   device name used when mounting.
+
+   One can imagine a gadget that has an Ethernet, MTP and HID
+   interfaces where the last two are implemented via FunctionFS.  On
+   user space level it would look like this:
+
+   $ modprobe g_foo
+   $ mkdir /dev/ffs-mtp &amp;&amp; mount -t functionfs mtp /dev/ffs-mtp
+   $ ( cd /dev/ffs-mtp &amp;&amp; mtp-daemon ) &amp;
+   $ mkdir /dev/ffs-hid &amp;&amp; mount -t functionfs hid /dev/ffs-hid
+   $ ( cd /dev/ffs-hid &amp;&amp; hid-daemon ) &amp;
+
+   On kernel level the gadget would check ffs_data-&gt;dev_name to
+   identify whether it's FunctionFS designed for MTP ("mtp") or HID
+   ("hid").
+
+
+____________________________________________________________
+[1] <a href=3D"http://article.gmane.org/gmane.linux.usb.general/23890">http=
+://article.gmane.org/gmane.linux.usb.general/23890</a>
+[2] <a href=3D"http://article.gmane.org/gmane.linux.usb.general/23902">http=
+://article.gmane.org/gmane.linux.usb.general/23902</a>
+[3] <a href=3D"http://www.linux-usb.org/gadget/usb.c">http://www.linux-usb.=
+org/gadget/usb.c</a>
+[4] <a href=3D"http://www.linux-usb.org/usbtest/testusb.c">http://www.linux=
+-usb.org/usbtest/testusb.c</a>
+
+
+David Brownell (1):
+  USB: testusb: an USB testing application
+
+Michal Nazarewicz (7):
+  wait_event_interruptible_locked() interface
+  fs/timerfd.c: make use of wait_event_interruptible_locked_irq()
+  USB: gadget: __init and __exit tags removed
+  USB: f_fs: the FunctionFS driver
+  USB: g_ffs: the FunctionFS gadget driver
+  USB: ffs-test: FunctionFS testing program
+  USB: testusb: testusb compatibility with FunctionFS gadget
+
+ drivers/usb/gadget/Kconfig          |   21 +-
+ drivers/usb/gadget/Makefile         |    2 +
+ drivers/usb/gadget/composite.c      |   21 +-
+ drivers/usb/gadget/config.c         |    4 +-
+ drivers/usb/gadget/epautoconf.c     |   12 +-
+ drivers/usb/gadget/f_acm.c          |   32 +-
+ drivers/usb/gadget/f_ecm.c          |   33 +-
+ drivers/usb/gadget/f_fs.c           | 2453 +++++++++++++++++++++++++++++++=
+++++
+ drivers/usb/gadget/f_mass_storage.c |    2 +-
+ drivers/usb/gadget/f_rndis.c        |   34 +-
+ drivers/usb/gadget/g_ffs.c          |  322 +++++
+ drivers/usb/gadget/u_ether.c        |    4 +-
+ fs/timerfd.c                        |   22 +-
+ include/linux/usb/functionfs.h      |  199 +++
+ include/linux/wait.h                |  231 ++++-
+ kernel/sched.c                      |    1 +
+ tools/usb/ffs-test.c                |  554 ++++++++
+ tools/usb/testusb.c                 |  537 ++++++++
+ 18 files changed, 4392 insertions(+), 92 deletions(-)
+ create mode 100644 drivers/usb/gadget/f_fs.c
+ create mode 100644 drivers/usb/gadget/g_ffs.c
+ create mode 100644 include/linux/usb/functionfs.h
+ create mode 100644 tools/usb/ffs-test.c
+ create mode 100644 tools/usb/testusb.c
+
+
+*Diff with Previous Version*
+
+diff --git a/include/linux/wait.h b/include/linux/wait.h
+see first patch
+
+diff --git a/fs/timerfd.c b/fs/timerfd.c
+see second patch
+
+diff --git a/drivers/usb/gadget/composite.c b/drivers/usb/gadget/composite.=
+c
+diff --git a/drivers/usb/gadget/config.c b/drivers/usb/gadget/config.c
+diff --git a/drivers/usb/gadget/f_acm.c b/drivers/usb/gadget/f_acm.c
+diff --git a/drivers/usb/gadget/f_ecm.c b/drivers/usb/gadget/f_ecm.c
+diff --git a/drivers/usb/gadget/f_mass_storage.c b/drivers/usb/gadget/f_mas=
+s_storage.c
+diff --git a/drivers/usb/gadget/f_rndis.c b/drivers/usb/gadget/f_rndis.c
+diff --git a/drivers/usb/gadget/mass_storage.c b/drivers/usb/gadget/mass_st=
+orage.c
+basically: sed -e s/__usb_\(init\|exit\|init_or_exit\_/__cold/ \
+               -e s/__usb_initdata//
+
+diff --git a/drivers/usb/gadget/usb-init-exit.h b/drivers/usb/gadget/usb-in=
+it-exit.h
+deleted file mode 100644
+
+diff --git a/drivers/usb/gadget/f_fs.c b/drivers/usb/gadget/f_fs.c
+--- a/drivers/usb/gadget/f_fs.c
++++ b/drivers/usb/gadget/f_fs.c
+@@ -336,7 +336,7 @@ ffs_sb_create_file(struct super_block *sb, const char *=
+name, void *data,
+ static int ffs_mutex_lock(struct mutex *mutex, unsigned nonblock)
+ 	__attribute__((warn_unused_result, nonnull));
+ static char *ffs_prepare_buffer(const char * __user buf, size_t len)
+-	__attribute__((warn_unused_result));
++	__attribute__((warn_unused_result, nonnull));
+=20
+=20
+ /* Control file aka ep0 **************************************************=
+***/
+@@ -533,34 +533,6 @@ done_spin:
+=20
+=20
+=20
+-static int __ffs_ep0_read_wait_for_events(struct ffs_data *ffs)
+-{
+-	/* We are holding ffs-&gt;ev.waitq.lock */
+-
+-	DEFINE_WAIT(wait);
+-	int ret =3D 0;
+-
+-	wait.flags |=3D WQ_FLAG_EXCLUSIVE;
+-	__add_wait_queue_tail(&amp;ffs-&gt;ev.waitq, &amp;wait);
+-
+-	do {
+-		set_current_state(TASK_INTERRUPTIBLE);
+-		if (signal_pending(current)) {
+-			ret =3D -ERESTARTSYS;
+-			break;
+-		}
+-
+-		spin_unlock_irq(&amp;ffs-&gt;ev.waitq.lock);
+-		schedule();
+-		spin_lock_irq(&amp;ffs-&gt;ev.waitq.lock);
+-	} while (!ffs-&gt;ev.count);
+-
+-	__remove_wait_queue(&amp;ffs-&gt;ev.waitq, &amp;wait);
+-	__set_current_state(TASK_RUNNING);
+-
+-	return ret;
+-}
+-
+ static ssize_t __ffs_ep0_read_events(struct ffs_data *ffs, char __user *bu=
+f,
+ 				     size_t n)
+ {
+@@ -580,7 +552,13 @@ static ssize_t __ffs_ep0_read_events(struct ffs_data *=
+ffs, char __user *buf,
+ 		}
+ 	} while (++i &lt; n);
+=20
+-	ffs-&gt;ev.count =3D 0;
++	if (n &lt; ffs-&gt;ev.count) {
++		ffs-&gt;ev.count -=3D n;
++		memmove(ffs-&gt;ev.types, ffs-&gt;ev.types + n,
++			ffs-&gt;ev.count * sizeof *ffs-&gt;ev.types);
++	} else {
++		ffs-&gt;ev.count =3D 0;
++	}
+=20
+ 	spin_unlock_irq(&amp;ffs-&gt;ev.waitq.lock);
+ 	mutex_unlock(&amp;ffs-&gt;mutex);
+@@ -594,8 +572,8 @@ static ssize_t ffs_ep0_read(struct file *file, char __u=
+ser *buf,
+ 			    size_t len, loff_t *ptr)
+ {
+ 	struct ffs_data *ffs =3D file-&gt;private_data;
++	char *data =3D NULL;
+ 	size_t n;
+-	char *data;
+ 	int ret;
+=20
+ 	ENTER();
+@@ -638,8 +616,7 @@ static ssize_t ffs_ep0_read(struct file *file, char __u=
+ser *buf,
+ 			break;
+ 		}
+=20
+-		if (!ffs-&gt;ev.count &amp;&amp;
+-		    unlikely(__ffs_ep0_read_wait_for_events(ffs))) {
++		if (unlikely(wait_event_interruptible_exclusive_locked_irq(ffs-&gt;ev.wa=
+itq, ffs-&gt;ev.count))) {
+ 			ret =3D -EINTR;
+ 			break;
+ 		}
+@@ -658,17 +635,18 @@ static ssize_t ffs_ep0_read(struct file *file, char _=
+_user *buf,
+=20
+ 		spin_unlock_irq(&amp;ffs-&gt;ev.waitq.lock);
+=20
+-		data =3D ffs_prepare_buffer(NULL, len);
+-		if (unlikely(IS_ERR(data))) {
+-			ret =3D PTR_ERR(data);
+-			goto done_mutex;
++		if (likely(len)) {
++			data =3D kmalloc(len, GFP_KERNEL);
++			if (unlikely(!data)) {
++				ret =3D -ENOMEM;
++				goto done_mutex;
++			}
+ 		}
+=20
+ 		spin_lock_irq(&amp;ffs-&gt;ev.waitq.lock);
+=20
+ 		/* See ffs_ep0_write() */
+ 		if (FFS_SETUP_STATE(ffs) =3D=3D FFS_SETUP_CANCELED) {
+-			kfree(data);
+ 			ret =3D -EIDRM;
+ 			break;
+ 		}
+@@ -677,7 +655,6 @@ static ssize_t ffs_ep0_read(struct file *file, char __u=
+ser *buf,
+ 		ret =3D __ffs_ep0_queue_wait(ffs, data, len);
+ 		if (likely(ret &gt; 0) &amp;&amp; unlikely(__copy_to_user(buf, data, len=
+)))
+ 			ret =3D -EFAULT;
+-		kfree(data);
+ 		goto done_mutex;
+=20
+ 	default:
+@@ -688,6 +665,7 @@ static ssize_t ffs_ep0_read(struct file *file, char __u=
+ser *buf,
+ 	spin_unlock_irq(&amp;ffs-&gt;ev.waitq.lock);
+ done_mutex:
+ 	mutex_unlock(&amp;ffs-&gt;mutex);
++	kfree(data);
+ 	return ret;
+ }
+=20
+@@ -1768,7 +1746,7 @@ static int __must_check ffs_do_descs(unsigned count, =
+char *data, unsigned len,
+ 				     ffs_entity_callback entity, void *priv)
+ {
+ 	const unsigned _len =3D len;
+-	long num =3D 0;
++	unsigned long num =3D 0;
+=20
+ 	ENTER();
+=20
+@@ -1781,7 +1759,7 @@ static int __must_check ffs_do_descs(unsigned count, =
+char *data, unsigned len,
+ 		/* Record "descriptor" entitny */
+ 		ret =3D entity(FFS_DESCRIPTOR, (u8 *)num, (void *)data, priv);
+ 		if (unlikely(ret &lt; 0)) {
+-			FDBG("entity DESCRIPTOR(%02x); ret =3D %d", num, ret);
++			FDBG("entity DESCRIPTOR(%02lx); ret =3D %d", num, ret);
+ 			return ret;
+ 		}
+=20
+@@ -2461,15 +2439,13 @@ static char *ffs_prepare_buffer(const char * __user=
+ buf, size_t len)
+ 	if (unlikely(!data))
+ 		return ERR_PTR(-ENOMEM);
+=20
+-	if (likely(buf !=3D NULL) &amp;&amp; unlikely(__copy_from_user(data, buf,=
+ len))) {
++	if (unlikely(__copy_from_user(data, buf, len))) {
+ 		kfree(data);
+ 		return ERR_PTR(-EFAULT);
+ 	}
+=20
+-	if (likely(buf)) {
+-		FVDBG("Buffer from user space:");
+-		ffs_dump_mem("", data, len);
+-	}
++	FVDBG("Buffer from user space:");
++	ffs_dump_mem("", data, len);
+=20
+ 	return data;
+ }
+
+
+diff --git a/tools/usb/testusb.c b/tools/usb/testusb.c
+index beaeea3..0a1a5b5 100644
+--- a/tools/usb/testusb.c
++++ b/tools/usb/testusb.c
+@@ -1,8 +1,10 @@
+-/* $(CROSS_COMPILE)cc -Wall -g -lpthread -o testusb testusb.c */
++/* $(CROSS_COMPILE)cc -Wall -Wextra -g -lpthread -o testusb testusb.c */
+=20
+ /*
+  * Copyright (c) 2002 by David Brownell
+- *=20
++ * Copyright (c) 2010 by Samsung Electronics
++ * Author: Michal Nazarewicz &lt;m.nazarewicz@samsung.com&gt;
++ *
+  * This program is free software; you can redistribute it and/or modify it
+  * under the terms of the GNU General Public License as published by the
+  * Free Software Foundation; either version 2 of the License, or (at your
+@@ -25,6 +27,7 @@
+ #include &lt;pthread.h&gt;
+ #include &lt;unistd.h&gt;
+ #include &lt;errno.h&gt;
++#include &lt;limits.h&gt;
+=20
+ #include &lt;sys/types.h&gt;
+ #include &lt;sys/stat.h&gt;
+@@ -236,6 +239,8 @@ static int find_testdev(const char *name, const struct =
+stat *sb, int flag)
+ 	int				ifnum;
+ 	struct testdev			*entry;
+=20
++	(void)sb; /* unused */
++
+ 	if (flag !=3D FTW_F)
+ 		return 0;
+ 	/* ignore /proc/bus/usb/{devices,drivers} */
+@@ -339,11 +344,51 @@ restart:
+ 	return arg;
+ }
+=20
++static const char *usbfs_dir_find(void)
++{
++	static char usbfs_path_0[] =3D "/dev/usb/devices";
++	static char usbfs_path_1[] =3D "/proc/bus/usb/devices";
++
++	static char *const usbfs_paths[] =3D {
++		usbfs_path_0, usbfs_path_1
++	};
++
++	static char *const *
++		end =3D usbfs_paths + sizeof usbfs_paths / sizeof *usbfs_paths;
++
++	char *const *it =3D usbfs_paths;
++	do {
++		int fd =3D open(*it, O_RDONLY);
++		close(fd);
++		if (fd &gt;=3D 0) {
++			strrchr(*it, '/')[0] =3D '\0';
++			return *it;
++		}
++	} while (++it !=3D end);
++
++	return NULL;
++}
++
++static int parse_num(unsigned *num, const char *str)
++{
++	unsigned long val;
++	char *end;
++
++	errno =3D 0;
++	val =3D strtoul(str, &amp;end, 0);
++	if (errno || *end || val &gt; UINT_MAX)
++		return -1;
++	*num =3D val;
++	return 0;
++}
++
+ int main (int argc, char **argv)
+ {
++
+ 	int			c;
+ 	struct testdev		*entry;
+ 	char			*device;
++	const char		*usbfs_dir =3D NULL;
+ 	int			all =3D 0, forever =3D 0, not =3D 0;
+ 	int			test =3D -1 /* all */;
+ 	struct usbtest_param	param;
+@@ -365,23 +410,24 @@ int main (int argc, char **argv)
+ 	/* for easy use when hotplugging */
+ 	device =3D getenv ("DEVICE");
+=20
+-	while ((c =3D getopt (argc, argv, "D:ac:g:hns:t:v:")) !=3D EOF)
++	while ((c =3D getopt (argc, argv, "D:aA:c:g:hns:t:v:")) !=3D EOF)
+ 	switch (c) {
+ 	case 'D':	/* device, if only one */
+ 		device =3D optarg;
+ 		continue;
++	case 'A':	/* use all devices with specified usbfs dir */
++		usbfs_dir =3D optarg;
++		/* FALL THROUGH */
+ 	case 'a':	/* use all devices */
+-		device =3D 0;
++		device =3D NULL;
+ 		all =3D 1;
+ 		continue;
+ 	case 'c':	/* count iterations */
+-		param.iterations =3D atoi (optarg);
+-		if (param.iterations &lt; 0)
++		if (parse_num(&amp;param.iterations, optarg))
+ 			goto usage;
+ 		continue;
+ 	case 'g':	/* scatter/gather entries */
+-		param.sglen =3D atoi (optarg);
+-		if (param.sglen &lt; 0)
++		if (parse_num(&amp;param.sglen, optarg))
+ 			goto usage;
+ 		continue;
+ 	case 'l':	/* loop forever */
+@@ -391,8 +437,7 @@ int main (int argc, char **argv)
+ 		not =3D 1;
+ 		continue;
+ 	case 's':	/* size of packet */
+-		param.length =3D atoi (optarg);
+-		if (param.length &lt; 0)
++		if (parse_num(&amp;param.length, optarg))
+ 			goto usage;
+ 		continue;
+ 	case 't':	/* run just one test */
+@@ -401,15 +446,14 @@ int main (int argc, char **argv)
+ 			goto usage;
+ 		continue;
+ 	case 'v':	/* vary packet size by ... */
+-		param.vary =3D atoi (optarg);
+-		if (param.vary &lt; 0)
++		if (parse_num(&amp;param.vary, optarg))
+ 			goto usage;
+ 		continue;
+ 	case '?':
+ 	case 'h':
+ 	default:
+ usage:
+-		fprintf (stderr, "usage: %s [-an] [-D dev]\n"
++		fprintf (stderr, "usage: %s [-n] [-D dev | -a | -A usbfs-dir]\n"
+ 			"\t[-c iterations]  [-t testnum]\n"
+ 			"\t[-s packetsize] [-g sglen] [-v vary]\n",
+ 			argv [0]);
+@@ -423,13 +467,17 @@ usage:
+ 		goto usage;
+ 	}
+=20
+-	if ((c =3D open ("/proc/bus/usb/devices", O_RDONLY)) &lt; 0) {
+-		fputs ("usbfs files are missing\n", stderr);
+-		return -1;
++	/* Find usbfs mount point */
++	if (!usbfs_dir) {
++		usbfs_dir =3D usbfs_dir_find();
++		if (!usbfs_dir) {
++			fputs ("usbfs files are missing\n", stderr);
++			return -1;
++		}
+ 	}
+=20
+ 	/* collect and list the test devices */
+-	if (ftw ("/proc/bus/usb", find_testdev, 3) !=3D 0) {
++	if (ftw (usbfs_dir, find_testdev, 3) !=3D 0) {
+ 		fputs ("ftw failed; is usbfs missing?\n", stderr);
+ 		return -1;
+ 	}
+
+</pre>
+
+</div> <!-- ArticleText -->
+</div>
+<div class=3D"lwn-u-1 pure-u-md-1-6 not-print">
+<div id=3D"azk93271_right_zone"></div>
+</div>
+</div> <!-- pure-grid -->
+
+        <br clear=3D"all">
+        <center>
+        <p>
+        <font size=3D"-2">
+        Copyright =C2=A9 2010, Eklektix, Inc.<br>
+       =20
+        Comments and public postings are copyrighted by their creators.<br>
+        Linux  is a registered trademark of Linus Torvalds<br>
+        </font>
+        </p></center>
+       =20
+           =20
+           =20
+           =20
+       =20
+        </body></html>
+------MultipartBoundary--bBGmtIx9OVNqEv3MjXSSbEByuKZ6xno730dt3uNm3h----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://lwn.net/CSS/lwn
+
+@charset "utf-8";
+
+body { color: black; background-color: rgb(255, 255, 255); padding: 0px; }
+
+h1 { margin: 0px 0px 5px; padding: 0px; color: black; }
+
+h2 { margin: 20px 0px 5px; padding: 0px; }
+
+h3 { margin: 0px 0px 5px; padding: 0px; }
+
+a { text-decoration: underline; }
+
+a:link { color: darkblue; }
+
+a:visited { color: rgb(68, 68, 68); }
+
+a:hover { color: darkblue; background-color: rgb(238, 238, 238); }
+
+a:visited:hover { color: rgb(68, 68, 68); }
+
+a.name { color: black; }
+
+a.name:link { color: black; }
+
+a.name:hover { color: black; }
+
+table.Page { width: 100%; }
+
+td.LeftColumn { background-color: rgb(255, 204, 153); width: 156px; overflo=
+w: hidden; vertical-align: top; }
+
+td.MidColumn { background-color: rgb(255, 255, 255); padding: 3px; border-s=
+tyle: none; vertical-align: top; }
+
+td.MCTopBanner { background-color: rgb(255, 255, 255); border-style: none; =
+padding: 0px 0px 0px 4px; }
+
+.MCTopBanner center { text-align: left; }
+
+td.RightColumn { border-style: none; border-width: thin; vertical-align: to=
+p; text-align: left; border-color: rgb(238, 238, 238); padding-top: 6em; }
+
+div.MidColHeader { margin: 0px auto 0px 0px; padding: 0px; max-width: 57em;=
+ }
+
+table.Page tr { vertical-align: top; }
+
+table.HeadlineView { }
+
+table.HeadlineView td { vertical-align: top; }
+
+div.PageHeadline { text-align: center; max-width: 75em; margin-top: 1em; ma=
+rgin-bottom: 2em; }
+
+div.PageHeadline h1 { margin-bottom: 0.2em; }
+
+div.PageHeadline h2 { margin-top: 0.2em; }
+
+p.Cat1HL { background-color: rgb(255, 204, 153); text-align: center; font-s=
+ize: 200%; font-weight: bold; padding-top: 3px; padding-bottom: 5px; margin=
+-bottom: 0.2em; }
+
+p.Cat2HL { background-color: rgb(255, 204, 153); font-size: large; font-wei=
+ght: bold; padding-left: 3px; margin-bottom: 0.3em; }
+
+p.Cat3HL { background-color: rgb(255, 204, 153); font-weight: bold; padding=
+-left: 3px; margin-bottom: 0.3em; }
+
+p.SummaryHL { font-weight: bold; font-size: larger; text-decoration: underl=
+ine; margin-top: 0.4em; margin-bottom: 0.4em; }
+
+h2.SummaryHL { font-weight: bold; font-size: larger; text-decoration: under=
+line; margin-top: 0.4em; margin-bottom: 0.4em; }
+
+p.SummaryHL a:link { color: black; }
+
+p.SummaryHL a:visited { color: black; }
+
+h2.SummaryHL a:link { color: black; }
+
+h2.SummaryHL a:visited { color: black; }
+
+p.IndexPrimary a:link { color: black; }
+
+p.IndexPrimary a:visited { color: black; }
+
+p.IndexSecondary a:link { color: black; }
+
+p.IndexSecondary a:visited { color: black; }
+
+table.Form th { text-align: left; }
+
+span { font-style: normal; font-weight: normal; color: darkred; background-=
+color: white; }
+
+span.SpellingError { background-color: rgb(238, 238, 238); color: black; }
+
+font.SpellingError { background-color: rgb(238, 238, 238); }
+
+div.ErrorWords { background-color: rgb(238, 238, 221); border-style: groove=
+; padding: 3px 3px 2px; margin: 1px 5px 1px 0px; }
+
+div.BigQuote { font-style: normal; font-weight: normal; color: darkred; bac=
+kground-color: white; margin-left: 1cm; margin-right: 1cm; }
+
+div.BigQuote p { margin-top: 1em; margin-bottom: 0px; }
+
+div.Headline { background-color: rgb(255, 204, 153); font-weight: bold; fon=
+t-size: larger; padding-left: 3px; }
+
+div.SummaryHeadline { font-weight: bold; font-size: larger; text-decoration=
+: underline; margin-top: 0.4em; margin-bottom: 0.4em; }
+
+div.Byline { font-size: smaller; text-align: center; }
+
+div.SideBox { margin: 1em 1px; }
+
+div.SideBox p { text-indent: -1em; margin: 0px 0px 1px 1em; }
+
+div.SideBox p.Header { font-weight: bold; text-indent: 0px; margin-left: 0p=
+x; }
+
+div.Comment { margin-left: 1em; background-color: inherit; }
+
+div.CommentSubtree { background-color: inherit; }
+
+div.OldCommentSubtree { background-color: rgb(204, 204, 204); }
+
+div.CommentBox, div.OldCommentBox { border-style: none none none solid; bor=
+der-width: thin; max-width: 60em; margin-top: 1em; background-color: inheri=
+t; }
+
+div.CommentBox { border-color: rgb(255, 204, 153); }
+
+div.OldCommentBox { border-color: rgb(204, 204, 204); }
+
+p.CommentTitle { padding: 2px 2px 2px 4px; margin: 0px; font-weight: bold; =
+}
+
+div.CommentBox p.CommentTitle { background-color: rgb(255, 204, 153); }
+
+div.OldCommentBox p.CommentTitle { background-color: rgb(204, 204, 204); }
+
+div.CommentBody { padding: 0px 4px; background-color: inherit; }
+
+p.CommentPoster { margin-top: 0px; }
+
+div.CommentReplyButton { display: block; text-align: right; padding: 4px; }
+
+div.FormattedComment { }
+
+pre.FormattedComment { font: inherit; }
+
+div.FormattedComment pre { font: inherit; }
+
+td.Headline { background-color: rgb(255, 204, 153); }
+
+table.Middle { background-color: rgb(255, 255, 255); padding: 3px; border-s=
+tyle: none; width: 100%; }
+
+td.Middle { background-color: rgb(255, 255, 255); vertical-align: top; }
+
+.Form { background-color: rgb(238, 238, 238); padding: 3px; border-style: g=
+roove; }
+
+a.Current { background-color: darkred; color: white; }
+
+a.Other { }
+
+p.NextLink { text-align: right; }
+
+font.SearchItem { font-weight: bold; color: red; }
+
+font.QuotedText { color: rgb(153, 0, 153); }
+
+font.Subscription { color: darkgreen; }
+
+tr.Even { background-color: rgb(238, 238, 238); }
+
+tr.Odd { }
+
+table.OddEven { border-collapse: separate; }
+
+table.OddEven tr:nth-child(2n) { background-color: rgb(255, 255, 255); }
+
+table.OddEven tr:nth-child(2n+1) { background-color: rgb(238, 238, 238); }
+
+table.OddEven th { background-color: rgb(255, 255, 255); }
+
+table.OddEven td { padding: 3px; }
+
+.s-nonexistent { background-color: red !important; }
+
+.s-withdrawn { background-color: red !important; }
+
+.s-in-progress { background-color: white !important; }
+
+.s-submitted { background-color: yellow !important; }
+
+.s-active { background-color: lightgreen !important; }
+
+p.Headlines { margin-bottom: 6px; text-indent: -1em; margin-left: 1em; marg=
+in-top: 0px; }
+
+p.Feature { text-indent: -1em; margin-left: 1em; margin-top: 0px; margin-bo=
+ttom: 2px; }
+
+p.ErrorMessage { color: red; margin-left: 1cm; margin-right: 1cm; font-weig=
+ht: bold; font-size: large; }
+
+font.NonActive { color: red; font-weight: bold; }
+
+a.NonActive { color: red; font-weight: bold; }
+
+table.TopNavigation { width: 100%; max-width: 55em; margin-bottom: 0px; mar=
+gin-top: 0px; }
+
+td.NavLink { background-color: rgb(238, 238, 238); text-align: center; max-=
+width: 15em; }
+
+p.IndexPrimary { margin-top: 1em; margin-bottom: 0px; font-weight: bold; }
+
+p.IndexSecondary { margin-top: 0px; text-indent: 5mm; margin-bottom: 0px; }
+
+p.IndexEntry { text-indent: 1cm; margin-top: 0px; margin-bottom: 0px; }
+
+div.TextAd { width: 150px; border-style: solid; border-width: thin; margin:=
+ 0px auto 10px; background-color: white; color: black; }
+
+p.TextAdHeader { background-color: rgb(65, 157, 74); color: white; margin-t=
+op: 0px; margin-bottom: 3px; text-align: center; font-weight: bold; }
+
+p.TextAdLink { margin: 2px; }
+
+p.TextAdBody { margin: 10px 2px 2px; }
+
+p.TextAdFooter { border-top-style: dotted; border-top-width: thin; text-ali=
+gn: center; background-color: rgb(255, 204, 153); margin: 2px 0px 0px; }
+
+table.tlnav { width: 100%; color: black; padding: 2px; }
+
+table.tlrw { width: 45%; background-color: rgb(238, 238, 221); border-style=
+: groove; margin: 5px; float: right; }
+
+table.tlr { width: 35%; background-color: rgb(238, 238, 221); border-style:=
+ groove; margin: 5px; float: right; }
+
+table.tllw { width: 45%; float: left; background-color: rgb(238, 238, 221);=
+ border-style: groove; margin: 5px; }
+
+table.tll { width: 35%; float: left; background-color: rgb(238, 238, 221); =
+border-style: groove; margin: 5px; }
+
+p.QuoteAttr { text-align: right; }
+
+div.tlrw { width: 45%; float: right; background-color: rgb(238, 238, 221); =
+border-style: groove; padding: 3px 3px 0px; margin: 1px 0px 1px 5px; }
+
+div.tlr { width: 35%; float: right; background-color: rgb(238, 238, 221); b=
+order-style: groove; padding: 3px 3px 0px; margin: 1px 0px 1px 5px; }
+
+div.tllw { width: 45%; float: left; background-color: rgb(238, 238, 221); b=
+order-style: groove; padding: 3px 3px 0px; margin: 1px 5px 1px 0px; }
+
+div.tll { width: 35%; float: left; background-color: rgb(238, 238, 221); bo=
+rder-style: groove; padding: 3px 3px 0px; margin: 1px 5px 1px 0px; }
+
+p.tlqa { text-align: right; }
+
+ul.spacylist li { margin-bottom: 0.5em; }
+
+ol.spacylist li { margin-bottom: 0.5em; }
+
+ul.tighter { margin-top: 0px; margin-bottom: 0px; }
+
+ul.tighter li { margin-top: 2px; margin-bottom: 2px; }
+
+p.GuestAuthor { max-width: 15em; background-color: rgb(238, 238, 238); bord=
+er-style: groove; padding: 3px; margin: 6px 0px 2px 5px; float: right; }
+
+div.GAByline { max-width: 15em; background-color: rgb(238, 238, 238); borde=
+r-style: groove; padding: 3px; margin: 6px 0px 2px 5px; float: right; text-=
+align: center; }
+
+div.GAByline p { margin: 0px; text-align: left; }
+
+div.GAByline p:first-child { font-weight: bold; text-align: center; margin-=
+bottom: 3px; }
+
+div.GAByline hr { width: 40%; }
+
+div.FeatureByline { max-width: 20em; float: left; background-color: rgb(238=
+, 238, 238); border-style: groove; margin: 2px 5px 2px 0px; padding-bottom:=
+ 5px; padding-right: 25px; padding-left: 5px; }
+
+div.FeatureByline hr { width: 40%; }
+
+div.survey { margin-left: 1cm; }
+
+div.sv_mc { margin-left: 10mm; margin-top: 0cm; }
+
+span.PullQuote { max-width: 30%; float: right; color: black; background-col=
+or: rgb(238, 238, 238); margin: 2px 0px 2px 5px; padding: 5px 2px 5px 0.5em=
+; border-style: none none none solid; border-color: rgb(255, 204, 153); fon=
+t-weight: normal; font-size: larger; }
+
+span.invisible { display: none; }
+
+table.CalM { width: 100%; border-spacing: 0px; }
+
+tr.CalM { border-left-style: groove; }
+
+td.CalMDate { background-color: rgb(238, 238, 238); font-size: x-large; wid=
+th: 13%; border-left-style: groove; border-top-style: groove; }
+
+td.CalMEvent { font-size: smaller; vertical-align: middle; border-left-styl=
+e: groove; }
+
+td.CalMContinue { font-size: smaller; vertical-align: middle; border-left-s=
+tyle: groove; }
+
+td.CalBlank { border-left-style: none; }
+
+td.CalMBottom { border-left-style: groove; border-bottom-style: groove; }
+
+td.CalMTop { border-left-style: none; border-top-style: groove; }
+
+td.CalMCorner { border-left-style: groove; border-top-style: groove; }
+
+td.CalMHeader { font-size: larger; font-weight: bold; text-align: center; w=
+idth: 13%; padding-top: 20px; padding-bottom: 10px; }
+
+td.CalMName { font-size: x-large; font-weight: bold; text-align: center; ba=
+ckground-color: rgb(238, 238, 238); margin-bottom: 10px; border-top-style: =
+groove; border-bottom-style: groove; }
+
+td.CalMArrow { vertical-align: middle; border-style: groove; }
+
+div.ArticleText { margin: 0px; padding: 0px 2px 0px 0px; max-width: 75em; }
+
+div.widepage div.ArticleText { max-width: 999em !important; }
+
+div.Printable { }
+
+div.Printable div.ArticleText { margin: 0px; padding: 0px; max-width: none;=
+ }
+
+div.BlurbText { margin: 0px; padding: 0px; }
+
+span.UliMath { color: black; font-weight: bold; }
+
+span.UliInvSig { color: black; font-weight: bold; text-decoration: overline=
+; }
+
+div.AdMarker { text-align: center; font-size: smaller; color: black; font-w=
+eight: bold; }
+
+div.AdRight { float: right; background-color: rgb(255, 255, 255); border-wi=
+dth: 3px; border-style: solid; border-color: rgb(255, 255, 255); margin-lef=
+t: 2px; padding: 2px; }
+
+div.promobox { float: left; background-color: rgb(238, 238, 221); border-st=
+yle: groove; padding: 3px 3px 0px; margin: 1px 5px 1px 0px; }
+
+ul.NoBullet { list-style-type: none; }
+
+div.FilteredComment { display: none; background-color: rgb(238, 238, 238); =
+}
+
+div.CommHdr { background-color: rgb(238, 238, 238); }
+
+img.photo { max-width: 100%; }
+
+img.rthumb { width: 200px; height: 250px; border-style: none; padding: 3px =
+0px 3px 3px; float: right; }
+
+img.lthumb { width: 200px; height: 250px; border-style: none; padding: 3px =
+3px 3px 0px; float: left; }
+
+div.BlurbListing { padding-left: 3px; }
+
+.comment-title { width: 98%; }
+
+.comment-body { width: 98%; }
+
+.wide-form { width: 95%; margin: 0.1em 0.5em 0.1em 0.1em; padding: 0.2em; b=
+ackground-color: rgb(238, 238, 238); border-radius: 0.5em; }
+
+.covered { background: rgb(238, 238, 238); color: rgb(238, 238, 238); }
+
+.covered::selection { background: rgb(255, 255, 255); color: black; }
+
+div.MLThread { max-height: 15em; background: rgb(238, 238, 238); overflow-y=
+: scroll; }
+
+label.SBHelp { float: right; }
+
+label.SBHelp::after { content: "[Hide help]"; }
+
+input.SBHelp { display: none; }
+
+input[type=3D"checkbox"]:checked ~ label.SBHelp::after { content: "[Show se=
+arch help]"; }
+
+input[type=3D"checkbox"]:checked ~ div.SBHelp { display: none; }
+------MultipartBoundary--bBGmtIx9OVNqEv3MjXSSbEByuKZ6xno730dt3uNm3h----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://lwn.net/CSS/nosub
+
+@charset "utf-8";
+
+div.MakeALink { display: none; }
+------MultipartBoundary--bBGmtIx9OVNqEv3MjXSSbEByuKZ6xno730dt3uNm3h----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://lwn.net/CSS/pure-min
+
+@charset "utf-8";
+
+html { font-family: sans-serif; text-size-adjust: 100%; }
+
+body { margin: 0px; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, =
+menu, nav, section, summary { display: block; }
+
+audio, canvas, progress, video { display: inline-block; vertical-align: bas=
+eline; }
+
+audio:not([controls]) { display: none; height: 0px; }
+
+[hidden], template { display: none; }
+
+a { background-color: transparent; }
+
+a:active, a:hover { outline: 0px; }
+
+abbr[title] { border-bottom: 1px dotted; }
+
+b, strong { font-weight: 700; }
+
+dfn { font-style: italic; }
+
+h1 { font-size: 2em; margin: 0.67em 0px; }
+
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+
+small { font-size: 80%; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-ali=
+gn: baseline; }
+
+sup { top: -0.5em; }
+
+sub { bottom: -0.25em; }
+
+img { border: 0px; }
+
+svg:not(:root) { overflow: hidden; }
+
+figure { margin: 1em 40px; }
+
+hr { box-sizing: content-box; height: 0px; }
+
+pre { overflow: auto; }
+
+kbd, samp { font-family: monospace, monospace; font-size: 1em; }
+
+button, input, optgroup, select, textarea { color: inherit; font: inherit; =
+margin: 0px; }
+
+button { overflow: visible; }
+
+button, select { text-transform: none; }
+
+button, html input[type=3D"button"], input[type=3D"reset"], input[type=3D"s=
+ubmit"] { -webkit-appearance: button; cursor: pointer; }
+
+button[disabled], html input[disabled] { cursor: default; }
+
+input { line-height: normal; }
+
+input[type=3D"checkbox"], input[type=3D"radio"] { box-sizing: border-box; p=
+adding: 0px; }
+
+input[type=3D"number"]::-webkit-inner-spin-button, input[type=3D"number"]::=
+-webkit-outer-spin-button { height: auto; }
+
+input[type=3D"search"] { -webkit-appearance: textfield; box-sizing: content=
+-box; }
+
+input[type=3D"search"]::-webkit-search-cancel-button, input[type=3D"search"=
+]::-webkit-search-decoration { -webkit-appearance: none; }
+
+fieldset { border: 1px solid silver; margin: 0px 2px; padding: 0.35em 0.625=
+em 0.75em; }
+
+legend { border: 0px; padding: 0px; }
+
+textarea { overflow: auto; }
+
+optgroup { font-weight: 700; }
+
+table { border-collapse: collapse; border-spacing: 0px; }
+
+td, th { padding: 0px; }
+
+.hidden, [hidden] { display: none !important; }
+
+.pure-img { max-width: 100%; height: auto; display: block; }
+
+.pure-g { letter-spacing: -0.31em; text-rendering: optimizespeed; font-fami=
+ly: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; display: -=
+webkit-flex; flex-flow: row wrap; align-content: flex-start; }
+
+.pure-u { display: inline-block; zoom: 1; letter-spacing: normal; word-spac=
+ing: normal; vertical-align: top; text-rendering: auto; }
+
+.pure-g [class*=3D"pure-u"] { font-family: sans-serif; }
+
+.pure-u-1, .pure-u-1-1, .pure-u-1-2, .pure-u-1-3, .pure-u-2-3, .pure-u-1-4,=
+ .pure-u-3-4, .pure-u-1-5, .pure-u-2-5, .pure-u-3-5, .pure-u-4-5, .pure-u-5=
+-5, .pure-u-1-6, .pure-u-5-6, .pure-u-1-8, .pure-u-3-8, .pure-u-5-8, .pure-=
+u-7-8, .pure-u-1-12, .pure-u-5-12, .pure-u-7-12, .pure-u-11-12, .pure-u-1-2=
+4, .pure-u-2-24, .pure-u-3-24, .pure-u-4-24, .pure-u-5-24, .pure-u-6-24, .p=
+ure-u-7-24, .pure-u-8-24, .pure-u-9-24, .pure-u-10-24, .pure-u-11-24, .pure=
+-u-12-24, .pure-u-13-24, .pure-u-14-24, .pure-u-15-24, .pure-u-16-24, .pure=
+-u-17-24, .pure-u-18-24, .pure-u-19-24, .pure-u-20-24, .pure-u-21-24, .pure=
+-u-22-24, .pure-u-23-24, .pure-u-24-24 { display: inline-block; zoom: 1; le=
+tter-spacing: normal; word-spacing: normal; vertical-align: top; text-rende=
+ring: auto; }
+
+.pure-u-1-24 { width: 4.1667%; }
+
+.pure-u-1-12, .pure-u-2-24 { width: 8.3333%; }
+
+.pure-u-1-8, .pure-u-3-24 { width: 12.5%; }
+
+.pure-u-1-6, .pure-u-4-24 { width: 16.6667%; }
+
+.pure-u-1-5 { width: 20%; }
+
+.pure-u-5-24 { width: 20.8333%; }
+
+.pure-u-1-4, .pure-u-6-24 { width: 25%; }
+
+.pure-u-7-24 { width: 29.1667%; }
+
+.pure-u-1-3, .pure-u-8-24 { width: 33.3333%; }
+
+.pure-u-3-8, .pure-u-9-24 { width: 37.5%; }
+
+.pure-u-2-5 { width: 40%; }
+
+.pure-u-5-12, .pure-u-10-24 { width: 41.6667%; }
+
+.pure-u-11-24 { width: 45.8333%; }
+
+.pure-u-1-2, .pure-u-12-24 { width: 50%; }
+
+.pure-u-13-24 { width: 54.1667%; }
+
+.pure-u-7-12, .pure-u-14-24 { width: 58.3333%; }
+
+.pure-u-3-5 { width: 60%; }
+
+.pure-u-5-8, .pure-u-15-24 { width: 62.5%; }
+
+.pure-u-2-3, .pure-u-16-24 { width: 66.6667%; }
+
+.pure-u-17-24 { width: 70.8333%; }
+
+.pure-u-3-4, .pure-u-18-24 { width: 75%; }
+
+.pure-u-19-24 { width: 79.1667%; }
+
+.pure-u-4-5 { width: 80%; }
+
+.pure-u-5-6, .pure-u-20-24 { width: 83.3333%; }
+
+.pure-u-7-8, .pure-u-21-24 { width: 87.5%; }
+
+.pure-u-11-12, .pure-u-22-24 { width: 91.6667%; }
+
+.pure-u-23-24 { width: 95.8333%; }
+
+.pure-u-1, .pure-u-1-1, .pure-u-5-5, .pure-u-24-24 { width: 100%; }
+
+.pure-button { display: inline-block; zoom: 1; line-height: normal; white-s=
+pace: nowrap; vertical-align: middle; text-align: center; cursor: pointer; =
+-webkit-user-drag: none; user-select: none; box-sizing: border-box; }
+
+.pure-button { font-family: inherit; font-size: 100%; padding: 0.5em 1em; c=
+olor: rgba(0, 0, 0, 0.8); border: 0px rgba(0, 0, 0, 0); background-color: r=
+gb(230, 230, 230); text-decoration: none; border-radius: 2px; }
+
+.pure-button-hover, .pure-button:hover, .pure-button:focus { background-ima=
+ge: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1=
+)); }
+
+.pure-button:focus { outline: 0px; }
+
+.pure-button-active, .pure-button:active { box-shadow: rgba(0, 0, 0, 0.15) =
+0px 0px 0px 1px inset, rgba(0, 0, 0, 0.2) 0px 0px 6px inset; }
+
+.pure-button[disabled], .pure-button-disabled, .pure-button-disabled:hover,=
+ .pure-button-disabled:focus, .pure-button-disabled:active { border: 0px; b=
+ackground-image: none; opacity: 0.4; cursor: not-allowed; box-shadow: none;=
+ }
+
+.pure-button-hidden { display: none; }
+
+.pure-button-primary, .pure-button-selected, a.pure-button-primary, a.pure-=
+button-selected { background-color: rgb(0, 120, 231); color: rgb(255, 255, =
+255); }
+
+.pure-form input[type=3D"text"], .pure-form input[type=3D"password"], .pure=
+-form input[type=3D"email"], .pure-form input[type=3D"url"], .pure-form inp=
+ut[type=3D"date"], .pure-form input[type=3D"month"], .pure-form input[type=
+=3D"time"], .pure-form input[type=3D"datetime"], .pure-form input[type=3D"d=
+atetime-local"], .pure-form input[type=3D"week"], .pure-form input[type=3D"=
+number"], .pure-form input[type=3D"search"], .pure-form input[type=3D"tel"]=
+, .pure-form input[type=3D"color"], .pure-form select, .pure-form textarea =
+{ padding: 0.5em 0.6em; display: inline-block; border: 1px solid rgb(204, 2=
+04, 204); box-shadow: rgb(221, 221, 221) 0px 1px 3px inset; border-radius: =
+4px; vertical-align: middle; box-sizing: border-box; }
+
+.pure-form input:not([type]) { padding: 0.5em 0.6em; display: inline-block;=
+ border: 1px solid rgb(204, 204, 204); box-shadow: rgb(221, 221, 221) 0px 1=
+px 3px inset; border-radius: 4px; box-sizing: border-box; }
+
+.pure-form input[type=3D"color"] { padding: 0.2em 0.5em; }
+
+.pure-form input[type=3D"text"]:focus, .pure-form input[type=3D"password"]:=
+focus, .pure-form input[type=3D"email"]:focus, .pure-form input[type=3D"url=
+"]:focus, .pure-form input[type=3D"date"]:focus, .pure-form input[type=3D"m=
+onth"]:focus, .pure-form input[type=3D"time"]:focus, .pure-form input[type=
+=3D"datetime"]:focus, .pure-form input[type=3D"datetime-local"]:focus, .pur=
+e-form input[type=3D"week"]:focus, .pure-form input[type=3D"number"]:focus,=
+ .pure-form input[type=3D"search"]:focus, .pure-form input[type=3D"tel"]:fo=
+cus, .pure-form input[type=3D"color"]:focus, .pure-form select:focus, .pure=
+-form textarea:focus { outline: 0px; border-color: rgb(18, 159, 234); }
+
+.pure-form input:not([type]):focus { outline: 0px; border-color: rgb(18, 15=
+9, 234); }
+
+.pure-form input[type=3D"file"]:focus, .pure-form input[type=3D"radio"]:foc=
+us, .pure-form input[type=3D"checkbox"]:focus { outline: rgb(18, 159, 234) =
+auto 1px; }
+
+.pure-form .pure-checkbox, .pure-form .pure-radio { margin: 0.5em 0px; disp=
+lay: block; }
+
+.pure-form input[type=3D"text"][disabled], .pure-form input[type=3D"passwor=
+d"][disabled], .pure-form input[type=3D"email"][disabled], .pure-form input=
+[type=3D"url"][disabled], .pure-form input[type=3D"date"][disabled], .pure-=
+form input[type=3D"month"][disabled], .pure-form input[type=3D"time"][disab=
+led], .pure-form input[type=3D"datetime"][disabled], .pure-form input[type=
+=3D"datetime-local"][disabled], .pure-form input[type=3D"week"][disabled], =
+.pure-form input[type=3D"number"][disabled], .pure-form input[type=3D"searc=
+h"][disabled], .pure-form input[type=3D"tel"][disabled], .pure-form input[t=
+ype=3D"color"][disabled], .pure-form select[disabled], .pure-form textarea[=
+disabled] { cursor: not-allowed; background-color: rgb(234, 237, 237); colo=
+r: rgb(202, 210, 211); }
+
+.pure-form input:not([type])[disabled] { cursor: not-allowed; background-co=
+lor: rgb(234, 237, 237); color: rgb(202, 210, 211); }
+
+.pure-form input[readonly], .pure-form select[readonly], .pure-form textare=
+a[readonly] { background-color: rgb(238, 238, 238); color: rgb(119, 119, 11=
+9); border-color: rgb(204, 204, 204); }
+
+.pure-form input:focus:invalid, .pure-form textarea:focus:invalid, .pure-fo=
+rm select:focus:invalid { color: rgb(185, 74, 72); border-color: rgb(233, 5=
+0, 45); }
+
+.pure-form input[type=3D"file"]:focus:invalid:focus, .pure-form input[type=
+=3D"radio"]:focus:invalid:focus, .pure-form input[type=3D"checkbox"]:focus:=
+invalid:focus { outline-color: rgb(233, 50, 45); }
+
+.pure-form select { height: 2.25em; border: 1px solid rgb(204, 204, 204); b=
+ackground-color: rgb(255, 255, 255); }
+
+.pure-form select[multiple] { height: auto; }
+
+.pure-form label { margin: 0.5em 0px 0.2em; }
+
+.pure-form fieldset { margin: 0px; padding: 0.35em 0px 0.75em; border: 0px;=
+ }
+
+.pure-form legend { display: block; width: 100%; padding: 0.3em 0px; margin=
+-bottom: 0.3em; color: rgb(51, 51, 51); border-bottom: 1px solid rgb(229, 2=
+29, 229); }
+
+.pure-form-stacked input[type=3D"text"], .pure-form-stacked input[type=3D"p=
+assword"], .pure-form-stacked input[type=3D"email"], .pure-form-stacked inp=
+ut[type=3D"url"], .pure-form-stacked input[type=3D"date"], .pure-form-stack=
+ed input[type=3D"month"], .pure-form-stacked input[type=3D"time"], .pure-fo=
+rm-stacked input[type=3D"datetime"], .pure-form-stacked input[type=3D"datet=
+ime-local"], .pure-form-stacked input[type=3D"week"], .pure-form-stacked in=
+put[type=3D"number"], .pure-form-stacked input[type=3D"search"], .pure-form=
+-stacked input[type=3D"tel"], .pure-form-stacked input[type=3D"color"], .pu=
+re-form-stacked input[type=3D"file"], .pure-form-stacked select, .pure-form=
+-stacked label, .pure-form-stacked textarea { display: block; margin: 0.25e=
+m 0px; }
+
+.pure-form-stacked input:not([type]) { display: block; margin: 0.25em 0px; =
+}
+
+.pure-form-aligned input, .pure-form-aligned textarea, .pure-form-aligned s=
+elect, .pure-form-aligned .pure-help-inline, .pure-form-message-inline { di=
+splay: inline-block; vertical-align: middle; }
+
+.pure-form-aligned textarea { vertical-align: top; }
+
+.pure-form-aligned .pure-control-group { margin-bottom: 0.5em; }
+
+.pure-form-aligned .pure-control-group label { text-align: right; display: =
+inline-block; vertical-align: middle; width: 10em; margin: 0px 1em 0px 0px;=
+ }
+
+.pure-form-aligned .pure-controls { margin: 1.5em 0px 0px 11em; }
+
+.pure-form input.pure-input-rounded, .pure-form .pure-input-rounded { borde=
+r-radius: 2em; padding: 0.5em 1em; }
+
+.pure-form .pure-group fieldset { margin-bottom: 10px; }
+
+.pure-form .pure-group input, .pure-form .pure-group textarea { display: bl=
+ock; padding: 10px; margin: 0px 0px -1px; border-radius: 0px; position: rel=
+ative; top: -1px; }
+
+.pure-form .pure-group input:focus, .pure-form .pure-group textarea:focus {=
+ z-index: 3; }
+
+.pure-form .pure-group input:first-child, .pure-form .pure-group textarea:f=
+irst-child { top: 1px; border-radius: 4px 4px 0px 0px; margin: 0px; }
+
+.pure-form .pure-group input:first-child:last-child, .pure-form .pure-group=
+ textarea:first-child:last-child { top: 1px; border-radius: 4px; margin: 0p=
+x; }
+
+.pure-form .pure-group input:last-child, .pure-form .pure-group textarea:la=
+st-child { top: -2px; border-radius: 0px 0px 4px 4px; margin: 0px; }
+
+.pure-form .pure-group button { margin: 0.35em 0px; }
+
+.pure-form .pure-input-1 { width: 100%; }
+
+.pure-form .pure-input-2-3 { width: 66%; }
+
+.pure-form .pure-input-1-2 { width: 50%; }
+
+.pure-form .pure-input-1-3 { width: 33%; }
+
+.pure-form .pure-input-1-4 { width: 25%; }
+
+.pure-form .pure-help-inline, .pure-form-message-inline { display: inline-b=
+lock; padding-left: 0.3em; color: rgb(102, 102, 102); vertical-align: middl=
+e; font-size: 0.875em; }
+
+.pure-form-message { display: block; color: rgb(102, 102, 102); font-size: =
+0.875em; }
+
+@media only screen and (max-width: 480px) {
+  .pure-form button[type=3D"submit"] { margin: 0.7em 0px 0px; }
+  .pure-form input:not([type]), .pure-form input[type=3D"text"], .pure-form=
+ input[type=3D"password"], .pure-form input[type=3D"email"], .pure-form inp=
+ut[type=3D"url"], .pure-form input[type=3D"date"], .pure-form input[type=3D=
+"month"], .pure-form input[type=3D"time"], .pure-form input[type=3D"datetim=
+e"], .pure-form input[type=3D"datetime-local"], .pure-form input[type=3D"we=
+ek"], .pure-form input[type=3D"number"], .pure-form input[type=3D"search"],=
+ .pure-form input[type=3D"tel"], .pure-form input[type=3D"color"], .pure-fo=
+rm label { margin-bottom: 0.3em; display: block; }
+  .pure-group input:not([type]), .pure-group input[type=3D"text"], .pure-gr=
+oup input[type=3D"password"], .pure-group input[type=3D"email"], .pure-grou=
+p input[type=3D"url"], .pure-group input[type=3D"date"], .pure-group input[=
+type=3D"month"], .pure-group input[type=3D"time"], .pure-group input[type=
+=3D"datetime"], .pure-group input[type=3D"datetime-local"], .pure-group inp=
+ut[type=3D"week"], .pure-group input[type=3D"number"], .pure-group input[ty=
+pe=3D"search"], .pure-group input[type=3D"tel"], .pure-group input[type=3D"=
+color"] { margin-bottom: 0px; }
+  .pure-form-aligned .pure-control-group label { margin-bottom: 0.3em; text=
+-align: left; display: block; width: 100%; }
+  .pure-form-aligned .pure-controls { margin: 1.5em 0px 0px; }
+  .pure-form .pure-help-inline, .pure-form-message-inline, .pure-form-messa=
+ge { display: block; font-size: 0.75em; padding: 0.2em 0px 0.8em; }
+}
+
+.pure-menu { box-sizing: border-box; }
+
+.pure-menu-fixed { position: fixed; left: 0px; top: 0px; z-index: 3; }
+
+.pure-menu-list, .pure-menu-item { position: relative; }
+
+.pure-menu-list { list-style: none; margin: 0px; padding: 0px; }
+
+.pure-menu-item { padding: 0px; margin: 0px; height: 100%; }
+
+.pure-menu-link, .pure-menu-heading { display: block; text-decoration: none=
+; white-space: nowrap; }
+
+.pure-menu-horizontal { width: 100%; white-space: nowrap; }
+
+.pure-menu-horizontal .pure-menu-list { display: inline-block; }
+
+.pure-menu-horizontal .pure-menu-item, .pure-menu-horizontal .pure-menu-hea=
+ding, .pure-menu-horizontal .pure-menu-separator { display: inline-block; z=
+oom: 1; vertical-align: middle; }
+
+.pure-menu-item .pure-menu-item { display: block; }
+
+.pure-menu-children { display: none; position: absolute; left: 100%; top: 0=
+px; margin: 0px; padding: 0px; z-index: 3; }
+
+.pure-menu-horizontal .pure-menu-children { left: 0px; top: auto; width: in=
+herit; }
+
+.pure-menu-allow-hover:hover > .pure-menu-children, .pure-menu-active > .pu=
+re-menu-children { display: block; position: absolute; }
+
+.pure-menu-has-children > .pure-menu-link::after { padding-left: 0.5em; con=
+tent: "=E2=96=B8"; font-size: small; }
+
+.pure-menu-horizontal .pure-menu-has-children > .pure-menu-link::after { co=
+ntent: "=E2=96=BE"; }
+
+.pure-menu-scrollable { overflow: hidden scroll; }
+
+.pure-menu-scrollable .pure-menu-list { display: block; }
+
+.pure-menu-horizontal.pure-menu-scrollable .pure-menu-list { display: inlin=
+e-block; }
+
+.pure-menu-horizontal.pure-menu-scrollable { white-space: nowrap; overflow:=
+ auto hidden; padding: 0.5em 0px; }
+
+.pure-menu-horizontal.pure-menu-scrollable::-webkit-scrollbar { display: no=
+ne; }
+
+.pure-menu-separator { background-color: rgb(204, 204, 204); height: 1px; m=
+argin: 0.3em 0px; }
+
+.pure-menu-horizontal .pure-menu-separator { width: 1px; height: 1.3em; mar=
+gin: 0px 0.3em; }
+
+.pure-menu-heading { text-transform: uppercase; color: rgb(86, 93, 100); }
+
+.pure-menu-link { color: rgb(119, 119, 119); }
+
+.pure-menu-children { background-color: rgb(255, 255, 255); }
+
+.pure-menu-link, .pure-menu-disabled, .pure-menu-heading { padding: 0.5em 1=
+em; }
+
+.pure-menu-disabled { opacity: 0.5; }
+
+.pure-menu-disabled .pure-menu-link:hover { background-color: transparent; =
+}
+
+.pure-menu-active > .pure-menu-link, .pure-menu-link:hover, .pure-menu-link=
+:focus { background-color: rgb(238, 238, 238); }
+
+.pure-menu-selected .pure-menu-link, .pure-menu-selected .pure-menu-link:vi=
+sited { color: rgb(0, 0, 0); }
+
+.pure-table { border-collapse: collapse; border-spacing: 0px; empty-cells: =
+show; border: 1px solid rgb(203, 203, 203); }
+
+.pure-table caption { color: rgb(0, 0, 0); font: italic 85%/1 arial, sans-s=
+erif; padding: 1em 0px; text-align: center; }
+
+.pure-table td, .pure-table th { border-left: 1px solid rgb(203, 203, 203);=
+ border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; =
+font-size: inherit; margin: 0px; overflow: visible; padding: 0.5em 1em; }
+
+.pure-table td:first-child, .pure-table th:first-child { border-left-width:=
+ 0px; }
+
+.pure-table thead { background-color: rgb(224, 224, 224); color: rgb(0, 0, =
+0); text-align: left; vertical-align: bottom; }
+
+.pure-table td { background-color: transparent; }
+
+.pure-table-odd td { background-color: rgb(242, 242, 242); }
+
+.pure-table-striped tr:nth-child(2n-1) td { background-color: rgb(242, 242,=
+ 242); }
+
+.pure-table-bordered td { border-bottom: 1px solid rgb(203, 203, 203); }
+
+.pure-table-bordered tbody > tr:last-child > td { border-bottom-width: 0px;=
+ }
+
+.pure-table-horizontal td, .pure-table-horizontal th { border-width: 0px 0p=
+x 1px; border-bottom-style: solid; border-bottom-color: rgb(203, 203, 203);=
+ }
+
+.pure-table-horizontal tbody > tr:last-child > td { border-bottom-width: 0p=
+x; }
+------MultipartBoundary--bBGmtIx9OVNqEv3MjXSSbEByuKZ6xno730dt3uNm3h----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://lwn.net/CSS/grids-responsive-min
+
+@charset "utf-8";
+
+@media screen and (min-width: 35.5em) {
+  .pure-u-sm-1, .pure-u-sm-1-1, .pure-u-sm-1-2, .pure-u-sm-1-3, .pure-u-sm-=
+2-3, .pure-u-sm-1-4, .pure-u-sm-3-4, .pure-u-sm-1-5, .pure-u-sm-2-5, .pure-=
+u-sm-3-5, .pure-u-sm-4-5, .pure-u-sm-5-5, .pure-u-sm-1-6, .pure-u-sm-5-6, .=
+pure-u-sm-1-8, .pure-u-sm-3-8, .pure-u-sm-5-8, .pure-u-sm-7-8, .pure-u-sm-1=
+-12, .pure-u-sm-5-12, .pure-u-sm-7-12, .pure-u-sm-11-12, .pure-u-sm-1-24, .=
+pure-u-sm-2-24, .pure-u-sm-3-24, .pure-u-sm-4-24, .pure-u-sm-5-24, .pure-u-=
+sm-6-24, .pure-u-sm-7-24, .pure-u-sm-8-24, .pure-u-sm-9-24, .pure-u-sm-10-2=
+4, .pure-u-sm-11-24, .pure-u-sm-12-24, .pure-u-sm-13-24, .pure-u-sm-14-24, =
+.pure-u-sm-15-24, .pure-u-sm-16-24, .pure-u-sm-17-24, .pure-u-sm-18-24, .pu=
+re-u-sm-19-24, .pure-u-sm-20-24, .pure-u-sm-21-24, .pure-u-sm-22-24, .pure-=
+u-sm-23-24, .pure-u-sm-24-24 { display: inline-block; zoom: 1; letter-spaci=
+ng: normal; word-spacing: normal; vertical-align: top; text-rendering: auto=
+; }
+  .pure-u-sm-1-24 { width: 4.1667%; }
+  .pure-u-sm-1-12, .pure-u-sm-2-24 { width: 8.3333%; }
+  .pure-u-sm-1-8, .pure-u-sm-3-24 { width: 12.5%; }
+  .pure-u-sm-1-6, .pure-u-sm-4-24 { width: 16.6667%; }
+  .pure-u-sm-1-5 { width: 20%; }
+  .pure-u-sm-5-24 { width: 20.8333%; }
+  .pure-u-sm-1-4, .pure-u-sm-6-24 { width: 25%; }
+  .pure-u-sm-7-24 { width: 29.1667%; }
+  .pure-u-sm-1-3, .pure-u-sm-8-24 { width: 33.3333%; }
+  .pure-u-sm-3-8, .pure-u-sm-9-24 { width: 37.5%; }
+  .pure-u-sm-2-5 { width: 40%; }
+  .pure-u-sm-5-12, .pure-u-sm-10-24 { width: 41.6667%; }
+  .pure-u-sm-11-24 { width: 45.8333%; }
+  .pure-u-sm-1-2, .pure-u-sm-12-24 { width: 50%; }
+  .pure-u-sm-13-24 { width: 54.1667%; }
+  .pure-u-sm-7-12, .pure-u-sm-14-24 { width: 58.3333%; }
+  .pure-u-sm-3-5 { width: 60%; }
+  .pure-u-sm-5-8, .pure-u-sm-15-24 { width: 62.5%; }
+  .pure-u-sm-2-3, .pure-u-sm-16-24 { width: 66.6667%; }
+  .pure-u-sm-17-24 { width: 70.8333%; }
+  .pure-u-sm-3-4, .pure-u-sm-18-24 { width: 75%; }
+  .pure-u-sm-19-24 { width: 79.1667%; }
+  .pure-u-sm-4-5 { width: 80%; }
+  .pure-u-sm-5-6, .pure-u-sm-20-24 { width: 83.3333%; }
+  .pure-u-sm-7-8, .pure-u-sm-21-24 { width: 87.5%; }
+  .pure-u-sm-11-12, .pure-u-sm-22-24 { width: 91.6667%; }
+  .pure-u-sm-23-24 { width: 95.8333%; }
+  .pure-u-sm-1, .pure-u-sm-1-1, .pure-u-sm-5-5, .pure-u-sm-24-24 { width: 1=
+00%; }
+}
+
+@media screen and (min-width: 48em) {
+  .pure-u-md-1, .pure-u-md-1-1, .pure-u-md-1-2, .pure-u-md-1-3, .pure-u-md-=
+2-3, .pure-u-md-1-4, .pure-u-md-3-4, .pure-u-md-1-5, .pure-u-md-2-5, .pure-=
+u-md-3-5, .pure-u-md-4-5, .pure-u-md-5-5, .pure-u-md-1-6, .pure-u-md-5-6, .=
+pure-u-md-1-8, .pure-u-md-3-8, .pure-u-md-5-8, .pure-u-md-7-8, .pure-u-md-1=
+-12, .pure-u-md-5-12, .pure-u-md-7-12, .pure-u-md-11-12, .pure-u-md-1-24, .=
+pure-u-md-2-24, .pure-u-md-3-24, .pure-u-md-4-24, .pure-u-md-5-24, .pure-u-=
+md-6-24, .pure-u-md-7-24, .pure-u-md-8-24, .pure-u-md-9-24, .pure-u-md-10-2=
+4, .pure-u-md-11-24, .pure-u-md-12-24, .pure-u-md-13-24, .pure-u-md-14-24, =
+.pure-u-md-15-24, .pure-u-md-16-24, .pure-u-md-17-24, .pure-u-md-18-24, .pu=
+re-u-md-19-24, .pure-u-md-20-24, .pure-u-md-21-24, .pure-u-md-22-24, .pure-=
+u-md-23-24, .pure-u-md-24-24 { display: inline-block; zoom: 1; letter-spaci=
+ng: normal; word-spacing: normal; vertical-align: top; text-rendering: auto=
+; }
+  .pure-u-md-1-24 { width: 4.1667%; }
+  .pure-u-md-1-12, .pure-u-md-2-24 { width: 8.3333%; }
+  .pure-u-md-1-8, .pure-u-md-3-24 { width: 12.5%; }
+  .pure-u-md-1-6, .pure-u-md-4-24 { width: 16.6667%; }
+  .pure-u-md-1-5 { width: 20%; }
+  .pure-u-md-5-24 { width: 20.8333%; }
+  .pure-u-md-1-4, .pure-u-md-6-24 { width: 25%; }
+  .pure-u-md-7-24 { width: 29.1667%; }
+  .pure-u-md-1-3, .pure-u-md-8-24 { width: 33.3333%; }
+  .pure-u-md-3-8, .pure-u-md-9-24 { width: 37.5%; }
+  .pure-u-md-2-5 { width: 40%; }
+  .pure-u-md-5-12, .pure-u-md-10-24 { width: 41.6667%; }
+  .pure-u-md-11-24 { width: 45.8333%; }
+  .pure-u-md-1-2, .pure-u-md-12-24 { width: 50%; }
+  .pure-u-md-13-24 { width: 54.1667%; }
+  .pure-u-md-7-12, .pure-u-md-14-24 { width: 58.3333%; }
+  .pure-u-md-3-5 { width: 60%; }
+  .pure-u-md-5-8, .pure-u-md-15-24 { width: 62.5%; }
+  .pure-u-md-2-3, .pure-u-md-16-24 { width: 66.6667%; }
+  .pure-u-md-17-24 { width: 70.8333%; }
+  .pure-u-md-3-4, .pure-u-md-18-24 { width: 75%; }
+  .pure-u-md-19-24 { width: 79.1667%; }
+  .pure-u-md-4-5 { width: 80%; }
+  .pure-u-md-5-6, .pure-u-md-20-24 { width: 83.3333%; }
+  .pure-u-md-7-8, .pure-u-md-21-24 { width: 87.5%; }
+  .pure-u-md-11-12, .pure-u-md-22-24 { width: 91.6667%; }
+  .pure-u-md-23-24 { width: 95.8333%; }
+  .pure-u-md-1, .pure-u-md-1-1, .pure-u-md-5-5, .pure-u-md-24-24 { width: 1=
+00%; }
+}
+
+@media screen and (min-width: 64em) {
+  .pure-u-lg-1, .pure-u-lg-1-1, .pure-u-lg-1-2, .pure-u-lg-1-3, .pure-u-lg-=
+2-3, .pure-u-lg-1-4, .pure-u-lg-3-4, .pure-u-lg-1-5, .pure-u-lg-2-5, .pure-=
+u-lg-3-5, .pure-u-lg-4-5, .pure-u-lg-5-5, .pure-u-lg-1-6, .pure-u-lg-5-6, .=
+pure-u-lg-1-8, .pure-u-lg-3-8, .pure-u-lg-5-8, .pure-u-lg-7-8, .pure-u-lg-1=
+-12, .pure-u-lg-5-12, .pure-u-lg-7-12, .pure-u-lg-11-12, .pure-u-lg-1-24, .=
+pure-u-lg-2-24, .pure-u-lg-3-24, .pure-u-lg-4-24, .pure-u-lg-5-24, .pure-u-=
+lg-6-24, .pure-u-lg-7-24, .pure-u-lg-8-24, .pure-u-lg-9-24, .pure-u-lg-10-2=
+4, .pure-u-lg-11-24, .pure-u-lg-12-24, .pure-u-lg-13-24, .pure-u-lg-14-24, =
+.pure-u-lg-15-24, .pure-u-lg-16-24, .pure-u-lg-17-24, .pure-u-lg-18-24, .pu=
+re-u-lg-19-24, .pure-u-lg-20-24, .pure-u-lg-21-24, .pure-u-lg-22-24, .pure-=
+u-lg-23-24, .pure-u-lg-24-24 { display: inline-block; zoom: 1; letter-spaci=
+ng: normal; word-spacing: normal; vertical-align: top; text-rendering: auto=
+; }
+  .pure-u-lg-1-24 { width: 4.1667%; }
+  .pure-u-lg-1-12, .pure-u-lg-2-24 { width: 8.3333%; }
+  .pure-u-lg-1-8, .pure-u-lg-3-24 { width: 12.5%; }
+  .pure-u-lg-1-6, .pure-u-lg-4-24 { width: 16.6667%; }
+  .pure-u-lg-1-5 { width: 20%; }
+  .pure-u-lg-5-24 { width: 20.8333%; }
+  .pure-u-lg-1-4, .pure-u-lg-6-24 { width: 25%; }
+  .pure-u-lg-7-24 { width: 29.1667%; }
+  .pure-u-lg-1-3, .pure-u-lg-8-24 { width: 33.3333%; }
+  .pure-u-lg-3-8, .pure-u-lg-9-24 { width: 37.5%; }
+  .pure-u-lg-2-5 { width: 40%; }
+  .pure-u-lg-5-12, .pure-u-lg-10-24 { width: 41.6667%; }
+  .pure-u-lg-11-24 { width: 45.8333%; }
+  .pure-u-lg-1-2, .pure-u-lg-12-24 { width: 50%; }
+  .pure-u-lg-13-24 { width: 54.1667%; }
+  .pure-u-lg-7-12, .pure-u-lg-14-24 { width: 58.3333%; }
+  .pure-u-lg-3-5 { width: 60%; }
+  .pure-u-lg-5-8, .pure-u-lg-15-24 { width: 62.5%; }
+  .pure-u-lg-2-3, .pure-u-lg-16-24 { width: 66.6667%; }
+  .pure-u-lg-17-24 { width: 70.8333%; }
+  .pure-u-lg-3-4, .pure-u-lg-18-24 { width: 75%; }
+  .pure-u-lg-19-24 { width: 79.1667%; }
+  .pure-u-lg-4-5 { width: 80%; }
+  .pure-u-lg-5-6, .pure-u-lg-20-24 { width: 83.3333%; }
+  .pure-u-lg-7-8, .pure-u-lg-21-24 { width: 87.5%; }
+  .pure-u-lg-11-12, .pure-u-lg-22-24 { width: 91.6667%; }
+  .pure-u-lg-23-24 { width: 95.8333%; }
+  .pure-u-lg-1, .pure-u-lg-1-1, .pure-u-lg-5-5, .pure-u-lg-24-24 { width: 1=
+00%; }
+}
+
+@media screen and (min-width: 80em) {
+  .pure-u-xl-1, .pure-u-xl-1-1, .pure-u-xl-1-2, .pure-u-xl-1-3, .pure-u-xl-=
+2-3, .pure-u-xl-1-4, .pure-u-xl-3-4, .pure-u-xl-1-5, .pure-u-xl-2-5, .pure-=
+u-xl-3-5, .pure-u-xl-4-5, .pure-u-xl-5-5, .pure-u-xl-1-6, .pure-u-xl-5-6, .=
+pure-u-xl-1-8, .pure-u-xl-3-8, .pure-u-xl-5-8, .pure-u-xl-7-8, .pure-u-xl-1=
+-12, .pure-u-xl-5-12, .pure-u-xl-7-12, .pure-u-xl-11-12, .pure-u-xl-1-24, .=
+pure-u-xl-2-24, .pure-u-xl-3-24, .pure-u-xl-4-24, .pure-u-xl-5-24, .pure-u-=
+xl-6-24, .pure-u-xl-7-24, .pure-u-xl-8-24, .pure-u-xl-9-24, .pure-u-xl-10-2=
+4, .pure-u-xl-11-24, .pure-u-xl-12-24, .pure-u-xl-13-24, .pure-u-xl-14-24, =
+.pure-u-xl-15-24, .pure-u-xl-16-24, .pure-u-xl-17-24, .pure-u-xl-18-24, .pu=
+re-u-xl-19-24, .pure-u-xl-20-24, .pure-u-xl-21-24, .pure-u-xl-22-24, .pure-=
+u-xl-23-24, .pure-u-xl-24-24 { display: inline-block; zoom: 1; letter-spaci=
+ng: normal; word-spacing: normal; vertical-align: top; text-rendering: auto=
+; }
+  .pure-u-xl-1-24 { width: 4.1667%; }
+  .pure-u-xl-1-12, .pure-u-xl-2-24 { width: 8.3333%; }
+  .pure-u-xl-1-8, .pure-u-xl-3-24 { width: 12.5%; }
+  .pure-u-xl-1-6, .pure-u-xl-4-24 { width: 16.6667%; }
+  .pure-u-xl-1-5 { width: 20%; }
+  .pure-u-xl-5-24 { width: 20.8333%; }
+  .pure-u-xl-1-4, .pure-u-xl-6-24 { width: 25%; }
+  .pure-u-xl-7-24 { width: 29.1667%; }
+  .pure-u-xl-1-3, .pure-u-xl-8-24 { width: 33.3333%; }
+  .pure-u-xl-3-8, .pure-u-xl-9-24 { width: 37.5%; }
+  .pure-u-xl-2-5 { width: 40%; }
+  .pure-u-xl-5-12, .pure-u-xl-10-24 { width: 41.6667%; }
+  .pure-u-xl-11-24 { width: 45.8333%; }
+  .pure-u-xl-1-2, .pure-u-xl-12-24 { width: 50%; }
+  .pure-u-xl-13-24 { width: 54.1667%; }
+  .pure-u-xl-7-12, .pure-u-xl-14-24 { width: 58.3333%; }
+  .pure-u-xl-3-5 { width: 60%; }
+  .pure-u-xl-5-8, .pure-u-xl-15-24 { width: 62.5%; }
+  .pure-u-xl-2-3, .pure-u-xl-16-24 { width: 66.6667%; }
+  .pure-u-xl-17-24 { width: 70.8333%; }
+  .pure-u-xl-3-4, .pure-u-xl-18-24 { width: 75%; }
+  .pure-u-xl-19-24 { width: 79.1667%; }
+  .pure-u-xl-4-5 { width: 80%; }
+  .pure-u-xl-5-6, .pure-u-xl-20-24 { width: 83.3333%; }
+  .pure-u-xl-7-8, .pure-u-xl-21-24 { width: 87.5%; }
+  .pure-u-xl-11-12, .pure-u-xl-22-24 { width: 91.6667%; }
+  .pure-u-xl-23-24 { width: 95.8333%; }
+  .pure-u-xl-1, .pure-u-xl-1-1, .pure-u-xl-5-5, .pure-u-xl-24-24 { width: 1=
+00%; }
+}
+------MultipartBoundary--bBGmtIx9OVNqEv3MjXSSbEByuKZ6xno730dt3uNm3h----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://lwn.net/CSS/pure-lwn
+
+@charset "utf-8";
+
+.pure-g > div { box-sizing: border-box; }
+
+#menu { width: 100%; position: fixed; top: 0px; left: 0px; right: 0px; back=
+ground-color: rgb(238, 238, 238); padding: 0px 0.2em; overflow-y: visible; =
+display: block; z-index: 20; height: 42px; }
+
+#menu.scrollable { position: absolute; }
+
+div.navmenu-container { margin-left: 0.5em; margin-top: 0.5em; min-width: 7=
+0%; border-radius: 0.8em; padding: 0.1em; display: inline-block; }
+
+ul.navmenu { list-style: none; position: relative; display: inline-table; p=
+adding: 0px; margin: 0px; }
+
+.navmenu li { display: inline-block; margin-right: 0.4em; }
+
+.navmenu ul { display: none; position: absolute; top: 100%; width: 15em; li=
+st-style: none; z-index: 10; background: rgb(238, 238, 238); padding-left: =
+0px; margin-left: 0px; border-style: solid; }
+
+.navmenu ul li { display: block; margin-top: 0.2em; margin-left: 0.2em; lin=
+e-height: 1.4; }
+
+.navmenu ul li:first-child { margin-top: 1.2em; }
+
+.navmenu li:hover > ul { display: block; }
+
+a.navmenu { color: black; }
+
+.navmenu a { text-decoration: none; }
+
+.navmenu a:hover { text-decoration: underline; }
+
+.navmenu a:visited, .topnav-container a:visited { color: darkblue; }
+
+a.navmenu::after { content: " =E2=96=B6"; }
+
+font.logo, font.logobl, img.logo { display: none; }
+
+img.sslogo { float: left; }
+
+div.logo { float: left; }
+
+div.topnav-container { margin-left: 0.5em; margin-top: 45px; margin-right: =
+0.5em; background: rgb(238, 238, 238); border-radius: 0.8em; padding: 0.3em=
+; }
+
+@media screen and (min-width: 48em) {
+  .header, .content { padding-left: 2em; padding-right: 2em; }
+  div.maincolumn { padding-left: 10em; }
+  #menu { display: block; width: 9.6em; height: 100%; bottom: 0px; overflow=
+-y: visible; }
+  #menu:hover { overflow-y: auto; }
+  #menu.scrollable { position: fixed; }
+  div.navmenu-container { display: block; margin-top: 120px; margin-left: 0=
+px; padding: 0px; }
+  .navmenu ul { display: block; position: static; width: 9.6em; border-styl=
+e: none; top: 0px; }
+  .navmenu li { margin: 0.5em 0px 0px 0.1em; width: 100%; }
+  .navmenu ul li { margin: 0.1em 0px 0px 0.5em; text-indent: -0.4em; paddin=
+g-right: 0px; width: auto; line-height: 1.2; }
+  .navmenu ul li:first-child { margin-top: 0px; }
+  a.navmenu::after { content: ""; }
+  div.topnav-container { margin-left: 10.5em; margin-top: 0.5em; }
+  img.logo { padding-right: 0.2em; display: inline; float: left; position: =
+absolute; top: 3px; left: 3px; }
+  font.logo { font-weight: bold; color: green; display: inline; font-size: =
+180%; text-align: right; float: left; padding-left: 60px; font-family: sans=
+-serif; line-height: 0.8; padding-top: 0.3em; }
+  font.logobl { color: green; display: inline; font-size: 80%; text-align: =
+center; position: absolute; top: 85px; left: 5px; font-family: sans-serif; =
+}
+  img.sslogo { display: none; }
+  div.fp-feature { padding-right: 1em; }
+  #AdminPageMenu { display: none; }
+}
+
+.huge-only { display: none; }
+
+@media screen and (min-width: 80em) {
+  .huge-only { display: inline-block; }
+}
+
+@media print {
+  .not-print { display: none; }
+  #menu { position: absolute; }
+}
+
+.handset-only { display: inline-block; }
+
+.not-handset { display: none; }
+
+@media (min-width: 48em) {
+  .handset-only { display: none; }
+  .not-handset { display: inline-block; }
+}
+
+div.SideBox { font-size: smaller; }
+
+div.ArticleText { padding-left: 0.5em; }
+
+body { line-height: 1.2; }
+
+div.Headline { border-radius: 0.5em; padding-left: 6px; }
+
+div.BlurbListing { padding-left: 6px; }
+
+table.Form td { padding: 2px 5px; }
+
+table { border-collapse: separate; border-spacing: 5px 0px; }
+
+table.AdminBox { padding: 0px; width: 98%; }
+
+table.AdminBox td { padding: 0px; }
+
+pre { white-space: pre; overflow: visible; }
+
+p.CommentTitle { border-radius: 0px 2em 2em 0px; }
+
+p.Cat1HL { border-radius: 0.5em; }
+
+p.Cat2HL { border-radius: 0.5em; padding-left: 0.3em; margin-left: -0.3em; =
+}
+
+p.Cat3HL { border-radius: 0.4em; padding-left: 0.2em; margin-left: -0.2em; =
+}
+
+div.CommentBox, div.OldCommentBox { margin-left: 0.2em; }
+
+html { font-family: inherit; }
+
+.pure-g, .pure-g [class*=3D"pure-u"] { font-family: inherit; }
+
+body { }
+
+.pure-u-md-8-24 { width: 33%; }
+
+.lwn-u-1 { zoom: 1; letter-spacing: normal; word-spacing: normal; vertical-=
+align: top; text-rendering: auto; }
+
+input [type=3D"submit"] { background: rgb(238, 238, 238); color: black; }
+
+textarea { background: rgb(255, 255, 255); color: black; }
+
+form.loginform { display: inline; }
+------MultipartBoundary--bBGmtIx9OVNqEv3MjXSSbEByuKZ6xno730dt3uNm3h----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: https://static.lwn.net/images/logo/barepenguin-70.png
+
+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
+Fwbfzrn/L6K/2mrmY/ZKAAAAAElFTkSuQmCC
+
+------MultipartBoundary--bBGmtIx9OVNqEv3MjXSSbEByuKZ6xno730dt3uNm3h----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: https://static.lwn.net/images/lcorner-ss.png
+
+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
+
+------MultipartBoundary--bBGmtIx9OVNqEv3MjXSSbEByuKZ6xno730dt3uNm3h------
