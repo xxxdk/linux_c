@@ -1,0 +1,253 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://cateee.net/lkddb/web-lkddb/USB_ZERO.html
+Subject: Linux Kernel Driver DataBase: CONFIG_USB_ZERO: Gadget Zero (DEVELOPMENT)
+Date: Mon, 27 May 2019 15:18:56 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--1POYVjsYi3EI5QZtW21iUrmUDN47AcPRMhyHlBKUAt----"
+
+
+------MultipartBoundary--1POYVjsYi3EI5QZtW21iUrmUDN47AcPRMhyHlBKUAt----
+Content-Type: text/html
+Content-ID: <frame-007F94FF05715935F97DCFA0D73095F1@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://cateee.net/lkddb/web-lkddb/USB_ZERO.html
+
+<!--?xml version=3D"1.0" encoding=3D"UTF-8"?--><!DOCTYPE html PUBLIC "-//W3=
+C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-=
+transitional.dtd"><html xmlns=3D"http://www.w3.org/1999/xhtml"><head><meta =
+http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+ =20
+  <link href=3D"https://cateee.net/template/lkddb.css" rel=3D"stylesheet" t=
+ype=3D"text/css">
+  <link rel=3D"icon" type=3D"image/png" href=3D"https://cateee.net/cateee.p=
+ng">
+  <title>Linux Kernel Driver DataBase: CONFIG_USB_ZERO: Gadget Zero (DEVELO=
+PMENT)</title>
+</head>
+
+<body xml:lang=3D"en" lang=3D"en">
+<div class=3D"hnav">
+<p>
+ Navigation:
+ <a href=3D"https://cateee.net/lkddb/">Linux Kernel Driver DataBase</a> -
+ web LKDDB:
+ <a href=3D"https://cateee.net/lkddb/web-lkddb/">Main index</a> -
+ <a href=3D"https://cateee.net/lkddb/web-lkddb/index_U.html">U index</a>
+
+</p><form action=3D"https://www.google.com/" id=3D"cse-search-box">
+  <div>
+   =20
+   =20
+    <input type=3D"text" name=3D"q" size=3D"55">
+    <input type=3D"submit" name=3D"sa" value=3D"Search">
+  </div>
+</form>
+
+</div>
+
+<h1>CONFIG_USB_ZERO: Gadget Zero (DEVELOPMENT)</h1>
+
+
+<!-- lkddb-top -->
+<ins class=3D"adsbygoogle" style=3D"display:inline-block;width:728px;height=
+:90px" data-ad-client=3D"ca-pub-8942588522142995" data-ad-slot=3D"529292499=
+3"></ins>
+
+
+<h2>General informations</h2>
+
+<p>The Linux kernel configuration item <code>CONFIG_USB_ZERO</code> has mul=
+tiple definitions:
+
+</p><h2><emph>Gadget Zero (DEVELOPMENT)</emph> found in <code>drivers/usb/g=
+adget/legacy/Kconfig</code></h2>
+<p>The configuration item CONFIG_USB_ZERO:</p>
+<ul><li>prompt: Gadget Zero (DEVELOPMENT)</li>
+<li>type: tristate</li>
+<li>depends on: <code>(none)</code></li>
+<li>defined in <a href=3D"https://github.com/torvalds/linux/tree/master/dri=
+vers/usb/gadget/legacy/Kconfig">drivers/usb/gadget/legacy/Kconfig</a></li>
+<li>found in Linux kernels: 3.17=E2=80=933.19, 4.0=E2=80=934.20, 5.0=E2=80=
+=935.1, 5.2-rc+HEAD</li>
+<li>modules built: <code>g_zero</code>, <code>g_zero</code></li>
+</ul>
+
+<h3>Help text</h3>
+<p>Gadget Zero is a two-configuration device.  It either sinks and
+sources bulk data; or it loops back a configurable number of
+transfers.  It also implements control requests, for "chapter 9"
+conformance.  The driver needs only two bulk-capable endpoints, so
+it can work on top of most device-side usb controllers.  It's
+useful for testing, and is also a working example showing how
+USB "gadget drivers" can be written.</p>
+
+<p>Make this be the first driver you try using on top of any new
+USB peripheral controller driver.  Then you can use host-side
+test software, like the "usbtest" driver, to put your hardware
+and its driver through a basic set of functional tests.</p>
+
+<p>Gadget Zero also works with the host-side "usb-skeleton" driver,
+and with many kinds of host-side test software.  You may need
+to tweak product and vendor IDs before host software knows about
+this device, and arrange to select an appropriate configuration.</p>
+
+<p>Say "y" to link the driver statically, or "m" to build a
+dynamically linked module called "g_zero".</p>
+
+<h2><emph>Gadget Zero (DEVELOPMENT)</emph> found in <code>drivers/usb/gadge=
+t/Kconfig</code></h2>
+<p>The configuration item CONFIG_USB_ZERO:</p>
+<ul><li>prompt: Gadget Zero (DEVELOPMENT)</li>
+<li>type: tristate</li>
+<li>depends on: <code>(none)</code></li>
+<li>defined in <a href=3D"https://github.com/torvalds/linux/tree/master/dri=
+vers/usb/gadget/Kconfig">drivers/usb/gadget/Kconfig</a></li>
+<li>found in Linux kernels: 2.5.70=E2=80=932.5.75, 2.6.0=E2=80=932.6.39, 3.=
+0=E2=80=933.16</li>
+<li>modules built: <code>g_zero</code>, <code>g_zero</code></li>
+</ul>
+
+<h3>Help text</h3>
+<p>Gadget Zero is a two-configuration device.  It either sinks and
+sources bulk data; or it loops back a configurable number of
+transfers.  It also implements control requests, for "chapter 9"
+conformance.  The driver needs only two bulk-capable endpoints, so
+it can work on top of most device-side usb controllers.  It's
+useful for testing, and is also a working example showing how
+USB "gadget drivers" can be written.</p>
+
+<p>Make this be the first driver you try using on top of any new
+USB peripheral controller driver.  Then you can use host-side
+test software, like the "usbtest" driver, to put your hardware
+and its driver through a basic set of functional tests.</p>
+
+<p>Gadget Zero also works with the host-side "usb-skeleton" driver,
+and with many kinds of host-side test software.  You may need
+to tweak product and vendor IDs before host software knows about
+this device, and arrange to select an appropriate configuration.</p>
+
+<p>Say "y" to link the driver statically, or "m" to build a
+dynamically linked module called "g_zero".</p>
+
+
+<h2>Hardware</h2>
+
+
+
+<h3>LKDDb</h3>
+<p>Raw data from LKDDb:</p>
+<ul class=3D"dblist">
+<li><code>lkddb module g_zero <a href=3D"https://cateee.net/lkddb/web-lkddb=
+/USB_ZERO.html">CONFIG_USB_ZERO</a> : <a href=3D"https://github.com/torvald=
+s/linux/tree/master/drivers/usb/gadget/Kconfig">drivers/usb/gadget/Kconfig<=
+/a> : "Gadget Zero (DEVELOPMENT)" # in 2.5.70=E2=80=932.5.75, 2.6.0=E2=80=
+=932.6.39, 3.0=E2=80=933.16</code></li>
+<li><code>lkddb module g_zero <a href=3D"https://cateee.net/lkddb/web-lkddb=
+/USB_ZERO.html">CONFIG_USB_ZERO</a> : <a href=3D"https://github.com/torvald=
+s/linux/tree/master/drivers/usb/gadget/legacy/Kconfig">drivers/usb/gadget/l=
+egacy/Kconfig</a> : "Gadget Zero (DEVELOPMENT)" # in 3.17=E2=80=933.19, 4.0=
+=E2=80=934.20, 5.0=E2=80=935.1, 5.2-rc+HEAD</code></li>
+</ul>
+
+
+<h2>Sources</h2>
+<p>This page is automaticly generated with free (libre, open) software
+<a href=3D"https://cateee.net/lkddb/">lkddb</a>(see <a href=3D"https://cate=
+ee.net/sources/lkddb-sources/">lkddb-sources</a>).</p>
+
+<p>The data is retrived from:</p><ul>
+<li><a href=3D"https://www.kernel.org/">Linux kernel</a></li>
+<li><a href=3D"https://cateee.net/lkddb/">Linux Kernel Driver DataBase</a> =
+(LKDDb)</li>
+
+</ul><p></p>
+
+<h2>Automatic links from Google (and ads)</h2>
+<style type=3D"text/css">
+@import url(//www.google.com/cse/api/branding.css);
+</style>
+<div class=3D"cse-branding-bottom" style=3D"background-color:#FFFFFF;color:=
+#000000">
+  <div class=3D"cse-branding-form">
+    <form action=3D"https://www.google.com/" id=3D"cse-search-box">
+      <div>
+       =20
+       =20
+        <input type=3D"text" name=3D"q" size=3D"55">
+        <input type=3D"submit" name=3D"sa" value=3D"Search">
+      </div>
+    </form>
+  </div>
+  <div class=3D"cse-branding-logo">
+    <img src=3D"https://www.google.com/images/poweredby_transparent/powered=
+by_FFFFFF.gif" alt=3D"Google">
+  </div>
+  <div class=3D"cse-branding-text">
+    Custom Search
+  </div>
+</div>
+
+
+<div id=3D"queries"></div>
+
+
+<p></p><p>Popular queries:</p><p>
+
+<!-- lkddb-links -->
+<ins class=3D"adsbygoogle" style=3D"display:inline-block;width:728px;height=
+:15px" data-ad-client=3D"ca-pub-8942588522142995" data-ad-slot=3D"455801042=
+2"></ins>
+
+</p>
+
+<div class=3D"hnav">
+<p>
+  Navigation:
+  <a href=3D"https://cateee.net/lkddb/">Linux Kernel Driver DataBase</a> -
+  web LKDDB:
+  <a href=3D"https://cateee.net/lkddb/web-lkddb/">main index</a> -
+  <a href=3D"https://cateee.net/lkddb/web-lkddb/index_U.html">U index</a>
+</p>
+</div>
+
+<div class=3D"foot">
+<p>Automatically generated (in year 2019). See also <a href=3D"https://gitl=
+ab.com/cateee/lkddb">LKDDb sources</a> on GitLab</p>
+</div>
+
+
+
+
+</body></html>
+------MultipartBoundary--1POYVjsYi3EI5QZtW21iUrmUDN47AcPRMhyHlBKUAt----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://cateee.net/template/lkddb.css
+
+@charset "utf-8";
+
+body { color: black; background: white; }
+
+h1 { color: rgb(0, 51, 0); }
+
+h2, h3 { color: rgb(0, 102, 51); }
+
+.code { font-family: monospace; }
+
+.hnav p { font-size: small; }
+
+div.foot { border-top: thin solid; }
+
+.foot p { font-size: small; }
+
+.dblist { font-size: small; }
+------MultipartBoundary--1POYVjsYi3EI5QZtW21iUrmUDN47AcPRMhyHlBKUAt----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://www.google.com/cse/api/branding.css
+
+@charset "utf-8";
+=0A
+------MultipartBoundary--1POYVjsYi3EI5QZtW21iUrmUDN47AcPRMhyHlBKUAt------

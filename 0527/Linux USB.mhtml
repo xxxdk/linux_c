@@ -1,0 +1,529 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: http://www.linux-usb.org/
+Subject: Linux USB
+Date: Mon, 27 May 2019 15:18:39 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--lGsmwpqg7tBE4LBYAfP4tgXavyFumpYHfGqk3saJi5----"
+
+
+------MultipartBoundary--lGsmwpqg7tBE4LBYAfP4tgXavyFumpYHfGqk3saJi5----
+Content-Type: text/html
+Content-ID: <frame-5331A5134DD8A45EEBBFC66FD01296D1@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.linux-usb.org/
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3Dwindows-1252">
+<title>Linux USB</title>
+</head>
+
+<!-- $Id: index.html,v 1.15 2000-05-23 20:48:57 gowdy Exp $ -->
+
+<frameset cols=3D"20%,*" frameborder=3D"NO" border=3D"0">
+=09
+		    =20
+	=09
+=09
+	<frame name=3D"sections" src=3D"cid:frame-F8DF9928CF41667E1EC8998B9D7FE30E=
+@mhtml.blink">
+	<frame name=3D"content" src=3D"cid:frame-FBECE51F986F223472CC9E3EB77D6B34@=
+mhtml.blink">
+</frameset>
+
+
+</html>
+------MultipartBoundary--lGsmwpqg7tBE4LBYAfP4tgXavyFumpYHfGqk3saJi5----
+Content-Type: text/html
+Content-ID: <frame-F8DF9928CF41667E1EC8998B9D7FE30E@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.linux-usb.org/sections.html
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3Dwindows-1252">
+<title>Linux USB</title>
+</head>
+
+<body bgcolor=3D"#ffffff" text=3D"#000000" link=3D"#0000FF" vlink=3D"#66009=
+9" alink=3D"#FF0000">
+
+<!-- $Id: sections.html,v 1.25 2009-07-15 22:19:32 gowdy Exp $ -->
+
+<table height=3D"100%">
+<tbody><tr valign=3D"top"><td>Mirrors: [<a href=3D"http://usb.in.tum.de/lin=
+ux-usb/" target=3D"_top">de</a>|<a href=3D"http://it.linux-usb.org/" target=
+=3D"_top">it</a>|<a href=3D"http://www.linux-usb.org/" target=3D"_top">us</=
+a>]
+</td></tr><tr valign=3D"top"><td><h1>Linux USB</h1>
+</td></tr><tr valign=3D"top"><td>
+<b>Sections</b><br><br>
+
+<a href=3D"http://www.linux-usb.org/introduction.html" target=3D"content">I=
+ntroduction</a><br>
+<a href=3D"http://www.linux-usb.org/FAQ.html" target=3D"content">FAQs</a><b=
+r>
+<a href=3D"http://www.linux-usb.org/devices.html" target=3D"content">Device=
+ Support</a><br>
+<a href=3D"http://www.linux-usb.org/tools.html" target=3D"content">Tools</a=
+><br>
+<strike><a href=3D"http://www.linux-usb.org/bitkeeper.html" target=3D"conte=
+nt">Bitkeeper</a></strike><br>
+<a href=3D"http://git.kernel.org/?p=3Dlinux/kernel/git/gregkh/patches.git;a=
+=3Dsummary" target=3D"_top">git</a><br>
+<a href=3D"http://www.linux-usb.org/mailing.html" target=3D"content">Mailin=
+g Lists</a><br>
+<a href=3D"http://www.linux-usb.org/usblinks.html" target=3D"content">Links=
+</a><br>
+<a href=3D"http://www.linux-usb.org/thanks.html" target=3D"content">Thanks<=
+/a><br>
+<a href=3D"http://www.linux-usb.org/contacts.html" target=3D"content">Conta=
+cts</a><br>
+
+<!--img src=3D"newest.gif" alt=3D"New!"-->
+
+</td></tr><tr valign=3D"bottom">
+<td>
+
+<a href=3D"http://www.linux.org/" target=3D"_top"><img src=3D"http://www.li=
+nux-usb.org/sit3-shine.7_88.gif" width=3D"88" height=3D"105" border=3D"0" a=
+lt=3D"Linux"></a><br>
+
+<a href=3D"http://www.usb.org/" target=3D"_top"><!--img src=3D"USBHSCertifi=
+ed_88.gif" width=3D"88" height=3D"42" border=3D"0" alt=3D"USB"-->USB IF</a>=
+<br>
+
+<a href=3D"http://sourceforge.net/" target=3D"_top"><img src=3D"http://sour=
+ceforge.net/sflogo.php?group_id=3D3581&amp;type=3D1" width=3D"88" height=3D=
+"31" border=3D"0" alt=3D"SourceForge Logo"></a>
+</td></tr></tbody></table>
+
+
+
+
+</body></html>
+------MultipartBoundary--lGsmwpqg7tBE4LBYAfP4tgXavyFumpYHfGqk3saJi5----
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.linux-usb.org/sit3-shine.7_88.gif
+
+R0lGODlhWABpAOcAAP//////zP//mf//Zv//M///AP/M///MzP/Mmf/MZv/MM//MAP+Z//+ZzP+Z
+mf+ZZv+ZM/+ZAP9m//9mzP9mmf9mZv9mM/9mAP8z//8zzP8zmf8zZv8zM/8zAP8A//8AzP8Amf8A
+Zv8AM/8AAMz//8z/zMz/mcz/Zsz/M8z/AMzM/8zMzMzMmczMZszMM8zMAMyZ/8yZzMyZmcyZZsyZ
+M8yZAMxm/8xmzMxmmcxmZsxmM8xmAMwz/8wzzMwzmcwzZswzM8wzAMwA/8wAzMwAmcwAZswAM8wA
+AJn//5n/zJn/mZn/Zpn/M5n/AJnM/5nMzJnMmZnMZpnMM5nMAJmZ/5mZzJmZmZmZZpmZM5mZAJlm
+/5lmzJlmmZlmZplmM5lmAJkz/5kzzJkzmZkzZpkzM5kzAJkA/5kAzJkAmZkAZpkAM5kAAGb//2b/
+zGb/mWb/Zmb/M2b/AGbM/2bMzGbMmWbMZmbMM2bMAGaZ/2aZzGaZmWaZZmaZM2aZAGZm/2ZmzGZm
+mWZmZmZmM2ZmAGYz/2YzzGYzmWYzZmYzM2YzAGYA/2YAzGYAmWYAZmYAM2YAADP//zP/zDP/mTP/
+ZjP/MzP/ADPM/zPMzDPMmTPMZjPMMzPMADOZ/zOZzDOZmTOZZjOZMzOZADNm/zNmzDNmmTNmZjNm
+MzNmADMz/zMzzDMzmTMzZjMzMzMzADMA/zMAzDMAmTMAZjMAMzMAAAD//wD/zAD/mQD/ZgD/MwD/
+AADM/wDMzADMmQDMZgDMMwDMAACZ/wCZzACZmQCZZgCZMwCZAABm/wBmzABmmQBmZgBmMwBmAAAz
+/wAzzAAzmQAzZgAzMwAzAAAA/wAAzAAAmQAAZgAAMwAAAP//////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////yH+Dk1hZGUgd2l0aCBHSU1Q
+ACH5BAEKAP8ALAAAAABYAGkAAAj+AP8JHEiwoMGDCAc2WijL2sJGCSNKnEixYkJZ1zJq3HgNosWP
+IEMaxMixpEZZIlOqjGiy5UaPK2OmdFnSWitrJ2Xq/EizJCtWglhptLazaESSPTWyKhUoEKtWGVEa
+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
+
+------MultipartBoundary--lGsmwpqg7tBE4LBYAfP4tgXavyFumpYHfGqk3saJi5----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://sourceforge.net/sflogo.php?group_id=3581&type=1
+
+iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAMAAABUFvrSAAAAwFBMVEX///+KiorFxsaPkJCbnJyN
+jY3k5OT//v70fCCBgoKhoqKGh4e+vr7MzMz8/PykpKRub29SU1OXmJjx8fH1iDRNTk6zs7N9fX30
+fSGurq6UlZWnqKjp6em1trb+7+N3eHhdXl7/+vbPz8/82sDS0tLZ2dn19fXf39/s7Oz96ttHSEj1
+gir4q2/V1ta4ubn5+fllZmb2j0D3m1T0gCbCwsKfn5/7zan94Mm7u7v6x5/6wpf+8+r81bf3n1z5
+tH/70K/QZEL7AAAB/klEQVRIx+3T2ZKiMBQG4B8IhF0WFQUUXBDEDW3t1ra75/3fag7YOjM1c6k3
+U/4XoZKQr5JDAJ555n/JvN37eADLh+3e6byb3x0ebnsnTHrt+d1d9R2n0etNnsqhAqwY69tQRBqw
+skySDjEQHwSakmRZHoOFYShiFhleDnQZ686AIjLkKUSJ8u2eF++4yr6xKUyYLRuZzMctGumLZhd5
+gJWWQ+lD45wDnUDXrTitmFbu4TitquKK6+iS6+suY+zi8k91d77KK73mhbrZH3/BMDaG35xIa9rO
+oH6rsoGWu3E85GUcONTj0Kt6fqsugTdVbU+G3zKXpSmURp95Nzg+yvwiIjFNi2D5eLTTelopM8dT
+wtR2u7Aty9dTajB5WbzhQ1V7pwnsrfpVr8wZU1p/wpEm8Ru8348JrpJkk0bUj8uVI7hpAXeATVKK
+eidJVmjk4YuqLs58qX6OLmsFLtcPa13UT5aZXW5kCGZ/lcKhavc7M9pxaSJIaCgV9fSC1PJru/3j
+6opT5BLWfQ5F4jCop3GqsR/4VlCAjvIbXLhOJJcDUI0jt1DcYB11RN0dDAZXmUq7VHfNfu2D4NFX
+spgXbagazKDelG5d1qWLaIQxDEEQLAjj5grpgUDHPqxhh2u6jpqxtvcapfnzSB7e3LvmYzl6iEv5
+epD7zDPP/Cs/ATAUMp2tlKkZAAAAAElFTkSuQmCC
+
+------MultipartBoundary--lGsmwpqg7tBE4LBYAfP4tgXavyFumpYHfGqk3saJi5----
+Content-Type: text/html
+Content-ID: <frame-FBECE51F986F223472CC9E3EB77D6B34@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.linux-usb.org/gadget/file_storage.html
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3Dwindows-1252"><title>MSG Backing Storage</title>
+
+    <style type=3D"text/css">
+	<!--
+	    h1,h2,h3,h4,h5 { color:maroon }
+	-->
+    </style></head><body bgcolor=3D"#ffffff">
+
+<center>
+<h2>Backing Storage for the Mass Storage Gadget</h2>
+<p><em>
+Last Modified:
+20 March 2013
+</em></p>
+</center>
+
+<p> The <b>Mass Storage Gadget (MSG)</b> provides support for the USB
+Mass Storage class.  It can appear to a host as a set of up to 8 SCSI
+disk drives (called Logical Units often referred to as <b>LUN</b>s,
+even though it technically stands for Logical Unit Number), although
+most of the time a single LUN is all you will need.  The information
+stored for each LUN must be maintained by the gadget somewhere, either
+in a normal file or in a block device such as a disk partition or even
+a ramdisk.  This file or block device is called the <b>backing
+storage</b> for the gadget, and you tell MSG where the backing storage
+is when you load the gadget driver:
+
+<table cellpadding=3D"8" width=3D"80%">
+<tbody><tr><td bgcolor=3D"#ffffcc"><pre>bash# <em>modprobe g_mass_storage f=
+ile=3D/root/data/backing_file</em></pre>
+</td></tr>
+</tbody></table>
+
+This command tells MSG to provide a single LUN with backing storage
+maintained in <em>/root/data/backing_file</em>.  If you wanted to have
+two LUNs, where the second LUN used <em>/dev/hda7</em> as its backing
+storage, you would do:
+
+<table cellpadding=3D"8" width=3D"80%">
+<tbody><tr><td bgcolor=3D"#ffffcc"><pre>bash# <em>modprobe g_mass_storage f=
+ile=3D/root/data/backing_file,/dev/hda7</em></pre>
+</td></tr>
+</tbody></table>
+</p>
+
+<p> Under Linux 2.6, if you add "<em>removable=3Dy</em>" to the
+<em>modprobe</em> line then MSG will act like a device with removable
+media and allow you to specify the backing storage using sysfs
+attributes.  In fact, if you do this then you can omit the
+"<em>file=3D...</em>" parameter entirely.  The gadget will resemble a
+ZIP drive with no cartridge inserted until you use sysfs to
+specify some backing storage.
+
+</p><blockquote><em><b>AN IMPORTANT WARNING!</b> While MSG is running and
+the gadget is connected to a USB host, that USB host will use the
+backing storage as a private disk drive.  It will <b>not</b> expect to
+see any changes in the backing storage other than the ones it makes.
+Extraneous changes are liable to corrupt the filesystem and may even
+crash the host.  Only one system (normally, the USB host) may write to
+the backing storage, and if one system is writing that data, no other
+should be reading it.  The only safe way to share the backing storage
+between the host and the gadget's operating system at the same time is
+to make it read-only on both sides.
+</em></blockquote>
+
+<h4>Creating a backing storage file</h4>
+
+<p> Backing storage requires some preparation before MSG can use it.
+To start with, if the backing storage is a regular file then the file
+must be created beforehand, with its full desired size.  (MSG won't
+create a backing storage file and won't change the size of an existing
+file.)  In the example above, if you wanted
+<em>/root/data/backing_file</em> to represent a 64MB drive then you
+would have to create it using a command something like this:
+
+<table cellpadding=3D"8" width=3D"80%">
+<tbody><tr><td bgcolor=3D"#ffffcc"><pre>bash# <em>dd bs=3D1M count=3D64 if=
+=3D/dev/zero of=3D/root/data/backing_file</em>
+64+0 records in
+64+0 records out</pre>
+</td></tr>
+</tbody></table>
+
+This has to be done before you can load <em>g_mass_storage</em>, but
+it only has to be done once.  If the backing storage is a block device
+or disk partition such as <em>/dev/hda7</em> then you don't have to
+create it beforehand, because it will already exist.
+</p>
+
+<h4>Partitioning the backing storage</h4>
+
+<p> However, creating the backing storage isn't enough.  It's like
+having a raw disk drive; you still need to partition the disk and
+install a filesystem before you can use it.  (Strictly speaking you
+<em>don't</em> need to partition it.  You can treat the entire drive
+as a single large device, like a floppy disk.  This will be confusing,
+though, and some versions of Windows won't work with an unpartitioned
+USB drive.)  Okay, so how do you partition the backing storage?
+</p>
+
+<p> Answer: You create a partition table by using the <b>fdisk</b>
+program.  Here's an example showing how to do it.  The example assumes
+you will want to use the gadget with a Windows host.  It's a little
+tricky because <em>fdisk</em> needs help when working with something
+other than an actual device.  Begin by starting up <em>fdisk</em> and
+telling it the name of your backing storage.
+You'll get a message something like this:
+</p>
+
+<table cellpadding=3D"8" width=3D"80%">
+<tbody><tr><td bgcolor=3D"#ffffcc"><pre>bash# <em>fdisk /root/data/backing_=
+file</em>
+Device contains neither a valid DOS partition table, nor Sun or SGI disklab=
+el
+Building a new DOS disklabel. Changes will remain in memory only,
+until you decide to write them. After that, of course, the previous
+content won't be recoverable.
+
+You must set heads sectors and cylinders.
+You can do this from the extra functions menu.
+
+Command (m for help): </pre>
+</td></tr>
+</tbody></table>
+
+<h4>Heads, Sectors, and Cylinders</h4>
+
+<p>As you see, <em>fdisk</em> says that it needs you to set the heads,
+sectors, and cylinders values.  (Some versions only say they need you
+to set the number of cylinders, but they're wrong.  You can tell by
+the way they'll miscalculate the size of the backing file; they're
+using default values and ignoring the actual file size.)  The
+numbers you use are somewhat arbitrary; the scheme shown here works
+okay.  Give the "x" (eXpert or eXtra) command:
+
+<table cellpadding=3D"8" width=3D"80%">
+<tbody><tr><td bgcolor=3D"#ffffcc"><pre>Command (m for help): <em>x</em></p=
+re>
+</td></tr>
+</tbody></table>
+
+Then set the number of sectors/track.  <em>g_mass_storage</em> uses a
+sector size of 512 bytes, so 8 sectors/track will give us 4096 bytes
+per track.  This is good because it matches the size of a memory page
+(on a 32-bit processor).
+
+<table cellpadding=3D"8" width=3D"80%">
+<tbody><tr><td bgcolor=3D"#ffffcc"><pre>Expert command (m for help): <em>s<=
+/em>
+Number of sectors (1-63): <em>8</em>
+Warning: setting sector offset for DOS compatiblity</pre>
+</td></tr>
+</tbody></table>
+
+Next set the number of heads (or tracks/cylinder).  With 4 KB per
+track, 16 heads will give us a total of 64 KB per cylinder, which is
+convenient since the size of the backing file is 64 MB.
+
+<table cellpadding=3D"8" width=3D"80%">
+<tbody><tr><td bgcolor=3D"#ffffcc"><pre>Expert command (m for help): <em>h<=
+/em>
+Number of heads (1-256): <em>16</em></pre>
+</td></tr>
+</tbody></table>
+
+Finally set the number of cylinders.  It's important that the total
+size you specify matches the actual size of the backing file.  Since
+we've got 64 KB per cylinder and 64 MB total, we need to use 1024
+cylinders.
+
+<table cellpadding=3D"8" width=3D"80%">
+<tbody><tr><td bgcolor=3D"#ffffcc"><pre>Expert command (m for help): <em>c<=
+/em>
+Number of cylinders (1-131071): <em>1024</em></pre>
+</td></tr>
+</tbody></table>
+
+Now return to the normal menu (the "r" command):
+
+<table cellpadding=3D"8" width=3D"80%">
+<tbody><tr><td bgcolor=3D"#ffffcc"><pre>Expert command (m for help): <em>r<=
+/em></pre>
+</td></tr>
+</tbody></table>
+
+</p><h4>Creating a primary partition</h4>
+
+Create a new primary partition ("n" for new).  Let's make it number 1.
+The defaults for the starting and ending cylinder are perfect because
+they will make the partition occupy the entire backing file, so just
+press Enter when asked for the First and Last cylinder:
+
+<table cellpadding=3D"8" width=3D"80%">
+<tbody><tr><td bgcolor=3D"#ffffcc"><pre>Command (m for help): <em>n</em>
+Command action
+   e   extended
+   p   primary partition (1-4)
+<em>p</em>
+Partition number (1-4): <em>1</em>
+First cylinder (1-1024, default 1):
+Using default value 1
+Last cylinder or +size or +sizeM or +sizeK (1-1024, default 1024):
+Using default value 1024</pre>
+</td></tr>
+</tbody></table>
+
+The new partition is created by default as a Linux partition.  Since
+you want to use the gadget with a Windows host, you should change the
+partition type (the "t" command) to FAT32 (code "b"):
+
+<table cellpadding=3D"8" width=3D"80%">
+<tbody><tr><td bgcolor=3D"#ffffcc"><pre>Command (m for help): <em>t</em>
+Partition number (1-4): <em>1</em>
+Hex code (type L to list codes): <em>b</em>
+Changed system type of partition 1 to b (Win95 FAT32)</pre>
+</td></tr>
+</tbody></table>
+
+Print out ("p") the new partition table to be sure everything's correct:
+
+<table cellpadding=3D"8" width=3D"80%">
+<tbody><tr><td bgcolor=3D"#ffffcc"><pre>Command (m for help): <em>p</em>
+
+Disk /root/data/backing_file: 16 heads, 8 sectors, 1024 cylinders
+Units =3D cylinders of 128 * 512 bytes
+
+                  Device Boot    Start       End    Blocks   Id  System
+/root/data/backing_file1             1      1024     65532    b  Win95 FAT3=
+2</pre>
+</td></tr>
+</tbody></table>
+
+Finally write out ("w") the partition table to the backing storage:
+
+<table cellpadding=3D"8" width=3D"80%">
+<tbody><tr><td bgcolor=3D"#ffffcc"><pre>Command (m for help): w
+The partition table has been altered!
+
+Calling ioctl() to re-read partition table.
+Re-read table failed with error 25: Inappropriate ioctl for device.
+Reboot your system to ensure the partition table is updated.
+
+WARNING: If you have created or modified any DOS 6.x
+partitions, please see the fdisk manual page for additional
+information.
+Syncing disks.</pre>
+</td></tr>
+</tbody></table>
+<p></p>
+
+<h4>Adding a filesystem</h4>
+
+<p> At this point a new partition has been created but it doesn't yet
+contain a filesystem.  The easiest way to add a filesystem is to load
+<em>g_mass_storage</em>, connect the gadget to a USB host, and use the
+host to do the work.  With a Linux host you can run <em>mkdosfs</em>;
+with a Windows host you can double-click on the drive's icon in the
+"My Computer" window.
+</p>
+
+<h4>Accessing the backing storage from the gadget</h4>
+
+<p> It is possible to manipulate the data in the backing storage from
+the gadget (even to add the filesystem).  <em>Don't do this while the
+gadget is connected to a USB host!</em> The key is to use the
+<b>loop</b> device driver with the "<em>-o</em>" (offset) option for
+the <b>losetup</b> program.
+</p>
+
+<p> For this to work, you have to know what the partition's offset is.
+If you followed the partitioning scheme given above then the offset
+will always be 4096.  If not, you can use <em>fdisk</em> to find the
+correct offset value:
+
+<table cellpadding=3D"8" width=3D"80%">
+<tbody><tr><td bgcolor=3D"#ffffcc"><pre># <em>fdisk -lu /root/data/backing_=
+file</em>
+You must set cylinders.
+You can do this from the extra functions menu.
+
+Disk data: 0 MB, 0 bytes
+16 heads, 8 sectors/track, 0 cylinders, total 0 sectors
+Units =3D sectors of 1 * 512 =3D 512 bytes
+
+                   Device Boot      Start         End      Blocks   Id  Sys=
+tem
+ /root/data/backing_file1               8        8191        4092    b  Win=
+95 FAT32</pre>
+</td></tr>
+</tbody></table>
+
+Ignore the bogus data at the top and concentrate on the table at
+the bottom.  The number you want is the value in the "Start" column.
+It gives the offset in sectors; to convert to bytes you must multiply
+by 512.  So we see that the offset is 8 x 512 =3D 4096 bytes.
+</p>
+
+You use the <em>losetup</em> program to set up the <em>loop</em>
+device driver with the proper offset:
+
+<table cellpadding=3D"8" width=3D"80%">
+<tbody><tr><td bgcolor=3D"#ffffcc"><pre># <em>losetup -o 4096 /dev/loop0 /r=
+oot/data/backing_file</em></pre>
+</td></tr>
+</tbody></table>
+
+Now <em>/dev/loop0</em> is mapped to the partition within the backing
+storage.  You can create a filesystem on it:
+
+<table cellpadding=3D"8" width=3D"80%">
+<tbody><tr><td bgcolor=3D"#ffffcc"><pre># <em>mkdosfs /dev/loop0</em></pre>
+</td></tr>
+</tbody></table>
+
+and then you can mount it:
+
+<table cellpadding=3D"8" width=3D"80%">
+<tbody><tr><td bgcolor=3D"#ffffcc"><pre># <em>mount -t vfat /dev/loop0 /mnt=
+/loop</em></pre>
+</td></tr>
+</tbody></table>
+
+Now you can transfer files back and forth to your heart's content!
+When you're done, be sure to unmount and detach the <em>loop</em>
+device:
+
+<table cellpadding=3D"8" width=3D"80%">
+<tbody><tr><td bgcolor=3D"#ffffcc"><pre># <em>umount /dev/loop0
+# losetup -d /dev/loop0</em></pre>
+</td></tr>
+</tbody></table>
+<p></p>
+
+<!-- vim:syntax=3Dhtml:sw=3D4
+-->
+</body></html>
+------MultipartBoundary--lGsmwpqg7tBE4LBYAfP4tgXavyFumpYHfGqk3saJi5------

@@ -1,0 +1,1385 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: http://www.linux-usb.org/usbtest/
+Subject: USB Testing on Linux
+Date: Mon, 27 May 2019 15:16:21 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--YaATNPWXdHiaEYNoYwoRPV0XXsvcmqyZUTTKue5nup----"
+
+
+------MultipartBoundary--YaATNPWXdHiaEYNoYwoRPV0XXsvcmqyZUTTKue5nup----
+Content-Type: text/html
+Content-ID: <frame-F13F5C8B30460950565DF187E23A3CC1@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.linux-usb.org/usbtest/
+
+<html class=3D""><head><meta http-equiv=3D"Content-Type" content=3D"text/ht=
+ml; charset=3Dwindows-1252">
+    <title>USB Testing on Linux</title>
+    <style type=3D"text/css">
+	<!--
+	    h1,h2,h3,h4,h5 { color:maroon }
+	-->
+    </style>
+<link type=3D"text/css" rel=3D"stylesheet" charset=3D"UTF-8" href=3D"https:=
+//translate.googleapis.com/translate_static/css/translateelement.css"></hea=
+d><body bgcolor=3D"#ffffff">
+
+<center>
+<h2>USB Testing on Linux</h2>
+<p><em>
+last modified: 17 March 2007<br>
+</em></p>
+</center>
+
+<p> The Linux-USB kernel code is complex enough to need some
+focused testing efforts, and this web page tries to give an
+overview of the key ones.
+There are basically two things to tests:
+<em>hosts</em> like desktop PCs or other "USB masters",
+and <em>peripherals</em>, devices, or whatever
+you want to call the gadgets that act as "USB slaves"
+and implement the function the USB host is accessing.
+(On some hardware Linux supports OTG.  OTG uses both host and gadget APIs,
+and adds mode negotiation support that needs testing.)
+Each of those has at least two layers of device drivers to test.
+</p><ul>
+<li>
+The lowest level is the usb controller hardware;
+<a href=3D"http://www.linux-usb.org/usbtest/#hosts">Host Controller Driver<=
+/a> (HCD) and
+<a href=3D"http://www.linux-usb.org/usbtest/#gadgets">USB Device (or Periph=
+eral) Controller</a> (UDC) driver
+testing can share many of the same tools, if both use Linux.
+Those drivers need
+testing in many modes, since the higher levels each implement
+different protocols for accessing peripheral functionality.
+</li><li>
+Once the controller drivers are working, you can test the
+<a href=3D"http://www.linux-usb.org/usbtest/#devices">USB Device Drivers</a=
+> (and gadget drivers)
+which expose such functionality to applications (and users).
+Examples of such higher level
+functionality include class protocols for printers,
+mice, video cameras, network links, and so on.
+</li></ul>
+
+<p> Although most of these tests will be of interest to folk
+debugging, developing or
+maintaining USB system software like controller drivers or
+device firmware,
+some may be useful to sysadmins or end users that suspect they
+may have flakey USB hardware.
+</p>
+
+<p>If you're bringing up new USB hardware with Linux, perhaps with
+embedded or at least non-PCI controllers, you may find it hard to
+debug without hardware tools such as a USB protocol sniffer
+or a logic analyser.
+There are probably a dozen or more other vendors; look around.
+As is the case with more general-purpose JTAG tools, higher end tools
+(such as those from LeCroy, which bought CATC) can often be rented.
+At this writing, <a href=3D"http://www.totalphase.com/">Total Phase</a>
+has the most affordable tools
+(including a relatively new high speed analyser), with software
+which runs natively on Linux.
+</p>
+
+<center><hr width=3D"70%"></center>
+
+<h3><a name=3D"hosts">Testing USB Host Controller Drivers</a></h3>
+
+<p> You're likely to be interested in this if you're maintaining
+a USB Host Controller Driver (HCD), especially if it's one that's
+not widely available on PCI hardware;
+or if you're using Linux as a host when testing some kinds of product.
+(The same tests can be used from a known-working Linux host to
+test a USB Device Controller driver.)
+Such tests help serve as driver regression tests, so they're good
+to have as arrows in the test case quiver of a Linux distributor.
+These are also the tests that might be helpful in turning up
+hardware problems with some USB configurations.
+You may even notice interesting performance characteristics.
+</p>
+
+<p> Other than the old <em>usbstress 0.3</em> software (which
+wasn't widely used), the primary effort here
+started with the 2.5.42 kernel release.  It consists of: </p><ul>
+
+    <li> Specialized peripheral firmware.  (Unless you're only
+    doing sanity tests for control messaging, which isn't
+    always useful.)  You can use Linux to run this,
+    if your hardware is supported through the "gadget" API.
+    </li>
+
+    <li> A kernel driver, <em>drivers/usb/misc/usbtest.c</em>,
+    where the actual test cases live.
+    At this writing, testcases include positive tests for many
+    chapter 9 issues, basic bulk I/O paths
+    (including request queuing, which tends to find HCD bugs),
+    isochronous transfers,
+    and a subset of the host side USB driver APIs exported from usbcore.
+    One test (for control queuing) covers some fault recovery modes.
+    <em><b>This driver is unavailable on Linux 2.4 kernels.</b></em>
+    </li>
+
+    <li> Userland software to call that driver, such as
+    <b><a href=3D"http://www.linux-usb.org/usbtest/testusb.c">testusb.c</a>=
+</b> and
+    <b><a href=3D"http://www.linux-usb.org/usbtest/test.sh">test.sh</a></b>=
+ if you're using "usbtest".
+    Note that <em>test.sh</em> calls testusb in many different
+    modes.  It does that to ensure that more different code paths
+    are covered, including short transfers and various different
+    traffic patterns, but there are omissions.
+    </li>
+
+    </ul>
+
+<p> Assuming you have a recent Linux kernel (such as 2.6.12)
+you will already have the kernel source code for the tests,
+so the main question is how to get a device to test with..
+<em>The simplest solution for most people will involve ordering
+a specialized PCI card and using it on a Linux PC; see below.</em>
+</p>
+
+<p> You won't notice issues with class or vendor-specific
+functionality with the kind of test setup described here,
+or with some of the less-mainstream Linux-USB APIs.
+Certain traffic patterns won't be covered at all, and there's
+not much testing for isochronous transfer modes.
+In other words, don't forget to test with real off-the-shelf peripheral
+and their Linux drivers too.
+</p>
+
+<h4> Device Firmware Supporting Host Side Testing</h4>
+
+<p> At this writing, there are many peripheral
+known to work with this testing software.
+The "bulk sink" and "bulk source" functionality is also
+supported by most peripheral firmware development kits,
+as is "iso sink" and "iso source" (for hardware that
+supports isochronous transfers).
+</p>
+
+<p>The <em>first</em> type of peripheral is anything using a
+full speed Cypress EZ-USB chip, like some of the
+<a href=3D"http://people.omnigroup.com/wiml/soft/pic/keyspan.html">Keyspan =
+serial adapters</a>.
+The peripheral can use GPL'd firmware
+written by Martin Diehl, instead of whatever they
+might normally be using.
+(The source for that is in the <em>firmware/ezusb/testing</em>
+area in CVS for the Linux-Hotplug project.
+Cypress development kits include similar drivers.)
+Many products (notably, many types of serial adapters)
+use those chips internally, and rely on device drivers
+(or <em>fxload</em>) to download the firmware.
+You can disable their "official" device drivers and then
+use them for testing.
+Store <a href=3D"http://www.linux-usb.org/usbtest/ep2_inout.ihx">the test f=
+irmware</a>
+(doesn't currently support iso transfers)
+into the <em>/etc/hotplug/usb</em> directory
+so that you can download it with 'fxload' from
+<a href=3D"http://linux-hotplug.sourceforge.net/?selected=3Dusb">http://lin=
+ux-hotplug.sourceforge.net</a>.
+Then enable the <em>usbtest</em> kernel driver,
+and install this <a href=3D"http://www.linux-usb.org/usbtest/usbtest">/etc/=
+hotplug/usb/usbtest</a>
+driver setup script, you should be able to run these tests
+with very little trouble, either in a formal "test this now"
+mode or as background tasks in parallel with other activity
+(including other USB activity).
+</p>
+
+<p> The <em>second</em> type of peripheral uses the Linux-USB
+<a href=3D"http://www.linux-usb.org/gadget/index.html">Gadget</a> driver fr=
+amework API.
+That's standard in current Linux 2.4 and 2.6 kernels.
+It includes a <em>Gadget Zero</em> driver.
+To use it, you need a hardware-specific driver to make
+your USB controller implement that API.
+High speed USB peripherals can work, as well as full and low speed ones.
+There's a user-mode version of that driver, which optionally
+supports testing for a variety of isochronous transfer rates.
+(The collection of supported hardware is beginning to grow.
+In fact, testing the hardware-specific controller driver
+relies on gadget zero and host side tests like these.)
+</p>
+
+<blockquote><em>This is by far the simplest option.
+Two ways to run high speed peripherals on Linux are:
+(a) a PC with a spare PCI slot, plus a <b>Net2280EVB</b> card
+(made by <a href=3D"http://www.plxtech.com/">PLX</a>,
+available from various online sources for around $US 105)
+running most Linux 2.6 kernels;
+or, if you can work with non-x86 embedded Linux environments
+using buildroot,
+(b) an <b>ATNGW100</b> board
+(from <a href=3D"http://www.atmel.com/">Atmel</a>, a small but
+complete Linux-capable board available from distributors
+like Digi-Key for about $US 89)
+running Linux 2.6.23+.
+</em></blockquote>
+
+<p><em>Hey!  Intel sells official USB2 compliance testing devices!</em>
+<a href=3D"http://developer.intel.com/technology/usb/download/Usb2Complianc=
+eDeviceSpec_r10.pdf">PDF</a> at around $100 each.
+Maybe you can help
+make these work with "usbtest" or related code.
+</p>
+
+<h4> Driving the Tests from a Linux 2.6 Command Line </h4>
+
+<p> The <b><a href=3D"http://www.linux-usb.org/usbtest/testusb.c">testusb.c=
+</a></b>
+program just issues ioctls to perform
+the tests implemented by the kernel driver.
+It can generate a variety of transfer patterns; you should
+make sure to test both regular streaming and mixes of transfer
+sizes (including short transfers), maybe by using this
+<b><a href=3D"http://www.linux-usb.org/usbtest/test.sh">test.sh</a></b> scr=
+ipt.
+Run <em>testusb</em> like this:</p>
+
+<table cellpadding=3D"8" width=3D"80%">
+<tbody><tr><td bgcolor=3D"#ffffcc"><pre>[root@krypton misc]# testusb
+must specify '-a' or '-D dev'
+usage: testusb [-a] [-D dev] [-n] [-c iterations] [-s packetsize] [-g sglen=
+]
+[root@krypton misc]# </pre>
+</td></tr></tbody></table>
+
+<p> Use 'testusb -a' to test all recognized devices in parallel (one thread
+per device).
+Here's output from a test run (with an old <em>usbtest</em> driver)
+on a uniprocessor, for two high speed FX2 devices:
+one with firmware for bulk IN transfers, the other firmware for bulk OUT.
+That's with lots of I/O parallelism,
+so likely these would be good SMP test modes too:
+</p>
+
+<table cellpadding=3D"8" width=3D"80%">
+<tbody><tr><td bgcolor=3D"#ffffcc"><pre>[root@krypton misc]# <a href=3D"htt=
+p://www.linux-usb.org/usbtree">usbtree</a>
+/:  Bus 01.Port 1: Dev 1, Class=3Droot_hub, Driver=3Dehci-hcd/5p, 480M
+  |__ Port 1: Dev 2, If 0, Class=3Dvend., Driver=3Dusbtest, 480M
+  |__ Port 2: Dev 3, If 0, Class=3Dvend., Driver=3Dusbtest, 480M
+[root@krypton misc]#
+[root@krypton misc]# testusb -a
+unknown speed    /proc/bus/usb/001/003
+unknown speed    /proc/bus/usb/001/002
+/proc/bus/usb/001/002 test 0 took 0.000011 sec
+/proc/bus/usb/001/003 test 0 took 0.000006 sec
+/proc/bus/usb/001/003 test 1 took 0.201934 sec
+/proc/bus/usb/001/002 test 2 took 0.226852 sec
+/proc/bus/usb/001/003 test 3 took 0.211918 sec
+/proc/bus/usb/001/002 test 4 took 0.222404 sec
+/proc/bus/usb/001/003 test 5 took 2.137454 sec
+/proc/bus/usb/001/002 test 6 took 2.133821 sec
+/proc/bus/usb/001/003 test 7 took 2.125387 sec
+/proc/bus/usb/001/002 test 8 took 2.115402 sec
+[root@krypton misc]# </pre>
+</td></tr></tbody></table>
+
+<p> What did the tests do?  UTSL; current versions add at least
+control message tests (covering many "chapter 9" spec behaviors,
+and unlink testing) and isochronous transfer support.
+Here's a summary from a different test run,
+with more tests and firmware that doesn't support the ISO
+transfer tests (#15 and #16):
+</p>
+
+<table cellpadding=3D"8" width=3D"80%">
+<tbody><tr><td bgcolor=3D"#ffffcc"><pre>[root@krypton misc]# dmesg | tail -=
+15
+usbtest 2-2.4:3.0: TEST 0:  NOP
+usbtest 2-2.4:3.0: TEST 1:  write 512 bytes 1000 times
+usbtest 2-2.4:3.0: TEST 2:  read 512 bytes 1000 times
+usbtest 2-2.4:3.0: TEST 3:  write/512 0..512 bytes 1000 times
+usbtest 2-2.4:3.0: TEST 4:  read/512 0..512 bytes 1000 times
+usbtest 2-2.4:3.0: TEST 5:  write 1000 sglists 32 entries of 512 bytes
+usbtest 2-2.4:3.0: TEST 6:  read 1000 sglists 32 entries of 512 bytes
+usbtest 2-2.4:3.0: TEST 7:  write/512 1000 sglists 32 entries 0..512 bytes
+usbtest 2-2.4:3.0: TEST 8:  read/512 1000 sglists 32 entries 0..512 bytes
+usbtest 2-2.4:3.0: TEST 9:  ch9 (subset) control tests, 1000 times
+usbtest 2-2.4:3.0: TEST 10:  queue 32 control calls, 1000 times
+usbtest 2-2.4:3.0: TEST 11:  unlink 1000 reads of 512
+usbtest 2-2.4:3.0: TEST 12:  unlink 1000 writes of 512
+usbtest 2-2.4:3.0: TEST 13:  set/clear 1000 halts
+usbtest 2-2.4:3.0: TEST 14:  1000 ep0out, 0..255 vary 1
+[root@krypton misc]# </pre>
+</td></tr></tbody></table>
+
+<p>On the host side, there are two types of test output.
+One is the results of the command line invocations; that's
+easily captured with the Linux "script" command.
+The other is the driver output, which is captured by the "syslog"
+daemon given an appropriate "syslog.conf" setup.
+(On some versions of this driver you may need to modify the
+driver by hand to re-enable this output.)
+</p>
+
+<p>Tests #11 and #12 aren't very interesting from the perspective
+of the peripherals, but they cover some tricky code paths within HCDs
+and usbcore.
+Notice that those tests don't yet handle device
+disconnect/reconnect (do those by hand, at awkward spots
+including mid-test),
+suspend/resume, or reset, but they do
+cover significant portions of the rest of the Linux-USB host side API.
+</p>
+
+<p>You can use module options to make the "usbtest" driver
+bind to <em>any USB peripheral that enumerates</em> and then the
+"testusb" program can talk to it with "test 9" and "test 10".
+Those are chapter 9 tests (control traffic) that <em>every
+USB device</em> should be able to pass.  If even those
+simple tests don't work, you'll have found a bug in either
+that peripheral's firmware,
+some hardware component,
+or in Linux (probably the HCD, which
+can often be changed with an inexpensive PCI card).
+Those two tests could help system administrators track down
+some types of USB problems.
+</p>
+
+<p><em>Test 10 has been particularly effective at shaking out low-level
+controller and driver bugs on both host and peripheral/gadget sides.</em>
+It issues many back-to-back control transfers,
+and induces faults such as protocol stalls;
+so it's exposed races, fault handling bugs,
+and various annoying combinations of the two.
+Likewise the scatterlist tests have been good at doing the same
+thing for bulk transfers, for much the same reasons.
+</p>
+
+<p>Test #14 can't use the default "testusb" parameters; you'll need to
+drive it using parameters such as those in the test script.
+That's also more interesting for peripheral controller testing, since
+it covers the "control-OUT" type transfers that are essential for
+supporting RNDIS connections to MS-Windows.
+The test itself will only work on devices which support some testing-only
+control messages.
+(Such as by using "gadget zero" to test the underlying peripheral controlle=
+r
+driver, or the Intel test device mentioned above.)
+</p><p>
+
+</p><p> As of 2.5.44, the three main HCDs (EHCI, OHCI, UHCI) seemed to pass
+those basic tests on at least some basic hardware configurations, on
+runs of a few hundred iterations.  That's clearly a good milestone,
+but it certainly shouldn't be the last one!
+(Some host controllers have run these tests for weeks without
+significant problems; and since 2.5.44, more test cases have
+been added.)
+</p>
+
+<center><hr width=3D"70%"></center>
+<h3><a name=3D"gadgets">Testing USB Peripheral Controller Drivers</a></h3>
+
+<p> When you're implementing a USB peripheral by embedding Linux,
+and using the
+<a href=3D"http://www.linux-usb.org/gadget/index.html">Gadget</a> driver fr=
+amework,
+do all the testing outlined here.
+Gadget drivers are written to a hardware-neutral API,
+which can support both generic (class style) functionality
+or vendor-specific functionality.
+The controller driver implements that API, and you'll drive different
+parts of that implementation using different gadget drivers
+along with different host side software.
+</p>
+
+
+<h4><a name=3D"usbcv">USBCV Chapter 9 Tests
+(MS-Windows USB Host)</a></h4>
+
+<p>Your peripheral should certainly pass the www.usb.org USBCV tests.
+These take about five minutes to run.
+
+</p><ol>
+<li>Set up USB test host, running MS-Windows and USBCV
+</li>
+<li>Set up USB test device, running Linux 2.4 or 2.6.
+Load Gadget Zero ("modprobe g_zero"), or some other
+driver you want to verify.
+</li>
+<li>If you're using gadget zero, load it with "autoresume=3D5"
+to make sure the tests address suspend and remote wakeup.
+</li>
+<li>Run USBCV chapter 9, and maybe OTG, tests.  All should pass.
+</li>
+</ol>
+
+<h4><a name=3D"usbtest">Linux USBTEST (Linux 2.6 USB Host)</a></h4>
+
+<p>These are the same tests described earlier for use in HCD testing.
+The difference is that here the "known good" component is the Linux-USB hos=
+t,
+rather than peripheral (which is being tested by the host).
+Most Linux PCs should work just fine as the test driver.
+Run them for quick sanity tests, and as overnight stress loads.
+Leave them running all week while you do other things with your
+boards, too; you might turn up something interesting, like an
+unexpected interaction between different SOC components.
+If in doubt, try using an OHCI controller on your Linux host;
+that's been used most often for such testing (so it's least
+likely to hide problems).
+Also, be sure to use a very recent Linux kernel; bugs in the test
+code do show up sometimes, and older kernels won't have the fixes.
+</p>
+
+<p><em>Note that once these tests work, you can use the
+<b><a href=3D"http://www.linux-usb.org/usbtest/test.sh">test.sh</a></b> scr=
+ipt.(described earlier)
+as an unattended scripted test.
+You should be able to run it for weeks and never see an error.
+</em></p>
+
+
+<h5><a>Control Traffic</a> (any gadget driver)</h5>
+
+<p>
+These control tests cover more than USBCV, notably testing
+fault handling and, only with gadget zero, control-OUT transfers.
+</p>
+
+<ol>
+<li>Set up USB test host, running Linux 2.6 and with
+the "usbtest" module loaded.
+You'll also need the "testusb" program (as above).
+</li>
+<li>Set up USB test device, running Linux 2.4 or 2.6.
+Load Gadget Zero ("modprobe g_zero"), or some other
+driver you want to verify.
+</li>
+<li>Run "testusb -t9", for basic operations often used in enumeration.
+</li>
+<li>Run "testusb -t10", good at finding problems with fault handling
+</li>
+<li>If the test device is using Gadget Zero,
+run "testusb -t14 -c 15000 -s 256 -v 1";
+this tests control-OUT transfers, which are essential to support
+RNDIS network connections to MS-Windows.
+</li>
+<li>All tests should run for at least 24 hours without errors.
+</li>
+<li>Repeat the previous tests
+(except, for now, test 14)
+using gadgetfs and its usermode test
+program, to test "deferred response" mode by handling several
+control transfers in userspace.
+</li>
+<li>At least a few times you should disconnect the peripheral
+from the USB host while each of tests 9, 10, and 14 are running.</li>
+</ol>
+
+<h5><a>Bulk Traffic</a> (Gadget Zero, Gadgetfs) </h5>
+
+<p>The test script linked above includes useful test parameters.
+Most of these tests can be run in modes where they verify that
+data matches some specific pattern.
+You <em>should use that test script</em> to make sure that
+enough of the interesting boundary cases are covered by your
+tests.
+
+</p><ol>
+<li>Set up USB test host, running Linux 2.6 and with
+the "usbtest" module loaded.
+You'll also need the "testusb" program (as above).
+</li>
+<li>Set up USB test device, running Linux 2.4 or 2.6.
+Load Gadget Zero ("modprobe g_zero").
+</li>
+<li>Run "testusb -t1", "testusb -t3", "testusb -t5",
+and "testusb -t7" to test bulk OUT transfers.
+The scatterlist tests can sustain peak transfer rates
+for some time, and all the test have modes where
+they can issue short writes.
+Use those to cover many different traffic patterns.
+</li>
+<li>Run "testusb -t2", "testusb -t4", "testusb -t6",
+and "testusb -t8" to test bulk IN transfers.
+The scatterlist tests can sustain peak transfer rates
+for some time.
+</li>
+<li>If your hardware supports the host setting an endpoint's
+HALT feature, you can run "testusb -at13".
+Some hardware has difficulty halting IN endpoints,
+so you may need to skip this test.
+</li>
+<li>All tests should run for at least 24 hours without errors.
+Do this both with and without kernel debugging options enabled,
+particularly lockdep and slab poisoning.
+You want to be sure to find (and fix) the kind of bugs these
+options uncover.
+And you also want to do the same with the kind of subtle timing
+bugs that can be covered, or uncovered, by the extra work those
+options cause.
+</li>
+<li>Repeat the previous tests using gadgetfs and its usermode test
+program, to test request queue depths greater than one.
+(Requires a version of gadgetfs with AIO support.
+This may mean you need to port "libaio" to a new CPU/platform;
+that library seems unmaintained lately, several patches to add
+support for new platforms have been submitted but not merged.)
+</li>
+<li>If your driver supports both PIO and DMA modes, run
+those tests in both driver modes.
+</li>
+<li>At least a few times you should disconnect the peripheral
+from the USB host while each of the above tests are running.</li>
+</ol>
+
+<p>You may wish to make use of the "mod63" data pattern tests.
+These don't work with all packet sizes, so you'll need to set
+them up by hand, but they are good ways to help catch problems
+like accidentally duplicated packets or buffers.
+</p>
+
+<p>As a rule, interrupt transfers are handled the same as bulk transfers;
+they shouldn't need much separate testing.
+However, you may want to enable the "usbtest" and/or "g_zero" module
+options which let you test those transfers.
+</p>
+
+<h5><a>Isochronous Traffic</a> (gadgetfs) </h5>
+
+<p>At this writing, no generally available gadget drivers
+require isochronous transfer support.
+
+</p><ol>
+<li>Set up USB test host, running Linux 2.6 and with
+the "usbtest" module loaded.
+You'll also need the "testusb" program (as above).
+</li>
+<li>Set up USB test device, running Linux or some other OS.
+Here the directions assume you're using a version of gadgetfs with
+AIO support, and its user mode example/test program.
+</li>
+<li>Run "testusb -t15" to test iso OUT transfers.
+Issue various size writes.
+</li>
+<li>Run "testusb -t16" to test iso IN transfers.
+</li>
+<li>All tests should run for at least 24 hours without errors.
+</li>
+<li>If your driver supports both PIO and DMA modes, run
+those tests in both driver modes.
+</li>
+</ol>
+
+<h4><a name=3D"network">Network Tests
+(Linux 2.6 and MS-Windows USB Hosts)</a></h4>
+
+<p>When Gadget Zero is basically working, you should start using
+<b>Ethernet</b> style testing also, the <em>g_ether</em> gadget driver.
+That normally uses CDC Ethernet to talk to hosts, and will cover
+important code paths that won't be addressed using "usbtest".
+Specifically, transfers go in both directions concurrently;
+they use queue depths greater than one;
+and the rates at which requests enter and leave the queues
+vary considerably more.
+(Races will show up a lot more readily!)
+
+</p><p>With these instructions, you should use both Linux and MS-Windows as=
+ the
+USB host.  Be sure to enable the RNDIS option for g_ether.
+
+</p><ol>
+<li>modprobe g_ether (on peripheral)</li>
+<li>ifconfig usb0 192.1.1.2 (on peripheral)</li>
+<li>connect to host (optionally, interchange with the previous ifconfig ste=
+p)</li>
+<li>ifconfig usb0 192.1.1.1 (on host ... interface may not be usb0,
+it may even be eth0 if you provided a stable Ethernet address</li>
+<li>ping -f -l50 -c 1000 192.1.1.2 (on host) ... no errors or lossage</li>
+<li>ping -f -l50 -c 1000 192.1.1.1 (on peripheral) ... no errors or lossage=
+</li>
+<li>... preceding ping tests may be modified, interchanged, interspersed</l=
+i>
+<li>... also, try 'ping -c 1 -s SIZE' for sizes 1..4K </li>
+<li>ttcp -r -s (on peripheral)</li>
+<li>ttcp -t -s -n 10000 192.1.1.2 (on host) ... no errors or lossage</li>
+<li>... preceding ttcp tests should be interchanged and interspersed</li>
+<li>... during both ping and ttcp tests, also test unplugging
+</li><li>... if your initial test host was Linux, rerun the same tests with
+an MS-Windows host (e.g. SP2); otherwise, rerun them with a Linux host.
+</li></ol>
+
+<p>
+As with Gadget Zero, once this works for short periods you should
+ensure that it works reliably for days at a time.
+All tests should run for at least 24 hours without errors.
+</p>
+
+
+<h4>Other Peripheral Testing </h4>
+
+<p>
+Don't forget connect/disconnect testing;
+do it in the middle of those bulk/control/iso operations,
+and be sure all pending transactions are properly cleaned up.
+There's also "softconnect" testing to be done on all systems
+except those which don't provide software control over the
+D+ (or D-) pullup used to signal device disconnect:
+when you "rmmod" a gadget driver when the peripheral is cabled
+to the host, the host should normally see the device disconnect.
+Likewise, when you modprobe the gadget driver, the host should
+imediately detect a new peripheral and enumerate it.
+Halting, or rebooting, your Linux peripheral should also
+disconnect it from the host.
+</p>
+
+<p>Other gadget drivers are also available for testing,
+but once your controller works well with those two drivers it's=20
+much less likely you'll find significant bugs that
+aren't related to the gadget driver you're using.
+For example,
+</p><ul>
+<li>Use <em>g_file_storage</em> to share mass storage
+media (like a filesystem on an MMC card) with operating systems
+including MS-Windows, Linux, and MacOS.
+Storage is one of the few gadget drivers that ever needs to use USB
+halt processing; it also relies on the "deferred response" mode,
+which controller drivers probably need to handle specifically.
+Be sure you <a href=3D"http://www.linux-usb.org/gadget/file_storage.html">s=
+et it up correctly</a>; you may want to use the debug mode, so
+you can use it in a "removable media" mode or
+tell it not to require endpoint halts.
+</li><li>
+Use <em>g_serial</em> with <em>usb-serial</em> to a Linux host,
+or using the CDC ACM mode to talk to (a) Linux cdc-acm,
+(b) MS-Windows (c) MacOS, or (d) other USB hosts.
+</li>
+<li>
+...or try your application-specific driver.
+</li>
+</ul>
+<p></p>
+
+<p>If your system could operate in OTG mode, or if it's a development board
+that configures its single USB port in either host or peripheral roles,
+you should add a few basic hardware tests to your suite.
+In particular, only host-only, non-OTG, non-SRP configurations should
+ever provide VBUS power by default.
+But VBUS switching bugs are easy to have on dual-role boards,
+so you should test this.
+If you have a device with a LED that turns on given VBUS power, it's
+easy to use that in manual testing for whether VBUS power is off.
+</p>
+
+<h4><a name=3D"usb-otg">OTG Protocol Tests, "OPT"
+(MS-Windows USB Host)</a></h4>
+
+<p>If your peripheral supports USB OTG, run through all of the OPT tests.
+These tests are detailed in the <em>OTG Compliance Plan
+for the USB 2.0 Specification</em>.
+That document is available from www.usb.org, which
+also makes the OPT test equipment available.
+There are several dozen of these tests, covering your device in both
+the "A" role (default host) and the "B" role (default peripheral);
+so make sure both host and peripheral side stacks work well before
+you start running these tests.
+
+</p><p>Your peripheral might also implement just a subset of OTG,
+such as the SRP protocol.  You can test just that portion
+of the OTG stack, too.
+
+
+</p><center><hr width=3D"70%"></center>
+<h3><a name=3D"devices">Supporting USB Peripherals on Linux Hosts</a></h3>
+
+<p> You're likely to be interested in this if you're developing
+a USB peripheral, and want to make it work well with Linux hosts.
+You can implement the peripheral by embedding Linux,
+or with some other OS.
+</p>
+
+<p> There are several levels of testing that a Linux host
+can perform to your peripheral.
+The <a href=3D"http://www.linux-usb.org/usbtest/#basic">basic test</a> is w=
+hether Linux-USB can enumerate
+your peripheral and parse its descriptors; that's basic plugfest style test=
+ing.
+All non-defective peripherals should support this.
+(Look at <em>/proc/bus/usb/devices</em> after Linux enumerates it,
+and verify that the descriptors are displayed correctly.)
+There are also some chapter 9 tests that your peripheral should handle;
+if it handles the analogous USB-IF tests (from a Windows host),
+it should pass these with little trouble.
+For <a href=3D"http://www.linux-usb.org/usbtest/#full">full function suppor=
+t</a> you must make sure Linux
+host side
+applications can use your peripheral, using some kind of device driver(s).
+(User mode drivers can sometimes work here.)
+</p>
+
+<p> The <a href=3D"http://linux-usb-test.sourceforge.net/">http://linux-usb=
+-test.sourceforge.net</a> documentation is a
+resource for interoperability testing that you may find helpful.
+</p>
+
+<h4><a name=3D"basic">Enumeration and Basic Connectivity</a></h4>
+
+<p>You should do all such basic testing with all major Linux host
+configurations:  the three primary types of host controller
+(EHCI, OHCI, and UHCI) with their drivers, and with both USB 1.1
+and USB 2.0 hubs (with transaction translators).
+(Even in the 2.6.3 kernel, there are still situations where the
+UHCI driver behaves differently from other HCDs.)
+</p>
+
+<p>
+You can't do thorough testing without both kinds of external hub,
+and you probably need an add-on PCI host controller card to make
+sure you have the other kind of USB 1.1 controller (OHCI or UHCI)
+and/or a USB 2.0 controller (EHCI).
+Or at least borrow the use of a system with such hardware,
+if you don't want to own it yourself.
+Although it's a goal to minimize differences in how the different
+USB host controllers behave on Linux, they can't all report the
+same status codes given the same errors.
+</p>
+
+<p>High-speed capable peripherals must be tested both at high speed,
+connecting to EHCI directly or through a USB 2.0 hub, and at full speed.
+Most other peripherals run only at full speed (or sometimes low speed),
+so they won't need as much testing.
+</p>
+
+<p> Full-speed (or low speed) tests
+connect peripherals in one of two ways.
+</p><ul>
+<li> To OHCI and UHCI root hubs.
+On newer hardware (with USB 2.0 support on all built-in USB ports,
+or add-in USB 2.0 cards)
+you might need to use an external
+USB 1.1 hub to connect high-speed capable
+peripherals, forcing them to run at lower speed so they
+don't connect to the EHCI root hub.
+</li>
+
+<li> To EHCI root hubs.  For full speed (or low speed)
+peripherals this means connecting through a high speed hub
+through a transaction translator.
+If the peripheral is not capable of high speed operation,
+you can connect it directly to the USB 2.0 hub, otherwise you
+will need to connect it to the USB 2.0 hub through a USB 1.1 hub.
+(That forces it to use the lower speed,
+a possible but unlikely configuration.)
+</li>
+</ul>
+
+<p>The "testusb" program gives you access to two basic kinds of
+"chapter 9" tests.
+<b>Test 9</b> just makes sure a number of required operations are
+handled correctly; no peripheral should ever fail it.
+<b>Test 10</b> is reasonably aggressive, and tests things like
+queuing, protocol stalls, short reads,
+and
+handling of consecutive faults (where it's easy for peripherals
+and hosts to misbehave).
+Of course, if you're testing a peripheral you'll also want to be sure
+it passes the USB-IF "USBCV" tests (after paying a MSFT license tax,
+since that software only runs on Windows hosts).
+Any peripheral running under Linux should pass all of those tests,
+regardless of how much additional Linux integration is done.
+</p>
+
+<h4><a name=3D"full">Device Driver and Application Support</a></h4>
+
+<p>The more interesting level is whether your Linux-using customers can
+use your USB peripheral through host-side applications.
+Some peripherals can work through 'usbfs' with user mode device drivers;
+those peripherals tend to rely only on simple half-duplex protocols.
+(Some very useful USB-IF class specifications are half duplex...)
+Otherwise you'll need some kernel device driver.
+The Linux kernel community strongly prefers GPL'd device drivers, which
+can safely be merged into kernel distributions. Closed-source drivers
+are undesirable, and can't usually be bugfixed.
+If you feel you must close your source, do it in
+user mode applications.
+</p>
+
+<p>If your peripheral works with Linux, presumably you'll have a set of
+application level tests to verify higher level functionality.
+Here's a short checklist of other things you need to support
+from those host side drivers:
+</p><dl>
+
+<dt><em>Make sure your driver supports hotplugging.</em>
+</dt><dd>
+That means they include a MODULE_DEVICE_TABLE that will make the driver
+module load automatically for each peripheral the driver supports.=20
+Test this by making sure the module is not loaded, and then plugging in
+your system.
+On any recent Linux distribution, this should load the driver module.
+You may want to use an /etc/hotplug/usb/DRIVER setup script to hook
+your user mode software up to that driver.
+On 2.6 systems, also make sure that <em>udev</em> does the right
+thing with device special file nodes (in <em>/dev/...</em>) used
+by applications to talk with most drivers.
+</dd>
+
+<dt><em><b>Test peripheral unplugging !!</b></em>
+</dt><dd>
+Unplug while your application is doing different operations with the
+peripheral, and when it's idle. =20
+There are often two kinds of idle:  one where the driver
+is opened by the application, and one where it isn't.
+Buggy disconnect processing has been a big problem with USB peripherals,
+sometimes causing kernel oopsing.
+Linux 2.6 kernels changed to get rid of the main reasons for oopsing.
+The main usbcore fixes are in kernel version 2.6.10 and newer, but you may
+also need higher layer fixes.
+For example, both the SCSI and driver model code needed
+significant hot-unplug bugfixes.
+(If you're supporting Linux 2.4 USB hosts, test your drivers'
+disconnect handling aggressively, and expect HCD-specific bugs.)
+When the kernel disconnects your driver, it means it!
+</dd>
+
+<dt><em>Test Suspend/Resume and Remote Wakeup.</em>
+</dt><dd>
+USB device drivers should all support selective suspend and resume by ensur=
+ing
+that drivers don't issue URBs to suspended devices.
+(Unless they handle submit failures intelligently.)
+There are two basic ways to wake up those suspended devices.
+Some devices, like keyboards, mice and network adapters, support "remote wa=
+keup"
+as a kind of "instant on", either from a system-wide sleep state or just fr=
+om
+the lower-power USB suspend state.
+But all devices can be woken up by the Linux host software; drivers might f=
+or
+example handle -EHOSTUNREACH ("device is asleep") faults by reactivating de=
+vices
+instead of bouncing that fault to upper layers of the Linux-based system.
+Especially smart device power management schemes may autosuspend idle devic=
+es,
+and use either (or both) of those schemes to ensure that devices are resume=
+d
+as soon they need to be active again.
+</dd>
+
+<dt><em>Test with all the different host adapter configuration.</em>
+</dt><dd>
+Sometimes hubs (including root hubs) behave differently during
+enumeration, which often reflects hardware problems.
+Software testing can focus on disconnect processing.
+Remember the HCDs (or USB 2.0 TTs) don't always report I/O errors
+the same, so your driver will likely see disconnect-related I/O errors
+for a few hundred milliseconds before its <em>disconnect()</em>
+method is invoked.
+</dd>
+
+</dl>
+
+<p>Of course, there are also the usual sort of driver portability issues.
+You can often expect other people in the Linux community to help with
+those issues, if your software is clean and portable.
+Once you have the basics working (plug/unplug, all host controllers,
+and your driver functionality meeting current application requirements),
+users should be able to submit patches for the rest.
+</p><div id=3D"goog-gt-tt" class=3D"skiptranslate" dir=3D"ltr"><div style=
+=3D"padding: 8px;"><div><div class=3D"logo"><img src=3D"https://www.gstatic=
+.com/images/branding/product/1x/translate_24dp.png" width=3D"20" height=3D"=
+20" alt=3D"Google &#32763;&#35793;"></div></div></div><div class=3D"top" st=
+yle=3D"padding: 8px; float: left; width: 100%;"><h1 class=3D"title gray">&#=
+21407;&#25991;</h1></div><div class=3D"middle" style=3D"padding: 8px;"><div=
+ class=3D"original-text"></div></div><div class=3D"bottom" style=3D"padding=
+: 8px;"><div class=3D"activity-links"><span class=3D"activity-link">&#25552=
+;&#20379;&#26356;&#22909;&#30340;&#32763;&#35793;&#24314;&#35758;</span><sp=
+an class=3D"activity-link"></span></div><div class=3D"started-activity-cont=
+ainer"><hr style=3D"color: #CCC; background-color: #CCC; height: 1px; borde=
+r: none;"><div class=3D"activity-root"></div></div></div><div class=3D"stat=
+us-message" style=3D"display: none;"></div></div>
+
+
+
+<div class=3D"goog-te-spinner-pos"><div class=3D"goog-te-spinner-animation"=
+><svg xmlns=3D"http://www.w3.org/2000/svg" class=3D"goog-te-spinner" width=
+=3D"96px" height=3D"96px" viewBox=3D"0 0 66 66"><circle class=3D"goog-te-sp=
+inner-path" fill=3D"none" stroke-width=3D"6" stroke-linecap=3D"round" cx=3D=
+"33" cy=3D"33" r=3D"30"></circle></svg></div></div></body></html>
+------MultipartBoundary--YaATNPWXdHiaEYNoYwoRPV0XXsvcmqyZUTTKue5nup----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://translate.googleapis.com/translate_static/css/translateelement.css
+
+@charset "utf-8";
+
+.goog-te-banner-frame { left: 0px; top: 0px; height: 39px; width: 100%; z-i=
+ndex: 10000001; position: fixed; border-top: none; border-right: none; bord=
+er-left: none; border-image: initial; border-bottom: 1px solid rgb(107, 144=
+, 218); margin: 0px; box-shadow: rgb(153, 153, 153) 0px 0px 8px 1px; }
+
+.goog-te-menu-frame { z-index: 10000002; position: fixed; border: none; box=
+-shadow: rgb(153, 153, 153) 0px 3px 8px 2px; }
+
+.goog-te-ftab-frame { z-index: 10000000; border: none; margin: 0px; }
+
+.goog-te-gadget { font-family: arial; font-size: 11px; color: rgb(102, 102,=
+ 102); white-space: nowrap; }
+
+.goog-te-gadget img { vertical-align: middle; border: none; }
+
+.goog-te-gadget-simple { background-color: rgb(255, 255, 255); border-width=
+: 1px; border-style: solid; border-color: rgb(155, 155, 155) rgb(213, 213, =
+213) rgb(232, 232, 232); font-size: 10pt; display: inline-block; padding-to=
+p: 1px; padding-bottom: 2px; cursor: pointer; zoom: 1; }
+
+.goog-te-gadget-icon { margin-left: 2px; margin-right: 2px; width: 19px; he=
+ight: 19px; border: none; vertical-align: middle; }
+
+.goog-te-combo { margin-left: 4px; margin-right: 4px; vertical-align: basel=
+ine; }
+
+.goog-te-gadget .goog-te-combo { margin: 4px 0px; }
+
+.goog-logo-link, .goog-logo-link:link, .goog-logo-link:visited, .goog-logo-=
+link:hover, .goog-logo-link:active { font-size: 12px; font-weight: bold; co=
+lor: rgb(68, 68, 68); text-decoration: none; }
+
+.goog-te-banner .goog-logo-link, .goog-close-link { display: block; margin:=
+ 0px 10px; }
+
+.goog-te-banner .goog-logo-link { padding-top: 2px; padding-left: 4px; }
+
+.goog-te-combo, .goog-te-banner *, .goog-te-ftab *, .goog-te-menu *, .goog-=
+te-menu2 *, .goog-te-balloon * { font-family: arial; font-size: 10pt; }
+
+.goog-te-banner { margin: 0px; background-color: rgb(228, 239, 251); overfl=
+ow: hidden; }
+
+.goog-te-banner img { border: none; }
+
+.goog-te-banner-content { color: rgb(0, 0, 0); }
+
+.goog-te-banner-content img { vertical-align: middle; }
+
+.goog-te-banner-info { color: rgb(102, 102, 102); vertical-align: top; marg=
+in-top: 0px; font-size: 7pt; }
+
+.goog-te-banner-margin { width: 8px; }
+
+.goog-te-button { border-color: rgb(231, 231, 231); border-style: none soli=
+d solid none; border-width: 0px 1px 1px 0px; }
+
+.goog-te-button div { border-color: rgb(204, 204, 204) rgb(153, 153, 153) r=
+gb(153, 153, 153) rgb(204, 204, 204); border-style: solid; border-width: 1p=
+x; height: 20px; }
+
+.goog-te-button button { background: transparent; border: none; cursor: poi=
+nter; height: 20px; overflow: hidden; margin: 0px; vertical-align: top; whi=
+te-space: nowrap; }
+
+.goog-te-button button:active { background: none 0px 0px repeat scroll rgb(=
+204, 204, 204); }
+
+.goog-te-ftab { margin: 0px; background-color: rgb(255, 255, 255); white-sp=
+ace: nowrap; }
+
+.goog-te-ftab-link { text-decoration: none; font-weight: bold; font-size: 1=
+0pt; border: 1px outset rgb(136, 136, 136); padding: 6px 10px; white-space:=
+ nowrap; position: absolute; left: 0px; top: 0px; }
+
+.goog-te-ftab-link img { margin-left: 2px; margin-right: 2px; width: 19px; =
+height: 19px; border: none; vertical-align: middle; }
+
+.goog-te-ftab-link span { text-decoration: underline; margin-left: 2px; mar=
+gin-right: 2px; vertical-align: middle; }
+
+.goog-float-top .goog-te-ftab-link { padding: 2px; border-top-width: 0px; }
+
+.goog-float-bottom .goog-te-ftab-link { padding: 2px; border-bottom-width: =
+0px; }
+
+.goog-te-menu-value { text-decoration: none; color: rgb(0, 0, 204); white-s=
+pace: nowrap; margin-left: 4px; margin-right: 4px; }
+
+.goog-te-menu-value span { text-decoration: underline; }
+
+.goog-te-menu-value img { margin-left: 2px; margin-right: 2px; }
+
+.goog-te-gadget-simple .goog-te-menu-value { color: rgb(0, 0, 0); }
+
+.goog-te-gadget-simple .goog-te-menu-value span { text-decoration: none; }
+
+.goog-te-menu { background-color: rgb(255, 255, 255); text-decoration: none=
+; border: 2px solid rgb(195, 217, 255); overflow: hidden scroll; position: =
+absolute; left: 0px; top: 0px; }
+
+.goog-te-menu-item { padding: 3px; text-decoration: none; }
+
+.goog-te-menu-item, .goog-te-menu-item:link { color: rgb(0, 0, 204); backgr=
+ound: rgb(255, 255, 255); }
+
+.goog-te-menu-item:visited { color: rgb(85, 26, 139); }
+
+.goog-te-menu-item:hover { background: rgb(195, 217, 255); }
+
+.goog-te-menu-item:active { color: rgb(0, 0, 204); }
+
+.goog-te-menu2 { background-color: rgb(255, 255, 255); text-decoration: non=
+e; border: 1px solid rgb(107, 144, 218); overflow: hidden; padding: 4px; }
+
+.goog-te-menu2-colpad { width: 16px; }
+
+.goog-te-menu2-separator { margin: 6px 0px; height: 1px; background-color: =
+rgb(170, 170, 170); overflow: hidden; }
+
+.goog-te-menu2-item div, .goog-te-menu2-item-selected div { padding: 4px; }
+
+.goog-te-menu2-item .indicator { display: none; }
+
+.goog-te-menu2-item-selected .indicator { }
+
+.goog-te-menu2-item-selected .text { padding-left: 4px; padding-right: 4px;=
+ }
+
+.goog-te-menu2-item, .goog-te-menu2-item-selected { text-decoration: none; =
+}
+
+.goog-te-menu2-item div, .goog-te-menu2-item:link div, .goog-te-menu2-item:=
+visited div, .goog-te-menu2-item:active div { color: rgb(0, 0, 204); backgr=
+ound: rgb(255, 255, 255); }
+
+.goog-te-menu2-item:hover div { color: rgb(255, 255, 255); background: rgb(=
+51, 102, 204); }
+
+.goog-te-menu2-item-selected div, .goog-te-menu2-item-selected:link div, .g=
+oog-te-menu2-item-selected:visited div, .goog-te-menu2-item-selected:hover =
+div, .goog-te-menu2-item-selected:active div { color: rgb(0, 0, 0); font-we=
+ight: bold; }
+
+.goog-te-balloon { background-color: rgb(255, 255, 255); overflow: hidden; =
+padding: 8px; border: none; border-radius: 10px; }
+
+.goog-te-balloon-frame { background-color: rgb(255, 255, 255); border: 1px =
+solid rgb(107, 144, 218); box-shadow: rgb(153, 153, 153) 0px 3px 8px 2px; b=
+order-radius: 8px; }
+
+.goog-te-balloon img { border: none; }
+
+.goog-te-balloon-text { margin-top: 6px; }
+
+.goog-te-balloon-zippy { margin-top: 6px; white-space: nowrap; }
+
+.goog-te-balloon-zippy * { vertical-align: middle; }
+
+.goog-te-balloon-zippy .minus { background-image: url("//www.google.com/ima=
+ges/zippy_minus_sm.gif"); }
+
+.goog-te-balloon-zippy .plus { background-image: url("//www.google.com/imag=
+es/zippy_plus_sm.gif"); }
+
+.goog-te-balloon-zippy span { color: rgb(0, 0, 204); text-decoration: under=
+line; cursor: pointer; margin: 0px 4px; }
+
+.goog-te-balloon-form { margin: 6px 0px 0px; }
+
+.goog-te-balloon-form form { margin: 0px; }
+
+.goog-te-balloon-form form textarea { margin-bottom: 4px; width: 100%; }
+
+.goog-te-balloon-footer { margin: 6px 0px 4px; }
+
+.goog-te-spinner-pos { z-index: 1000; position: fixed; transition-delay: 0.=
+6s; left: -1000px; top: -1000px; }
+
+.goog-te-spinner-animation { display: flex; align-items: center; justify-co=
+ntent: center; width: 104px; height: 104px; border-radius: 50px; background=
+: url("//www.gstatic.com/images/branding/product/2x/translate_24dp.png") 50=
+% 50% no-repeat rgb(255, 255, 255); transition: all 0.6s ease-in-out 0s; tr=
+ansform: scale(0.4); opacity: 0; }
+
+.goog-te-spinner-animation-show { transform: scale(0.5); opacity: 1; }
+
+.goog-te-spinner { margin: 2px 0px 0px 2px; animation: 1.4s linear 0s infin=
+ite normal none running goog-te-spinner-rotator; }
+
+@keyframes goog-te-spinner-rotator {=20
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(270deg); }
+}
+
+.goog-te-spinner-path { stroke-dasharray: 187; stroke-dashoffset: 0; stroke=
+: rgb(66, 133, 244); transform-origin: center center; animation: 1.4s ease-=
+in-out 0s infinite normal none running goog-te-spinner-dash; }
+
+@keyframes goog-te-spinner-dash {=20
+  0% { stroke-dashoffset: 187; }
+  50% { stroke-dashoffset: 46.75; transform: rotate(135deg); }
+  100% { stroke-dashoffset: 187; transform: rotate(450deg); }
+}
+
+#goog-gt-tt html, #goog-gt-tt body, #goog-gt-tt div, #goog-gt-tt span, #goo=
+g-gt-tt iframe, #goog-gt-tt h1, #goog-gt-tt h2, #goog-gt-tt h3, #goog-gt-tt=
+ h4, #goog-gt-tt h5, #goog-gt-tt h6, #goog-gt-tt p, #goog-gt-tt a, #goog-gt=
+-tt img, #goog-gt-tt ol, #goog-gt-tt ul, #goog-gt-tt li, #goog-gt-tt table,=
+ #goog-gt-tt form, #goog-gt-tt tbody, #goog-gt-tt tr, #goog-gt-tt td { marg=
+in: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inhe=
+rit; font-weight: inherit; font-stretch: inherit; font-size: inherit; font-=
+family: inherit; vertical-align: baseline; text-align: left; line-height: n=
+ormal; }
+
+#goog-gt-tt ol, #goog-gt-tt ul { list-style: none; }
+
+#goog-gt-tt table { border-collapse: collapse; border-spacing: 0px; }
+
+#goog-gt-tt caption, #goog-gt-tt th, #goog-gt-tt td { text-align: left; fon=
+t-weight: normal; }
+
+div#goog-gt-tt { padding: 10px 14px; }
+
+#goog-gt-tt { color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);=
+ border: 1px solid rgb(238, 238, 238); box-shadow: rgba(0, 0, 0, 0.2) 0px 4=
+px 16px; display: none; font-family: arial; font-size: 10pt; width: 420px; =
+padding: 12px; position: absolute; z-index: 10000; }
+
+#goog-gt-tt .original-text, .gt-hl-layer { clear: both; font-size: 10pt; po=
+sition: relative; text-align: justify; width: 100%; }
+
+#goog-gt-tt .title { color: rgb(153, 153, 153); font-family: arial, sans-se=
+rif; margin: 4px 0px; text-align: left; }
+
+#goog-gt-tt .close-button { display: none; }
+
+#goog-gt-tt .logo { float: left; margin: 0px; }
+
+#goog-gt-tt .activity-links { display: inline-block; }
+
+#goog-gt-tt .started-activity-container { display: none; width: 100%; }
+
+#goog-gt-tt .activity-root { margin-top: 20px; }
+
+#goog-gt-tt .left { float: left; }
+
+#goog-gt-tt .right { float: right; }
+
+#goog-gt-tt .bottom { min-height: 15px; position: relative; height: 1%; }
+
+#goog-gt-tt .status-message { background: rgb(41, 145, 13); border-radius: =
+4px; box-shadow: rgb(30, 102, 9) 0px 2px 2px inset; color: white; font-size=
+: 9pt; font-weight: bolder; margin-top: 12px; padding: 6px; text-shadow: rg=
+b(30, 102, 9) 1px 1px 1px; }
+
+#goog-gt-tt .activity-link { color: rgb(17, 85, 204); cursor: pointer; font=
+-family: arial; font-size: 11px; margin-right: 15px; text-decoration: none;=
+ }
+
+#goog-gt-tt textarea { font-family: arial; resize: vertical; width: 100%; m=
+argin-bottom: 10px; border-radius: 1px; border-width: 1px; border-style: so=
+lid; border-color: silver rgb(217, 217, 217) rgb(217, 217, 217); border-ima=
+ge: initial; font-size: 13px; height: auto; overflow-y: auto; padding: 1px;=
+ }
+
+#goog-gt-tt textarea:focus { box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px ins=
+et; border: 1px solid rgb(77, 144, 254); outline: none; }
+
+#goog-gt-tt .activity-cancel { margin-right: 10px; }
+
+#goog-gt-tt .translate-form { min-height: 25px; vertical-align: middle; pad=
+ding-top: 8px; }
+
+#goog-gt-tt .translate-form .activity-form { margin-bottom: 0px; }
+
+#goog-gt-tt .translate-form .activity-form input { display: inline-block; m=
+in-width: 54px; border: 1px solid rgba(0, 0, 0, 0.1); text-align: center; c=
+olor: rgb(68, 68, 68); font-size: 11px; font-weight: bold; height: 27px; ou=
+tline: 0px; padding: 0px 8px; vertical-align: middle; line-height: 27px; ma=
+rgin: 0px 16px 0px 0px; box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px; border-=
+radius: 2px; transition: all 0.218s ease 0s; background-color: rgb(245, 245=
+, 245); background-image: -webkit-linear-gradient(top, rgb(245, 245, 245), =
+rgb(241, 241, 241)); user-select: none; cursor: default; }
+
+#goog-gt-tt .translate-form .activity-form input:hover { border: 1px solid =
+rgb(198, 198, 198); color: rgb(34, 34, 34); transition: all 0s ease 0s; bac=
+kground-color: rgb(248, 248, 248); background-image: -webkit-linear-gradien=
+t(top, rgb(248, 248, 248), rgb(241, 241, 241)); }
+
+#goog-gt-tt .translate-form .activity-form input:active { border: 1px solid=
+ rgb(198, 198, 198); color: rgb(51, 51, 51); background-color: rgb(246, 246=
+, 246); background-image: -webkit-linear-gradient(top, rgb(246, 246, 246), =
+rgb(241, 241, 241)); }
+
+#goog-gt-tt .translate-form .activity-form input:focus, #goog-gt-tt .transl=
+ate-form .activity-form input.focus { outline: none; border: 1px solid rgb(=
+77, 144, 254); z-index: 4 !important; }
+
+#goog-gt-tt .translate-form .activity-form input.selected { background-colo=
+r: rgb(238, 238, 238); background-image: -webkit-linear-gradient(top, rgb(2=
+38, 238, 238), rgb(224, 224, 224)); box-shadow: rgba(0, 0, 0, 0.1) 0px 1px =
+2px inset; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); }
+
+#goog-gt-tt .translate-form .activity-form input.activity-submit { color: w=
+hite; border-color: rgb(48, 121, 237); background-color: rgb(77, 144, 254);=
+ background-image: -webkit-linear-gradient(top, rgb(77, 144, 254), rgb(71, =
+135, 237)); }
+
+#goog-gt-tt .translate-form .activity-form input.activity-submit:hover #goo=
+g-gt-tt .translate-form .activity-form input.activity-submit:focus, #goog-g=
+t-tt .translate-form .activity-form input.activity-submit.focus #goog-gt-tt=
+ .translate-form .activity-form input.activity-submit:active { border-color=
+: rgb(48, 121, 237); background-color: rgb(53, 122, 232); background-image:=
+ -webkit-linear-gradient(top, rgb(77, 144, 254), rgb(53, 122, 232)); }
+
+#goog-gt-tt .translate-form .activity-form input.activity-submit:hover { bo=
+x-shadow: rgb(255, 255, 255) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.1) 0px =
+1px 1px; }
+
+#goog-gt-tt .translate-form .activity-form input:focus, #goog-gt-tt .transl=
+ate-form .activity-form input.focus, #goog-gt-tt .translate-form .activity-=
+form input:active, #goog-gt-tt .translate-form .activity-form input:hover, =
+#goog-gt-tt .translate-form .activity-form input.activity-submit:focus, #go=
+og-gt-tt .translate-form .activity-form input.activity-submit.focus, #goog-=
+gt-tt .translate-form .activity-form input.activity-submit:active, #goog-gt=
+-tt .translate-form .activity-form input.activity-submit:hover { border-col=
+or: rgb(48, 121, 237); }
+
+#goog-gt-tt .gray { color: rgb(153, 153, 153); font-family: arial, sans-ser=
+if; }
+
+#goog-gt-tt .alt-helper-text { color: rgb(153, 153, 153); font-size: 11px; =
+font-family: arial, sans-serif; margin: 15px 0px 5px; }
+
+#goog-gt-tt .alt-error-text { color: rgb(136, 0, 0); display: none; font-si=
+ze: 9pt; }
+
+.goog-text-highlight { background-color: rgb(201, 215, 241); box-shadow: rg=
+b(153, 153, 170) 2px 2px 4px; box-sizing: border-box; position: relative; }
+
+#goog-gt-tt .alt-menu.goog-menu { background: rgb(255, 255, 255); border: 1=
+px solid rgb(221, 221, 221); box-shadow: rgb(153, 153, 170) 0px 2px 4px; mi=
+n-width: 0px; outline: none; padding: 0px; position: absolute; z-index: 200=
+0; }
+
+#goog-gt-tt .alt-menu .goog-menuitem { cursor: pointer; padding: 2px 5px 5p=
+x; margin-right: 0px; border-style: none; }
+
+#goog-gt-tt .alt-menu div.goog-menuitem:hover { background: rgb(221, 221, 2=
+21); }
+
+#goog-gt-tt .alt-menu .goog-menuitem h1 { font-size: 100%; font-weight: bol=
+d; margin: 4px 0px; }
+
+#goog-gt-tt .alt-menu .goog-menuitem strong { color: rgb(52, 90, 173); }
+
+#goog-gt-tt .goog-submenu-arrow { text-align: right; position: absolute; ri=
+ght: 0px; left: auto; }
+
+#goog-gt-tt .goog-menuitem-rtl .goog-submenu-arrow { text-align: left; posi=
+tion: absolute; left: 0px; right: auto; }
+
+#goog-gt-tt .gt-hl-text, #goog-gt-tt .trans-target-highlight { background-c=
+olor: rgb(241, 234, 0); border-radius: 4px; box-shadow: rgba(0, 0, 0, 0.5) =
+3px 3px 4px; box-sizing: border-box; color: rgb(241, 234, 0); cursor: point=
+er; margin: -2px -2px -2px -3px; padding: 2px 2px 2px 3px; position: relati=
+ve; }
+
+#goog-gt-tt .trans-target-highlight { color: rgb(34, 34, 34); }
+
+#goog-gt-tt .gt-hl-layer { color: white; position: absolute !important; }
+
+#goog-gt-tt .trans-target, #goog-gt-tt .trans-target .trans-target-highligh=
+t { background-color: rgb(201, 215, 241); border-radius: 4px 4px 0px 0px; b=
+ox-shadow: rgba(0, 0, 0, 0.5) 3px 3px 4px; box-sizing: border-box; cursor: =
+pointer; margin: -2px -2px -2px -3px; padding: 2px 2px 3px 3px; position: r=
+elative; }
+
+#goog-gt-tt span:focus { outline: none; }
+
+#goog-gt-tt .trans-edit { background-color: transparent; border: 1px solid =
+rgb(77, 144, 254); border-radius: 0em; margin: -2px; padding: 1px; }
+
+#goog-gt-tt .gt-trans-highlight-l { border-left: 2px solid red; margin-left=
+: -2px; }
+
+#goog-gt-tt .gt-trans-highlight-r { border-right: 2px solid red; margin-rig=
+ht: -2px; }
+
+#goog-gt-tt #alt-input { padding: 2px; }
+
+#goog-gt-tt #alt-input-text { font-size: 11px; padding: 2px 2px 3px; margin=
+: 0px; background-color: rgb(255, 255, 255); color: rgb(51, 51, 51); border=
+-width: 1px; border-style: solid; border-color: rgb(192, 192, 192) rgb(217,=
+ 217, 217) rgb(217, 217, 217); border-image: initial; display: inline-block=
+; vertical-align: top; height: 21px; box-sizing: border-box; border-radius:=
+ 1px; }
+
+#goog-gt-tt #alt-input-text:hover { border-width: 1px; border-style: solid;=
+ border-color: rgb(160, 160, 160) rgb(185, 185, 185) rgb(185, 185, 185); bo=
+rder-image: initial; box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px inset; }
+
+#goog-gt-tt #alt-input-text:focus { box-shadow: rgba(0, 0, 0, 0.3) 0px 1px =
+2px inset; outline: none; border: 1px solid rgb(77, 144, 254); }
+
+#goog-gt-tt #alt-input-submit { font-size: 11px; padding: 2px 6px 3px; marg=
+in: 0px 0px 0px 2px; height: 21px; }
+------MultipartBoundary--YaATNPWXdHiaEYNoYwoRPV0XXsvcmqyZUTTKue5nup----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: https://www.gstatic.com/images/branding/product/2x/translate_24dp.png
+
+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
+5PF339yL/IxXqK4AAAAASUVORK5CYII=
+
+------MultipartBoundary--YaATNPWXdHiaEYNoYwoRPV0XXsvcmqyZUTTKue5nup----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: https://www.gstatic.com/images/branding/product/1x/translate_24dp.png
+
+iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAADAElEQVR4Ab2TA5djWRRGaxlj/51h
+27Zt23xltG3btrtj2zbHM9/c87LuvKCNumvtYrL3zTlJVaucIeuz/bs3pv/s1ZRHT0YPTmMe3Rnd
+GvLoypiwPvzxWwVI3rs5j1cFOq32dHurAIm5nJDkpYHOq2O33irAxS+8PaeesfTW528c+F/6gttz
+OVFz1AebzQu/P4BQKIRgMCgSCARE/H4/8YfF7upZGmiUKJfzQBfGsPUJPJPp4PX6mTjE5eUB+Hy+
+36VAmXjt6Sz0rhRi8SSM7Pvqk1lRTnSuy+PUVR10OjOT+F8YIKR3UbH8VBaJZBKH72ew9GgWh++l
+Mf9QjstF1hxwQSbTwGy2kvTVARoFR+9M4fjDdMnci+WdGENa4nj8RAWt1sD2YSPZ80YkBUjGobGs
+OZUVxTtvZJBMJkUMrhTJC9TSmLRQqfUwGIwYuaSW7cTLqQyQjEOik48y4q0Hb8hh0q4cHuhTuKdL
+cTk6MnouvoEhcwQMW7AWIxYJGLW0FmNWNGDMysbKAMk4tFDawZEHaSw/nsUhtgv6fRn7mcuJQc1x
+bNl/GvceydguzBC27sPJSzdIzJECfL4citAu4okkjO4UhNOl8g41ObRnCNuuYEH9dpy7fhszq9ez
+kAVOp/PFgU7l1EqUy4lV+5yYV7MVIxbW4Mb9x7RwEZfLRbuQAqXSF4olOVGdQ/+GKEYvbMDMtRuw
+8cAxWK1WMeBwOOiVSIEXSEvE5XKiHaNhzy08fabCwqatLHKCBwgp0LY2/UfHNxQTbYUcVrIxyeQa
+qDV6LG7ejqt3HsBut5cGugnBPr+sjv/eXsiA066ctWmRtgXQZk2Bgc0RKJRaGI0mmMzmkjFVvemZ
+Mv/Mdz/2PIcfehT4vvs5rKi9Jd7eZDLDYrEQbx+gM3zKlehPvS6BWFF3G3I2Hq2OAib6PPAAjent
+AouEO4t/7s3ktYXlKpUa6MoChTHZf3+rwLx5175aUXMLDx/JIJMpoVZrodVqodfrRQwGAwV/v3L9
+ab+q1jj/Aa5bwO+xfluQAAAAAElFTkSuQmCC
+
+------MultipartBoundary--YaATNPWXdHiaEYNoYwoRPV0XXsvcmqyZUTTKue5nup------
